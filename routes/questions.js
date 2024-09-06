@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const fs = require('fs');
-const { getDb } = require('../db');
+const { connectToDatabase } = require('../db');
 
 const loadData = (topic, subtopic) => {
   const filePath = path.join(__dirname, `../data/${topic}/${subtopic}.js`);
@@ -40,11 +40,11 @@ router.get('/:topic/:subtopic/:count', (req, res) => {
   res.json(selected);
 });
 
+// Update the submit-result route
 router.post('/submit-result', async (req, res) => {
   const { topic, subtopic, score, totalQuestions } = req.body;
-  const db = getDb();
-
   try {
+    const db = await connectToDatabase();
     const result = await db.collection('quiz_results').insertOne({
       topic,
       subtopic,
@@ -59,11 +59,10 @@ router.post('/submit-result', async (req, res) => {
   }
 });
 
-// Add this new route for the dashboard
+// Update the dashboard route
 router.get('/dashboard', async (req, res) => {
-  const db = getDb();
-
   try {
+    const db = await connectToDatabase();
     const results = await db.collection('quiz_results').find({}).toArray();
     console.log('Dashboard results:', results);
     res.json(results);
