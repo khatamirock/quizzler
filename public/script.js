@@ -205,7 +205,11 @@ function switchTab(tab) {
 async function fetchDashboardData() {
     try {
         const response = await fetch('/api/questions/dashboard');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const data = await response.json();
+        console.log('Fetched dashboard data:', data);
         displayDashboardData(data);
     } catch (error) {
         console.error('Error fetching dashboard data:', error);
@@ -214,23 +218,25 @@ async function fetchDashboardData() {
 }
 
 function displayDashboardData(data) {
-    if (data.length === 0) {
+    console.log('Displaying dashboard data:', data);
+    if (!data || data.length === 0) {
         dashboardData.innerHTML = '<p>No quiz results available.</p>';
         return;
     }
 
-    let html = '<table><tr><th>Topic</th><th>Subtopic</th><th>Average Score</th><th>Total Attempts</th></tr>';
-    data.forEach(topic => {
-        topic.subtopics.forEach(subtopic => {
-            html += `<tr>
-                <td>${topic._id}</td>
-                <td>${subtopic.name}</td>
-                <td>${subtopic.avgScore.toFixed(2)}%</td>
-                <td>${subtopic.totalAttempts}</td>
-            </tr>`;
-        });
+    let html = '<table><tr><th>Topic</th><th>Subtopic</th><th>Score</th><th>Total Questions</th><th>Timestamp</th></tr>';
+    data.forEach(result => {
+        console.log('Processing result:', result);
+        html += `<tr>
+            <td>${result.topic || 'N/A'}</td>
+            <td>${result.subtopic || 'N/A'}</td>
+            <td>${result.score}</td>
+            <td>${result.totalQuestions}</td>
+            <td>${new Date(result.timestamp).toLocaleString()}</td>
+        </tr>`;
     });
     html += '</table>';
+    console.log('Generated HTML:', html);
     dashboardData.innerHTML = html;
 }
 

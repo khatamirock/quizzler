@@ -64,28 +64,8 @@ router.get('/dashboard', async (req, res) => {
   const db = getDb();
 
   try {
-    const results = await db.collection('quiz_results').aggregate([
-      {
-        $group: {
-          _id: { topic: '$topic', subtopic: '$subtopic' },
-          avgScore: { $avg: { $divide: ['$score', '$totalQuestions'] } },
-          totalAttempts: { $sum: 1 }
-        }
-      },
-      {
-        $group: {
-          _id: '$_id.topic',
-          subtopics: {
-            $push: {
-              name: '$_id.subtopic',
-              avgScore: { $multiply: ['$avgScore', 100] },
-              totalAttempts: '$totalAttempts'
-            }
-          }
-        }
-      }
-    ]).toArray();
-
+    const results = await db.collection('quiz_results').find({}).toArray();
+    console.log('Dashboard results:', results);
     res.json(results);
   } catch (error) {
     console.error('Error fetching dashboard data:', error);
