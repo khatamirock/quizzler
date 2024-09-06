@@ -21,14 +21,19 @@ function updateSubtopics() {
     if (topic) {
         fetch(`/api/questions/subtopics/${topic}`)
             .then(response => response.json())
-            .then(subtopics => {
-                if (subtopics.length > 0) {
-                    subtopics.forEach(subtopic => {
-                        const option = document.createElement('option');
-                        option.value = subtopic;
-                        option.textContent = subtopic;
-                        subtopicSelect.appendChild(option);
-                    });
+            .then(classifiedSubtopics => {
+                if (Object.keys(classifiedSubtopics).length > 0) {
+                    for (const [subsValue, subtopics] of Object.entries(classifiedSubtopics)) {
+                        const optgroup = document.createElement('optgroup');
+                        optgroup.label = `Subs: ${subsValue}`;
+                        subtopics.forEach(subtopic => {
+                            const option = document.createElement('option');
+                            option.value = subsValue; // Use subsValue as the value
+                            option.textContent = subtopic;
+                            optgroup.appendChild(option);
+                        });
+                        subtopicSelect.appendChild(optgroup);
+                    }
                     subtopicSelect.disabled = false;
                 } else {
                     const option = document.createElement('option');
@@ -322,3 +327,60 @@ async function fetchMongoCollections() {
         console.error('Error fetching MongoDB collections:', error);
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const topicSelect = document.getElementById('topic');
+  const subtopicSelect = document.getElementById('subtopic');
+
+  // Fetch and populate topics
+  fetch('/api/questions/topics')
+    .then(response => response.json())
+    .then(topics => {
+      topicSelect.innerHTML = '<option value="" disabled selected>Select a topic</option>';
+      topics.forEach(topic => {
+        const option = document.createElement('option');
+        option.value = topic;
+        option.textContent = topic;
+        topicSelect.appendChild(option);
+      });
+    })
+    .catch(error => {
+      console.error('Error fetching topics:', error);
+    });
+
+  topicSelect.addEventListener('change', updateSubtopics);
+
+  function updateSubtopics() {
+    const topic = topicSelect.value;
+    subtopicSelect.innerHTML = '<option value="">Select Subtopic</option>';
+    subtopicSelect.disabled = true;
+
+    if (topic) {
+      fetch(`/api/questions/subtopics/${topic}`)
+        .then(response => response.json())
+        .then(classifiedSubtopics => {
+          if (Object.keys(classifiedSubtopics).length > 0) {
+            for (const [subsValue, subtopics] of Object.entries(classifiedSubtopics)) {
+              const optgroup = document.createElement('optgroup');
+              optgroup.label = `Subs: ${subsValue}`;
+              subtopics.forEach(subtopic => {
+                const option = document.createElement('option');
+                option.value = subsValue; // Use subsValue as the value
+                option.textContent = subtopic;
+                optgroup.appendChild(option);
+              });
+              subtopicSelect.appendChild(optgroup);
+            }
+            subtopicSelect.disabled = false;
+          } else {
+            const option = document.createElement('option');
+            option.value = "default";
+            option.textContent = "No subtopics available";
+            subtopicSelect.appendChild(option);
+          }
+        });
+    }
+  }
+
+  // Other existing code...
+});

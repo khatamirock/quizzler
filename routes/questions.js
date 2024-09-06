@@ -2,14 +2,18 @@ const express = require('express');
 const router = express.Router();
 const { connectToDatabase } = require('../db');
 
-// Remove the loadData function as it's no longer needed
-// const loadData = (topic, subtopic) => {
-//   const filePath = path.join(__dirname, `../data/${topic}/${subtopic}.js`);
-//   if (fs.existsSync(filePath)) {
-//     return require(filePath);
-//   }
-//   return null;
-// };
+// Route to fetch collection names as topics
+router.get('/topics', async (req, res) => {
+  try {
+    const db = await connectToDatabase('data');
+    const collections = await db.listCollections().toArray();
+    const topics = collections.map(col => col.name);
+    res.json(topics);
+  } catch (error) {
+    console.error('Error fetching topics:', error);
+    res.status(500).json({ error: 'Failed to fetch topics', details: error.message });
+  }
+});
 
 // Update the subtopics route to fetch collections from the "data" database
 router.get('/subtopics/:topic', async (req, res) => {
@@ -18,7 +22,36 @@ router.get('/subtopics/:topic', async (req, res) => {
     const db = await connectToDatabase('data');
     const collections = await db.listCollections().toArray();
     const subtopics = collections.map(col => col.name);
-    res.json(subtopics);
+
+    // Find unique `subs` values and classify subtopics
+    const classifiedSubtopics = {};
+    const uniqueSubs = new Set();
+
+    for (const subtopic of subtopics) {
+      if (subtopic.toLowerCase().includes(topic.toLowerCase())) {
+        const collection = db.collection(subtopic);
+        const subsFields = await collection.find({}, { projection: { subs: 1 } }).toArray();
+        
+        subsFields.forEach(subsField => {
+          const subsValue = subsField && subsField.subs ? subsField.subs : 'other';
+          uniqueSubs.add(subsValue);
+
+          if (!classifiedSubtopics[subsValue]) {
+            classifiedSubtopics[subsValue] = new Set();
+          }
+          classifiedSubtopics[subsValue].add(subtopic);
+        });
+      }
+    }
+
+    // Convert sets to arrays for JSON serialization
+    for (const subsValue in classifiedSubtopics) {
+      classifiedSubtopics[subsValue] = Array.from(classifiedSubtopics[subsValue]);
+    }
+
+    console.log('Unique Subs:', Array.from(uniqueSubs));
+    console.log('Classified Subtopics:', classifiedSubtopics);
+    res.json(classifiedSubtopics);
   } catch (error) {
     console.error('Error fetching subtopics:', error);
     res.status(500).json({ error: 'Failed to fetch subtopics', details: error.message });
@@ -30,8 +63,8 @@ router.get('/:topic/:subtopic/:count', async (req, res) => {
   const { topic, subtopic, count } = req.params;
   try {
     const db = await connectToDatabase('data');
-    const collection = db.collection(subtopic);
-    const questions = await collection.find({}).toArray();
+    const collection = db.collection(topic);
+    const questions = await collection.find({ subs: parseInt(subtopic) }).toArray();
 
     if (!questions || !Array.isArray(questions)) {
       return res.status(400).json({ error: 'Invalid topic or data format' });
@@ -100,4 +133,5 @@ router.get('/collections', async (req, res) => {
   }
 });
 
+module.exports = router;
 module.exports = router;
