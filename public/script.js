@@ -13,30 +13,39 @@ const subtopicSelect = document.getElementById('subtopic');
 
 topicSelect.addEventListener('change', updateSubtopics);
 
-function updateSubtopics() {
+async function updateSubtopics() {
     const topic = topicSelect.value;
     subtopicSelect.innerHTML = '<option value="">Select Subtopic</option>';
     subtopicSelect.disabled = true;
 
     if (topic) {
-        fetch(`/api/questions/subtopics/${topic}`)
-            .then(response => response.json())
-            .then(subtopics => {
-                if (subtopics.length > 0) {
-                    subtopics.forEach(subtopic => {
-                        const option = document.createElement('option');
-                        option.value = subtopic;
-                        option.textContent = subtopic;
-                        subtopicSelect.appendChild(option);
-                    });
-                    subtopicSelect.disabled = false;
-                } else {
+        try {
+            const response = await fetch(`/api/questions/subtopics/${topic}`);
+            if (!response.ok) {
+                throw new Error('Failed to fetch subtopics');
+            }
+            const subtopics = await response.json();
+            if (subtopics.length > 0) {
+                subtopics.forEach(subtopic => {
                     const option = document.createElement('option');
-                    option.value = "default";
-                    option.textContent = "No subtopics available";
+                    option.value = subtopic;
+                    option.textContent = subtopic;
                     subtopicSelect.appendChild(option);
-                }
-            });
+                });
+                subtopicSelect.disabled = false;
+            } else {
+                const option = document.createElement('option');
+                option.value = "default";
+                option.textContent = "No subtopics available";
+                subtopicSelect.appendChild(option);
+            }
+        } catch (error) {
+            console.error('Error fetching subtopics:', error);
+            const option = document.createElement('option');
+            option.value = "default";
+            option.textContent = "Error fetching subtopics";
+            subtopicSelect.appendChild(option);
+        }
     }
 }
 
