@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to JSON Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="converter">
+        <h2>Text to JSON Converter</h2>
+        <form id="converterForm">
+            <label for="topicSelect">Select Topic:</label>
+            <select id="topicSelect">
+                <option value="">Select or create a topic</option>
+            </select>
+            
+            <label for="newTopic">Or Create New Topic:</label>
+            <input type="text" id="newTopic" placeholder="Enter new topic name">
+            
+            <label for="subtopicSelect">Select Subtopic:</label>
+            <select id="subtopicSelect" disabled>
+                <option value="">Select or create a subtopic</option>
+            </select>
+            
+            <label for="newSubtopic">Or Create New Subtopic:</label>
+            <input type="text" id="newSubtopic" placeholder="Enter new subtopic name">
+            
+            <label for="rawText">Raw Text:</label>
+            <textarea id="rawText" rows="10" required></textarea>
+            
+            <button type="button" id="previewButton">Preview JSON</button>
+        </form>
+        <div id="previewArea" style="display: none;">
+            <h3>JSON Preview:</h3>
+            <pre id="jsonPreview"></pre>
+            <button id="saveButton">Save JSON</button>
+            <button id="editButton">Edit Text</button>
+        </div>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

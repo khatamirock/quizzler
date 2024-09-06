@@ -14,6 +14,7 @@
         <div id="tabs">
             <button id="quizTab" class="active">Quiz</button>
             <button id="dashboardTab">Dashboard</button>
+            <button id="converterTab">Text to JSON</button>
         </div>
         <div id="quizContent">
             <!-- Existing quiz content -->
@@ -47,6 +48,9 @@
             <h2>Quiz Results Dashboard</h2>
             <div id="dashboardData"></div>
             <div id="chartsContainer"></div> <!-- Add this line for the charts container -->
+        </div>
+        <div id="converterContent" style="display:none;">
+            <iframe src="text_to_json/index.html" width="100%" height="600px" frameborder="0"></iframe>
         </div>
     </div>
     <script src="script.js"></script>

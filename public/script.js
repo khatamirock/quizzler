@@ -182,23 +182,32 @@ const dashboardTab = document.getElementById('dashboardTab');
 const quizContent = document.getElementById('quizContent');
 const dashboardContent = document.getElementById('dashboardContent');
 const dashboardData = document.getElementById('dashboardData');
+const converterTab = document.getElementById('converterTab');
+const converterContent = document.getElementById('converterContent');
 
 // Add event listeners for tab switching
 quizTab.addEventListener('click', () => switchTab('quiz'));
 dashboardTab.addEventListener('click', () => switchTab('dashboard'));
+converterTab.addEventListener('click', () => switchTab('converter'));
 
 function switchTab(tab) {
+    quizTab.classList.remove('active');
+    dashboardTab.classList.remove('active');
+    converterTab.classList.remove('active');
+    quizContent.style.display = 'none';
+    dashboardContent.style.display = 'none';
+    converterContent.style.display = 'none';
+
     if (tab === 'quiz') {
         quizTab.classList.add('active');
-        dashboardTab.classList.remove('active');
         quizContent.style.display = 'block';
-        dashboardContent.style.display = 'none';
-    } else {
-        quizTab.classList.remove('active');
+    } else if (tab === 'dashboard') {
         dashboardTab.classList.add('active');
-        quizContent.style.display = 'none';
         dashboardContent.style.display = 'block';
         fetchDashboardData();
+    } else if (tab === 'converter') {
+        converterTab.classList.add('active');
+        converterContent.style.display = 'block';
     }
 }
 
