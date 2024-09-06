@@ -39,7 +39,7 @@ router.get('/subtopics/:topic', async (req, res) => {
           if (!classifiedSubtopics[subsValue]) {
             classifiedSubtopics[subsValue] = new Set();
           }
-          classifiedSubtopics[subsValue].add(subtopic);
+          classifiedSubtopics[subsValue].add(`${subtopic}-${subsValue}`);
         });
       }
     }
@@ -47,6 +47,11 @@ router.get('/subtopics/:topic', async (req, res) => {
     // Convert sets to arrays for JSON serialization
     for (const subsValue in classifiedSubtopics) {
       classifiedSubtopics[subsValue] = Array.from(classifiedSubtopics[subsValue]);
+    }
+
+    // Send only half of the unique subtopics
+    for (const subsValue in classifiedSubtopics) {
+      classifiedSubtopics[subsValue] = classifiedSubtopics[subsValue].slice(0, Math.ceil(classifiedSubtopics[subsValue].length / 2));
     }
 
     console.log('Unique Subs:', Array.from(uniqueSubs));
@@ -64,7 +69,8 @@ router.get('/:topic/:subtopic/:count', async (req, res) => {
   try {
     const db = await connectToDatabase('data');
     const collection = db.collection(topic);
-    const questions = await collection.find({ subs: parseInt(subtopic) }).toArray();
+    const subsValue = parseInt(subtopic.split('-').pop());
+    const questions = await collection.find({ subs: subsValue }).toArray();
 
     if (!questions || !Array.isArray(questions)) {
       return res.status(400).json({ error: 'Invalid topic or data format' });
@@ -133,5 +139,4 @@ router.get('/collections', async (req, res) => {
   }
 });
 
-module.exports = router;
 module.exports = router;

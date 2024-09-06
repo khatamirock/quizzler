@@ -1,7 +1,8 @@
 module.exports =[
       {
         "question_id": 20,
-        "question_text": "Software Engineering What is a Software?",
+        "subs":1,
+"question_text": "Software Engineering What is a Software?",
         "options": [
           {
             "text": "Software is set of programs",
@@ -25,7 +26,8 @@ module.exports =[
 
       {
         "question_id": 22,
-        "question_text": "not a part of software processes ?",
+        "subs":1,
+"question_text": "not a part of software processes ?",
         "options": [
           {
             "text": "Software dependence",
@@ -48,13 +50,15 @@ module.exports =[
       },
       {
         "question_id": 23,
-        "question_text": "",
+        "subs":1,
+"question_text": "",
         "options": [],
         "correct_answer": null
       },
       {
         "question_id": 24,
-        "question_text": "d. Software engineering is concerned with the practicalities of developing and delivering useful software. Answer: (c).Computer science belongs to Software engineering. Which of these is true? basi",
+        "subs":1,
+"question_text": "d. Software engineering is concerned with the practicalities of developing and delivering useful software. Answer: (c).Computer science belongs to Software engineering. Which of these is true? basi",
         "options": [
           {
             "text": "Generic products and customized products are types of software products.",
@@ -77,7 +81,8 @@ module.exports =[
       },
       {
         "question_id": 254,
-        "question_text": "Software is considered to be be collection of",
+        "subs":1,
+"question_text": "Software is considered to be be collection of",
         "options": [
           {
             "text": "programming code",
@@ -100,7 +105,8 @@ module.exports =[
       },
       {
         "question_id": 255,
-        "question_text": "The process of developing a software product using software engineering methods is referred to as",
+        "subs":1,
+"question_text": "The process of developing a software product using software engineering methods is referred to as",
         "options": [
           {
             "text": "Software Engineering",
@@ -123,7 +129,8 @@ module.exports =[
       },
       {
         "question_id": 256,
-        "question_text": "Lehman has given laws for software evolution and he divided the software into categories.",
+        "subs":1,
+"question_text": "Lehman has given laws for software evolution and he divided the software into categories.",
         "options": [
           {
             "text": "6",
@@ -146,7 +153,8 @@ module.exports =[
       },
       {
         "question_id": 257,
-        "question_text": "Which of the following is not consider laws for E- Type software evolution?",
+        "subs":1,
+"question_text": "Which of the following is not consider laws for E- Type software evolution?",
         "options": [
           {
             "text": "Continuing quality",
@@ -169,7 +177,8 @@ module.exports =[
       },
       {
         "question_id": 258,
-        "question_text": "Which of the following laws for E-Type says \"E- type software system must continue to adapt to changes, else it becomes the real world changes, progressively less useful\".",
+        "subs":1,
+"question_text": "Which of the following laws for E-Type says \"E- type software system must continue to adapt to changes, else it becomes the real world changes, progressively less useful\".",
         "options": [
           {
             "text": "Continuing growth",
@@ -192,7 +201,8 @@ module.exports =[
       },
       {
         "question_id": 259,
-        "question_text": "Which of the following is the Characteristics of good software?",
+        "subs":1,
+"question_text": "Which of the following is the Characteristics of good software?",
         "options": [
           {
             "text": "Transitional",
@@ -215,7 +225,8 @@ module.exports =[
       },
       {
         "question_id": 260,
-        "question_text": "Where there is a need of Software Engineering?",
+        "subs":1,
+"question_text": "Where there is a need of Software Engineering?",
         "options": [
           {
             "text": "For Large Software",
@@ -238,7 +249,8 @@ module.exports =[
       },
       {
         "question_id": 261,
-        "question_text": "The reason for software bugs and failures is due to",
+        "subs":1,
+"question_text": "The reason for software bugs and failures is due to",
         "options": [
           {
             "text": "Software Developers",
@@ -261,7 +273,8 @@ module.exports =[
       },
       {
         "question_id": 262,
-        "question_text": "RAD Software process model stands for",
+        "subs":1,
+"question_text": "RAD Software process model stands for",
         "options": [
           {
             "text": "Rapid Application Development.",
@@ -284,7 +297,8 @@ module.exports =[
       },
       {
         "question_id": 263,
-        "question_text": "What is the simplest model of software development paradigm?",
+        "subs":1,
+"question_text": "What is the simplest model of software development paradigm?",
         "options": [
           {
             "text": "Spiral model",
@@ -307,7 +321,8 @@ module.exports =[
       },
       {
         "question_id": 364,
-        "question_text": "The architectural model is derived from which of these sources? A) Information about the application domain for the software to be built; mox B) Specific requirements model elements such as data flow diagrams or analysis classes, their relationships and collaborations for the problem. at hand; C) The availability of architectural styles and patterns.",
+        "subs":1,
+"question_text": "The architectural model is derived from which of these sources? A) Information about the application domain for the software to be built; mox B) Specific requirements model elements such as data flow diagrams or analysis classes, their relationships and collaborations for the problem. at hand; C) The availability of architectural styles and patterns.",
         "options": [
           {
             "text": "Both A & B",
@@ -326,7 +341,8 @@ module.exports =[
       },
       {
         "question_id": 265,
-        "question_text": "Which model is also known as Verification and validation model?",
+        "subs":1,
+"question_text": "Which model is also known as Verification and validation model?",
         "options": [
           {
             "text": "Waterfall model",
@@ -349,7 +365,8 @@ module.exports =[
       },
       {
         "question_id": 266,
-        "question_text": "Which model is not suitable for large software projects but good one for bolearning and experimenting?",
+        "subs":1,
+"question_text": "Which model is not suitable for large software projects but good one for bolearning and experimenting?",
         "options": [
           {
             "text": "Big Bang model for b. Spiral model",
@@ -368,7 +385,8 @@ module.exports =[
       },
       {
         "question_id": 267,
-        "question_text": "Which model is also called as the classic life cycle or the Waterfall model?",
+        "subs":1,
+"question_text": "Which model is also called as the classic life cycle or the Waterfall model?",
         "options": [
           {
             "text": "Iterative Development",
@@ -391,7 +409,8 @@ module.exports =[
       },
       {
         "question_id": 268,
-        "question_text": "What is the average effective global activity rate in an evolving E-type system is invariant over the lifetime of the product?",
+        "subs":1,
+"question_text": "What is the average effective global activity rate in an evolving E-type system is invariant over the lifetime of the product?",
         "options": [
           {
             "text": "Self-regulation",
@@ -414,7 +433,8 @@ module.exports =[
       },
       {
         "question_id": 269,
-        "question_text": "Build & Fix Model is suitable for programming exercises of",
+        "subs":1,
+"question_text": "Build & Fix Model is suitable for programming exercises of",
         "options": [
           {
             "text": "100-200",
@@ -437,7 +457,8 @@ module.exports =[
       },
       {
         "question_id": 270,
-        "question_text": "Which one of the following models is not suitable for accommodating any change?",
+        "subs":1,
+"question_text": "Which one of the following models is not suitable for accommodating any change?",
         "options": [
           {
             "text": "Build & Fix Model and",
@@ -460,7 +481,8 @@ module.exports =[
       },
       {
         "question_id": 271,
-        "question_text": "Which is not one of the types of prototype of Prototyping Model?",
+        "subs":1,
+"question_text": "Which is not one of the types of prototype of Prototyping Model?",
         "options": [
           {
             "text": "Horizontal Prototype 201 stack IT Job Solution and Stack IT BPSC Special | Call 01812603406 or 01789741518 | or Visist: stackvaly.com",
@@ -475,7 +497,8 @@ module.exports =[
       },
       {
         "question_id": 272,
-        "question_text": "Which one of the following is not a phase of Prototyping Model?",
+        "subs":1,
+"question_text": "Which one of the following is not a phase of Prototyping Model?",
         "options": [
           {
             "text": "Quick Design yismarc. Prototype Refinement",
@@ -494,7 +517,8 @@ module.exports =[
       },
       {
         "question_id": 273,
-        "question_text": "Which of the following statements regarding Build & Fix Model is wrong?",
+        "subs":1,
+"question_text": "Which of the following statements regarding Build & Fix Model is wrong?",
         "options": [
           {
             "text": "No room for structured design",
@@ -517,7 +541,8 @@ module.exports =[
       },
       {
         "question_id": 274,
-        "question_text": "RAD Model has",
+        "subs":1,
+"question_text": "RAD Model has",
         "options": [
           {
             "text": "2 phases",
@@ -540,7 +565,8 @@ module.exports =[
       },
       {
         "question_id": 275,
-        "question_text": "What is the major drawback of using RAD Model?",
+        "subs":1,
+"question_text": "What is the major drawback of using RAD Model?",
         "options": [
           {
             "text": "Highly specialized & skilled developers/designers are required.",
@@ -563,7 +589,8 @@ module.exports =[
       },
       {
         "question_id": 276,
-        "question_text": "SDLC stands for",
+        "subs":1,
+"question_text": "SDLC stands for",
         "options": [
           {
             "text": "Software Development Life Cycle",
@@ -586,7 +613,8 @@ module.exports =[
       },
       {
         "question_id": 277,
-        "question_text": "Which model can be selected if user is involved in hi bol all the phases of SDLC?",
+        "subs":1,
+"question_text": "Which model can be selected if user is involved in hi bol all the phases of SDLC?",
         "options": [
           {
             "text": "Waterfall Model Janem c. RAD Model",
@@ -605,7 +633,8 @@ module.exports =[
       },
       {
         "question_id": 278,
-        "question_text": "Which one of the following is not an Evolutionary Process Model? 101",
+        "subs":1,
+"question_text": "Which one of the following is not an Evolutionary Process Model? 101",
         "options": [
           {
             "text": "WINWIN Spiral Model 2004",
@@ -628,7 +657,8 @@ module.exports =[
       },
       {
         "question_id": 281,
-        "question_text": "The spiral model was originally proposed by 10 32",
+        "subs":1,
+"question_text": "The spiral model was originally proposed by 10 32",
         "options": [
           {
             "text": "IBM",
@@ -651,7 +681,8 @@ module.exports =[
       },
       {
         "question_id": 282,
-        "question_text": "The spiral model has two dimensions namely and gb",
+        "subs":1,
+"question_text": "The spiral model has two dimensions namely and gb",
         "options": [
           {
             "text": "diagonal, angular",
@@ -674,7 +705,8 @@ module.exports =[
       },
       {
         "question_id": 283,
-        "question_text": "How is WINWIN Spiral Model different from Spiral Model? 6231",
+        "subs":1,
+"question_text": "How is WINWIN Spiral Model different from Spiral Model? 6231",
         "options": [
           {
             "text": "It defines tasks required to define resources, timelines, and other project related information.",
@@ -697,7 +729,8 @@ module.exports =[
       },
       {
         "question_id": 285,
-        "question_text": "How is Incremental Model different from Spiral Model? mihov",
+        "subs":1,
+"question_text": "How is Incremental Model different from Spiral Model? mihov",
         "options": [
           {
             "text": "Progress can be measured for Incremental Model.",
@@ -720,7 +753,8 @@ module.exports =[
       },
       {
         "question_id": 286,
-        "question_text": "If you were to create client/server applications, which model would you go for?",
+        "subs":1,
+"question_text": "If you were to create client/server applications, which model would you go for?",
         "options": [
           {
             "text": "WINWIN Spiral Model",
@@ -743,7 +777,8 @@ module.exports =[
       },
       {
         "question_id": 287,
-        "question_text": "Selection of a model is based on",
+        "subs":1,
+"question_text": "Selection of a model is based on",
         "options": [
           {
             "text": "Requirements",
@@ -766,7 +801,8 @@ module.exports =[
       },
       {
         "question_id": 288,
-        "question_text": "Which two models doesn't allow defining requirements early in the cycle?",
+        "subs":1,
+"question_text": "Which two models doesn't allow defining requirements early in the cycle?",
         "options": [
           {
             "text": "Waterfall & RAD",
@@ -789,7 +825,8 @@ module.exports =[
       },
       {
         "question_id": 289,
-        "question_text": "Which of the following life cycle model can be chosen if the development team has less experience on similar projects?",
+        "subs":1,
+"question_text": "Which of the following life cycle model can be chosen if the development team has less experience on similar projects?",
         "options": [
           {
             "text": "Spiral",
@@ -808,7 +845,8 @@ module.exports =[
       },
       {
         "question_id": 290,
-        "question_text": "If you were a lead developer of a software company and you are asked to submit a project/product within a stipulated time-frame with no cost barriers, which model would you molde select?",
+        "subs":1,
+"question_text": "If you were a lead developer of a software company and you are asked to submit a project/product within a stipulated time-frame with no cost barriers, which model would you molde select?",
         "options": [
           {
             "text": "Waterfall bru",
@@ -827,7 +865,8 @@ module.exports =[
       },
       {
         "question_id": 291,
-        "question_text": "Which two of the following models will not be able to give the desired outcome if user's participation is not involved?",
+        "subs":1,
+"question_text": "Which two of the following models will not be able to give the desired outcome if user's participation is not involved?",
         "options": [
           {
             "text": "Waterfall & Spiral bus a",
@@ -850,7 +889,8 @@ module.exports =[
       },
       {
         "question_id": 292,
-        "question_text": "A company is developing an advance version of sawit their current software available in the market, Bac what model approach would they prefer?",
+        "subs":1,
+"question_text": "A company is developing an advance version of sawit their current software available in the market, Bac what model approach would they prefer?",
         "options": [
           {
             "text": "RAD",
@@ -873,7 +913,8 @@ module.exports =[
       },
       {
         "question_id": 293,
-        "question_text": "Choose the correct option from given below:",
+        "subs":1,
+"question_text": "Choose the correct option from given below:",
         "options": [
           {
             "text": "Prototyping Model facilitates re-usability of components",
@@ -896,7 +937,8 @@ module.exports =[
       },
       {
         "question_id": 294,
-        "question_text": "Which of the following model has a major disadvantage in terms of the coding phase of a software life cycle model?",
+        "subs":1,
+"question_text": "Which of the following model has a major disadvantage in terms of the coding phase of a software life cycle model?",
         "options": [
           {
             "text": "Spiral Model",
@@ -919,7 +961,8 @@ module.exports =[
       },
       {
         "question_id": 296,
-        "question_text": "Find out which phase is not available in SDLC?",
+        "subs":1,
+"question_text": "Find out which phase is not available in SDLC?",
         "options": [
           {
             "text": "Coding",
@@ -942,7 +985,8 @@ module.exports =[
       },
       {
         "question_id": 297,
-        "question_text": "Which SDLC activity does the user initiates the request for a desired software product?",
+        "subs":1,
+"question_text": "Which SDLC activity does the user initiates the request for a desired software product?",
         "options": [
           {
             "text": "Requirement gathering h Implementation Forma-238",
@@ -953,7 +997,8 @@ module.exports =[
       },
       {
         "question_id": 299,
-        "question_text": "Which of the items listed below is not one of the software engineering layers?",
+        "subs":1,
+"question_text": "Which of the items listed below is not one of the software engineering layers?",
         "options": [
           {
             "text": "Process",
@@ -976,7 +1021,8 @@ module.exports =[
       },
       {
         "question_id": 300,
-        "question_text": "For the best Software model suitable for the project, in which of the phase the developers decide a roadmap for project plan?",
+        "subs":1,
+"question_text": "For the best Software model suitable for the project, in which of the phase the developers decide a roadmap for project plan?",
         "options": [
           {
             "text": "Software Design",
@@ -999,7 +1045,8 @@ module.exports =[
       },
       {
         "question_id": 301,
-        "question_text": "Where is the prototyping model of software development well suited?",
+        "subs":1,
+"question_text": "Where is the prototyping model of software development well suited?",
         "options": [
           {
             "text": "When requirements are well defined.",
@@ -1022,7 +1069,8 @@ module.exports =[
       },
       {
         "question_id": 302,
-        "question_text": "Design phase is followed by",
+        "subs":1,
+"question_text": "Design phase is followed by",
         "options": [
           {
             "text": "Coding",
@@ -1045,7 +1093,8 @@ module.exports =[
       },
       {
         "question_id": 303,
-        "question_text": "The two dimensions of spiral model are",
+        "subs":1,
+"question_text": "The two dimensions of spiral model are",
         "options": [
           {
             "text": "diagonal, angular",
@@ -1068,7 +1117,8 @@ module.exports =[
       },
       {
         "question_id": 304,
-        "question_text": "The Incremental Model is combination of elements of",
+        "subs":1,
+"question_text": "The Incremental Model is combination of elements of",
         "options": [
           {
             "text": "Build & FIX Model & Waterfall Model",
@@ -1091,7 +1141,8 @@ module.exports =[
       },
       {
         "question_id": 306,
-        "question_text": "Identify the correct statement with respect to Evolutionary development:",
+        "subs":1,
+"question_text": "Identify the correct statement with respect to Evolutionary development:",
         "options": [
           {
             "text": "Evolutionary development usually has two flavors; exploratory development, and throw- away prototyping.",
@@ -1106,7 +1157,8 @@ module.exports =[
       },
       {
         "question_id": 307,
-        "question_text": "Spiral model was developed by",
+        "subs":1,
+"question_text": "Spiral model was developed by",
         "options": [
           {
             "text": "Victor Bisili",
@@ -1129,7 +1181,8 @@ module.exports =[
       },
       {
         "question_id": 308,
-        "question_text": "Software evolution does not comprises:",
+        "subs":1,
+"question_text": "Software evolution does not comprises:",
         "options": [
           {
             "text": "Development activities",
@@ -1152,7 +1205,8 @@ module.exports =[
       },
       {
         "question_id": 309,
-        "question_text": "The linear sequential development is model of software ugend!",
+        "subs":1,
+"question_text": "The linear sequential development is model of software ugend!",
         "options": [
           {
             "text": "A reasonable approach when requirements are well defined.",
@@ -1175,7 +1229,8 @@ module.exports =[
       },
       {
         "question_id": 310,
-        "question_text": "The linear sequential model development is also known as the",
+        "subs":1,
+"question_text": "The linear sequential model development is also known as the",
         "options": [
           {
             "text": "Classical life cycle model",
@@ -1198,7 +1253,8 @@ module.exports =[
       },
       {
         "question_id": 311,
-        "question_text": "The incremental model of software development is",
+        "subs":1,
+"question_text": "The incremental model of software development is",
         "options": [
           {
             "text": "A reasonable approach when requirements are well defined.",
@@ -1221,7 +1277,8 @@ module.exports =[
       },
       {
         "question_id": 312,
-        "question_text": "The rapid application development model is",
+        "subs":1,
+"question_text": "The rapid application development model is",
         "options": [
           {
             "text": "Another name development. for 3 component-based",
@@ -1244,13 +1301,15 @@ module.exports =[
       },
       {
         "question_id": 313,
-        "question_text": "Evolutionary software process models 357 of 983",
+        "subs":1,
+"question_text": "Evolutionary software process models 357 of 983",
         "options": [],
         "correct_answer": null
       },
       {
         "question_id": 314,
-        "question_text": "The prototyping model of software development is",
+        "subs":1,
+"question_text": "The prototyping model of software development is",
         "options": [
           {
             "text": "A reasonable approach when requirements are well defined.",
@@ -1273,7 +1332,8 @@ module.exports =[
       },
       {
         "question_id": 315,
-        "question_text": "The spiral model of software development",
+        "subs":1,
+"question_text": "The spiral model of software development",
         "options": [
           {
             "text": "Ends with the delivery of the software product",
@@ -1296,7 +1356,8 @@ module.exports =[
       },
       {
         "question_id": 316,
-        "question_text": "The concurrent development model is",
+        "subs":1,
+"question_text": "The concurrent development model is",
         "options": [
           {
             "text": "Another name development model. for the rapid application w",
@@ -1319,7 +1380,8 @@ module.exports =[
       },
       {
         "question_id": 317,
-        "question_text": "The component-based development model is",
+        "subs":1,
+"question_text": "The component-based development model is",
         "options": [
           {
             "text": "Only appropriate for computer hardware design.",
@@ -1342,7 +1404,8 @@ module.exports =[
       },
       {
         "question_id": 318,
-        "question_text": "The formal methods model of software development makes use of mathematical methods to",
+        "subs":1,
+"question_text": "The formal methods model of software development makes use of mathematical methods to",
         "options": [
           {
             "text": "Define the specification for computer-based systems",
@@ -1365,7 +1428,8 @@ module.exports =[
       },
       {
         "question_id": 319,
-        "question_text": "Which of these is not one of the phase names defined by the Unified Process model for software development?",
+        "subs":1,
+"question_text": "Which of these is not one of the phase names defined by the Unified Process model for software development?",
         "options": [
           {
             "text": "Inception phase",
@@ -1388,7 +1452,8 @@ module.exports =[
       },
       {
         "question_id": 320,
-        "question_text": "Which of the following is not necessary to apply agility to a software process?",
+        "subs":1,
+"question_text": "Which of the following is not necessary to apply agility to a software process?",
         "options": [
           {
             "text": "Eliminate the use of project planning and testing",
@@ -1411,7 +1476,8 @@ module.exports =[
       },
       {
         "question_id": 321,
-        "question_text": "How do you create agile processes to manage unpredictability?",
+        "subs":1,
+"question_text": "How do you create agile processes to manage unpredictability?",
         "options": [
           {
             "text": "Requirements gathering must be conducted very to carefully",
@@ -1434,7 +1500,8 @@ module.exports =[
       },
       {
         "question_id": 322,
-        "question_text": "Which of the following traits need to exist among the members of an agile software team?",
+        "subs":1,
+"question_text": "Which of the following traits need to exist among the members of an agile software team?",
         "options": [
           {
             "text": "Competence",
@@ -1457,7 +1524,8 @@ module.exports =[
       },
       {
         "question_id": 323,
-        "question_text": "What are the four framework activities found in the Extreme Programming (XP) process model?",
+        "subs":1,
+"question_text": "What are the four framework activities found in the Extreme Programming (XP) process model?",
         "options": [
           {
             "text": "analysis, design, coding, testing",
@@ -1480,7 +1548,8 @@ module.exports =[
       },
       {
         "question_id": 324,
-        "question_text": "What are the three framework activities for the Adaptive Software Development (ASD) process model?",
+        "subs":1,
+"question_text": "What are the three framework activities for the Adaptive Software Development (ASD) process model?",
         "options": [
           {
             "text": "analysis, design, coding",
@@ -1503,7 +1572,8 @@ module.exports =[
       },
       {
         "question_id": 126,
-        "question_text": "Agile Modeling (AM) provides guidance to practitioner during which of these software tasks?",
+        "subs":1,
+"question_text": "Agile Modeling (AM) provides guidance to practitioner during which of these software tasks?",
         "options": [
           {
             "text": "Analysis",
@@ -1526,7 +1596,8 @@ module.exports =[
       },
       {
         "question_id": 327,
-        "question_text": "The largest percentage of total life cycle cost of software is:",
+        "subs":1,
+"question_text": "The largest percentage of total life cycle cost of software is:",
         "options": [
           {
             "text": "Design cost",
@@ -1549,7 +1620,8 @@ module.exports =[
       },
       {
         "question_id": 328,
-        "question_text": "The most creative and challenging phase of system life cycle is",
+        "subs":1,
+"question_text": "The most creative and challenging phase of system life cycle is",
         "options": [
           {
             "text": "Design",
@@ -1568,7 +1640,8 @@ module.exports =[
       },
       {
         "question_id": 329,
-        "question_text": "The advantages of creating a prototype are",
+        "subs":1,
+"question_text": "The advantages of creating a prototype are",
         "options": [
           {
             "text": "It can serve as means of communication between. developers and customers",
@@ -1591,7 +1664,8 @@ module.exports =[
       },
       {
         "question_id": 330,
-        "question_text": "The main activity of the design phase of the system life cycle is to",
+        "subs":1,
+"question_text": "The main activity of the design phase of the system life cycle is to",
         "options": [
           {
             "text": "understand the current system",
@@ -1614,7 +1688,8 @@ module.exports =[
       },
       {
         "question_id": 331,
-        "question_text": "The main purpose of the system investigation phase is to produce",
+        "subs":1,
+"question_text": "The main purpose of the system investigation phase is to produce",
         "options": [
           {
             "text": "a design report",
@@ -1637,7 +1712,8 @@ module.exports =[
       },
       {
         "question_id": 332,
-        "question_text": "A system analyst does not need to consider",
+        "subs":1,
+"question_text": "A system analyst does not need to consider",
         "options": [
           {
             "text": "technical feasibility",
@@ -1652,7 +1728,8 @@ module.exports =[
       },
       {
         "question_id": 333,
-        "question_text": "A feasibility study",
+        "subs":1,
+"question_text": "A feasibility study",
         "options": [
           {
             "text": "considers a single solution d. none of these",
@@ -1675,7 +1752,8 @@ module.exports =[
       },
       {
         "question_id": 334,
-        "question_text": "The combination of the top-down and the bottom- up approach may be referred to as an",
+        "subs":1,
+"question_text": "The combination of the top-down and the bottom- up approach may be referred to as an",
         "options": [
           {
             "text": "interactive approach",
@@ -1698,13 +1776,15 @@ module.exports =[
       },
       {
         "question_id": 335,
-        "question_text": "System prototyping helps the designer in roma-25A",
+        "subs":1,
+"question_text": "System prototyping helps the designer in roma-25A",
         "options": [],
         "correct_answer": null
       },
       {
         "question_id": 25,
-        "question_text": "",
+        "subs":1,
+"question_text": "",
         "options": [
           {
             "text": "Business and social change d. Security The fundamental notions of software engineering does not account for ?",
@@ -1719,13 +1799,15 @@ module.exports =[
       },
       {
         "question_id": 26,
-        "question_text": "",
+        "subs":1,
+"question_text": "",
         "options": [],
         "correct_answer": null
       },
       {
         "question_id": 27,
-        "question_text": "b. Software Security d. Software Validation Answer: (d).Software Validation Which of these is not true?",
+        "subs":1,
+"question_text": "b. Software Security d. Software Validation Answer: (d).Software Validation Which of these is not true?",
         "options": [
           {
             "text": "Web has led to availability of software services and possibility of developing highly distributed service based systems.",
@@ -1748,7 +1830,8 @@ module.exports =[
       },
       {
         "question_id": 28,
-        "question_text": "Arrange the following activities for making a software product using 4GT. i. Design strategy ii. Transformation into product iii. Implementation iv. Requirement gathering",
+        "subs":1,
+"question_text": "Arrange the following activities for making a software product using 4GT. i. Design strategy ii. Transformation into product iii. Implementation iv. Requirement gathering",
         "options": [
           {
             "text": "1, 4, 3, 2",
@@ -1771,7 +1854,8 @@ module.exports =[
       },
       {
         "question_id": 29,
-        "question_text": "4GL is an example of processing.",
+        "subs":1,
+"question_text": "4GL is an example of processing.",
         "options": [
           {
             "text": "White Box",
@@ -1794,7 +1878,8 @@ module.exports =[
       },
       {
         "question_id": 30,
-        "question_text": "The 4GT Model is a package of",
+        "subs":1,
+"question_text": "The 4GT Model is a package of",
         "options": [
           {
             "text": "Software tools",
@@ -1805,19 +1890,22 @@ module.exports =[
       },
       {
         "question_id": 31,
-        "question_text": "",
+        "subs":1,
+"question_text": "",
         "options": [],
         "correct_answer": null
       },
       {
         "question_id": 32,
-        "question_text": "",
+        "subs":1,
+"question_text": "",
         "options": [],
         "correct_answer": null
       },
       {
         "question_id": 33,
-        "question_text": "350 of 983",
+        "subs":1,
+"question_text": "350 of 983",
         "options": [
           {
             "text": "CASE Tools c. Software Programs Answer: (b).Software tools d. Documentation Which of the following is not a type of a 4GL? One originating a. on Lisp machine",
@@ -1840,7 +1928,8 @@ module.exports =[
       },
       {
         "question_id": 336,
-        "question_text": "Mistakes made in the system analysis stage show up in",
+        "subs":1,
+"question_text": "Mistakes made in the system analysis stage show up in",
         "options": [
           {
             "text": "system design",
@@ -1863,7 +1952,8 @@ module.exports =[
       },
       {
         "question_id": 337,
-        "question_text": "Which of the following is not true of the conversion phase of the development life cycle?",
+        "subs":1,
+"question_text": "Which of the following is not true of the conversion phase of the development life cycle?",
         "options": [
           {
             "text": "Documentation must be emphasized",
@@ -1886,7 +1976,8 @@ module.exports =[
       },
       {
         "question_id": 338,
-        "question_text": "Which of the following is not a factor in the failure of the systems development projects?",
+        "subs":1,
+"question_text": "Which of the following is not a factor in the failure of the systems development projects?",
         "options": [
           {
             "text": "Size of the company",
@@ -1909,7 +2000,8 @@ module.exports =[
       },
       {
         "question_id": 339,
-        "question_text": "In phase 1 of the system development life cycle, which of the following aspects are usually analyzed?",
+        "subs":1,
+"question_text": "In phase 1 of the system development life cycle, which of the following aspects are usually analyzed?",
         "options": [
           {
             "text": "Input (transactions) c. Outputs",
@@ -1928,7 +2020,8 @@ module.exports =[
       },
       {
         "question_id": 340,
-        "question_text": "The feasibilities investigation is (are)",
+        "subs":1,
+"question_text": "The feasibilities investigation is (are)",
         "options": [
           {
             "text": "technical feasibility",
@@ -1947,7 +2040,8 @@ module.exports =[
       },
       {
         "question_id": 341,
-        "question_text": "To which phase of SDLC, is file conversion related?",
+        "subs":1,
+"question_text": "To which phase of SDLC, is file conversion related?",
         "options": [
           {
             "text": "System design",
@@ -1970,7 +2064,8 @@ module.exports =[
       },
       {
         "question_id": 342,
-        "question_text": "Which of the following activities does not belong to the Implementation phase of the SDLC?",
+        "subs":1,
+"question_text": "Which of the following activities does not belong to the Implementation phase of the SDLC?",
         "options": [
           {
             "text": "User training",
@@ -1985,7 +2080,8 @@ module.exports =[
       },
       {
         "question_id": 343,
-        "question_text": "A pseudocode is a/an",
+        "subs":1,
+"question_text": "A pseudocode is a/an",
         "options": [
           {
             "text": "machine code",
@@ -2016,7 +2112,8 @@ module.exports =[
       },
       {
         "question_id": 344,
-        "question_text": "An audit trial is",
+        "subs":1,
+"question_text": "An audit trial is",
         "options": [
           {
             "text": "test data used by the system auditor",
@@ -2039,7 +2136,8 @@ module.exports =[
       },
       {
         "question_id": 345,
-        "question_text": "In Concurrent Development Model, when end user indicates changes in requirements must be made, modeling activity moves from under development state into the",
+        "subs":1,
+"question_text": "In Concurrent Development Model, when end user indicates changes in requirements must be made, modeling activity moves from under development state into the",
         "options": [
           {
             "text": "awaiting changes state",
@@ -2062,7 +2160,8 @@ module.exports =[
       },
       {
         "question_id": 346,
-        "question_text": "In Concurrent among the",
+        "subs":1,
+"question_text": "In Concurrent among the",
         "options": [
           {
             "text": "phasesb.",
@@ -2081,7 +2180,8 @@ module.exports =[
       },
       {
         "question_id": 347,
-        "question_text": "In Concurrent Development Model, for example when analysis model correction is generated, analysis action present in awaiting state moves into A",
+        "subs":1,
+"question_text": "In Concurrent Development Model, for example when analysis model correction is generated, analysis action present in awaiting state moves into A",
         "options": [
           {
             "text": "awaiting changes state",
@@ -2100,7 +2200,8 @@ module.exports =[
       },
       {
         "question_id": 348,
-        "question_text": "In Concurrent Development Model, for example when analysis model correction is not generated, analysis action is present in",
+        "subs":1,
+"question_text": "In Concurrent Development Model, for example when analysis model correction is not generated, analysis action is present in",
         "options": [
           {
             "text": "none state",
@@ -2123,7 +2224,8 @@ module.exports =[
       },
       {
         "question_id": 349,
-        "question_text": "In Concurrent Development Model, when initial communication is not completed modeling activity existed in the",
+        "subs":1,
+"question_text": "In Concurrent Development Model, when initial communication is not completed modeling activity existed in the",
         "options": [
           {
             "text": "awaiting changes state",
@@ -2146,7 +2248,8 @@ module.exports =[
       },
       {
         "question_id": 350,
-        "question_text": "Model which can be represent schematically as series of framework activities, software engineering actions and tasks and their associated states is",
+        "subs":1,
+"question_text": "Model which can be represent schematically as series of framework activities, software engineering actions and tasks and their associated states is",
         "options": [
           {
             "text": "prototyping model",
@@ -2157,7 +2260,8 @@ module.exports =[
       },
       {
         "question_id": 351,
-        "question_text": "Concurrent model development is also known as",
+        "subs":1,
+"question_text": "Concurrent model development is also known as",
         "options": [
           {
             "text": "concurrent engineering",
@@ -2180,7 +2284,8 @@ module.exports =[
       },
       {
         "question_id": 352,
-        "question_text": "In Concurrent Development Model, externally observable mode of behavior is termed as",
+        "subs":1,
+"question_text": "In Concurrent Development Model, externally observable mode of behavior is termed as",
         "options": [
           {
             "text": "state",
@@ -2203,7 +2308,8 @@ module.exports =[
       },
       {
         "question_id": 353,
-        "question_text": "In Concurrent Development Model, early in project when communication activity has completed its first iteration it exists in the",
+        "subs":1,
+"question_text": "In Concurrent Development Model, early in project when communication activity has completed its first iteration it exists in the",
         "options": [
           {
             "text": "awaiting changes state",
@@ -2226,7 +2332,8 @@ module.exports =[
       },
       {
         "question_id": 354,
-        "question_text": "In Concurrent Development Model, all activities exist concurrently but reside in om",
+        "subs":1,
+"question_text": "In Concurrent Development Model, all activities exist concurrently but reside in om",
         "options": [
           {
             "text": "single state",
@@ -2249,7 +2356,8 @@ module.exports =[
       },
       {
         "question_id": 355,
-        "question_text": "In Concurrent Development Model, when initial communication is completed modeling makes a transition into",
+        "subs":1,
+"question_text": "In Concurrent Development Model, when initial communication is completed modeling makes a transition into",
         "options": [
           {
             "text": "under development state",
@@ -2272,7 +2380,8 @@ module.exports =[
       },
       {
         "question_id": 356,
-        "question_text": "In incremental process model, coding of software is done in",
+        "subs":1,
+"question_text": "In incremental process model, coding of software is done in",
         "options": [
           {
             "text": "construction framework",
@@ -2295,7 +2404,8 @@ module.exports =[
       },
       {
         "question_id": 357,
-        "question_text": "When incremental model is used, first increment is often a",
+        "subs":1,
+"question_text": "When incremental model is used, first increment is often a",
         "options": [
           {
             "text": "core product",
@@ -2318,7 +2428,8 @@ module.exports =[
       },
       {
         "question_id": 358,
-        "question_text": "Once core product is analyzed by client, there exist a",
+        "subs":1,
+"question_text": "Once core product is analyzed by client, there exist a",
         "options": [
           {
             "text": "plan phase",
@@ -2341,19 +2452,22 @@ module.exports =[
       },
       {
         "question_id": 359,
-        "question_text": "Incremental process model focuses on delivery of an operational product with int beach decrement stack IT Job Solution and Stack IT BPSC Special | Call 01812603406 or 01789741518 | or Visist: stackvaly.com",
+        "subs":1,
+"question_text": "Incremental process model focuses on delivery of an operational product with int beach decrement stack IT Job Solution and Stack IT BPSC Special | Call 01812603406 or 01789741518 | or Visist: stackvaly.com",
         "options": [],
         "correct_answer": null
       },
       {
         "question_id": 360,
-        "question_text": "In incremental process model, each linear",
+        "subs":1,
+"question_text": "In incremental process model, each linear",
         "options": [],
         "correct_answer": null
       },
       {
         "question_id": 361,
-        "question_text": "sequence of a software produces deliverable",
+        "subs":1,
+"question_text": "sequence of a software produces deliverable",
         "options": [
           {
             "text": "increment c. constant Answer: (a).increment",
@@ -2376,7 +2490,8 @@ module.exports =[
       },
       {
         "question_id": 362,
-        "question_text": "Each iteration in incremental model passes through the",
+        "subs":1,
+"question_text": "Each iteration in incremental model passes through the",
         "options": [
           {
             "text": "communication and modeling phases",
@@ -2399,7 +2514,8 @@ module.exports =[
       },
       {
         "question_id": 363,
-        "question_text": "A process of software development where requirements are broken down into multiple standalone modules of software development cycle",
+        "subs":1,
+"question_text": "A process of software development where requirements are broken down into multiple standalone modules of software development cycle",
         "options": [
           {
             "text": "Waterfall model",
@@ -2422,7 +2538,8 @@ module.exports =[
       },
       {
         "question_id": 364,
-        "question_text": "Incremental process model phase which acknowledged that software is delivered to customer who evaluates delivered product and provides feedback based on evaluation and then iteration is processed is",
+        "subs":1,
+"question_text": "Incremental process model phase which acknowledged that software is delivered to customer who evaluates delivered product and provides feedback based on evaluation and then iteration is processed is",
         "options": [
           {
             "text": "deployment",
@@ -2445,7 +2562,8 @@ module.exports =[
       },
       {
         "question_id": 365,
-        "question_text": "In incremental process model, each iteration phase is rigid and",
+        "subs":1,
+"question_text": "In incremental process model, each iteration phase is rigid and",
         "options": [
           {
             "text": "not overlap each other",
@@ -2468,7 +2586,8 @@ module.exports =[
       },
       {
         "question_id": 366,
-        "question_text": "In incremental process model, requirement and specification of software are collected in",
+        "subs":1,
+"question_text": "In incremental process model, requirement and specification of software are collected in",
         "options": [
           {
             "text": "communication framework",
@@ -2491,7 +2610,8 @@ module.exports =[
       },
       {
         "question_id": 367,
-        "question_text": "Model which combines elements of waterfall model applied in an iterative fashion is",
+        "subs":1,
+"question_text": "Model which combines elements of waterfall model applied in an iterative fashion is",
         "options": [
           {
             "text": "RAD model",
@@ -2514,13 +2634,15 @@ module.exports =[
       },
       {
         "question_id": 368,
-        "question_text": "In incremental process model, some high-end function are designed in",
+        "subs":1,
+"question_text": "In incremental process model, some high-end function are designed in",
         "options": [],
         "correct_answer": null
       },
       {
         "question_id": 369,
-        "question_text": "Incremental process model phase in which modification of a software product is done after delivery to correct faults, to improve performance or other attributes is",
+        "subs":1,
+"question_text": "Incremental process model phase in which modification of a software product is done after delivery to correct faults, to improve performance or other attributes is",
         "options": [
           {
             "text": "maintenance framework",
@@ -2543,7 +2665,8 @@ module.exports =[
       },
       {
         "question_id": 370,
-        "question_text": "Each process model also prescribes a",
+        "subs":1,
+"question_text": "Each process model also prescribes a",
         "options": [
           {
             "text": "workflow",
@@ -2562,7 +2685,8 @@ module.exports =[
       },
       {
         "question_id": 371,
-        "question_text": "Prescriptive model often encompass capabilities of",
+        "subs":1,
+"question_text": "Prescriptive model often encompass capabilities of",
         "options": [
           {
             "text": "CCMI",
@@ -2585,7 +2709,8 @@ module.exports =[
       },
       {
         "question_id": 372,
-        "question_text": "Prescriptive process model is also referred to as",
+        "subs":1,
+"question_text": "Prescriptive process model is also referred to as",
         "options": [
           {
             "text": "severe process model",
@@ -2608,7 +2733,8 @@ module.exports =[
       },
       {
         "question_id": 373,
-        "question_text": "Manner in which process interrelated to one another is",
+        "subs":1,
+"question_text": "Manner in which process interrelated to one another is",
         "options": [
           {
             "text": "timeflow",
@@ -2631,7 +2757,8 @@ module.exports =[
       },
       {
         "question_id": 374,
-        "question_text": "We call perspective process model 'perspective' because they prescribe a set of process",
+        "subs":1,
+"question_text": "We call perspective process model 'perspective' because they prescribe a set of process",
         "options": [
           {
             "text": "element framework activities",
@@ -2654,7 +2781,8 @@ module.exports =[
       },
       {
         "question_id": 375,
-        "question_text": "In prototype model, iteration is planned quickly in",
+        "subs":1,
+"question_text": "In prototype model, iteration is planned quickly in",
         "options": [
           {
             "text": "quick plan",
@@ -2677,7 +2805,8 @@ module.exports =[
       },
       {
         "question_id": 376,
-        "question_text": "Model which is useful when developer is not sure of requirements, or efficiency of an algorithm, business rules, response time, etc is",
+        "subs":1,
+"question_text": "Model which is useful when developer is not sure of requirements, or efficiency of an algorithm, business rules, response time, etc is",
         "options": [
           {
             "text": "Waterfall model c. Prototyping model",
@@ -2696,7 +2825,8 @@ module.exports =[
       },
       {
         "question_id": 377,
-        "question_text": "In prototype model, iteration is planned quickly in quick plan phase and modeling of that plan occurs in",
+        "subs":1,
+"question_text": "In prototype model, iteration is planned quickly in quick plan phase and modeling of that plan occurs in",
         "options": [
           {
             "text": "quick design",
@@ -2711,7 +2841,8 @@ module.exports =[
       },
       {
         "question_id": 378,
-        "question_text": "Phase of prototype model which focuses on a representation of those aspects of software that will visible to end user is",
+        "subs":1,
+"question_text": "Phase of prototype model which focuses on a representation of those aspects of software that will visible to end user is",
         "options": [
           {
             "text": "construction of prototype",
@@ -2734,7 +2865,8 @@ module.exports =[
       },
       {
         "question_id": 379,
-        "question_text": "Prototyping model is based on",
+        "subs":1,
+"question_text": "Prototyping model is based on",
         "options": [
           {
             "text": "limited functionality",
@@ -2757,7 +2889,8 @@ module.exports =[
       },
       {
         "question_id": 380,
-        "question_text": "Model which include set of general objectives for software is",
+        "subs":1,
+"question_text": "Model which include set of general objectives for software is",
         "options": [
           {
             "text": "spiral model",
@@ -2780,7 +2913,8 @@ module.exports =[
       },
       {
         "question_id": 381,
-        "question_text": "Prototype is evaluated by customer or end user in",
+        "subs":1,
+"question_text": "Prototype is evaluated by customer or end user in",
         "options": [
           {
             "text": "deployment",
@@ -2795,7 +2929,8 @@ module.exports =[
       },
       {
         "question_id": 382,
-        "question_text": "Developer",
+        "subs":1,
+"question_text": "Developer",
         "options": [
           {
             "text": "constantly often",
@@ -2826,7 +2961,8 @@ module.exports =[
       },
       {
         "question_id": 383,
-        "question_text": "To refine requirements for software, prototype model use",
+        "subs":1,
+"question_text": "To refine requirements for software, prototype model use",
         "options": [
           {
             "text": "feedback",
@@ -2841,7 +2977,8 @@ module.exports =[
       },
       {
         "question_id": 384,
-        "question_text": "In prototype model",
+        "subs":1,
+"question_text": "In prototype model",
         "options": [
           {
             "text": "quick plan",
@@ -2872,7 +3009,8 @@ module.exports =[
       },
       {
         "question_id": 385,
-        "question_text": "Prototyping paradigm begins with",
+        "subs":1,
+"question_text": "Prototyping paradigm begins with",
         "options": [
           {
             "text": "communication",
@@ -2895,7 +3033,8 @@ module.exports =[
       },
       {
         "question_id": 386,
-        "question_text": "In prototype model, quick design phase leads to construction of",
+        "subs":1,
+"question_text": "In prototype model, quick design phase leads to construction of",
         "options": [
           {
             "text": "iteration",
@@ -2910,7 +3049,8 @@ module.exports =[
       },
       {
         "question_id": 387,
-        "question_text": "RAD stands for b. quick plan M d. prototype",
+        "subs":1,
+"question_text": "RAD stands for b. quick plan M d. prototype",
         "options": [
           {
             "text": "Rule Application Development",
@@ -2933,7 +3073,8 @@ module.exports =[
       },
       {
         "question_id": 388,
-        "question_text": "Incremental software process model emphasizes a short development cycle is",
+        "subs":1,
+"question_text": "Incremental software process model emphasizes a short development cycle is",
         "options": [
           {
             "text": "Waterfall model that Page 362 d",
@@ -2944,7 +3085,8 @@ module.exports =[
       },
       {
         "question_id": 389,
-        "question_text": "High speed adaptation of waterfall model in which rapid development is achieved by using a component based construction approach is",
+        "subs":1,
+"question_text": "High speed adaptation of waterfall model in which rapid development is achieved by using a component based construction approach is",
         "options": [
           {
             "text": "RAD model",
@@ -2967,7 +3109,8 @@ module.exports =[
       },
       {
         "question_id": 391,
-        "question_text": "RAD SDLC model should be chosen only if resources with high business knowledge are available and there is a need to produce system in tupp",
+        "subs":1,
+"question_text": "RAD SDLC model should be chosen only if resources with high business knowledge are available and there is a need to produce system in tupp",
         "options": [
           {
             "text": "large span of time",
@@ -2990,7 +3133,8 @@ module.exports =[
       },
       {
         "question_id": 392,
-        "question_text": "Modeling encompasses phases which are",
+        "subs":1,
+"question_text": "Modeling encompasses phases which are",
         "options": [
           {
             "text": "2",
@@ -3013,7 +3157,8 @@ module.exports =[
       },
       {
         "question_id": 393,
-        "question_text": "Phase in which task scheduling is accomplished bus and is essential because multiple software teams nod work in parallel on different system functions is",
+        "subs":1,
+"question_text": "Phase in which task scheduling is accomplished bus and is essential because multiple software teams nod work in parallel on different system functions is",
         "options": [
           {
             "text": "communication b. planning d. deployment",
@@ -3028,7 +3173,8 @@ module.exports =[
       },
       {
         "question_id": 394,
-        "question_text": "Model suitable for project requiring shorter development times is",
+        "subs":1,
+"question_text": "Model suitable for project requiring shorter development times is",
         "options": [
           {
             "text": "Waterfall model",
@@ -3051,7 +3197,8 @@ module.exports =[
       },
       {
         "question_id": 395,
-        "question_text": "In RAD modeling, product model which is under development is designed in terms of flow of information and distribution of information between various business channels in",
+        "subs":1,
+"question_text": "In RAD modeling, product model which is under development is designed in terms of flow of information and distribution of information between various business channels in",
         "options": [
           {
             "text": "business modeling",
@@ -3074,7 +3221,8 @@ module.exports =[
       },
       {
         "question_id": 396,
-        "question_text": "If developers and customers are not committed to rapid fire activities necessary to complete system shin much abbrevative time frame, RAD projects will",
+        "subs":1,
+"question_text": "If developers and customers are not committed to rapid fire activities necessary to complete system shin much abbrevative time frame, RAD projects will",
         "options": [
           {
             "text": "succesfull",
@@ -3097,7 +3245,8 @@ module.exports =[
       },
       {
         "question_id": 397,
-        "question_text": "Phase which establishes a basis of subsequent 983 iterations, if required is",
+        "subs":1,
+"question_text": "Phase which establishes a basis of subsequent 983 iterations, if required is",
         "options": [
           {
             "text": "construction",
@@ -3120,7 +3269,8 @@ module.exports =[
       },
       {
         "question_id": 398,
-        "question_text": "Phase which emphasizes use of per-existing software components and application automatic code generation is",
+        "subs":1,
+"question_text": "Phase which emphasizes use of per-existing software components and application automatic code generation is",
         "options": [
           {
             "text": "construction",
@@ -3143,7 +3293,8 @@ module.exports =[
       },
       {
         "question_id": 399,
-        "question_text": "In RAD model, information gathered in business modeling phase is reviewed and analyzed to form sets of data objects vital for business in",
+        "subs":1,
+"question_text": "In RAD model, information gathered in business modeling phase is reviewed and analyzed to form sets of data objects vital for business in",
         "options": [
           {
             "text": "business modeling",
@@ -3166,7 +3317,8 @@ module.exports =[
       },
       {
         "question_id": 400,
-        "question_text": "Phase that works to understand business problem and information characteristics that software must accommodate is",
+        "subs":1,
+"question_text": "Phase that works to understand business problem and information characteristics that software must accommodate is",
         "options": [
           {
             "text": "communication",
@@ -3189,7 +3341,8 @@ module.exports =[
       },
       {
         "question_id": 401,
-        "question_text": "RAD process enables a development team to create in a short time a",
+        "subs":1,
+"question_text": "RAD process enables a development team to create in a short time a",
         "options": [
           {
             "text": "semi functional system",
@@ -3212,7 +3365,8 @@ module.exports =[
       },
       {
         "question_id": 402,
-        "question_text": "In RAD modeling, data objects defined in",
+        "subs":1,
+"question_text": "In RAD modeling, data objects defined in",
         "options": [
           {
             "text": "business modeling",
@@ -3235,7 +3389,8 @@ module.exports =[
       },
       {
         "question_id": 403,
-        "question_text": "Phase that establish design representations that serve as basis for RAD's construction activity is",
+        "subs":1,
+"question_text": "Phase that establish design representations that serve as basis for RAD's construction activity is",
         "options": [
           {
             "text": "communication",
@@ -3254,7 +3409,8 @@ module.exports =[
       },
       {
         "question_id": 404,
-        "question_text": "In RAD modeling, new components and all its interfaces testing are done by",
+        "subs":1,
+"question_text": "In RAD modeling, new components and all its interfaces testing are done by",
         "options": [
           {
             "text": "application generation",
@@ -3277,7 +3433,8 @@ module.exports =[
       },
       {
         "question_id": 405,
-        "question_text": "RAD should be used only when a system can be modularized to be delivered in an",
+        "subs":1,
+"question_text": "RAD should be used only when a system can be modularized to be delivered in an",
         "options": [
           {
             "text": "decremented manner",
@@ -3300,7 +3457,8 @@ module.exports =[
       },
       {
         "question_id": 406,
-        "question_text": "In RAD modeling, data object sets defined in data modeling phase are converted to establish business information flow needed to achieve specific business objectives as per business model in",
+        "subs":1,
+"question_text": "In RAD modeling, data object sets defined in data modeling phase are converted to establish business information flow needed to achieve specific business objectives as per business model in",
         "options": [
           {
             "text": "business modeling",
@@ -3323,7 +3481,8 @@ module.exports =[
       },
       {
         "question_id": 408,
-        "question_text": "Automated tools that are used to convert process models into code and actual system are termed as",
+        "subs":1,
+"question_text": "Automated tools that are used to convert process models into code and actual system are termed as",
         "options": [
           {
             "text": "application generation",
@@ -3346,7 +3505,8 @@ module.exports =[
       },
       {
         "question_id": 409,
-        "question_text": "RAD may not be appropriate when",
+        "subs":1,
+"question_text": "RAD may not be appropriate when",
         "options": [
           {
             "text": "maintenance is absent",
@@ -3369,7 +3529,8 @@ module.exports =[
       },
       {
         "question_id": 410,
-        "question_text": "A relatively new software engineering paradigm that provides a process and methodological approach for defining, specifying, designing and constructing aspects is referred to as",
+        "subs":1,
+"question_text": "A relatively new software engineering paradigm that provides a process and methodological approach for defining, specifying, designing and constructing aspects is referred to as",
         "options": [
           {
             "text": "AOP",
@@ -3392,7 +3553,8 @@ module.exports =[
       },
       {
         "question_id": 411,
-        "question_text": "Model which contains a set of activities that leads to formal mathematical specifications of software is",
+        "subs":1,
+"question_text": "Model which contains a set of activities that leads to formal mathematical specifications of software is",
         "options": [
           {
             "text": "Formal Methods Model",
@@ -3415,7 +3577,8 @@ module.exports =[
       },
       {
         "question_id": 412,
-        "question_text": "When concern cut across multiple multiple system functions, features and information, they are termed as",
+        "subs":1,
+"question_text": "When concern cut across multiple multiple system functions, features and information, they are termed as",
         "options": [
           {
             "text": "single cutting concerns",
@@ -3438,7 +3601,8 @@ module.exports =[
       },
       {
         "question_id": 413,
-        "question_text": "AOSD stands for",
+        "subs":1,
+"question_text": "AOSD stands for",
         "options": [
           {
             "text": "Aspect Oriented Software Development",
@@ -3461,7 +3625,8 @@ module.exports =[
       },
       {
         "question_id": 414,
-        "question_text": "COTS leads to reduction in development cycle up to",
+        "subs":1,
+"question_text": "COTS leads to reduction in development cycle up to",
         "options": [
           {
             "text": "40% c. 60%",
@@ -3476,13 +3641,15 @@ module.exports =[
       },
       {
         "question_id": 415,
-        "question_text": "AOCE uses a concept of horizontal slices through vertically decomposed software components stack IT Job Solution and Stack IT BPSC Special | Call 01812603406 or 01789741518 | or Visist: stackvaly.com ango called",
+        "subs":1,
+"question_text": "AOCE uses a concept of horizontal slices through vertically decomposed software components stack IT Job Solution and Stack IT BPSC Special | Call 01812603406 or 01789741518 | or Visist: stackvaly.com ango called",
         "options": [],
         "correct_answer": null
       },
       {
         "question_id": 378,
-        "question_text": "Phase of prototype model which focuses on a representation of those aspects of software that will visible to end user is",
+        "subs":1,
+"question_text": "Phase of prototype model which focuses on a representation of those aspects of software that will visible to end user is",
         "options": [
           {
             "text": "construction of prototype b. quick design",
@@ -3501,7 +3668,8 @@ module.exports =[
       },
       {
         "question_id": 379,
-        "question_text": "Prototyping model is based on",
+        "subs":1,
+"question_text": "Prototyping model is based on",
         "options": [
           {
             "text": "limited functionality",
@@ -3524,7 +3692,8 @@ module.exports =[
       },
       {
         "question_id": 380,
-        "question_text": "Model which include set of general objectives for software is",
+        "subs":1,
+"question_text": "Model which include set of general objectives for software is",
         "options": [
           {
             "text": "spiral model",
@@ -3547,7 +3716,8 @@ module.exports =[
       },
       {
         "question_id": 381,
-        "question_text": "Prototype is evaluated by customer or end user in",
+        "subs":1,
+"question_text": "Prototype is evaluated by customer or end user in",
         "options": [
           {
             "text": "deployment",
@@ -3562,7 +3732,8 @@ module.exports =[
       },
       {
         "question_id": 382,
-        "question_text": "Developer often",
+        "subs":1,
+"question_text": "Developer often",
         "options": [
           {
             "text": "quick plan",
@@ -3593,7 +3764,8 @@ module.exports =[
       },
       {
         "question_id": 383,
-        "question_text": "To refine requirements for software, prototype model use",
+        "subs":1,
+"question_text": "To refine requirements for software, prototype model use",
         "options": [
           {
             "text": "feedback",
@@ -3608,7 +3780,8 @@ module.exports =[
       },
       {
         "question_id": 384,
-        "question_text": "In prototype model objectives of requirements is",
+        "subs":1,
+"question_text": "In prototype model objectives of requirements is",
         "options": [
           {
             "text": "communication",
@@ -3639,7 +3812,8 @@ module.exports =[
       },
       {
         "question_id": 385,
-        "question_text": "Prototyping paradigm begins with",
+        "subs":1,
+"question_text": "Prototyping paradigm begins with",
         "options": [
           {
             "text": "communication",
@@ -3662,7 +3836,8 @@ module.exports =[
       },
       {
         "question_id": 386,
-        "question_text": "In prototype model, quick design phase leads to construction of",
+        "subs":1,
+"question_text": "In prototype model, quick design phase leads to construction of",
         "options": [
           {
             "text": "iteration",
@@ -3677,7 +3852,8 @@ module.exports =[
       },
       {
         "question_id": 387,
-        "question_text": "RAD stands for b. quick plan d. prototype",
+        "subs":1,
+"question_text": "RAD stands for b. quick plan d. prototype",
         "options": [
           {
             "text": "Rule Application Development",
@@ -3700,13 +3876,15 @@ module.exports =[
       },
       {
         "question_id": 388,
-        "question_text": "Incremental software process model emphasizes a short development cycle is a Waterfall model that",
+        "subs":1,
+"question_text": "Incremental software process model emphasizes a short development cycle is a Waterfall model that",
         "options": [],
         "correct_answer": null
       },
       {
         "question_id": 106,
-        "question_text": "Advantages of database system is (are)",
+        "subs":1,
+"question_text": "Advantages of database system is (are)",
         "options": [
           {
             "text": "all applications share centralized files",
@@ -3729,7 +3907,8 @@ module.exports =[
       },
       {
         "question_id": 107,
-        "question_text": "The drawback(s) of a database is (are) ROS",
+        "subs":1,
+"question_text": "The drawback(s) of a database is (are) ROS",
         "options": [
           {
             "text": "need to protect sensitive data from unauthorized access",
@@ -3752,7 +3931,8 @@ module.exports =[
       },
       {
         "question_id": 108,
-        "question_text": "The systems have been classified in different ways as",
+        "subs":1,
+"question_text": "The systems have been classified in different ways as",
         "options": [
           {
             "text": "open or closed",
@@ -3775,7 +3955,8 @@ module.exports =[
       },
       {
         "question_id": 179,
-        "question_text": "Which of the following divides the input domain into classes containing data?",
+        "subs":1,
+"question_text": "Which of the following divides the input domain into classes containing data?",
         "options": [
           {
             "text": "Equivalent partitioning",
@@ -3798,7 +3979,8 @@ module.exports =[
       },
       {
         "question_id": 180,
-        "question_text": "Which of the following is a common testing conducted by the developers?",
+        "subs":1,
+"question_text": "Which of the following is a common testing conducted by the developers?",
         "options": [
           {
             "text": "Unit testing",
@@ -3813,7 +3995,8 @@ module.exports =[
       },
       {
         "question_id": 181,
-        "question_text": "SDLC stands for b. Entry testing d. Code testing",
+        "subs":1,
+"question_text": "SDLC stands for b. Entry testing d. Code testing",
         "options": [
           {
             "text": "Software development life cycle amwalor",
@@ -3836,7 +4019,8 @@ module.exports =[
       },
       {
         "question_id": 183,
-        "question_text": "A process to determine how the actual testing is done",
+        "subs":1,
+"question_text": "A process to determine how the actual testing is done",
         "options": [
           {
             "text": "Audit",
@@ -3859,7 +4043,8 @@ module.exports =[
       },
       {
         "question_id": 184,
-        "question_text": "Gathering formal or informal technical feedback is called",
+        "subs":1,
+"question_text": "Gathering formal or informal technical feedback is called",
         "options": [
           {
             "text": "Audit",
@@ -3882,7 +4067,8 @@ module.exports =[
       },
       {
         "question_id": 185,
-        "question_text": "Which is not involved in debugging? stack IT Job Solution and Stack IT BPSC Special | Call 01812603406 or 01789741518 | or Visist: stackvaly.com",
+        "subs":1,
+"question_text": "Which is not involved in debugging? stack IT Job Solution and Stack IT BPSC Special | Call 01812603406 or 01789741518 | or Visist: stackvaly.com",
         "options": [
           {
             "text": "Identifying",
@@ -3897,7 +4083,8 @@ module.exports =[
       },
       {
         "question_id": 389,
-        "question_text": "High speed adaptation of waterfall model in which rapid development is achieved by using a component based construction approach is",
+        "subs":1,
+"question_text": "High speed adaptation of waterfall model in which rapid development is achieved by using a component based construction approach is",
         "options": [
           {
             "text": "RAD model",
@@ -3920,7 +4107,8 @@ module.exports =[
       },
       {
         "question_id": 391,
-        "question_text": "RAD SDLC model should be chosen only if resources with high business knowledge are available and there is a need to produce system in a Mem",
+        "subs":1,
+"question_text": "RAD SDLC model should be chosen only if resources with high business knowledge are available and there is a need to produce system in a Mem",
         "options": [
           {
             "text": "large span of time",
@@ -3943,7 +4131,8 @@ module.exports =[
       },
       {
         "question_id": 392,
-        "question_text": "Modeling encompasses phases which are",
+        "subs":1,
+"question_text": "Modeling encompasses phases which are",
         "options": [
           {
             "text": "2",
@@ -3966,7 +4155,8 @@ module.exports =[
       },
       {
         "question_id": 393,
-        "question_text": "Phase in which task scheduling is accomplished and is essential because multiple software teams oh work in parallel on different system functions is",
+        "subs":1,
+"question_text": "Phase in which task scheduling is accomplished and is essential because multiple software teams oh work in parallel on different system functions is",
         "options": [
           {
             "text": "communication",
@@ -3985,7 +4175,8 @@ module.exports =[
       },
       {
         "question_id": 394,
-        "question_text": "Model suitable for project requiring shorter Bare development times is",
+        "subs":1,
+"question_text": "Model suitable for project requiring shorter Bare development times is",
         "options": [
           {
             "text": "Waterfall model",
@@ -4008,7 +4199,8 @@ module.exports =[
       },
       {
         "question_id": 395,
-        "question_text": "In RAD modeling, product model which is under bin development is designed in terms of flow of information and distribution of information between various business channels in",
+        "subs":1,
+"question_text": "In RAD modeling, product model which is under bin development is designed in terms of flow of information and distribution of information between various business channels in",
         "options": [
           {
             "text": "business modeling",
@@ -4031,7 +4223,8 @@ module.exports =[
       },
       {
         "question_id": 396,
-        "question_text": "If developers and customers are not committed to rapid fire activities necessary to complete system Harmin much abbrevative time frame, RAD projects will",
+        "subs":1,
+"question_text": "If developers and customers are not committed to rapid fire activities necessary to complete system Harmin much abbrevative time frame, RAD projects will",
         "options": [
           {
             "text": "succesfull",
@@ -4054,7 +4247,8 @@ module.exports =[
       },
       {
         "question_id": 397,
-        "question_text": "Phase which establishes a basis of subsequent iterations, if required is",
+        "subs":1,
+"question_text": "Phase which establishes a basis of subsequent iterations, if required is",
         "options": [
           {
             "text": "construction",
@@ -4077,7 +4271,8 @@ module.exports =[
       },
       {
         "question_id": 398,
-        "question_text": "Phase which emphasizes use of per-existing software components and automatic code generation is",
+        "subs":1,
+"question_text": "Phase which emphasizes use of per-existing software components and automatic code generation is",
         "options": [
           {
             "text": "construction",
@@ -4100,7 +4295,8 @@ module.exports =[
       },
       {
         "question_id": 399,
-        "question_text": "In RAD model, information gathered in business modeling phase is reviewed and analyzed to form sets of data objects vital for business in",
+        "subs":1,
+"question_text": "In RAD model, information gathered in business modeling phase is reviewed and analyzed to form sets of data objects vital for business in",
         "options": [
           {
             "text": "business modeling",
@@ -4123,7 +4319,8 @@ module.exports =[
       },
       {
         "question_id": 400,
-        "question_text": "Phase that works to understand business problem and information characteristics that software must accommodate is",
+        "subs":1,
+"question_text": "Phase that works to understand business problem and information characteristics that software must accommodate is",
         "options": [
           {
             "text": "communication",
@@ -4146,7 +4343,8 @@ module.exports =[
       },
       {
         "question_id": 401,
-        "question_text": "RAD process enables a development team to create in a short time a",
+        "subs":1,
+"question_text": "RAD process enables a development team to create in a short time a",
         "options": [
           {
             "text": "semi functional system",
@@ -4169,7 +4367,8 @@ module.exports =[
       },
       {
         "question_id": 402,
-        "question_text": "In RAD modeling, data objects defined in",
+        "subs":1,
+"question_text": "In RAD modeling, data objects defined in",
         "options": [
           {
             "text": "business modeling",
@@ -4192,7 +4391,8 @@ module.exports =[
       },
       {
         "question_id": 403,
-        "question_text": "Phase that establish design representations that serve as basis for RAD's construction activity is",
+        "subs":1,
+"question_text": "Phase that establish design representations that serve as basis for RAD's construction activity is",
         "options": [
           {
             "text": "communication",
@@ -4215,7 +4415,8 @@ module.exports =[
       },
       {
         "question_id": 404,
-        "question_text": "In RAD modeling, new components and all its interfaces testing are done by",
+        "subs":1,
+"question_text": "In RAD modeling, new components and all its interfaces testing are done by",
         "options": [
           {
             "text": "application generation",
@@ -4238,7 +4439,8 @@ module.exports =[
       },
       {
         "question_id": 405,
-        "question_text": "RAD should be used only when a system can be modularized to be delivered in an",
+        "subs":1,
+"question_text": "RAD should be used only when a system can be modularized to be delivered in an",
         "options": [
           {
             "text": "decremented manner",
@@ -4261,7 +4463,8 @@ module.exports =[
       },
       {
         "question_id": 406,
-        "question_text": "In RAD modeling, data object sets defined in data modeling phase are converted to establish business information flow needed to achieve specific business objectives as per business model in",
+        "subs":1,
+"question_text": "In RAD modeling, data object sets defined in data modeling phase are converted to establish business information flow needed to achieve specific business objectives as per business model in",
         "options": [
           {
             "text": "business modeling",
@@ -4280,7 +4483,8 @@ module.exports =[
       },
       {
         "question_id": 408,
-        "question_text": "Automated tools that are used to convert process models into code and actual system are termed as",
+        "subs":1,
+"question_text": "Automated tools that are used to convert process models into code and actual system are termed as",
         "options": [
           {
             "text": "application generation",
@@ -4303,7 +4507,8 @@ module.exports =[
       },
       {
         "question_id": 410,
-        "question_text": "A relatively new software engineering paradigm that provides a process and methodological approach for defining, specifying, designing and constructing aspects is referred to as",
+        "subs":1,
+"question_text": "A relatively new software engineering paradigm that provides a process and methodological approach for defining, specifying, designing and constructing aspects is referred to as",
         "options": [
           {
             "text": "AOP",
@@ -4326,7 +4531,8 @@ module.exports =[
       },
       {
         "question_id": 411,
-        "question_text": "Model which contains a set of activities that leads to formal mathematical specifications of software is",
+        "subs":1,
+"question_text": "Model which contains a set of activities that leads to formal mathematical specifications of software is",
         "options": [
           {
             "text": "Formal Methods Model",
@@ -4349,7 +4555,8 @@ module.exports =[
       },
       {
         "question_id": 412,
-        "question_text": "When concern cut across multiple system functions, features and information, they are termed as",
+        "subs":1,
+"question_text": "When concern cut across multiple system functions, features and information, they are termed as",
         "options": [
           {
             "text": "single cutting concerns",
@@ -4372,7 +4579,8 @@ module.exports =[
       },
       {
         "question_id": 413,
-        "question_text": "AOSD stands for",
+        "subs":1,
+"question_text": "AOSD stands for",
         "options": [
           {
             "text": "Aspect Oriented Software Development",
@@ -4395,7 +4603,8 @@ module.exports =[
       },
       {
         "question_id": 414,
-        "question_text": "COTS leads to reduction in development cycle up to",
+        "subs":1,
+"question_text": "COTS leads to reduction in development cycle up to",
         "options": [
           {
             "text": "40% c. 60%",
@@ -4414,7 +4623,8 @@ module.exports =[
       },
       {
         "question_id": 415,
-        "question_text": "AOCE uses a concept of horizontal slices through vertically calgut called bil",
+        "subs":1,
+"question_text": "AOCE uses a concept of horizontal slices through vertically calgut called bil",
         "options": [
           {
             "text": "concerns decomposed software",
@@ -4429,7 +4639,8 @@ module.exports =[
       },
       {
         "question_id": 417,
-        "question_text": "Component-based development model contains many characteristics of",
+        "subs":1,
+"question_text": "Component-based development model contains many characteristics of",
         "options": [
           {
             "text": "Prototyping model",
@@ -4452,7 +4663,8 @@ module.exports =[
       },
       {
         "question_id": 418,
-        "question_text": "Development of formal models is currently quite",
+        "subs":1,
+"question_text": "Development of formal models is currently quite",
         "options": [
           {
             "text": "time continent",
@@ -4475,7 +4687,8 @@ module.exports =[
       },
       {
         "question_id": 419,
-        "question_text": "Concerns related to task synchronization or memory management is",
+        "subs":1,
+"question_text": "Concerns related to task synchronization or memory management is",
         "options": [
           {
             "text": "systemic",
@@ -4490,7 +4703,8 @@ module.exports =[
       },
       {
         "question_id": 420,
-        "question_text": "AOP stands for b. functions d. tolerance",
+        "subs":1,
+"question_text": "AOP stands for b. functions d. tolerance",
         "options": [
           {
             "text": "Apple Oriented Programming",
@@ -4513,7 +4727,8 @@ module.exports =[
       },
       {
         "question_id": 421,
-        "question_text": "Component-based development model leads to Software",
+        "subs":1,
+"question_text": "Component-based development model leads to Software",
         "options": [
           {
             "text": "linearity",
@@ -4536,7 +4751,8 @@ module.exports =[
       },
       {
         "question_id": 422,
-        "question_text": "Components functionality with well-defined interfaces that enable component to be integrated into software are termed as",
+        "subs":1,
+"question_text": "Components functionality with well-defined interfaces that enable component to be integrated into software are termed as",
         "options": [
           {
             "text": "COTS",
@@ -4559,7 +4775,8 @@ module.exports =[
       },
       {
         "question_id": 423,
-        "question_text": "Each loop in spiral model represents a",
+        "subs":1,
+"question_text": "Each loop in spiral model represents a",
         "options": [
           {
             "text": "communication",
@@ -4582,7 +4799,8 @@ module.exports =[
       },
       {
         "question_id": 424,
-        "question_text": "System feasibility in spiral model is determined in",
+        "subs":1,
+"question_text": "System feasibility in spiral model is determined in",
         "options": [
           {
             "text": "first loop",
@@ -4605,7 +4823,8 @@ module.exports =[
       },
       {
         "question_id": 425,
-        "question_text": "First circuit around spiral model represents a",
+        "subs":1,
+"question_text": "First circuit around spiral model represents a",
         "options": [
           {
             "text": "product development",
@@ -4628,7 +4847,8 @@ module.exports =[
       },
       {
         "question_id": 426,
-        "question_text": "Spiral model originally proposed by",
+        "subs":1,
+"question_text": "Spiral model originally proposed by",
         "options": [
           {
             "text": "Boehm",
@@ -4651,13 +4871,15 @@ module.exports =[
       },
       {
         "question_id": 427,
-        "question_text": "Evolutionary software process model that couples iterative nature of prototyping with controlled and systematic aspect of waterfall model is",
+        "subs":1,
+"question_text": "Evolutionary software process model that couples iterative nature of prototyping with controlled and systematic aspect of waterfall model is",
         "options": [],
         "correct_answer": null
       },
       {
         "question_id": 428,
-        "question_text": "Model in which overall success of a project high depends on risks analysis phase is called",
+        "subs":1,
+"question_text": "Model in which overall success of a project high depends on risks analysis phase is called",
         "options": [
           {
             "text": "risk-driven model",
@@ -4680,7 +4902,8 @@ module.exports =[
       },
       {
         "question_id": 429,
-        "question_text": "Each loop in spiral model is splited into",
+        "subs":1,
+"question_text": "Each loop in spiral model is splited into",
         "options": [
           {
             "text": "two sections",
@@ -4695,7 +4918,8 @@ module.exports =[
       },
       {
         "question_id": 430,
-        "question_text": "Spiral model is",
+        "subs":1,
+"question_text": "Spiral model is",
         "options": [
           {
             "text": "phase-driven model",
@@ -4726,7 +4950,8 @@ module.exports =[
       },
       {
         "question_id": 431,
-        "question_text": "Collection of use cases describe how outside actors interact with system and gain value from it is defined by",
+        "subs":1,
+"question_text": "Collection of use cases describe how outside actors interact with system and gain value from it is defined by",
         "options": [
           {
             "text": "use case model",
@@ -4749,7 +4974,8 @@ module.exports =[
       },
       {
         "question_id": 432,
-        "question_text": "Model which identifies design classes, subsystems and interfaces between them is",
+        "subs":1,
+"question_text": "Model which identifies design classes, subsystems and interfaces between them is",
         "options": [
           {
             "text": "analysis model",
@@ -4772,7 +4998,8 @@ module.exports =[
       },
       {
         "question_id": 433,
-        "question_text": "Model describes test that are used to ensure that use case are properly reflected in software that has been constructed is",
+        "subs":1,
+"question_text": "Model describes test that are used to ensure that use case are properly reflected in software that has been constructed is",
         "options": [
           {
             "text": "test model",
@@ -4795,7 +5022,8 @@ module.exports =[
       },
       {
         "question_id": 434,
-        "question_text": "Model that translates design classes into software components is",
+        "subs":1,
+"question_text": "Model that translates design classes into software components is",
         "options": [
           {
             "text": "analysis model",
@@ -4818,7 +5046,8 @@ module.exports =[
       },
       {
         "question_id": 435,
-        "question_text": "Model which maps components into physical computing environment is",
+        "subs":1,
+"question_text": "Model which maps components into physical computing environment is",
         "options": [
           {
             "text": "analysis model",
@@ -4841,7 +5070,8 @@ module.exports =[
       },
       {
         "question_id": 436,
-        "question_text": "Bradac found that linear nature of waterfall model leads to",
+        "subs":1,
+"question_text": "Bradac found that linear nature of waterfall model leads to",
         "options": [
           {
             "text": "flowing state",
@@ -4864,13 +5094,15 @@ module.exports =[
       },
       {
         "question_id": 437,
-        "question_text": "Waterfall model phase which acknowledged that software is delivered to customer who evaluates delivered product and provides feedback based evaluation is stack IT Job Solution and Stack IT BPSC Special | Call 01812603406 or 01789741518 | or Visist: stackvaly.com",
+        "subs":1,
+"question_text": "Waterfall model phase which acknowledged that software is delivered to customer who evaluates delivered product and provides feedback based evaluation is stack IT Job Solution and Stack IT BPSC Special | Call 01812603406 or 01789741518 | or Visist: stackvaly.com",
         "options": [],
         "correct_answer": null
       },
       {
         "question_id": 439,
-        "question_text": "In waterfall model, phases",
+        "subs":1,
+"question_text": "In waterfall model, phases",
         "options": [
           {
             "text": "overlap",
@@ -4893,7 +5125,8 @@ module.exports =[
       },
       {
         "question_id": 440,
-        "question_text": "Waterfall model phase which combines code generation and testing that is required to uncover errors in code is",
+        "subs":1,
+"question_text": "Waterfall model phase which combines code generation and testing that is required to uncover errors in code is",
         "options": [
           {
             "text": "planning",
@@ -4916,7 +5149,8 @@ module.exports =[
       },
       {
         "question_id": 441,
-        "question_text": "Waterfall model phase in which all possible requirements of system to be developed are captured and project initiate is",
+        "subs":1,
+"question_text": "Waterfall model phase in which all possible requirements of system to be developed are captured and project initiate is",
         "options": [
           {
             "text": "communication",
@@ -4939,7 +5173,8 @@ module.exports =[
       },
       {
         "question_id": 442,
-        "question_text": "Waterfall model is also known as",
+        "subs":1,
+"question_text": "Waterfall model is also known as",
         "options": [
           {
             "text": "automated life cycle",
@@ -4962,7 +5197,8 @@ module.exports =[
       },
       {
         "question_id": 443,
-        "question_text": "Waterfall model phase which establishes a plan for software engineering work that follows i.e estimating, scheduling, tracking is",
+        "subs":1,
+"question_text": "Waterfall model phase which establishes a plan for software engineering work that follows i.e estimating, scheduling, tracking is",
         "options": [
           {
             "text": "communication",
@@ -4985,7 +5221,8 @@ module.exports =[
       },
       {
         "question_id": 444,
-        "question_text": "Waterfall model phase in which modification of a software product is done after delivery to correct faults, to improve performance or other attributes is",
+        "subs":1,
+"question_text": "Waterfall model phase in which modification of a software product is done after delivery to correct faults, to improve performance or other attributes is",
         "options": [
           {
             "text": "maintenance",
@@ -5008,7 +5245,8 @@ module.exports =[
       },
       {
         "question_id": 445,
-        "question_text": "Oldest paradigm for software engineering is",
+        "subs":1,
+"question_text": "Oldest paradigm for software engineering is",
         "options": [
           {
             "text": "Incremental process model",
@@ -5031,7 +5269,8 @@ module.exports =[
       },
       {
         "question_id": 446,
-        "question_text": "Model in which any phase in development process begins only if previous phase is complete is",
+        "subs":1,
+"question_text": "Model in which any phase in development process begins only if previous phase is complete is",
         "options": [
           {
             "text": "Waterfall model",
@@ -5054,7 +5293,8 @@ module.exports =[
       },
       {
         "question_id": 447,
-        "question_text": "Waterfall model were originally proposed by",
+        "subs":1,
+"question_text": "Waterfall model were originally proposed by",
         "options": [
           {
             "text": "Winston Royce",
@@ -5077,7 +5317,8 @@ module.exports =[
       },
       {
         "question_id": 448,
-        "question_text": "Waterfall model phase in which system design is prepared and this system design helps in specifying system requirements and define overall system architecture is",
+        "subs":1,
+"question_text": "Waterfall model phase in which system design is prepared and this system design helps in specifying system requirements and define overall system architecture is",
         "options": [
           {
             "text": "modeling",
@@ -5100,7 +5341,8 @@ module.exports =[
       },
       {
         "question_id": 449,
-        "question_text": "Which of the following are valid step in SDLC framework?",
+        "subs":1,
+"question_text": "Which of the following are valid step in SDLC framework?",
         "options": [
           {
             "text": "Requirement Gathering b.",
@@ -5119,7 +5361,8 @@ module.exports =[
       },
       {
         "question_id": 450,
-        "question_text": "Which of the following is the first step in SDLC framwork?",
+        "subs":1,
+"question_text": "Which of the following is the first step in SDLC framwork?",
         "options": [
           {
             "text": "Feasibility Study",
@@ -5138,7 +5381,8 @@ module.exports =[
       },
       {
         "question_id": 451,
-        "question_text": "Which of the following is not correct model in Software Development Paradigm?",
+        "subs":1,
+"question_text": "Which of the following is not correct model in Software Development Paradigm?",
         "options": [
           {
             "text": "Waterfall Model",
@@ -5161,7 +5405,8 @@ module.exports =[
       },
       {
         "question_id": 452,
-        "question_text": "Waterfall model is not suitable for:",
+        "subs":1,
+"question_text": "Waterfall model is not suitable for:",
         "options": [
           {
             "text": "Small projects",
@@ -5184,7 +5429,8 @@ module.exports =[
       },
       {
         "question_id": 453,
-        "question_text": "In the maintenance phase the product must be tested against previous test cases. This is known as",
+        "subs":1,
+"question_text": "In the maintenance phase the product must be tested against previous test cases. This is known as",
         "options": [
           {
             "text": "Unit",
@@ -5207,7 +5453,8 @@ module.exports =[
       },
       {
         "question_id": 454,
-        "question_text": "Which type of integration testing uses stubs?",
+        "subs":1,
+"question_text": "Which type of integration testing uses stubs?",
         "options": [
           {
             "text": "Top down testing",
@@ -5230,7 +5477,8 @@ module.exports =[
       },
       {
         "question_id": 455,
-        "question_text": "Which one of the following is a functional requirement?",
+        "subs":1,
+"question_text": "Which one of the following is a functional requirement?",
         "options": [
           {
             "text": "Maintainability",
@@ -5253,7 +5501,8 @@ module.exports =[
       },
       {
         "question_id": 456,
-        "question_text": "Which defect amplification model is used to illustrate the generation and detection of errors during the preliminary steps of a software engineering process?",
+        "subs":1,
+"question_text": "Which defect amplification model is used to illustrate the generation and detection of errors during the preliminary steps of a software engineering process?",
         "options": [
           {
             "text": "Design",
@@ -5276,7 +5525,8 @@ module.exports =[
       },
       {
         "question_id": 457,
-        "question_text": "Which method is used method is used for evaluating the expression that passes the function argument?",
+        "subs":1,
+"question_text": "Which method is used method is used for evaluating the expression that passes the function argument?",
         "options": [
           {
             "text": "Strict evaluation",
@@ -5299,7 +5549,8 @@ module.exports =[
       },
       {
         "question_id": 458,
-        "question_text": "Organization can have in-house inspection, direct involvement of users and release of beta version are few of them and it also includes usability, compatibility, user acceptance etc. is called",
+        "subs":1,
+"question_text": "Organization can have in-house inspection, direct involvement of users and release of beta version are few of them and it also includes usability, compatibility, user acceptance etc. is called",
         "options": [
           {
             "text": "Task analysis",
@@ -5322,7 +5573,8 @@ module.exports =[
       },
       {
         "question_id": 460,
-        "question_text": "Which one of these belongs to integration testing in the OO context?",
+        "subs":1,
+"question_text": "Which one of these belongs to integration testing in the OO context?",
         "options": [
           {
             "text": "Unit testing",
@@ -5345,7 +5597,8 @@ module.exports =[
       },
       {
         "question_id": 461,
-        "question_text": "During security testing the tester plays the role of the individual who desires to",
+        "subs":1,
+"question_text": "During security testing the tester plays the role of the individual who desires to",
         "options": [
           {
             "text": "Penetrates the system",
@@ -5368,7 +5621,8 @@ module.exports =[
       },
       {
         "question_id": 462,
-        "question_text": "Which box specifies the behavior of a system or a part of a system?",
+        "subs":1,
+"question_text": "Which box specifies the behavior of a system or a part of a system?",
         "options": [
           {
             "text": "State box",
@@ -5391,7 +5645,8 @@ module.exports =[
       },
       {
         "question_id": 463,
-        "question_text": "The longer a fault exists in software",
+        "subs":1,
+"question_text": "The longer a fault exists in software",
         "options": [
           {
             "text": "the more tedious its removal becomes",
@@ -5414,7 +5669,8 @@ module.exports =[
       },
       {
         "question_id": 464,
-        "question_text": "Which condition defines the circumstances for a to particular operation is valid?",
+        "subs":1,
+"question_text": "Which condition defines the circumstances for a to particular operation is valid?",
         "options": [
           {
             "text": "Postcondition",
@@ -5437,7 +5693,8 @@ module.exports =[
       },
       {
         "question_id": 465,
-        "question_text": "Which is not a SQA activity?",
+        "subs":1,
+"question_text": "Which is not a SQA activity?",
         "options": [
           {
             "text": "Black box testing",
@@ -5460,7 +5717,8 @@ module.exports =[
       },
       {
         "question_id": 466,
-        "question_text": "Abbreviate the term BSS.",
+        "subs":1,
+"question_text": "Abbreviate the term BSS.",
         "options": [
           {
             "text": "Box Structure Specification",
@@ -5483,7 +5741,8 @@ module.exports =[
       },
       {
         "question_id": 467,
-        "question_text": "What is the testing to ensure the WebApp properly interfaces with other applications or databases?",
+        "subs":1,
+"question_text": "What is the testing to ensure the WebApp properly interfaces with other applications or databases?",
         "options": [
           {
             "text": "Compatibility",
@@ -5506,7 +5765,8 @@ module.exports =[
       },
       {
         "question_id": 468,
-        "question_text": "What do you understand by V&V in softwar testing?",
+        "subs":1,
+"question_text": "What do you understand by V&V in softwar testing?",
         "options": [
           {
             "text": "Verified Version",
@@ -5529,7 +5789,8 @@ module.exports =[
       },
       {
         "question_id": 469,
-        "question_text": "In static test techniques, behavioral and performance properties of the program are observe",
+        "subs":1,
+"question_text": "In static test techniques, behavioral and performance properties of the program are observe",
         "options": [
           {
             "text": "",
@@ -5556,7 +5817,8 @@ module.exports =[
       },
       {
         "question_id": 470,
-        "question_text": "Which granularity level of testing checks the behavior of module cooperation?",
+        "subs":1,
+"question_text": "Which granularity level of testing checks the behavior of module cooperation?",
         "options": [
           {
             "text": "Unit Testing",
@@ -5579,7 +5841,8 @@ module.exports =[
       },
       {
         "question_id": 471,
-        "question_text": "Which test refers to the retesting of a unit, integration and system after modification, in order to ascertain that the change has not introduced new faults?",
+        "subs":1,
+"question_text": "Which test refers to the retesting of a unit, integration and system after modification, in order to ascertain that the change has not introduced new faults?",
         "options": [
           {
             "text": "Regression Test",
@@ -5602,7 +5865,8 @@ module.exports =[
       },
       {
         "question_id": 472,
-        "question_text": "Which of the following is a black box testing strategy?",
+        "subs":1,
+"question_text": "Which of the following is a black box testing strategy?",
         "options": [
           {
             "text": "All Statements Coverage",
@@ -5625,7 +5889,8 @@ module.exports =[
       },
       {
         "question_id": 473,
-        "question_text": "A set of inputs, execution preconditions and expected outcomes is known as a",
+        "subs":1,
+"question_text": "A set of inputs, execution preconditions and expected outcomes is known as a",
         "options": [
           {
             "text": "Test plan",
@@ -5648,7 +5913,8 @@ module.exports =[
       },
       {
         "question_id": 474,
-        "question_text": "In which test design each input is tested at both ends of its valid range and just outside its valid range?",
+        "subs":1,
+"question_text": "In which test design each input is tested at both ends of its valid range and just outside its valid range?",
         "options": [
           {
             "text": "Boundary value testing",
@@ -5671,7 +5937,8 @@ module.exports =[
       },
       {
         "question_id": 475,
-        "question_text": "A white box test scales up well at different granularity levels of testing.",
+        "subs":1,
+"question_text": "A white box test scales up well at different granularity levels of testing.",
         "options": [
           {
             "text": "True",
@@ -5694,7 +5961,8 @@ module.exports =[
       },
       {
         "question_id": 476,
-        "question_text": "When does the testing process stops?",
+        "subs":1,
+"question_text": "When does the testing process stops?",
         "options": [
           {
             "text": "When resources (time and budget) are over",
@@ -5717,7 +5985,8 @@ module.exports =[
       },
       {
         "question_id": 477,
-        "question_text": "Which of the following is not a part of a test design document?",
+        "subs":1,
+"question_text": "Which of the following is not a part of a test design document?",
         "options": [
           {
             "text": "Test Plan",
@@ -5740,7 +6009,8 @@ module.exports =[
       },
       {
         "question_id": 478,
-        "question_text": "Specifying a set of test cases or test paths for each item to be tested at that level is known as",
+        "subs":1,
+"question_text": "Specifying a set of test cases or test paths for each item to be tested at that level is known as",
         "options": [
           {
             "text": "Test case generation",
@@ -5763,7 +6033,8 @@ module.exports =[
       },
       {
         "question_id": 479,
-        "question_text": "Acceptance & system test planning are a part of architectural design.",
+        "subs":1,
+"question_text": "Acceptance & system test planning are a part of architectural design.",
         "options": [
           {
             "text": "True",
@@ -5786,7 +6057,8 @@ module.exports =[
       },
       {
         "question_id": 480,
-        "question_text": "Which of the following term describes testing?",
+        "subs":1,
+"question_text": "Which of the following term describes testing?",
         "options": [
           {
             "text": "Finding broken code",
@@ -5809,7 +6081,8 @@ module.exports =[
       },
       {
         "question_id": 481,
-        "question_text": "What is Cyclomatic complexity?",
+        "subs":1,
+"question_text": "What is Cyclomatic complexity?",
         "options": [
           {
             "text": "Black box testing",
@@ -5832,7 +6105,8 @@ module.exports =[
       },
       {
         "question_id": 482,
-        "question_text": "Lower and upper limits are present in which chart?",
+        "subs":1,
+"question_text": "Lower and upper limits are present in which chart?",
         "options": [
           {
             "text": "Run chart",
@@ -5855,7 +6129,8 @@ module.exports =[
       },
       {
         "question_id": 483,
-        "question_text": "Maintenance testing is performed using which methodology?",
+        "subs":1,
+"question_text": "Maintenance testing is performed using which methodology?",
         "options": [
           {
             "text": "Retesting",
@@ -5878,7 +6153,8 @@ module.exports =[
       },
       {
         "question_id": 484,
-        "question_text": "White Box techniques are also classified as",
+        "subs":1,
+"question_text": "White Box techniques are also classified as",
         "options": [
           {
             "text": "Design based testing",
@@ -5901,7 +6177,8 @@ module.exports =[
       },
       {
         "question_id": 485,
-        "question_text": "Exhaustive testing is",
+        "subs":1,
+"question_text": "Exhaustive testing is",
         "options": [
           {
             "text": "always possible",
@@ -5924,7 +6201,8 @@ module.exports =[
       },
       {
         "question_id": 486,
-        "question_text": "Which of the following is/are White box technique?",
+        "subs":1,
+"question_text": "Which of the following is/are White box technique?",
         "options": [
           {
             "text": "Statement Testing",
@@ -5939,7 +6217,8 @@ module.exports =[
       },
       {
         "question_id": 186,
-        "question_text": "A standard for unit testing.is",
+        "subs":1,
+"question_text": "A standard for unit testing.is",
         "options": [
           {
             "text": "IEEE 1008",
@@ -5962,7 +6241,8 @@ module.exports =[
       },
       {
         "question_id": 187,
-        "question_text": "Examination of the program step by step is called",
+        "subs":1,
+"question_text": "Examination of the program step by step is called",
         "options": [
           {
             "text": "Controlling",
@@ -5985,7 +6265,8 @@ module.exports =[
       },
       {
         "question_id": 188,
-        "question_text": "The examination of changing values of variables is called stepping.",
+        "subs":1,
+"question_text": "The examination of changing values of variables is called stepping.",
         "options": [
           {
             "text": "True",
@@ -6008,7 +6289,8 @@ module.exports =[
       },
       {
         "question_id": 189,
-        "question_text": "A freeware GNU Debugger is",
+        "subs":1,
+"question_text": "A freeware GNU Debugger is",
         "options": [
           {
             "text": "GDB",
@@ -6031,7 +6313,8 @@ module.exports =[
       },
       {
         "question_id": 190,
-        "question_text": "Which of the following is written for getting help in GDB?",
+        "subs":1,
+"question_text": "Which of the following is written for getting help in GDB?",
         "options": [
           {
             "text": "he",
@@ -6054,7 +6337,8 @@ module.exports =[
       },
       {
         "question_id": 191,
-        "question_text": "h command gives",
+        "subs":1,
+"question_text": "h command gives",
         "options": [
           {
             "text": "A list of all the commands starting from h",
@@ -6077,7 +6361,8 @@ module.exports =[
       },
       {
         "question_id": 192,
-        "question_text": "creates an inferior process that runs your program.",
+        "subs":1,
+"question_text": "creates an inferior process that runs your program.",
         "options": [
           {
             "text": "run",
@@ -6096,7 +6381,8 @@ module.exports =[
       },
       {
         "question_id": 193,
-        "question_text": "Which of the following does not affects the -tal execution of the program? mo",
+        "subs":1,
+"question_text": "Which of the following does not affects the -tal execution of the program? mo",
         "options": [
           {
             "text": "Arguments",
@@ -6119,7 +6405,8 @@ module.exports =[
       },
       {
         "question_id": 194,
-        "question_text": "'set args' without arguments can",
+        "subs":1,
+"question_text": "'set args' without arguments can",
         "options": [
           {
             "text": "initialize all the arguments en",
@@ -6142,7 +6429,8 @@ module.exports =[
       },
       {
         "question_id": 195,
-        "question_text": "run >outfile command is used to",
+        "subs":1,
+"question_text": "run >outfile command is used to",
         "options": [
           {
             "text": "direct output to the file outfile",
@@ -6165,7 +6453,8 @@ module.exports =[
       },
       {
         "question_id": 196,
-        "question_text": "STD stands for Mon",
+        "subs":1,
+"question_text": "STD stands for Mon",
         "options": [
           {
             "text": "Software Test Documents of 983",
@@ -6184,7 +6473,8 @@ module.exports =[
       },
       {
         "question_id": 487,
-        "question_text": "What are the various Testing Levels?",
+        "subs":1,
+"question_text": "What are the various Testing Levels?",
         "options": [
           {
             "text": "Unit Testing",
@@ -6207,7 +6497,8 @@ module.exports =[
       },
       {
         "question_id": 488,
-        "question_text": "Boundary value analysis belong to?",
+        "subs":1,
+"question_text": "Boundary value analysis belong to?",
         "options": [
           {
             "text": "White Box Testing",
@@ -6230,7 +6521,8 @@ module.exports =[
       },
       {
         "question_id": 489,
-        "question_text": "Alpha testing is done at",
+        "subs":1,
+"question_text": "Alpha testing is done at",
         "options": [
           {
             "text": "Developer's end",
@@ -6253,7 +6545,8 @@ module.exports =[
       },
       {
         "question_id": 490,
-        "question_text": "The testing in which code is checked",
+        "subs":1,
+"question_text": "The testing in which code is checked",
         "options": [
           {
             "text": "Black box testing",
@@ -6276,7 +6569,8 @@ module.exports =[
       },
       {
         "question_id": 491,
-        "question_text": "Testing done without planning and quiry Documentation is called 102",
+        "subs":1,
+"question_text": "Testing done without planning and quiry Documentation is called 102",
         "options": [
           {
             "text": "Unit testing",
@@ -6299,7 +6593,8 @@ module.exports =[
       },
       {
         "question_id": 492,
-        "question_text": "Acceptance testing is also known as",
+        "subs":1,
+"question_text": "Acceptance testing is also known as",
         "options": [
           {
             "text": "Grey box testing",
@@ -6322,7 +6617,8 @@ module.exports =[
       },
       {
         "question_id": 493,
-        "question_text": "Which of the following is non-functional testing?",
+        "subs":1,
+"question_text": "Which of the following is non-functional testing?",
         "options": [
           {
             "text": "Black box testing",
@@ -6345,7 +6641,8 @@ module.exports =[
       },
       {
         "question_id": 494,
-        "question_text": "Beta testing is done at",
+        "subs":1,
+"question_text": "Beta testing is done at",
         "options": [
           {
             "text": "User's end",
@@ -6368,7 +6665,8 @@ module.exports =[
       },
       {
         "question_id": 495,
-        "question_text": "SPICE stands for a golaasb or siding 2",
+        "subs":1,
+"question_text": "SPICE stands for a golaasb or siding 2",
         "options": [
           {
             "text": "Software Process Improvement and Compatibility Determination nd",
@@ -6391,7 +6689,8 @@ module.exports =[
       },
       {
         "question_id": 496,
-        "question_text": "Unit testing is done by bigs",
+        "subs":1,
+"question_text": "Unit testing is done by bigs",
         "options": [
           {
             "text": "Users",
@@ -6410,7 +6709,8 @@ module.exports =[
       },
       {
         "question_id": 497,
-        "question_text": "Behavioral testing is of 983",
+        "subs":1,
+"question_text": "Behavioral testing is of 983",
         "options": [
           {
             "text": "Developers",
@@ -6421,7 +6721,8 @@ module.exports =[
       },
       {
         "question_id": 498,
-        "question_text": "b. Black box testing c. Grey box testing d. None of the mentioned Answer: (b).Black box testing Which of the following is black box testing?",
+        "subs":1,
+"question_text": "b. Black box testing c. Grey box testing d. None of the mentioned Answer: (b).Black box testing Which of the following is black box testing?",
         "options": [
           {
             "text": "Basic path testing",
@@ -6444,7 +6745,8 @@ module.exports =[
       },
       {
         "question_id": 499,
-        "question_text": "Which of the following is not used in measuring the size of the software?",
+        "subs":1,
+"question_text": "Which of the following is not used in measuring the size of the software?",
         "options": [
           {
             "text": "KLOC",
@@ -6467,7 +6769,8 @@ module.exports =[
       },
       {
         "question_id": 501,
-        "question_text": "Which of the following is not a software testing generic characteristics?",
+        "subs":1,
+"question_text": "Which of the following is not a software testing generic characteristics?",
         "options": [
           {
             "text": "Different testing techniques are appropriate at different points in time",
@@ -6490,7 +6793,8 @@ module.exports =[
       },
       {
         "question_id": 502,
-        "question_text": "ITG stands for",
+        "subs":1,
+"question_text": "ITG stands for",
         "options": [
           {
             "text": "instantaneous test group o",
@@ -6513,7 +6817,8 @@ module.exports =[
       },
       {
         "question_id": 503,
-        "question_text": "By collecting 13w28 is possible to develop meaningful guidelines to to halt the testing process.",
+        "subs":1,
+"question_text": "By collecting 13w28 is possible to develop meaningful guidelines to to halt the testing process.",
         "options": [
           {
             "text": "Failure intensity",
@@ -6536,7 +6841,8 @@ module.exports =[
       },
       {
         "question_id": 504,
-        "question_text": "Which of the following issues must be addressed if a successful software testing strategy is to be implemented?",
+        "subs":1,
+"question_text": "Which of the following issues must be addressed if a successful software testing strategy is to be implemented?",
         "options": [
           {
             "text": "Use effective formal technical reviews as a filter prior to testing",
@@ -6559,7 +6865,8 @@ module.exports =[
       },
       {
         "question_id": 507,
-        "question_text": "What is normally considered as an adjunct to the coding step?",
+        "subs":1,
+"question_text": "What is normally considered as an adjunct to the coding step?",
         "options": [
           {
             "text": "Integration testing",
@@ -6582,7 +6889,8 @@ module.exports =[
       },
       {
         "question_id": 508,
-        "question_text": "Which of the following is not regression test case?",
+        "subs":1,
+"question_text": "Which of the following is not regression test case?",
         "options": [
           {
             "text": "A representative sample of tests that will exercise all software functions",
@@ -6605,7 +6913,8 @@ module.exports =[
       },
       {
         "question_id": 509,
-        "question_text": "Which testing is an integration testing approach that is commonly used when \"shrink-wrapped\" dodde software products are being developed?",
+        "subs":1,
+"question_text": "Which testing is an integration testing approach that is commonly used when \"shrink-wrapped\" dodde software products are being developed?",
         "options": [
           {
             "text": "Regression Testing",
@@ -6628,7 +6937,8 @@ module.exports =[
       },
       {
         "question_id": 510,
-        "question_text": "In which testing level the focus is on customer usage?",
+        "subs":1,
+"question_text": "In which testing level the focus is on customer usage?",
         "options": [
           {
             "text": "Alpha Testing",
@@ -6647,7 +6957,8 @@ module.exports =[
       },
       {
         "question_id": 511,
-        "question_text": "Validation refers to the set of tasks that ensure that software correctly implements a specific function.",
+        "subs":1,
+"question_text": "Validation refers to the set of tasks that ensure that software correctly implements a specific function.",
         "options": [
           {
             "text": "True",
@@ -6670,7 +6981,8 @@ module.exports =[
       },
       {
         "question_id": 512,
-        "question_text": "The architecture of object-oriented software results in a series of layered subsystems that encapsulate collaborating classes. stack IT Job Solution and Stack IT BPSC Special | Call 01812603406 or 01789741518 | or Visist: stackvaly.com zad",
+        "subs":1,
+"question_text": "The architecture of object-oriented software results in a series of layered subsystems that encapsulate collaborating classes. stack IT Job Solution and Stack IT BPSC Special | Call 01812603406 or 01789741518 | or Visist: stackvaly.com zad",
         "options": [
           {
             "text": "True",
@@ -6689,7 +7001,8 @@ module.exports =[
       },
       {
         "question_id": 514,
-        "question_text": "Which testing integrates the set of classes required to respond to one input or event for the system?",
+        "subs":1,
+"question_text": "Which testing integrates the set of classes required to respond to one input or event for the system?",
         "options": [
           {
             "text": "cluster testing",
@@ -6712,13 +7025,15 @@ module.exports =[
       },
       {
         "question_id": 515,
-        "question_text": "Which of the following is one of the steps in the",
+        "subs":1,
+"question_text": "Which of the following is one of the steps in the",
         "options": [],
         "correct_answer": null
       },
       {
         "question_id": 516,
-        "question_text": "integration testing of OO software?",
+        "subs":1,
+"question_text": "integration testing of OO software?",
         "options": [
           {
             "text": "cluster testing",
@@ -6757,7 +7072,8 @@ module.exports =[
       },
       {
         "question_id": 518,
-        "question_text": "The object of",
+        "subs":1,
+"question_text": "The object of",
         "options": [
           {
             "text": "Integration tests",
@@ -6788,13 +7104,15 @@ module.exports =[
       },
       {
         "question_id": 519,
-        "question_text": "What refers to the externally observable structure",
+        "subs":1,
+"question_text": "What refers to the externally observable structure",
         "options": [],
         "correct_answer": null
       },
       {
         "question_id": 520,
-        "question_text": "of an OO program?",
+        "subs":1,
+"question_text": "of an OO program?",
         "options": [
           {
             "text": "Deep structure c. Core structure d. All of the mentioned Answer: (b).Surface structure",
@@ -6817,7 +7135,8 @@ module.exports =[
       },
       {
         "question_id": 521,
-        "question_text": "Which of the following is black-box oriented and can be accomplished by applying the same black- box methods discussed for conventional software?",
+        "subs":1,
+"question_text": "Which of the following is black-box oriented and can be accomplished by applying the same black- box methods discussed for conventional software?",
         "options": [
           {
             "text": "Conventional testing",
@@ -6836,7 +7155,8 @@ module.exports =[
       },
       {
         "question_id": 522,
-        "question_text": "In which of the following testing strategies, a smallest testable unit is the encapsulated class or object?",
+        "subs":1,
+"question_text": "In which of the following testing strategies, a smallest testable unit is the encapsulated class or object?",
         "options": [
           {
             "text": "Unit testing",
@@ -6855,7 +7175,8 @@ module.exports =[
       },
       {
         "question_id": 523,
-        "question_text": "Which of the following testing types is not a part of system testing?",
+        "subs":1,
+"question_text": "Which of the following testing types is not a part of system testing?",
         "options": [
           {
             "text": "Recovery testing",
@@ -6878,7 +7199,8 @@ module.exports =[
       },
       {
         "question_id": 524,
-        "question_text": "What is testing proces's first goal?",
+        "subs":1,
+"question_text": "What is testing proces's first goal?",
         "options": [
           {
             "text": "Bug prevention",
@@ -6901,7 +7223,8 @@ module.exports =[
       },
       {
         "question_id": 525,
-        "question_text": "Software mistakes during coding are known as",
+        "subs":1,
+"question_text": "Software mistakes during coding are known as",
         "options": [
           {
             "text": "errors",
@@ -6924,7 +7247,8 @@ module.exports =[
       },
       {
         "question_id": 526,
-        "question_text": "Name an evaluation technique to assess the quality of test cases.",
+        "subs":1,
+"question_text": "Name an evaluation technique to assess the quality of test cases.",
         "options": [
           {
             "text": "Mutation analysis",
@@ -6947,7 +7271,8 @@ module.exports =[
       },
       {
         "question_id": 527,
-        "question_text": "Test should be conducted for every possible",
+        "subs":1,
+"question_text": "Test should be conducted for every possible",
         "options": [
           {
             "text": "data",
@@ -6970,7 +7295,8 @@ module.exports =[
       },
       {
         "question_id": 528,
-        "question_text": "Which of the following is not a part of bug report?",
+        "subs":1,
+"question_text": "Which of the following is not a part of bug report?",
         "options": [
           {
             "text": "Test case",
@@ -6993,7 +7319,8 @@ module.exports =[
       },
       {
         "question_id": 529,
-        "question_text": "Which of the following is not a part of Execution Flow during debugging?",
+        "subs":1,
+"question_text": "Which of the following is not a part of Execution Flow during debugging?",
         "options": [
           {
             "text": "Step Over onimsc. Step Up",
@@ -7012,7 +7339,8 @@ module.exports =[
       },
       {
         "question_id": 530,
-        "question_text": "Cyclomatic Complexity method comes under which testing metho",
+        "subs":1,
+"question_text": "Cyclomatic Complexity method comes under which testing metho",
         "options": [
           {
             "text": "",
@@ -7035,7 +7363,8 @@ module.exports =[
       },
       {
         "question_id": 531,
-        "question_text": "Which is a black box testing technique appropriate to all levels of testing?",
+        "subs":1,
+"question_text": "Which is a black box testing technique appropriate to all levels of testing?",
         "options": [
           {
             "text": "Acceptance testing",
@@ -7058,7 +7387,8 @@ module.exports =[
       },
       {
         "question_id": 532,
-        "question_text": "Which of the following is the way of ensuring that the tests are actually testing code?",
+        "subs":1,
+"question_text": "Which of the following is the way of ensuring that the tests are actually testing code?",
         "options": [
           {
             "text": "Control structure testing stack IT Job Solution and Stack IT BPSC Special | Call 01812603406 or 01789741518 | or Visist: stackvaly.com",
@@ -7069,7 +7399,8 @@ module.exports =[
       },
       {
         "question_id": 533,
-        "question_text": "Effective testing will reduce",
+        "subs":1,
+"question_text": "Effective testing will reduce",
         "options": [
           {
             "text": "maintenance",
@@ -7092,7 +7423,8 @@ module.exports =[
       },
       {
         "question_id": 534,
-        "question_text": "Which of the following is a common pointer problem? raq c",
+        "subs":1,
+"question_text": "Which of the following is a common pointer problem? raq c",
         "options": [
           {
             "text": "Data sharing errors",
@@ -7115,7 +7447,8 @@ module.exports =[
       },
       {
         "question_id": 535,
-        "question_text": "Standard Enforcer is a",
+        "subs":1,
+"question_text": "Standard Enforcer is a",
         "options": [
           {
             "text": "Static Testing Tool",
@@ -7138,7 +7471,8 @@ module.exports =[
       },
       {
         "question_id": 536,
-        "question_text": "Many applications using static analysis find 0.1- 0.2% NCSS. NCSS stands for",
+        "subs":1,
+"question_text": "Many applications using static analysis find 0.1- 0.2% NCSS. NCSS stands for",
         "options": [
           {
             "text": "Non-Code Source Statement",
@@ -7161,7 +7495,8 @@ module.exports =[
       },
       {
         "question_id": 537,
-        "question_text": "Which testing tool does a simple job of enforcing standards in a uniform way of many programs?",
+        "subs":1,
+"question_text": "Which testing tool does a simple job of enforcing standards in a uniform way of many programs?",
         "options": [
           {
             "text": "Static Analyzer",
@@ -7184,7 +7519,8 @@ module.exports =[
       },
       {
         "question_id": 538,
-        "question_text": "Software Testing with real data in real environment is known as",
+        "subs":1,
+"question_text": "Software Testing with real data in real environment is known as",
         "options": [
           {
             "text": "alpha testing noite c. regression testing",
@@ -7203,7 +7539,8 @@ module.exports =[
       },
       {
         "question_id": 539,
-        "question_text": "Which of the following testing tools examine program systematically &automatically? whau",
+        "subs":1,
+"question_text": "Which of the following testing tools examine program systematically &automatically? whau",
         "options": [
           {
             "text": "Code Inspector",
@@ -7226,7 +7563,8 @@ module.exports =[
       },
       {
         "question_id": 540,
-        "question_text": "Which testing tool is responsible for documenting programs?",
+        "subs":1,
+"question_text": "Which testing tool is responsible for documenting programs?",
         "options": [
           {
             "text": "Test/File Generator",
@@ -7249,7 +7587,8 @@ module.exports =[
       },
       {
         "question_id": 541,
-        "question_text": "Beta Testing is done by",
+        "subs":1,
+"question_text": "Beta Testing is done by",
         "options": [
           {
             "text": "Developers",
@@ -7272,7 +7611,8 @@ module.exports =[
       },
       {
         "question_id": 542,
-        "question_text": "Standard enforcer TOOI program.",
+        "subs":1,
+"question_text": "Standard enforcer TOOI program.",
         "options": [
           {
             "text": "True",
@@ -7295,7 +7635,8 @@ module.exports =[
       },
       {
         "question_id": 543,
-        "question_text": "Debugging Program is a program which runs concurrently with the program under test & provide commands to",
+        "subs":1,
+"question_text": "Debugging Program is a program which runs concurrently with the program under test & provide commands to",
         "options": [
           {
             "text": "examine memory & registers gode",
@@ -7318,7 +7659,8 @@ module.exports =[
       },
       {
         "question_id": 544,
-        "question_text": "Execution Verifier is a dynamic tool that is also known as",
+        "subs":1,
+"question_text": "Execution Verifier is a dynamic tool that is also known as",
         "options": [
           {
             "text": "Test File Generator",
@@ -7341,7 +7683,8 @@ module.exports =[
       },
       {
         "question_id": 545,
-        "question_text": "The mistakes, committed by intercharging two digits in a numeicield, during data enty, is called",
+        "subs":1,
+"question_text": "The mistakes, committed by intercharging two digits in a numeicield, during data enty, is called",
         "options": [
           {
             "text": "Beta testing error",
@@ -7364,7 +7707,8 @@ module.exports =[
       },
       {
         "question_id": 546,
-        "question_text": "Coding and testing is done in following manner :",
+        "subs":1,
+"question_text": "Coding and testing is done in following manner :",
         "options": [
           {
             "text": "Adhoc",
@@ -7387,7 +7731,8 @@ module.exports =[
       },
       {
         "question_id": 547,
-        "question_text": "Main difference between program testing and system testing is Dot",
+        "subs":1,
+"question_text": "Main difference between program testing and system testing is Dot",
         "options": [
           {
             "text": "System testing is tough and program testing is easy",
@@ -7410,7 +7755,8 @@ module.exports =[
       },
       {
         "question_id": 548,
-        "question_text": "Cross reference checking w.r.t. data dictionary board refers to has his",
+        "subs":1,
+"question_text": "Cross reference checking w.r.t. data dictionary board refers to has his",
         "options": [
           {
             "text": "Finding, that there is no inconsistency is quoted in a text fle, and therefore reference is listed in reference file",
@@ -7433,7 +7779,8 @@ module.exports =[
       },
       {
         "question_id": 549,
-        "question_text": "In parallel run of s/w testing 1",
+        "subs":1,
+"question_text": "In parallel run of s/w testing 1",
         "options": [
           {
             "text": "Only computerized run 1:",
@@ -7444,7 +7791,8 @@ module.exports =[
       },
       {
         "question_id": 550,
-        "question_text": "Cost of error correction is least at",
+        "subs":1,
+"question_text": "Cost of error correction is least at",
         "options": [
           {
             "text": "Design stage",
@@ -7467,7 +7815,8 @@ module.exports =[
       },
       {
         "question_id": 551,
-        "question_text": "Variation in debugging: coding ability has been reported to be",
+        "subs":1,
+"question_text": "Variation in debugging: coding ability has been reported to be",
         "options": [
           {
             "text": "1:1",
@@ -7490,7 +7839,8 @@ module.exports =[
       },
       {
         "question_id": 552,
-        "question_text": "In extreme cases variation of coding: debugging ability ofprogrammers has been reported to be",
+        "subs":1,
+"question_text": "In extreme cases variation of coding: debugging ability ofprogrammers has been reported to be",
         "options": [
           {
             "text": "1:2",
@@ -7513,7 +7863,8 @@ module.exports =[
       },
       {
         "question_id": 553,
-        "question_text": "Single entry, single exit constricts with the if, while, sequence and compound statements in C and simulate",
+        "subs":1,
+"question_text": "Single entry, single exit constricts with the if, while, sequence and compound statements in C and simulate",
         "options": [
           {
             "text": "a hypercomputer",
@@ -7536,7 +7887,8 @@ module.exports =[
       },
       {
         "question_id": 554,
-        "question_text": "Form the detailed design speciication. If the coding is done in C++ C assembler the resulting code sizes will be on the average",
+        "subs":1,
+"question_text": "Form the detailed design speciication. If the coding is done in C++ C assembler the resulting code sizes will be on the average",
         "options": [
           {
             "text": "1: 3:4",
@@ -7559,7 +7911,8 @@ module.exports =[
       },
       {
         "question_id": 555,
-        "question_text": "Testing a program thoroughly",
+        "subs":1,
+"question_text": "Testing a program thoroughly",
         "options": [
           {
             "text": "Only some errors will be found",
@@ -7582,7 +7935,8 @@ module.exports =[
       },
       {
         "question_id": 556,
-        "question_text": "Testing can only be initiated",
+        "subs":1,
+"question_text": "Testing can only be initiated",
         "options": [
           {
             "text": "from the design stage only",
@@ -7605,7 +7959,8 @@ module.exports =[
       },
       {
         "question_id": 557,
-        "question_text": "Mr. X wants to find out if his program will execute forever if it runs. So he decides to test it",
+        "subs":1,
+"question_text": "Mr. X wants to find out if his program will execute forever if it runs. So he decides to test it",
         "options": [
           {
             "text": "He has to be clever in the design of her test cases",
@@ -7628,7 +7983,8 @@ module.exports =[
       },
       {
         "question_id": 558,
-        "question_text": "Choose the correct statement war",
+        "subs":1,
+"question_text": "Choose the correct statement war",
         "options": [
           {
             "text": "testing can always be exhaustive",
@@ -7651,7 +8007,8 @@ module.exports =[
       },
       {
         "question_id": 559,
-        "question_text": "Testing can",
+        "subs":1,
+"question_text": "Testing can",
         "options": [
           {
             "text": "can be exhaustive",
@@ -7674,7 +8031,8 @@ module.exports =[
       },
       {
         "question_id": 560,
-        "question_text": "Testing is best done",
+        "subs":1,
+"question_text": "Testing is best done",
         "options": [
           {
             "text": "by the designer",
@@ -7697,7 +8055,8 @@ module.exports =[
       },
       {
         "question_id": 561,
-        "question_text": "Clinton wants to test his module where he had forgotten to initialize x If x = 0 then Write (\"abnormal\") Else Write (\"normal\"); End if;",
+        "subs":1,
+"question_text": "Clinton wants to test his module where he had forgotten to initialize x If x = 0 then Write (\"abnormal\") Else Write (\"normal\"); End if;",
         "options": [
           {
             "text": "The tests will always given repeatable results",
@@ -7720,7 +8079,8 @@ module.exports =[
       },
       {
         "question_id": 565,
-        "question_text": "Which of the following is not a characteristic of good test data?",
+        "subs":1,
+"question_text": "Which of the following is not a characteristic of good test data?",
         "options": [
           {
             "text": "It should be comprehensive",
@@ -7743,7 +8103,8 @@ module.exports =[
       },
       {
         "question_id": 566,
-        "question_text": "The black-box concept",
+        "subs":1,
+"question_text": "The black-box concept",
         "options": [
           {
             "text": "assumes that the black box is independent",
@@ -7766,7 +8127,8 @@ module.exports =[
       },
       {
         "question_id": 567,
-        "question_text": "The black-box concept is based оп assumption(s) that",
+        "subs":1,
+"question_text": "The black-box concept is based оп assumption(s) that",
         "options": [
           {
             "text": "supersystem is stable the",
@@ -7789,7 +8151,8 @@ module.exports =[
       },
       {
         "question_id": 568,
-        "question_text": "In what manner, coding and testing are done?",
+        "subs":1,
+"question_text": "In what manner, coding and testing are done?",
         "options": [
           {
             "text": "Ad-hoc",
@@ -7812,7 +8175,8 @@ module.exports =[
       },
       {
         "question_id": 569,
-        "question_text": "Which of the following might be output as a result of using a CASE tool?",
+        "subs":1,
+"question_text": "Which of the following might be output as a result of using a CASE tool?",
         "options": [
           {
             "text": "Programming code",
@@ -7835,7 +8199,8 @@ module.exports =[
       },
       {
         "question_id": 575,
-        "question_text": "How many types of software testing exist?",
+        "subs":1,
+"question_text": "How many types of software testing exist?",
         "options": [
           {
             "text": "1",
@@ -7858,7 +8223,8 @@ module.exports =[
       },
       {
         "question_id": 576,
-        "question_text": "Which of the following is also known \"Behavioral\" testing?",
+        "subs":1,
+"question_text": "Which of the following is also known \"Behavioral\" testing?",
         "options": [
           {
             "text": "Black-box testing",
@@ -7881,7 +8247,8 @@ module.exports =[
       },
       {
         "question_id": 577,
-        "question_text": "SRS stands for?",
+        "subs":1,
+"question_text": "SRS stands for?",
         "options": [
           {
             "text": "System requirements specification bad",
@@ -7904,7 +8271,8 @@ module.exports =[
       },
       {
         "question_id": 579,
-        "question_text": "Which of the following white-box testing 30 technique is to set up test cases which covers all statements and branch conditions?",
+        "subs":1,
+"question_text": "Which of the following white-box testing 30 technique is to set up test cases which covers all statements and branch conditions?",
         "options": [
           {
             "text": "Data-flow testing",
@@ -7927,7 +8295,8 @@ module.exports =[
       },
       {
         "question_id": 580,
-        "question_text": "Exhaustive testing is?",
+        "subs":1,
+"question_text": "Exhaustive testing is?",
         "options": [
           {
             "text": "always possible",
@@ -7950,13 +8319,15 @@ module.exports =[
       },
       {
         "question_id": 581,
-        "question_text": "Which of the following is not used in measuring utan the size of the software?",
+        "subs":1,
+"question_text": "Which of the following is not used in measuring utan the size of the software?",
         "options": [],
         "correct_answer": null
       },
       {
         "question_id": 582,
-        "question_text": "",
+        "subs":1,
+"question_text": "",
         "options": [
           {
             "text": "Size of module C. KLOC Answer: (a).Size of module",
@@ -7979,7 +8350,8 @@ module.exports =[
       },
       {
         "question_id": 583,
-        "question_text": "Test Automation",
+        "subs":1,
+"question_text": "Test Automation",
         "options": [
           {
             "text": "increases",
@@ -7998,7 +8370,8 @@ module.exports =[
       },
       {
         "question_id": 197,
-        "question_text": "The SRS describes what the system should do with words and figures.",
+        "subs":1,
+"question_text": "The SRS describes what the system should do with words and figures.",
         "options": [
           {
             "text": "True",
@@ -8017,7 +8390,8 @@ module.exports =[
       },
       {
         "question_id": 198,
-        "question_text": "",
+        "subs":1,
+"question_text": "",
         "options": [
           {
             "text": "Class diagram",
@@ -8044,7 +8418,8 @@ module.exports =[
       },
       {
         "question_id": 199,
-        "question_text": "Process of maintaining a record of project development and maintenance.",
+        "subs":1,
+"question_text": "Process of maintaining a record of project development and maintenance.",
         "options": [
           {
             "text": "Process documentation",
@@ -8067,7 +8442,8 @@ module.exports =[
       },
       {
         "question_id": 200,
-        "question_text": "This describes the objectives of a product and set out the constraints. gled",
+        "subs":1,
+"question_text": "This describes the objectives of a product and set out the constraints. gled",
         "options": [
           {
             "text": "SDP",
@@ -8090,7 +8466,8 @@ module.exports =[
       },
       {
         "question_id": 201,
-        "question_text": "provide the detailed, specific",
+        "subs":1,
+"question_text": "provide the detailed, specific",
         "options": [
           {
             "text": "Appendices",
@@ -8113,7 +8490,8 @@ module.exports =[
       },
       {
         "question_id": 202,
-        "question_text": "Which of the following should describe the Bad technical terms used in the document?",
+        "subs":1,
+"question_text": "Which of the following should describe the Bad technical terms used in the document?",
         "options": [
           {
             "text": "glossary",
@@ -8136,13 +8514,15 @@ module.exports =[
       },
       {
         "question_id": 203,
-        "question_text": "The services provided for the user are described",
+        "subs":1,
+"question_text": "The services provided for the user are described",
         "options": [],
         "correct_answer": null
       },
       {
         "question_id": 204,
-        "question_text": "in which section?",
+        "subs":1,
+"question_text": "in which section?",
         "options": [
           {
             "text": "System requirements",
@@ -8181,7 +8561,8 @@ module.exports =[
       },
       {
         "question_id": 205,
-        "question_text": "The graphical models showing the relationships between the system and its environment.",
+        "subs":1,
+"question_text": "The graphical models showing the relationships between the system and its environment.",
         "options": [
           {
             "text": "System models",
@@ -8204,7 +8585,8 @@ module.exports =[
       },
       {
         "question_id": 206,
-        "question_text": "Maintenance and review add to the useful life of the system but can consume large amounts of",
+        "subs":1,
+"question_text": "Maintenance and review add to the useful life of the system but can consume large amounts of",
         "options": [
           {
             "text": "Documents",
@@ -8223,7 +8605,8 @@ module.exports =[
       },
       {
         "question_id": 207,
-        "question_text": "File and",
+        "subs":1,
+"question_text": "File and",
         "options": [
           {
             "text": "Resources database contains the frequency component.",
@@ -8242,7 +8625,8 @@ module.exports =[
       },
       {
         "question_id": 585,
-        "question_text": "Validation is a process is done by?",
+        "subs":1,
+"question_text": "Validation is a process is done by?",
         "options": [
           {
             "text": "developers",
@@ -8257,7 +8641,8 @@ module.exports =[
       },
       {
         "question_id": 586,
-        "question_text": "Verification has a?",
+        "subs":1,
+"question_text": "Verification has a?",
         "options": [
           {
             "text": "dynamic activities",
@@ -8288,7 +8673,8 @@ module.exports =[
       },
       {
         "question_id": 587,
-        "question_text": "Validation occurs after verification",
+        "subs":1,
+"question_text": "Validation occurs after verification",
         "options": [
           {
             "text": "True",
@@ -8311,7 +8697,8 @@ module.exports =[
       },
       {
         "question_id": 588,
-        "question_text": "Which testing includes testing a software manually, i.e. without using any automated tool or any script?",
+        "subs":1,
+"question_text": "Which testing includes testing a software manually, i.e. without using any automated tool or any script?",
         "options": [
           {
             "text": "Automation Testing",
@@ -8334,7 +8721,8 @@ module.exports =[
       },
       {
         "question_id": 589,
-        "question_text": "Which testing comes under manual testing?",
+        "subs":1,
+"question_text": "Which testing comes under manual testing?",
         "options": [
           {
             "text": "Unit testing",
@@ -8357,7 +8745,8 @@ module.exports =[
       },
       {
         "question_id": 135,
-        "question_text": "Automation testing, which is also known as?",
+        "subs":1,
+"question_text": "Automation testing, which is also known as?",
         "options": [
           {
             "text": "Test Design",
@@ -8380,7 +8769,8 @@ module.exports =[
       },
       {
         "question_id": 590,
-        "question_text": "Automation Testing is used to re-run the test scenarios that were performed manually, quickly, and repeatedly.",
+        "subs":1,
+"question_text": "Automation Testing is used to re-run the test scenarios that were performed manually, quickly, and repeatedly.",
         "options": [
           {
             "text": "True",
@@ -8403,7 +8793,8 @@ module.exports =[
       },
       {
         "question_id": 591,
-        "question_text": "In which of the following type of testing, testing is done without planning and documentation?",
+        "subs":1,
+"question_text": "In which of the following type of testing, testing is done without planning and documentation?",
         "options": [
           {
             "text": "Unit testing",
@@ -8422,7 +8813,8 @@ module.exports =[
       },
       {
         "question_id": 592,
-        "question_text": "Which techniqe is applied for usability testing?",
+        "subs":1,
+"question_text": "Which techniqe is applied for usability testing?",
         "options": [
           {
             "text": "White box MERC. Grey box",
@@ -8441,7 +8833,8 @@ module.exports =[
       },
       {
         "question_id": 593,
-        "question_text": "Which of the following is automation testing tool? поп",
+        "subs":1,
+"question_text": "Which of the following is automation testing tool? поп",
         "options": [
           {
             "text": "Selenium",
@@ -8472,7 +8865,8 @@ module.exports =[
       },
       {
         "question_id": 595,
-        "question_text": "Alpha Testing is useful way of compatibility testing.",
+        "subs":1,
+"question_text": "Alpha Testing is useful way of compatibility testing.",
         "options": [
           {
             "text": "True",
@@ -8495,7 +8889,8 @@ module.exports =[
       },
       {
         "question_id": 596,
-        "question_text": "Automation testing is also used to test the application from load, performance, and stress point of view.",
+        "subs":1,
+"question_text": "Automation testing is also used to test the application from load, performance, and stress point of view.",
         "options": [
           {
             "text": "True",
@@ -8518,7 +8913,8 @@ module.exports =[
       },
       {
         "question_id": 597,
-        "question_text": "How many levels of software testing?",
+        "subs":1,
+"question_text": "How many levels of software testing?",
         "options": [
           {
             "text": "1",
@@ -8541,7 +8937,8 @@ module.exports =[
       },
       {
         "question_id": 598,
-        "question_text": "Which type of testing is performed by developers before the setup is handed over to the testing team to formally execute the test cases?",
+        "subs":1,
+"question_text": "Which type of testing is performed by developers before the setup is handed over to the testing team to formally execute the test cases?",
         "options": [
           {
             "text": "Integration Testing",
@@ -8564,7 +8961,8 @@ module.exports =[
       },
       {
         "question_id": 599,
-        "question_text": "Unit Testing cannot catch each and every bug in an application.",
+        "subs":1,
+"question_text": "Unit Testing cannot catch each and every bug in an application.",
         "options": [
           {
             "text": "True",
@@ -8587,7 +8985,8 @@ module.exports =[
       },
       {
         "question_id": 600,
-        "question_text": "Integration testing can be done in",
+        "subs":1,
+"question_text": "Integration testing can be done in",
         "options": [
           {
             "text": "4",
@@ -8610,7 +9009,8 @@ module.exports =[
       },
       {
         "question_id": 601,
-        "question_text": "Which testing has the highest-level modules are tested first and progressively, lower-level modules are tested there after?",
+        "subs":1,
+"question_text": "Which testing has the highest-level modules are tested first and progressively, lower-level modules are tested there after?",
         "options": [
           {
             "text": "Bottom-up integration",
@@ -8633,13 +9033,15 @@ module.exports =[
       },
       {
         "question_id": 602,
-        "question_text": "Beta testing is also known as",
+        "subs":1,
+"question_text": "Beta testing is also known as",
         "options": [],
         "correct_answer": null
       },
       {
         "question_id": 603,
-        "question_text": "",
+        "subs":1,
+"question_text": "",
         "options": [
           {
             "text": "post-release testing",
@@ -8678,7 +9080,8 @@ module.exports =[
       },
       {
         "question_id": 604,
-        "question_text": "Which of the following is type of Non-Functional Testing?",
+        "subs":1,
+"question_text": "Which of the following is type of Non-Functional Testing?",
         "options": [
           {
             "text": "Performance Testing b. Load Testing",
@@ -8697,7 +9100,8 @@ module.exports =[
       },
       {
         "question_id": 605,
-        "question_text": "UI testing involves testing the Graphical User Interface of the Software.",
+        "subs":1,
+"question_text": "UI testing involves testing the Graphical User Interface of the Software.",
         "options": [
           {
             "text": "True",
@@ -8720,7 +9124,8 @@ module.exports =[
       },
       {
         "question_id": 606,
-        "question_text": "Unit testing, integration testing and system testing when combined together is known as alpha edentesting.",
+        "subs":1,
+"question_text": "Unit testing, integration testing and system testing when combined together is known as alpha edentesting.",
         "options": [
           {
             "text": "True",
@@ -8743,7 +9148,8 @@ module.exports =[
       },
       {
         "question_id": 607,
-        "question_text": "Software project management comprises of a number of activities, which contains pairs",
+        "subs":1,
+"question_text": "Software project management comprises of a number of activities, which contains pairs",
         "options": [
           {
             "text": "Project planning c. Project estimation d. All mentioned above",
@@ -8758,7 +9164,8 @@ module.exports =[
       },
       {
         "question_id": 608,
-        "question_text": "Effective software project management focuses on the four P's. What are those four P's?",
+        "subs":1,
+"question_text": "Effective software project management focuses on the four P's. What are those four P's?",
         "options": [
           {
             "text": "People, performance, payment, product",
@@ -8781,7 +9188,8 @@ module.exports =[
       },
       {
         "question_id": 609,
-        "question_text": "Give the Real-world maintenance Cost. factors affecting",
+        "subs":1,
+"question_text": "Give the Real-world maintenance Cost. factors affecting",
         "options": [
           {
             "text": "As technology advances, it becomes costly to maintain old software.t",
@@ -8804,7 +9212,8 @@ module.exports =[
       },
       {
         "question_id": 610,
-        "question_text": "Which Software-end maintenance Cost? factors affecting ost",
+        "subs":1,
+"question_text": "Which Software-end maintenance Cost? factors affecting ost",
         "options": [
           {
             "text": "Structure of Software Program bidali",
@@ -8827,7 +9236,8 @@ module.exports =[
       },
       {
         "question_id": 611,
-        "question_text": "The always growing and adapting nature of software hugely depends upon the environment in which user works in",
+        "subs":1,
+"question_text": "The always growing and adapting nature of software hugely depends upon the environment in which user works in",
         "options": [
           {
             "text": "Cost a be",
@@ -8852,7 +9262,8 @@ module.exports =[
       },
       {
         "question_id": 612,
-        "question_text": "",
+        "subs":1,
+"question_text": "",
         "options": [
           {
             "text": "Dynamic Nature 1",
@@ -8883,7 +9294,8 @@ module.exports =[
       },
       {
         "question_id": 613,
-        "question_text": "What is used for implementing the changes in existing or new requirements of user in software maintenance?",
+        "subs":1,
+"question_text": "What is used for implementing the changes in existing or new requirements of user in software maintenance?",
         "options": [
           {
             "text": "Preventive maintenance",
@@ -8906,7 +9318,8 @@ module.exports =[
       },
       {
         "question_id": 614,
-        "question_text": "Lehman has given eight laws for software evolution and he divided software into three categories. In which category software works strictly according to defined specifications and solutions.",
+        "subs":1,
+"question_text": "Lehman has given eight laws for software evolution and he divided software into three categories. In which category software works strictly according to defined specifications and solutions.",
         "options": [
           {
             "text": "Static-type",
@@ -8929,7 +9342,8 @@ module.exports =[
       },
       {
         "question_id": 615,
-        "question_text": "Which tools are used in implementation,testing and maintenance?",
+        "subs":1,
+"question_text": "Which tools are used in implementation,testing and maintenance?",
         "options": [
           {
             "text": "Upper case tools",
@@ -8952,7 +9366,8 @@ module.exports =[
       },
       {
         "question_id": 616,
-        "question_text": "Software project management is the process of managing all activities that are involved in software development, they are",
+        "subs":1,
+"question_text": "Software project management is the process of managing all activities that are involved in software development, they are",
         "options": [
           {
             "text": "Time C. Quality management",
@@ -8971,7 +9386,8 @@ module.exports =[
       },
       {
         "question_id": 617,
-        "question_text": "What is legacy system?",
+        "subs":1,
+"question_text": "What is legacy system?",
         "options": [
           {
             "text": "A legacy system refers to newer version of software.",
@@ -8994,7 +9410,8 @@ module.exports =[
       },
       {
         "question_id": 618,
-        "question_text": "Who deliver the technical skills that are necessary to engineer for a product or an application?",
+        "subs":1,
+"question_text": "Who deliver the technical skills that are necessary to engineer for a product or an application?",
         "options": [
           {
             "text": "Project managers",
@@ -9017,7 +9434,8 @@ module.exports =[
       },
       {
         "question_id": 619,
-        "question_text": "Which includes modifications and updations done in order to correct or fix the problems, that are either discovered by user or concluded by user 10 error reports? Ren",
+        "subs":1,
+"question_text": "Which includes modifications and updations done in order to correct or fix the problems, that are either discovered by user or concluded by user 10 error reports? Ren",
         "options": [
           {
             "text": "Perfective maintenance",
@@ -9040,7 +9458,8 @@ module.exports =[
       },
       {
         "question_id": 620,
-        "question_text": "Which structures in Organizational Paradigms on a team loosely and depends on individual initiative of the team members? 10",
+        "subs":1,
+"question_text": "Which structures in Organizational Paradigms on a team loosely and depends on individual initiative of the team members? 10",
         "options": [
           {
             "text": "Closed paradigm",
@@ -9063,7 +9482,8 @@ module.exports =[
       },
       {
         "question_id": 621,
-        "question_text": "Which phase is refers to the support phase of software development?",
+        "subs":1,
+"question_text": "Which phase is refers to the support phase of software development?",
         "options": [
           {
             "text": "Acceptance Phase",
@@ -9078,7 +9498,8 @@ module.exports =[
       },
       {
         "question_id": 622,
-        "question_text": "Four types of change are encountered during the support phase. Which one of the following is not one that falls into such category?",
+        "subs":1,
+"question_text": "Four types of change are encountered during the support phase. Which one of the following is not one that falls into such category?",
         "options": [
           {
             "text": "Translation wroc. Adaptation",
@@ -9097,7 +9518,8 @@ module.exports =[
       },
       {
         "question_id": 623,
-        "question_text": "Which tools are used in Implementation, Testing and Maintenance?",
+        "subs":1,
+"question_text": "Which tools are used in Implementation, Testing and Maintenance?",
         "options": [
           {
             "text": "Upper case tools",
@@ -9120,7 +9542,8 @@ module.exports =[
       },
       {
         "question_id": 624,
-        "question_text": "Which tools are used for project planning, cost, effort estimation, project scheduling and resource 40 planning?",
+        "subs":1,
+"question_text": "Which tools are used for project planning, cost, effort estimation, project scheduling and resource 40 planning?",
         "options": [
           {
             "text": "Process modeling tools",
@@ -9143,7 +9566,8 @@ module.exports =[
       },
       {
         "question_id": 625,
-        "question_text": "Which subsystem implements a repository that encompasses the following elements, 1) Content database 2) Database capabilities 3) Configuration management functions",
+        "subs":1,
+"question_text": "Which subsystem implements a repository that encompasses the following elements, 1) Content database 2) Database capabilities 3) Configuration management functions",
         "options": [
           {
             "text": "The publishing subsystem",
@@ -9166,7 +9590,8 @@ module.exports =[
       },
       {
         "question_id": 626,
-        "question_text": "Who manages the effects of change throughout the software process?",
+        "subs":1,
+"question_text": "Who manages the effects of change throughout the software process?",
         "options": [
           {
             "text": "Software project tracking and control",
@@ -9189,7 +9614,8 @@ module.exports =[
       },
       {
         "question_id": 627,
-        "question_text": "System Analysts have which of these following responsibilities?",
+        "subs":1,
+"question_text": "System Analysts have which of these following responsibilities?",
         "options": [
           {
             "text": "Analyzing and understanding requirements of intended software",
@@ -9212,7 +9638,8 @@ module.exports =[
       },
       {
         "question_id": 628,
-        "question_text": "In software maintenance tackling the changes in the hardware and software environment where family the software works, is called",
+        "subs":1,
+"question_text": "In software maintenance tackling the changes in the hardware and software environment where family the software works, is called",
         "options": [
           {
             "text": "Corrective",
@@ -9235,7 +9662,8 @@ module.exports =[
       },
       {
         "question_id": 630,
-        "question_text": "What are security controls ?",
+        "subs":1,
+"question_text": "What are security controls ?",
         "options": [
           {
             "text": "Controls that are intended to ensure that attacks are unsuccessful.",
@@ -9258,7 +9686,8 @@ module.exports =[
       },
       {
         "question_id": 670,
-        "question_text": "Which model is used during early stages of the system design after the requirements have been established?",
+        "subs":1,
+"question_text": "Which model is used during early stages of the system design after the requirements have been established?",
         "options": [
           {
             "text": "An application-composition model",
@@ -9281,7 +9710,8 @@ module.exports =[
       },
       {
         "question_id": 671,
-        "question_text": "Which model is used to compute the effort required to integrate reusable components or program code that is automatically generated by design or program translation tools?",
+        "subs":1,
+"question_text": "Which model is used to compute the effort required to integrate reusable components or program code that is automatically generated by design or program translation tools?",
         "options": [
           {
             "text": "An application-composition model",
@@ -9304,7 +9734,8 @@ module.exports =[
       },
       {
         "question_id": 672,
-        "question_text": "The COCOMO model takes into account different approaches to software development, reuse, et",
+        "subs":1,
+"question_text": "The COCOMO model takes into account different approaches to software development, reuse, et",
         "options": [
           {
             "text": "",
@@ -9331,7 +9762,8 @@ module.exports =[
       },
       {
         "question_id": 673,
-        "question_text": "Which of the following uses empirically derived formulas to predict effort as a function of LOC or FP?",
+        "subs":1,
+"question_text": "Which of the following uses empirically derived formulas to predict effort as a function of LOC or FP?",
         "options": [
           {
             "text": "FP-Based Estimation",
@@ -9354,7 +9786,8 @@ module.exports =[
       },
       {
         "question_id": 674,
-        "question_text": "The empirical data that support most estimation models are derived from a vast sample of projects.",
+        "subs":1,
+"question_text": "The empirical data that support most estimation models are derived from a vast sample of projects.",
         "options": [
           {
             "text": "True",
@@ -9377,7 +9810,8 @@ module.exports =[
       },
       {
         "question_id": 675,
-        "question_text": "Which version of COCOMO states that once requirements have been stabilized, the basic software architecture has been established?",
+        "subs":1,
+"question_text": "Which version of COCOMO states that once requirements have been stabilized, the basic software architecture has been established?",
         "options": [
           {
             "text": "Early design stage model",
@@ -9400,7 +9834,8 @@ module.exports =[
       },
       {
         "question_id": 676,
-        "question_text": "Which model was used during the early stages of software engineering, when prototyping of user interfaces, consideration of software and system interaction, assessment of performance, and evaluation of technology paramount.",
+        "subs":1,
+"question_text": "Which model was used during the early stages of software engineering, when prototyping of user interfaces, consideration of software and system interaction, assessment of performance, and evaluation of technology paramount.",
         "options": [
           {
             "text": "Early design stage model",
@@ -9423,7 +9858,8 @@ module.exports =[
       },
       {
         "question_id": 677,
-        "question_text": "Which one is not a size measure for software product?",
+        "subs":1,
+"question_text": "Which one is not a size measure for software product?",
         "options": [
           {
             "text": "LOC",
@@ -9446,7 +9882,8 @@ module.exports =[
       },
       {
         "question_id": 678,
-        "question_text": "COCOMO was developed initially by",
+        "subs":1,
+"question_text": "COCOMO was developed initially by",
         "options": [
           {
             "text": "B.Beizer",
@@ -9469,7 +9906,8 @@ module.exports =[
       },
       {
         "question_id": 679,
-        "question_text": "Estimation of size for a project is dependent on",
+        "subs":1,
+"question_text": "Estimation of size for a project is dependent on",
         "options": [
           {
             "text": "Cost",
@@ -9492,7 +9930,8 @@ module.exports =[
       },
       {
         "question_id": 680,
-        "question_text": "COCOMO-II was developed at",
+        "subs":1,
+"question_text": "COCOMO-II was developed at",
         "options": [
           {
             "text": "University of Texas",
@@ -9515,7 +9954,8 @@ module.exports =[
       },
       {
         "question_id": 681,
-        "question_text": "Which one is not a stage of COCOMO-II?",
+        "subs":1,
+"question_text": "Which one is not a stage of COCOMO-II?",
         "options": [
           {
             "text": "Early design estimation model",
@@ -9538,7 +9978,8 @@ module.exports =[
       },
       {
         "question_id": 682,
-        "question_text": "Why is decomposition technique required? and",
+        "subs":1,
+"question_text": "Why is decomposition technique required? and",
         "options": [
           {
             "text": "Software project estimation is a form of problem solving",
@@ -9561,7 +10002,8 @@ module.exports =[
       },
       {
         "question_id": 683,
-        "question_text": "Cost and effort estimation of a software uses only one forms of decomposition, either decomposition of the problem or decomposition of the process.",
+        "subs":1,
+"question_text": "Cost and effort estimation of a software uses only one forms of decomposition, either decomposition of the problem or decomposition of the process.",
         "options": [
           {
             "text": "True",
@@ -9584,7 +10026,8 @@ module.exports =[
       },
       {
         "question_id": 684,
-        "question_text": "If a Direct approach to software project sizing is taken, size can be measured in",
+        "subs":1,
+"question_text": "If a Direct approach to software project sizing is taken, size can be measured in",
         "options": [
           {
             "text": "LOC",
@@ -9607,7 +10050,8 @@ module.exports =[
       },
       {
         "question_id": 685,
-        "question_text": "Which software project sizing approach develop estimates of the information domain characteristics?",
+        "subs":1,
+"question_text": "Which software project sizing approach develop estimates of the information domain characteristics?",
         "options": [
           {
             "text": "Function point sizing",
@@ -9630,7 +10074,8 @@ module.exports =[
       },
       {
         "question_id": 686,
-        "question_text": "The expected value for the estimation variable (size), S, can be computed as a weighted average of the optimistic(Sopt), most likely (Sm), and pessimistic (Spess) estimates given as",
+        "subs":1,
+"question_text": "The expected value for the estimation variable (size), S, can be computed as a weighted average of the optimistic(Sopt), most likely (Sm), and pessimistic (Spess) estimates given as",
         "options": [
           {
             "text": "EV = (Sopt + 4Sm + Spess)/4",
@@ -9653,7 +10098,8 @@ module.exports =[
       },
       {
         "question_id": 687,
-        "question_text": "How many forms exists of Barry Boehm's COCOMO Model?",
+        "subs":1,
+"question_text": "How many forms exists of Barry Boehm's COCOMO Model?",
         "options": [
           {
             "text": "Two",
@@ -9676,7 +10122,8 @@ module.exports =[
       },
       {
         "question_id": 688,
-        "question_text": "Who suggested the four different approaches to the sizing problem?",
+        "subs":1,
+"question_text": "Who suggested the four different approaches to the sizing problem?",
         "options": [
           {
             "text": "Putnam",
@@ -9699,7 +10146,8 @@ module.exports =[
       },
       {
         "question_id": 709,
-        "question_text": "Which type of software engineering team has a defined leader who coordinates specific tasks and secondary leaders that have responsibility for sub tasks?",
+        "subs":1,
+"question_text": "Which type of software engineering team has a defined leader who coordinates specific tasks and secondary leaders that have responsibility for sub tasks?",
         "options": [
           {
             "text": "Controlled decentralized (CD)",
@@ -9722,7 +10170,8 @@ module.exports =[
       },
       {
         "question_id": 710,
-        "question_text": "Commitments to unrealistic time and resource estimates may result in",
+        "subs":1,
+"question_text": "Commitments to unrealistic time and resource estimates may result in",
         "options": [
           {
             "text": "project delay",
@@ -9745,7 +10194,8 @@ module.exports =[
       },
       {
         "question_id": 711,
-        "question_text": "Which software engineering team has no permanent leader?",
+        "subs":1,
+"question_text": "Which software engineering team has no permanent leader?",
         "options": [
           {
             "text": "Controlled decentralized (CD)",
@@ -9768,7 +10218,8 @@ module.exports =[
       },
       {
         "question_id": 712,
-        "question_text": "Which of the following is not a project factor that should be considered when planning the structure of software engineering teams?",
+        "subs":1,
+"question_text": "Which of the following is not a project factor that should be considered when planning the structure of software engineering teams?",
         "options": [
           {
             "text": "The difficulty of the problem to be solved b. High frustration caused by personal, business, or technological factors that causes friction among team members",
@@ -9783,7 +10234,8 @@ module.exports =[
       },
       {
         "question_id": 714,
-        "question_text": "Which activity sits at the core of software requirements analysis?",
+        "subs":1,
+"question_text": "Which activity sits at the core of software requirements analysis?",
         "options": [
           {
             "text": "Problem decomposition",
@@ -9806,7 +10258,8 @@ module.exports =[
       },
       {
         "question_id": 715,
-        "question_text": "Which of the following is not a sign that indicates that an information systems project is in jeopardy?",
+        "subs":1,
+"question_text": "Which of the following is not a sign that indicates that an information systems project is in jeopardy?",
         "options": [
           {
             "text": "Software people people don't understand their customer's needs",
@@ -9829,7 +10282,8 @@ module.exports =[
       },
       {
         "question_id": 716,
-        "question_text": "SPMP stands for __",
+        "subs":1,
+"question_text": "SPMP stands for __",
         "options": [
           {
             "text": "Software Project Manager's Plan",
@@ -9852,7 +10306,8 @@ module.exports =[
       },
       {
         "question_id": 717,
-        "question_text": "Which of the following categories is part of the output of software process?",
+        "subs":1,
+"question_text": "Which of the following categories is part of the output of software process?",
         "options": [
           {
             "text": "computer programs",
@@ -9875,7 +10330,8 @@ module.exports =[
       },
       {
         "question_id": 208,
-        "question_text": "This is not a part of the signing on procedure.",
+        "subs":1,
+"question_text": "This is not a part of the signing on procedure.",
         "options": [
           {
             "text": "Identification",
@@ -9890,7 +10346,8 @@ module.exports =[
       },
       {
         "question_id": 209,
-        "question_text": "A",
+        "subs":1,
+"question_text": "A",
         "options": [
           {
             "text": "Verification",
@@ -9921,7 +10378,8 @@ module.exports =[
       },
       {
         "question_id": 210,
-        "question_text": "A type of testing that is conducted at the software interface.",
+        "subs":1,
+"question_text": "A type of testing that is conducted at the software interface.",
         "options": [
           {
             "text": "gray box",
@@ -9944,7 +10402,8 @@ module.exports =[
       },
       {
         "question_id": 211,
-        "question_text": "A simple notation for the representation of control flow.",
+        "subs":1,
+"question_text": "A simple notation for the representation of control flow.",
         "options": [
           {
             "text": "System flow",
@@ -9967,7 +10426,8 @@ module.exports =[
       },
       {
         "question_id": 212,
-        "question_text": "A software metric that provides a quantitative measure of the logical complexity of a program.",
+        "subs":1,
+"question_text": "A software metric that provides a quantitative measure of the logical complexity of a program.",
         "options": [
           {
             "text": "Cyclomatic complexity",
@@ -9990,7 +10450,8 @@ module.exports =[
       },
       {
         "question_id": 213,
-        "question_text": "An expression for the calculation of cyclomatic complexity.",
+        "subs":1,
+"question_text": "An expression for the calculation of cyclomatic complexity.",
         "options": [
           {
             "text": "V(G) E-N+2",
@@ -10013,7 +10474,8 @@ module.exports =[
       },
       {
         "question_id": 214,
-        "question_text": "The probability of failure-free operation of a software application in a specified environment for a specified time.",
+        "subs":1,
+"question_text": "The probability of failure-free operation of a software application in a specified environment for a specified time.",
         "options": [
           {
             "text": "Software Quality d. Software Safety",
@@ -10028,13 +10490,15 @@ module.exports =[
       },
       {
         "question_id": 215,
-        "question_text": "SCM stands for",
+        "subs":1,
+"question_text": "SCM stands for",
         "options": [],
         "correct_answer": null
       },
       {
         "question_id": 216,
-        "question_text": "",
+        "subs":1,
+"question_text": "",
         "options": [
           {
             "text": "Software configuration monitoring",
@@ -10057,7 +10521,8 @@ module.exports =[
       },
       {
         "question_id": 217,
-        "question_text": "Testing is conducted by the developers in testing phase.",
+        "subs":1,
+"question_text": "Testing is conducted by the developers in testing phase.",
         "options": [
           {
             "text": "True",
@@ -10080,13 +10545,15 @@ module.exports =[
       },
       {
         "question_id": 218,
-        "question_text": "Process of evaluating a system to verify whether or not it is meeting its objectives. 52 of 983",
+        "subs":1,
+"question_text": "Process of evaluating a system to verify whether or not it is meeting its objectives. 52 of 983",
         "options": [],
         "correct_answer": null
       },
       {
         "question_id": 119,
-        "question_text": "A point not considered in system evaluation.",
+        "subs":1,
+"question_text": "A point not considered in system evaluation.",
         "options": [
           {
             "text": "Process control",
@@ -10105,7 +10572,8 @@ module.exports =[
       },
       {
         "question_id": 220,
-        "question_text": "Incorporating changes in an existing system to enhance, update, or upgrade its features.",
+        "subs":1,
+"question_text": "Incorporating changes in an existing system to enhance, update, or upgrade its features.",
         "options": [
           {
             "text": "Maintenance",
@@ -10128,7 +10596,8 @@ module.exports =[
       },
       {
         "question_id": 121,
-        "question_text": "",
+        "subs":1,
+"question_text": "",
         "options": [
           {
             "text": "Alpha Testing",
@@ -10143,7 +10612,8 @@ module.exports =[
       },
       {
         "question_id": 222,
-        "question_text": "",
+        "subs":1,
+"question_text": "",
         "options": [
           {
             "text": "Alpha Testing",
@@ -10174,7 +10644,8 @@ module.exports =[
       },
       {
         "question_id": 123,
-        "question_text": "The probability that a software application is operating according to requirements at a given point in time.",
+        "subs":1,
+"question_text": "The probability that a software application is operating according to requirements at a given point in time.",
         "options": [
           {
             "text": "Software Reliability",
@@ -10197,7 +10668,8 @@ module.exports =[
       },
       {
         "question_id": 224,
-        "question_text": "A model that is the demo implementation of the system.",
+        "subs":1,
+"question_text": "A model that is the demo implementation of the system.",
         "options": [
           {
             "text": "waterfall",
@@ -10220,7 +10692,8 @@ module.exports =[
       },
       {
         "question_id": 225,
-        "question_text": "Maintenance is the final phase in waterfall model.",
+        "subs":1,
+"question_text": "Maintenance is the final phase in waterfall model.",
         "options": [
           {
             "text": "True",
@@ -10243,13 +10716,15 @@ module.exports =[
       },
       {
         "question_id": 126,
-        "question_text": "A stage in which individual components are integrated and ensured that they are error-free to",
+        "subs":1,
+"question_text": "A stage in which individual components are integrated and ensured that they are error-free to",
         "options": [],
         "correct_answer": null
       },
       {
         "question_id": 227,
-        "question_text": "meet customer requirements.",
+        "subs":1,
+"question_text": "meet customer requirements.",
         "options": [
           {
             "text": "Coding",
@@ -10288,7 +10763,8 @@ module.exports =[
       },
       {
         "question_id": 228,
-        "question_text": "The customer requirements are broken down into logical modules for ease of",
+        "subs":1,
+"question_text": "The customer requirements are broken down into logical modules for ease of",
         "options": [
           {
             "text": "inheritance",
@@ -10303,7 +10779,8 @@ module.exports =[
       },
       {
         "question_id": 229,
-        "question_text": "What do you call",
+        "subs":1,
+"question_text": "What do you call",
         "options": [
           {
             "text": "design",
@@ -10334,7 +10811,8 @@ module.exports =[
       },
       {
         "question_id": 230,
-        "question_text": "A step in waterfall model that involves a meeting with the customer to understand the requirements.",
+        "subs":1,
+"question_text": "A step in waterfall model that involves a meeting with the customer to understand the requirements.",
         "options": [
           {
             "text": "Requirement Gathering",
@@ -10357,7 +10835,8 @@ module.exports =[
       },
       {
         "question_id": 231,
-        "question_text": "Methodology in which project management processes were step-by step.",
+        "subs":1,
+"question_text": "Methodology in which project management processes were step-by step.",
         "options": [
           {
             "text": "Incremental",
@@ -10380,7 +10859,8 @@ module.exports =[
       },
       {
         "question_id": 232,
-        "question_text": "An individual who plans and directs the work.",
+        "subs":1,
+"question_text": "An individual who plans and directs the work.",
         "options": [
           {
             "text": "Stakeholder",
@@ -10403,7 +10883,8 @@ module.exports =[
       },
       {
         "question_id": 233,
-        "question_text": "A planned program if work that requires a definitive amount of time, effort and planning to complete.",
+        "subs":1,
+"question_text": "A planned program if work that requires a definitive amount of time, effort and planning to complete.",
         "options": [
           {
             "text": "Problem",
@@ -10426,7 +10907,8 @@ module.exports =[
       },
       {
         "question_id": 234,
-        "question_text": "A set of activities that ensure that software correctly implements a specific function.cz",
+        "subs":1,
+"question_text": "A set of activities that ensure that software correctly implements a specific function.cz",
         "options": [
           {
             "text": "verification",
@@ -10449,7 +10931,8 @@ module.exports =[
       },
       {
         "question_id": 235,
-        "question_text": "Validation is computer base",
+        "subs":1,
+"question_text": "Validation is computer base",
         "options": [
           {
             "text": "",
@@ -10468,7 +10951,8 @@ module.exports =[
       },
       {
         "question_id": 236,
-        "question_text": "the debuggers.",
+        "subs":1,
+"question_text": "the debuggers.",
         "options": [
           {
             "text": "Coding c. Debugging is done in the development phase by",
@@ -10485,32 +10969,11 @@ module.exports =[
         ],
         "correct_answer": "C"
       },
-      {
-        "question_id": 237,
-        "question_text": "Locating or identifying the bugs is known as",
-        "options": [
-          {
-            "text": "Design",
-            "value": "A"
-          },
-          {
-            "text": "Testing",
-            "value": "B"
-          },
-          {
-            "text": "Debugging",
-            "value": "C"
-          },
-          {
-            "text": "Coding",
-            "value": "D"
-          },
-        ],
-        "correct_answer": "B"
-      },
+
       {
         "question_id": 238,
-        "question_text": " Which defines the role of software?",
+        "subs":1,
+"question_text": " Which defines the role of software?",
         "options": [
           {
             "text": "System design",
@@ -10533,7 +10996,8 @@ module.exports =[
       },
       {
         "question_id": 239,
-        "question_text": "What do you call testing individual components?",
+        "subs":1,
+"question_text": "What do you call testing individual components?",
         "options": [
           {
             "text": "system testing",
@@ -10556,7 +11020,8 @@ module.exports =[
       },
       {
         "question_id": 240,
-        "question_text": "A testing strategy that test the application as a whole.",
+        "subs":1,
+"question_text": "A testing strategy that test the application as a whole.",
         "options": [
           {
             "text": "Requirement Gathering b. Verification testing",
@@ -10575,7 +11040,8 @@ module.exports =[
       },
       {
         "question_id": 241,
-        "question_text": "A testing strategy that tests the application in the context of an entire system.",
+        "subs":1,
+"question_text": "A testing strategy that tests the application in the context of an entire system.",
         "options": [
           {
             "text": "System",
@@ -10594,7 +11060,8 @@ module.exports =[
       },
       {
         "question_id": 242,
-        "question_text": "Ais tested to ensure that information properly flows into and out of the system .",
+        "subs":1,
+"question_text": "Ais tested to ensure that information properly flows into and out of the system .",
         "options": [
           {
             "text": "module interface",
@@ -10617,7 +11084,8 @@ module.exports =[
       },
       {
         "question_id": 243,
-        "question_text": "A testing conducted at the developer's site under validation testing.",
+        "subs":1,
+"question_text": "A testing conducted at the developer's site under validation testing.",
         "options": [
           {
             "text": "alpha",
@@ -10632,7 +11100,8 @@ module.exports =[
       },
       {
         "question_id": 244,
-        "question_text": "A information",
+        "subs":1,
+"question_text": "A information",
         "options": [
           {
             "text": "gamma",
@@ -10663,7 +11132,8 @@ module.exports =[
       },
       {
         "question_id": 245,
-        "question_text": "Abstraction combines the data and functions into a single unit called a class.",
+        "subs":1,
+"question_text": "Abstraction combines the data and functions into a single unit called a class.",
         "options": [
           {
             "text": "True",
@@ -10686,7 +11156,8 @@ module.exports =[
       },
       {
         "question_id": 246,
-        "question_text": "The process of forming a new class from an existing class.",
+        "subs":1,
+"question_text": "The process of forming a new class from an existing class.",
         "options": [
           {
             "text": "Abstraction",
@@ -10709,7 +11180,8 @@ module.exports =[
       },
       {
         "question_id": 247,
-        "question_text": "This concept allows routines to use data again at different times.",
+        "subs":1,
+"question_text": "This concept allows routines to use data again at different times.",
         "options": [
           {
             "text": "Abstraction",
@@ -10732,7 +11204,8 @@ module.exports =[
       },
       {
         "question_id": 248,
-        "question_text": "The ability for programmers to use the same written and debugged existing class.",
+        "subs":1,
+"question_text": "The ability for programmers to use the same written and debugged existing class.",
         "options": [
           {
             "text": "Reusability",
@@ -10755,7 +11228,8 @@ module.exports =[
       },
       {
         "question_id": 249,
-        "question_text": "A concept that combines data and functions into a single unit called class.",
+        "subs":1,
+"question_text": "A concept that combines data and functions into a single unit called class.",
         "options": [
           {
             "text": "inheritance",
@@ -10770,7 +11244,8 @@ module.exports =[
       },
       {
         "question_id": 250,
-        "question_text": "class.",
+        "subs":1,
+"question_text": "class.",
         "options": [
           {
             "text": "module",
@@ -10801,7 +11276,9 @@ module.exports =[
       },
       {
         "question_id": 251,
-        "question_text": "A basic unit of object-oriented programming.",
+        
+        "subs":1,
+"question_text": "A basic unit of object-oriented programming.",
         "options": [
           {
             "text": "module",
@@ -10824,7 +11301,8 @@ module.exports =[
       },
       {
         "question_id": 252,
-        "question_text": "A procedural programming follows approach.",
+        "subs":1,
+"question_text": "A procedural programming follows approach.",
         "options": [
           {
             "text": "top-down",
@@ -10847,7 +11325,8 @@ module.exports =[
       },
       {
         "question_id": 253,
-        "question_text": "A programming technique in which the focus is on doing things.",
+        "subs":1,
+"question_text": "A programming technique in which the focus is on doing things.",
         "options": [
           {
             "text": "object oriented",

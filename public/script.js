@@ -23,14 +23,18 @@ function updateSubtopics() {
             .then(response => response.json())
             .then(classifiedSubtopics => {
                 if (Object.keys(classifiedSubtopics).length > 0) {
+                    const addedSubtopics = new Set();
                     for (const [subsValue, subtopics] of Object.entries(classifiedSubtopics)) {
                         const optgroup = document.createElement('optgroup');
                         optgroup.label = `Subs: ${subsValue}`;
                         subtopics.forEach(subtopic => {
-                            const option = document.createElement('option');
-                            option.value = subsValue; // Use subsValue as the value
-                            option.textContent = subtopic;
-                            optgroup.appendChild(option);
+                            if (!addedSubtopics.has(subtopic)) {
+                                const option = document.createElement('option');
+                                option.value = subtopic; // Use subtopic as the value
+                                option.textContent = subtopic;
+                                optgroup.appendChild(option);
+                                addedSubtopics.add(subtopic);
+                            }
                         });
                         subtopicSelect.appendChild(optgroup);
                     }
@@ -360,14 +364,18 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(classifiedSubtopics => {
           if (Object.keys(classifiedSubtopics).length > 0) {
+            const addedSubtopics = new Set();
             for (const [subsValue, subtopics] of Object.entries(classifiedSubtopics)) {
               const optgroup = document.createElement('optgroup');
               optgroup.label = `Subs: ${subsValue}`;
               subtopics.forEach(subtopic => {
-                const option = document.createElement('option');
-                option.value = subsValue; // Use subsValue as the value
-                option.textContent = subtopic;
-                optgroup.appendChild(option);
+                if (!addedSubtopics.has(subtopic)) {
+                  const option = document.createElement('option');
+                  option.value = subtopic; // Use subtopic as the value
+                  option.textContent = subtopic;
+                  optgroup.appendChild(option);
+                  addedSubtopics.add(subtopic);
+                }
               });
               subtopicSelect.appendChild(optgroup);
             }
