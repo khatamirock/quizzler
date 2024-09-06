@@ -1,7 +1,8 @@
 module.exports =[
     {
         "question_id": 580,
-        "question_text": "S, R is called the determinant.",
+        "subs":1,
+"question_text": "S, R is called the determinant.",
         "options": [
             {
                 "text": "a) a) True",
@@ -24,7 +25,8 @@ module.exports =[
     },
     {
         "question_id": 581,
-        "question_text": "Relations are categorized into normal forms according to the referential integrity constraints that they have.",
+        "subs":1,
+"question_text": "Relations are categorized into normal forms according to the referential integrity constraints that they have.",
         "options": [
             {
                 "text": "a) a) True",
@@ -47,7 +49,8 @@ module.exports =[
     },
     {
         "question_id": 582,
-        "question_text": "A relation is in Boyce-Codd Normal Form (BCNF) if every determinant is a composite key.",
+        "subs":1,
+"question_text": "A relation is in Boyce-Codd Normal Form (BCNF) if every determinant is a composite key.",
         "options": [
             {
                 "text": "a) a) True",
@@ -70,7 +73,8 @@ module.exports =[
     },
     {
         "question_id": 583,
-        "question_text": "A functional dependency is always an equation.",
+        "subs":1,
+"question_text": "A functional dependency is always an equation.",
         "options": [
             {
                 "text": "a) a) True",
@@ -93,7 +97,8 @@ module.exports =[
     },
     {
         "question_id": 584,
-        "question_text": "The SQL command to create a table is:",
+        "subs":1,
+"question_text": "The SQL command to create a table is:",
         "options": [
             {
                 "text": "a) a) MAKE TABLE",
@@ -116,7 +121,8 @@ module.exports =[
     },
     {
         "question_id": 585,
-        "question_text": "A trigger",
+        "subs":1,
+"question_text": "A trigger",
         "options": [
             {
                 "text": "a) a) pseudofile",
@@ -139,7 +145,8 @@ module.exports =[
     },
     {
         "question_id": 586,
-        "question_text": "The DROP TABLE statement:",
+        "subs":1,
+"question_text": "The DROP TABLE statement:",
         "options": [
             {
                 "text": "a) a) deletes the table structure along with data",
@@ -162,7 +169,8 @@ module.exports =[
     },
     {
         "question_id": 587,
-        "question_text": "SQL views can be used to hide:",
+        "subs":1,
+"question_text": "SQL views can be used to hide:",
         "options": [
             {
                 "text": "a) a) columns and rows",
@@ -185,7 +193,8 @@ module.exports =[
     },
     {
         "question_id": 588,
-        "question_text": "The SQL statement to create a view is:",
+        "subs":1,
+"question_text": "The SQL statement to create a view is:",
         "options": [
             {
                 "text": "a) a) CREATE VIEW",
@@ -209,7 +218,8 @@ module.exports =[
   
     {
         "question_id": 2,
-        "question_text": "Cascading updates refers to child rows being automatically deleted when a parent row is deleted. True",
+        "subs":1,
+"question_text": "Cascading updates refers to child rows being automatically deleted when a parent row is deleted. True",
         "options": [
             {
                 "text": "a) a) True",
@@ -232,7 +242,8 @@ module.exports =[
     },
     {
         "question_id": 3,
-        "question_text": "When transforming an entity-relationship model into a relational database design, each entity is represented as a table. True",
+        "subs":1,
+"question_text": "When transforming an entity-relationship model into a relational database design, each entity is represented as a table. True",
         "options": [
             {
                 "text": "a) a) True",
@@ -255,7 +266,8 @@ module.exports =[
     },
     {
         "question_id": 4,
-        "question_text": "Surrogate keys have much meaning for users. True",
+        "subs":1,
+"question_text": "Surrogate keys have much meaning for users. True",
         "options": [
             {
                 "text": "a) a) True",
@@ -278,7 +290,8 @@ module.exports =[
     },
     {
         "question_id": 39,
-        "question_text": "When the child entity is required, we are restricted from creating a new parent row without also creating a corresponding child row at the same time. True",
+        "subs":1,
+"question_text": "When the child entity is required, we are restricted from creating a new parent row without also creating a corresponding child row at the same time. True",
         "options": [
             {
                 "text": "a) a) True",
@@ -301,7 +314,8 @@ module.exports =[
     },
     {
         "question_id": 790,
-        "question_text": "Which of the following SQL statements are helpful in database redesign? A. Correlated subqueries only",
+        "subs":1,
+"question_text": "Which of the following SQL statements are helpful in database redesign? A. Correlated subqueries only",
         "options": [
             {
                 "text": "a) a) Correlated subqueries only",
@@ -324,7 +338,8 @@ module.exports =[
     },
     {
         "question_id": 791,
-        "question_text": "What SQL command can be used to delete columns from a table? A. MODIFY TABLE",
+        "subs":1,
+"question_text": "What SQL command can be used to delete columns from a table? A. MODIFY TABLE",
         "options": [
             {
                 "text": "a) a) MODIFY TABLE",
@@ -347,7 +362,8 @@ module.exports =[
     },
     {
         "question_id": 762,
-        "question_text": "What are the disadvantages of depending heavily on a single vendor?",
+        "subs":1,
+"question_text": "What are the disadvantages of depending heavily on a single vendor?",
         "options": [
             {
                 "text": "a) a) Reduced training costs",
@@ -370,7 +386,8 @@ module.exports =[
     },
     {
         "question_id": 763,
-        "question_text": "What type of constraint is used to specify a set of possible values for a column?",
+        "subs":1,
+"question_text": "What type of constraint is used to specify a set of possible values for a column?",
         "options": [
             {
                 "text": "a) a) Domain constraint",
@@ -393,7 +410,8 @@ module.exports =[
     },
     {
         "question_id": 764,
-        "question_text": "Which column property specifies whether a column can contain a data value?",
+        "subs":1,
+"question_text": "Which column property specifies whether a column can contain a data value?",
         "options": [
             {
                 "text": "a) a> Null status",
@@ -416,7 +434,8 @@ module.exports =[
     },
     {
         "question_id": 765,
-        "question_text": "How should a primary key be defined?",
+        "subs":1,
+"question_text": "How should a primary key be defined?",
         "options": [
             {
                 "text": "a) a> NULL",
@@ -439,7 +458,8 @@ module.exports =[
     },
     {
         "question_id": 766,
-        "question_text": "Which column property is used to specify a monetary value?",
+        "subs":1,
+"question_text": "Which column property is used to specify a monetary value?",
         "options": [
             {
                 "text": "a) a> Data type",
@@ -462,7 +482,8 @@ module.exports =[
     },
     {
         "question_id": 767,
-        "question_text": "When is the use of ID-dependent entities required?",
+        "subs":1,
+"question_text": "When is the use of ID-dependent entities required?",
         "options": [
             {
                 "text": "a) a> Association relationships only",
@@ -485,7 +506,8 @@ module.exports =[
     },
     {
         "question_id": 1,
-        "question_text": "In SQL, GRANT command is used to",
+        "subs":1,
+"question_text": "In SQL, GRANT command is used to",
         "options": [
             {
                 "text": "a) a) allow user to access databases",
@@ -508,7 +530,8 @@ module.exports =[
     },
     {
         "question_id": 1,
-        "question_text": "What is the default extension for SQL*Plus?",
+        "subs":1,
+"question_text": "What is the default extension for SQL*Plus?",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -531,7 +554,8 @@ module.exports =[
     },
     {
         "question_id": 2,
-        "question_text": "The left-leaning slash tells Oracle to execute whatever statement is in the buffer.",
+        "subs":1,
+"question_text": "The left-leaning slash tells Oracle to execute whatever statement is in the buffer.",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -554,7 +578,8 @@ module.exports =[
     },
     {
         "question_id": 3,
-        "question_text": "The semicolon terminates a SQL statement (and executes it).",
+        "subs":1,
+"question_text": "The semicolon terminates a SQL statement (and executes it).",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -577,7 +602,8 @@ module.exports =[
     },
     {
         "question_id": 4,
-        "question_text": "SQL*Plus is a text editor.",
+        "subs":1,
+"question_text": "SQL*Plus is a text editor.",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -600,7 +626,8 @@ module.exports =[
     },
     {
         "question_id": 5,
-        "question_text": "When you type Start FILENAME, the statement in your file will be executed automatically.",
+        "subs":1,
+"question_text": "When you type Start FILENAME, the statement in your file will be executed automatically.",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -623,7 +650,8 @@ module.exports =[
     },
     {
         "question_id": 6,
-        "question_text": "You can check on the status of tables with the DESCRIBE or DESC command.",
+        "subs":1,
+"question_text": "You can check on the status of tables with the DESCRIBE or DESC command.",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -646,7 +674,8 @@ module.exports =[
     },
     {
         "question_id": 7,
-        "question_text": "What is Hypertext Transfer Protocol (HTTP)?",
+        "subs":1,
+"question_text": "What is Hypertext Transfer Protocol (HTTP)?",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -669,7 +698,8 @@ module.exports =[
     },
     {
         "question_id": 8,
-        "question_text": "The benefits of object-oriented modeling are which of the following?",
+        "subs":1,
+"question_text": "The benefits of object-oriented modeling are which of the following?",
         "options": [
             {
                 "text": "a) Reusability",
@@ -693,7 +723,8 @@ module.exports =[
     
     {
         "question_id": 9,
-        "question_text": "The term Incomplete for a UML has the",
+        "subs":1,
+"question_text": "The term Incomplete for a UML has the",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -716,7 +747,8 @@ module.exports =[
     },
     {
         "question_id": 719,
-        "question_text": "A distributed database has which of the following advantages over a centralized database?",
+        "subs":1,
+"question_text": "A distributed database has which of the following advantages over a centralized database?",
         "options": [
             {
                 "text": "a) b) Software complexity",
@@ -739,7 +771,8 @@ module.exports =[
     },
     {
         "question_id": 721,
-        "question_text": "A transaction manager is which of the following?",
+        "subs":1,
+"question_text": "A transaction manager is which of the following?",
         "options": [
             {
                 "text": "a) b) Maintains appropriate concurrency",
@@ -762,7 +795,8 @@ module.exports =[
     },
     {
         "question_id": 129,
-        "question_text": "Which of the following is not true of the traditional approach to information processing?",
+        "subs":1,
+"question_text": "Which of the following is not true of the traditional approach to information processing?",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -785,7 +819,8 @@ module.exports =[
     },
     {
         "question_id": 130,
-        "question_text": "Batch processing is appropriate if",
+        "subs":1,
+"question_text": "Batch processing is appropriate if",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -808,7 +843,8 @@ module.exports =[
     },
     {
         "question_id": 131,
-        "question_text": "What is the abbreviation used for a software package that permits the users to create, retrieve and maintain records in a database?",
+        "subs":1,
+"question_text": "What is the abbreviation used for a software package that permits the users to create, retrieve and maintain records in a database?",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -831,7 +867,8 @@ module.exports =[
     },
     {
         "question_id": 133,
-        "question_text": "A data dictionary doesn't provide information about:",
+        "subs":1,
+"question_text": "A data dictionary doesn't provide information about:",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -854,7 +891,8 @@ module.exports =[
     },
     {
         "question_id": 134,
-        "question_text": "Data encryption techniques are particularly useful for:",
+        "subs":1,
+"question_text": "Data encryption techniques are particularly useful for:",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -877,7 +915,8 @@ module.exports =[
     },
     {
         "question_id": 1,
-        "question_text": "An audit trail is used to make",
+        "subs":1,
+"question_text": "An audit trail is used to make",
         "options": [
             {
                 "text": "a) a) Back-up copies",
@@ -900,7 +939,8 @@ module.exports =[
     },
     {
         "question_id": 2,
-        "question_text": "A race condition occurs when",
+        "subs":1,
+"question_text": "A race condition occurs when",
         "options": [
             {
                 "text": "a) a) Two concurrent activities interact to cause a processing error",
@@ -923,7 +963,8 @@ module.exports =[
     },
     {
         "question_id": 595,
-        "question_text": "A reason for using an SQL view to hide columns is:",
+        "subs":1,
+"question_text": "A reason for using an SQL view to hide columns is:",
         "options": [
             {
                 "text": "a) A",
@@ -946,7 +987,8 @@ module.exports =[
     },
     {
         "question_id": 597,
-        "question_text": "The SQL ALTER statement",
+        "subs":1,
+"question_text": "The SQL ALTER statement",
         "options": [
             {
                 "text": "a) A",
@@ -969,7 +1011,8 @@ module.exports =[
     },
     {
         "question_id": 601,
-        "question_text": "Views constructed from SQL SELECT statements that conform to the SQL-92 standard may not contain:",
+        "subs":1,
+"question_text": "Views constructed from SQL SELECT statements that conform to the SQL-92 standard may not contain:",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -992,7 +1035,8 @@ module.exports =[
     },
     {
         "question_id": 580,
-        "question_text": "S, R is called the determinant.",
+        "subs":1,
+"question_text": "S, R is called the determinant.",
         "options": [
             {
                 "text": "a) a) True",
@@ -1015,7 +1059,8 @@ module.exports =[
     },
     {
         "question_id": 581,
-        "question_text": "some other question.",
+        "subs":1,
+"question_text": "some other question.",
         "options": [
             {
                 "text": "a) a) MOST",
@@ -1038,7 +1083,8 @@ module.exports =[
     },
     {
         "question_id": 312,
-        "question_text": "The various departments of an organization The business processes the support the mission of an organization",
+        "subs":1,
+"question_text": "The various departments of an organization The business processes the support the mission of an organization",
         "options": [
             {
                 "text": "a) A",
@@ -1061,7 +1107,8 @@ module.exports =[
     },
     {
         "question_id": 805,
-        "question_text": "What SQL command will allow you to change the table STUDENT to add the constraint named GradeCheck that states that the values of the Grade column must be greater than 0?",
+        "subs":1,
+"question_text": "What SQL command will allow you to change the table STUDENT to add the constraint named GradeCheck that states that the values of the Grade column must be greater than 0?",
         "options": [
             {
                 "text": "a) a) ALTER",
@@ -1084,7 +1131,8 @@ module.exports =[
     },
     {
         "question_id": 806,
-        "question_text": "Which is not true of a correlated subquery?",
+        "subs":1,
+"question_text": "Which is not true of a correlated subquery?",
         "options": [
             {
                 "text": "a) a) The processing of the SELECT statements is nested.",
@@ -1107,7 +1155,8 @@ module.exports =[
     },
     {
         "question_id": 807,
-        "question_text": "A tool that can help designers understand the dependencies of database structures is a:",
+        "subs":1,
+"question_text": "A tool that can help designers understand the dependencies of database structures is a:",
         "options": [
             {
                 "text": "a) a) graph.",
@@ -1130,7 +1179,8 @@ module.exports =[
     },
     {
         "question_id": 808,
-        "question_text": "How many copies of the database schema are typically used in the redesign process?",
+        "subs":1,
+"question_text": "How many copies of the database schema are typically used in the redesign process?",
         "options": [
             {
                 "text": "a) a) One",
@@ -1153,7 +1203,8 @@ module.exports =[
     },
     {
         "question_id": 703,
-        "question_text": "decide which code should be on the workstation or the server.",
+        "subs":1,
+"question_text": "decide which code should be on the workstation or the server.",
         "options": [
             {
                 "text": "a) a) Option A",
@@ -1176,7 +1227,8 @@ module.exports =[
     },
     {
         "question_id": 704,
-        "question_text": "A server cannot serve on which of the following levels?",
+        "subs":1,
+"question_text": "A server cannot serve on which of the following levels?",
         "options": [
             {
                 "text": "a) a) Client Layer",
@@ -1199,7 +1251,8 @@ module.exports =[
     },
     {
         "question_id": 705,
-        "question_text": "The three different application logic components are which of the following?",
+        "subs":1,
+"question_text": "The three different application logic components are which of the following?",
         "options": [
             {
                 "text": "a) a) Presentation, Client, and Processing",
@@ -1222,7 +1275,8 @@ module.exports =[
     },
     {
         "question_id": 706,
-        "question_text": "A database server is responsible for which of the following?",
+        "subs":1,
+"question_text": "A database server is responsible for which of the following?",
         "options": [
             {
                 "text": "a) a) Database storage",
@@ -1245,7 +1299,8 @@ module.exports =[
     },
     {
         "question_id": 707,
-        "question_text": "Activities of a DBMS occur in the processing component logic.",
+        "subs":1,
+"question_text": "Activities of a DBMS occur in the processing component logic.",
         "options": [
             {
                 "text": "a) a) True",
@@ -1268,7 +1323,8 @@ module.exports =[
     },
     {
         "question_id": 708,
-        "question_text": "The presentation logic component is responsible for which of the following?",
+        "subs":1,
+"question_text": "The presentation logic component is responsible for which of the following?",
         "options": [
             {
                 "text": "a) a) True",
@@ -1291,7 +1347,8 @@ module.exports =[
     },
     {
         "question_id": 709,
-        "question_text": "Symmetric multiprocessing (SMP) architectures are useful for situations where data must remain in memory during processing to achieve the desired performance level.",
+        "subs":1,
+"question_text": "Symmetric multiprocessing (SMP) architectures are useful for situations where data must remain in memory during processing to achieve the desired performance level.",
         "options": [
             {
                 "text": "a) a) True",
@@ -1314,7 +1371,8 @@ module.exports =[
     },
     {
         "question_id": 710,
-        "question_text": "Massively parallel processing (MPP) systems require a complete copy of the operating system to be resident in each dedicated memory.",
+        "subs":1,
+"question_text": "Massively parallel processing (MPP) systems require a complete copy of the operating system to be resident in each dedicated memory.",
         "options": [
             {
                 "text": "a) a> True",
@@ -1337,7 +1395,8 @@ module.exports =[
     },
     {
         "question_id": 1,
-        "question_text": "Special | Database",
+        "subs":1,
+"question_text": "Special | Database",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -1360,7 +1419,8 @@ module.exports =[
     },
     {
         "question_id": 2,
-        "question_text": "Answer: Option C",
+        "subs":1,
+"question_text": "Answer: Option C",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -1383,7 +1443,8 @@ module.exports =[
     },
     {
         "question_id": 3,
-        "question_text": "* Is SQL which command(s) is(are) used to redefine an index's future storage allocation",
+        "subs":1,
+"question_text": "* Is SQL which command(s) is(are) used to redefine an index's future storage allocation",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -1406,7 +1467,8 @@ module.exports =[
     },
     {
         "question_id": 4,
-        "question_text": "Which of the following is a serious problem of file management systems?",
+        "subs":1,
+"question_text": "Which of the following is a serious problem of file management systems?",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -1429,7 +1491,8 @@ module.exports =[
     },
     {
         "question_id": 5,
-        "question_text": "With respect to data input, the most accurate description of battlin dading is",
+        "subs":1,
+"question_text": "With respect to data input, the most accurate description of battlin dading is",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -1452,7 +1515,8 @@ module.exports =[
     },
     {
         "question_id": 6,
-        "question_text": "The model for a 5. hierarchical model in many respects. resembles the",
+        "subs":1,
+"question_text": "The model for a 5. hierarchical model in many respects. resembles the",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -1475,7 +1539,8 @@ module.exports =[
     },
     {
         "question_id": 7,
-        "question_text": "A set of programs that handle a firm's data base responsibilities is called a",
+        "subs":1,
+"question_text": "A set of programs that handle a firm's data base responsibilities is called a",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -1498,7 +1563,8 @@ module.exports =[
     },
     {
         "question_id": 580,
-        "question_text": "S, R is called the determinant.",
+        "subs":1,
+"question_text": "S, R is called the determinant.",
         "options": [
             {
                 "text": "a) a) True",
@@ -1521,7 +1587,8 @@ module.exports =[
     },
     {
         "question_id": 581,
-        "question_text": "Incremental commitment does not allow a project to be easily redirected or to be terminated.",
+        "subs":1,
+"question_text": "Incremental commitment does not allow a project to be easily redirected or to be terminated.",
         "options": [
             {
                 "text": "a) a) True",
@@ -1544,7 +1611,8 @@ module.exports =[
     },
     {
         "question_id": 582,
-        "question_text": "There are three stages involved when analyzing the initiation of an information systems project.",
+        "subs":1,
+"question_text": "There are three stages involved when analyzing the initiation of an information systems project.",
         "options": [
             {
                 "text": "a) a) True",
@@ -1567,7 +1635,8 @@ module.exports =[
     },
     {
         "question_id": 583,
-        "question_text": "One of the most popular systems development life cycle methods is prototyping.",
+        "subs":1,
+"question_text": "One of the most popular systems development life cycle methods is prototyping.",
         "options": [
             {
                 "text": "a) a) True",
@@ -1590,7 +1659,8 @@ module.exports =[
     },
     {
         "question_id": 584,
-        "question_text": "If a denormalization situation exists with a one-to-one binary relationship, which of the following is true?",
+        "subs":1,
+"question_text": "If a denormalization situation exists with a one-to-one binary relationship, which of the following is true?",
         "options": [
             {
                 "text": "a) a) All fields are",
@@ -1613,7 +1683,8 @@ module.exports =[
     },
     {
         "question_id": 586,
-        "question_text": "What is the best data type definition for Oracle when a field is alphanumeric and has a length that can vary?",
+        "subs":1,
+"question_text": "What is the best data type definition for Oracle when a field is alphanumeric and has a length that can vary?",
         "options": [
             {
                 "text": "a) a) VARCHAR2",
@@ -1636,7 +1707,8 @@ module.exports =[
     },
     {
         "question_id": 156,
-        "question_text": "SQL stands for",
+        "subs":1,
+"question_text": "SQL stands for",
         "options": [
             {
                 "text": "a) a) Structured Query Language",
@@ -1659,7 +1731,8 @@ module.exports =[
     },
     {
         "question_id": 157,
-        "question_text": "Because it contains a description of its own structure, a database is considered to be",
+        "subs":1,
+"question_text": "Because it contains a description of its own structure, a database is considered to be",
         "options": [
             {
                 "text": "a) a) metadata incompatible",
@@ -1682,7 +1755,8 @@ module.exports =[
     },
     {
         "question_id": 158,
-        "question_text": "The purpose of a(n)",
+        "subs":1,
+"question_text": "The purpose of a(n)",
         "options": [
             {
                 "text": "a) a) database",
@@ -1705,7 +1779,8 @@ module.exports =[
     },
     {
         "question_id": 159,
-        "question_text": "Which of the following products implemented the CODASYL DBTG model?",
+        "subs":1,
+"question_text": "Which of the following products implemented the CODASYL DBTG model?",
         "options": [
             {
                 "text": "a) a> IDMS",
@@ -1728,7 +1803,8 @@ module.exports =[
     },
     {
         "question_id": 160,
-        "question_text": "An Enterprise Resource Planning application is an example of a(n)",
+        "subs":1,
+"question_text": "An Enterprise Resource Planning application is an example of a(n)",
         "options": [
             {
                 "text": "a) a> single-user",
@@ -1751,7 +1827,8 @@ module.exports =[
     },
     {
         "question_id": 161,
-        "question_text": "A DBMS that combines a DBMS and an application generator is",
+        "subs":1,
+"question_text": "A DBMS that combines a DBMS and an application generator is",
         "options": [
             {
                 "text": "a) a> Microsoft's SQL Server",
@@ -1774,7 +1851,8 @@ module.exports =[
     },
     {
         "question_id": 162,
-        "question_text": "Which of the following is not considered to",
+        "subs":1,
+"question_text": "Which of the following is not considered to",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -1797,7 +1875,8 @@ module.exports =[
     },
     {
         "question_id": 194,
-        "question_text": "Web page display is the most important application of XML.",
+        "subs":1,
+"question_text": "Web page display is the most important application of XML.",
         "options": [
             {
                 "text": "a) a) MOST",
@@ -1820,7 +1899,8 @@ module.exports =[
     },
     {
         "question_id": 195,
-        "question_text": "B",
+        "subs":1,
+"question_text": "B",
         "options": [
             {
                 "text": "a) a) XSLT is a declarative transformation",
@@ -1843,7 +1923,8 @@ module.exports =[
     },
     {
         "question_id": 196,
-        "question_text": "If the XML data instance conforms to the DTD, the document is said to be:",
+        "subs":1,
+"question_text": "If the XML data instance conforms to the DTD, the document is said to be:",
         "options": [
             {
                 "text": "a) a) type-invalid",
@@ -1866,7 +1947,8 @@ module.exports =[
     },
     {
         "question_id": 197,
-        "question_text": "XML is:",
+        "subs":1,
+"question_text": "XML is:",
         "options": [
             {
                 "text": "a) a> a subset of SGML only",
@@ -1889,7 +1971,8 @@ module.exports =[
     },
     {
         "question_id": 198,
-        "question_text": "The document that is used by XSLT to indicate how to transform the elements of the XML document to another format is a(n):",
+        "subs":1,
+"question_text": "The document that is used by XSLT to indicate how to transform the elements of the XML document to another format is a(n):",
         "options": [
             {
                 "text": "a) a) HTML page",
@@ -1912,7 +1995,8 @@ module.exports =[
     },
     {
         "question_id": 199,
-        "question_text": "If an XML document does not have a DTD, then by definition it is:",
+        "subs":1,
+"question_text": "If an XML document does not have a DTD, then by definition it is:",
         "options": [
             {
                 "text": "a) a> not-type-valid",
@@ -1935,7 +2019,8 @@ module.exports =[
     },
     {
         "question_id": 749,
-        "question_text": "A virtual table that can be accessed via SQL commands",
+        "subs":1,
+"question_text": "A virtual table that can be accessed via SQL commands",
         "options": [
             {
                 "text": "a) a) REMOVE TABLE CUSTOMER;",
@@ -1958,7 +2043,8 @@ module.exports =[
     },
     {
         "question_id": 750,
-        "question_text": "ON UPDATE CASCADE ensures which of the following?",
+        "subs":1,
+"question_text": "ON UPDATE CASCADE ensures which of the following?",
         "options": [
             {
                 "text": "a) a) Normalization",
@@ -1981,7 +2067,8 @@ module.exports =[
     },
     {
         "question_id": 751,
-        "question_text": "SQL data definition commands make up a(n)",
+        "subs":1,
+"question_text": "SQL data definition commands make up a(n)",
         "options": [
             {
                 "text": "a) a) DDL",
@@ -2004,7 +2091,8 @@ module.exports =[
     },
     {
         "question_id": 752,
-        "question_text": "Which of the following is valid SQL for an Index?",
+        "subs":1,
+"question_text": "Which of the following is valid SQL for an Index?",
         "options": [
             {
                 "text": "a) a> CREATE INDEX ID;",
@@ -2027,7 +2115,8 @@ module.exports =[
     },
     {
         "question_id": 753,
-        "question_text": "The SQL keyword(s) is used with",
+        "subs":1,
+"question_text": "The SQL keyword(s) is used with",
         "options": [
             {
                 "text": "a) a> LIKE only",
@@ -2050,7 +2139,8 @@ module.exports =[
     },
     {
         "question_id": 754,
-        "question_text": "is used with",
+        "subs":1,
+"question_text": "is used with",
         "options": [
             {
                 "text": "a) b> IN only",
@@ -2073,7 +2163,8 @@ module.exports =[
     },
     {
         "question_id": 183,
-        "question_text": "The most popular way to materialize XML documents is to use:",
+        "subs":1,
+"question_text": "The most popular way to materialize XML documents is to use:",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -2096,7 +2187,8 @@ module.exports =[
     },
     {
         "question_id": 184,
-        "question_text": "With XML:",
+        "subs":1,
+"question_text": "With XML:",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -2119,7 +2211,8 @@ module.exports =[
     },
     {
         "question_id": 185,
-        "question_text": "XSLT documents can automatically be generated from database data only. database data can automatically be extracted from XML documents only.",
+        "subs":1,
+"question_text": "XSLT documents can automatically be generated from database data only. database data can automatically be extracted from XML documents only.",
         "options": [
             {
                 "text": "a) a> To eliminate definition duplication, XML Schemas define:",
@@ -2142,7 +2235,8 @@ module.exports =[
     },
     {
         "question_id": 721,
-        "question_text": "Location transparency allows for which of the following?",
+        "subs":1,
+"question_text": "Location transparency allows for which of the following?",
         "options": [
             {
                 "text": "a) a) Users",
@@ -2165,7 +2259,8 @@ module.exports =[
     },
     {
         "question_id": 722,
-        "question_text": "A heterogeneous distributed database is which of the following?",
+        "subs":1,
+"question_text": "A heterogeneous distributed database is which of the following?",
         "options": [
             {
                 "text": "a) a) The same DBMS is used at each location and data are not distributed across all nodes.",
@@ -2188,7 +2283,8 @@ module.exports =[
     },
     {
         "question_id": 723,
-        "question_text": "Some of the columns of a relation are at different sites is which of the following?",
+        "subs":1,
+"question_text": "Some of the columns of a relation are at different sites is which of the following?",
         "options": [
             {
                 "text": "a) a) Data Replication",
@@ -2211,7 +2307,8 @@ module.exports =[
     },
     {
         "question_id": 739,
-        "question_text": "Data replication is favored where most process requests are read-only and where the data are relatively static.",
+        "subs":1,
+"question_text": "Data replication is favored where most process requests are read-only and where the data are relatively static.",
         "options": [
             {
                 "text": "a) a) True",
@@ -2234,7 +2331,8 @@ module.exports =[
     },
     {
         "question_id": 740,
-        "question_text": "The cost to perform a snapshot refresh may depend on whether the snapshot is simple or complex.",
+        "subs":1,
+"question_text": "The cost to perform a snapshot refresh may depend on whether the snapshot is simple or complex.",
         "options": [
             {
                 "text": "a) a) True",
@@ -2257,7 +2355,8 @@ module.exports =[
     },
     {
         "question_id": 741,
-        "question_text": "The semijoin approach saves network traffic.",
+        "subs":1,
+"question_text": "The semijoin approach saves network traffic.",
         "options": [
             {
                 "text": "a) a) True",
@@ -2280,7 +2379,8 @@ module.exports =[
     },
     {
         "question_id": 742,
-        "question_text": "The problem of concurrency control is more complex in a distributed database.",
+        "subs":1,
+"question_text": "The problem of concurrency control is more complex in a distributed database.",
         "options": [
             {
                 "text": "a) a> of",
@@ -2303,7 +2403,8 @@ module.exports =[
     },
     {
         "question_id": 1,
-        "question_text": "A is acor related",
+        "subs":1,
+"question_text": "A is acor related",
         "options": [
             {
                 "text": "a) a) Bits",
@@ -2326,7 +2427,8 @@ module.exports =[
     },
     {
         "question_id": 2,
-        "question_text": "Which command is used to remove an index from the database in SQL?",
+        "subs":1,
+"question_text": "Which command is used to remove an index from the database in SQL?",
         "options": [
             {
                 "text": "a) a) DELETE",
@@ -2349,7 +2451,8 @@ module.exports =[
     },
     {
         "question_id": 3,
-        "question_text": "An-owner-member set in the CODASYL specifications may have",
+        "subs":1,
+"question_text": "An-owner-member set in the CODASYL specifications may have",
         "options": [
             {
                 "text": "a) a) only one owner",
@@ -2372,7 +2475,8 @@ module.exports =[
     },
     {
         "question_id": 4,
-        "question_text": "What is the name given to the database management system which is able to handle full text data, image data, audio and video?",
+        "subs":1,
+"question_text": "What is the name given to the database management system which is able to handle full text data, image data, audio and video?",
         "options": [
             {
                 "text": "a) a) O",
@@ -2395,7 +2499,8 @@ module.exports =[
     },
     {
         "question_id": 5,
-        "question_text": "A top-to-bottom relationship among the items in a database is established by a",
+        "subs":1,
+"question_text": "A top-to-bottom relationship among the items in a database is established by a",
         "options": [
             {
                 "text": "a) a) Hierarchical schema",
@@ -2418,7 +2523,8 @@ module.exports =[
     },
     {
         "question_id": 6,
-        "question_text": "A database management system allows",
+        "subs":1,
+"question_text": "A database management system allows",
         "options": [
             {
                 "text": "a) a> simultaneous access to multiple files",
@@ -2441,7 +2547,8 @@ module.exports =[
     },
     {
         "question_id": 7,
-        "question_text": "Which of the following hardware components is the most important to the operation of a database management system?",
+        "subs":1,
+"question_text": "Which of the following hardware components is the most important to the operation of a database management system?",
         "options": [
             {
                 "text": "a) a> B high-resolution printer",
@@ -2464,7 +2571,8 @@ module.exports =[
     },
     {
         "question_id": 588,
-        "question_text": "To update an SQL view, the DBMS must be able to associate the column(s) to be updated with:",
+        "subs":1,
+"question_text": "To update an SQL view, the DBMS must be able to associate the column(s) to be updated with:",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -2487,7 +2595,8 @@ module.exports =[
     },
     {
         "question_id": 123,
-        "question_text": "If a piece of data is stored in two places in the database, then",
+        "subs":1,
+"question_text": "If a piece of data is stored in two places in the database, then",
         "options": [
             {
                 "text": "a) a) A",
@@ -2510,7 +2619,8 @@ module.exports =[
     },
     {
         "question_id": 124,
-        "question_text": "A data dictionary is a special file that contains",
+        "subs":1,
+"question_text": "A data dictionary is a special file that contains",
         "options": [
             {
                 "text": "a) a) A",
@@ -2533,7 +2643,8 @@ module.exports =[
     },
     {
         "question_id": 125,
-        "question_text": "A file that is organized in uniform format is formally referred to as a",
+        "subs":1,
+"question_text": "A file that is organized in uniform format is formally referred to as a",
         "options": [
             {
                 "text": "a) a) Document",
@@ -2556,7 +2667,8 @@ module.exports =[
     },
     {
         "question_id": 126,
-        "question_text": "A form can be used to",
+        "subs":1,
+"question_text": "A form can be used to",
         "options": [
             {
                 "text": "a) a) modify records",
@@ -2579,7 +2691,8 @@ module.exports =[
     },
     {
         "question_id": 127,
-        "question_text": "Which language has recently become the de- facto standard for interfacing application programs with relational database system?",
+        "subs":1,
+"question_text": "Which language has recently become the de- facto standard for interfacing application programs with relational database system?",
         "options": [
             {
                 "text": "a) a) Oracle",
@@ -2602,7 +2715,8 @@ module.exports =[
     },
     {
         "question_id": 128,
-        "question_text": "In SQL, the CREATE TABLE is used",
+        "subs":1,
+"question_text": "In SQL, the CREATE TABLE is used",
         "options": [
             {
                 "text": "a) a) to create a table, defining its columns, integrity constrains, and storage allocation",
@@ -2625,7 +2739,8 @@ module.exports =[
     },
     {
         "question_id": 109,
-        "question_text": "A multiple-form file management system",
+        "subs":1,
+"question_text": "A multiple-form file management system",
         "options": [
             {
                 "text": "a) a) Some",
@@ -2648,7 +2763,8 @@ module.exports =[
     },
     {
         "question_id": 111,
-        "question_text": "A entity",
+        "subs":1,
+"question_text": "A entity",
         "options": [
             {
                 "text": "a) a) Record",
@@ -2671,7 +2787,8 @@ module.exports =[
     },
     {
         "question_id": 149,
-        "question_text": "The DBMS acts as an interface between what two components of an enterprise-class database system?",
+        "subs":1,
+"question_text": "The DBMS acts as an interface between what two components of an enterprise-class database system?",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -2694,7 +2811,8 @@ module.exports =[
     },
     {
         "question_id": 150,
-        "question_text": "Which of the following products was an early implementation of the relational model developed by E.F. Codd of IBM?",
+        "subs":1,
+"question_text": "Which of the following products was an early implementation of the relational model developed by E.F. Codd of IBM?",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -2717,7 +2835,8 @@ module.exports =[
     },
     {
         "question_id": 151,
-        "question_text": "The following are components of a database except",
+        "subs":1,
+"question_text": "The following are components of a database except",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -2740,7 +2859,8 @@ module.exports =[
     },
     {
         "question_id": 152,
-        "question_text": "An application where only one user accesses the database at a given time is an example of a(n)",
+        "subs":1,
+"question_text": "An application where only one user accesses the database at a given time is an example of a(n)",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -2763,7 +2883,8 @@ module.exports =[
     },
     {
         "question_id": 153,
-        "question_text": "An on-line commercial site such as Amazon.com is an example of a(n)",
+        "subs":1,
+"question_text": "An on-line commercial site such as Amazon.com is an example of a(n)",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -2786,7 +2907,8 @@ module.exports =[
     },
     {
         "question_id": 734,
-        "question_text": "Stack IT BPSC S",
+        "subs":1,
+"question_text": "Stack IT BPSC S",
         "options": [
             {
                 "text": "a) a) True",
@@ -2809,7 +2931,8 @@ module.exports =[
     },
     {
         "question_id": 745,
-        "question_text": "You can add a row using SQL in a database with which of the following?",
+        "subs":1,
+"question_text": "You can add a row using SQL in a database with which of the following?",
         "options": [
             {
                 "text": "a) a) ADD",
@@ -2832,7 +2955,8 @@ module.exports =[
     },
     {
         "question_id": 746,
-        "question_text": "The command to remove rows from a table 'CUSTOMER' is:",
+        "subs":1,
+"question_text": "The command to remove rows from a table 'CUSTOMER' is:",
         "options": [
             {
                 "text": "a) a) REMOVE",
@@ -2855,7 +2979,8 @@ module.exports =[
     },
     {
         "question_id": 799,
-        "question_text": "What SQL command can be used to add columns to a table?",
+        "subs":1,
+"question_text": "What SQL command can be used to add columns to a table?",
         "options": [
             {
                 "text": "a) a) MODIFY",
@@ -2878,7 +3003,8 @@ module.exports =[
     },
     {
         "question_id": 800,
-        "question_text": "The EXISTS keyword will be true if:",
+        "subs":1,
+"question_text": "The EXISTS keyword will be true if:",
         "options": [
             {
                 "text": "a) a) any row in the subquery meets the condition only.",
@@ -2901,7 +3027,8 @@ module.exports =[
     },
     {
         "question_id": 801,
-        "question_text": "Changing cardinalities in a database is:",
+        "subs":1,
+"question_text": "Changing cardinalities in a database is:",
         "options": [
             {
                 "text": "a) a) a common database design task.",
@@ -2924,7 +3051,8 @@ module.exports =[
     },
     {
         "question_id": 802,
-        "question_text": "The NOT EXISTS keyword will be true if:",
+        "subs":1,
+"question_text": "The NOT EXISTS keyword will be true if:",
         "options": [
             {
                 "text": "a) a) all rows in the subquery fail the condition.",
@@ -2947,7 +3075,8 @@ module.exports =[
     },
     {
         "question_id": 803,
-        "question_text": "The data model that is produced from reverse engineering is:",
+        "subs":1,
+"question_text": "The data model that is produced from reverse engineering is:",
         "options": [
             {
                 "text": "a) a) a conceptual model.",
@@ -2970,7 +3099,8 @@ module.exports =[
     },
     {
         "question_id": 155,
-        "question_text": "A subquery in an SQL SELECT statement is enclosed in:",
+        "subs":1,
+"question_text": "A subquery in an SQL SELECT statement is enclosed in:",
         "options": [
             {
                 "text": "a) a) braces",
@@ -2993,7 +3123,8 @@ module.exports =[
     },
     {
         "question_id": 1,
-        "question_text": "A report generator is used to update files data entry print files on paper All of the above",
+        "subs":1,
+"question_text": "A report generator is used to update files data entry print files on paper All of the above",
         "options": [
             {
                 "text": "a) a) update files",
@@ -3016,7 +3147,8 @@ module.exports =[
     },
     {
         "question_id": 2,
-        "question_text": "Which of the following is not a logical database structure?",
+        "subs":1,
+"question_text": "Which of the following is not a logical database structure?",
         "options": [
             {
                 "text": "a) a) tree",
@@ -3039,7 +3171,8 @@ module.exports =[
     },
     {
         "question_id": 3,
-        "question_text": "Which of the following is a database administrator's function?",
+        "subs":1,
+"question_text": "Which of the following is a database administrator's function?",
         "options": [
             {
                 "text": "a) a) database design performance monitoring",
@@ -3062,7 +3195,8 @@ module.exports =[
     },
     {
         "question_id": 4,
-        "question_text": "Primitive operations common to all record management systems include",
+        "subs":1,
+"question_text": "Primitive operations common to all record management systems include",
         "options": [
             {
                 "text": "a) a) Print",
@@ -3085,7 +3219,8 @@ module.exports =[
     },
     {
         "question_id": 1,
-        "question_text": "used with conditional to remou unnecessary rows from table.",
+        "subs":1,
+"question_text": "used with conditional to remou unnecessary rows from table.",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -3108,7 +3243,8 @@ module.exports =[
     },
     {
         "question_id": 2,
-        "question_text": "Which of the following restricts the structure to a one-to-many relationship?",
+        "subs":1,
+"question_text": "Which of the following restricts the structure to a one-to-many relationship?",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -3131,7 +3267,8 @@ module.exports =[
     },
     {
         "question_id": 7,
-        "question_text": "A form defines where data is placed on the",
+        "subs":1,
+"question_text": "A form defines where data is placed on the",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -3154,7 +3291,8 @@ module.exports =[
     },
     {
         "question_id": 441,
-        "question_text": "all uncommitted changes have been removed from the datafiles?",
+        "subs":1,
+"question_text": "all uncommitted changes have been removed from the datafiles?",
         "options": [
             {
                 "text": "a) a) Full backup",
@@ -3177,7 +3315,8 @@ module.exports =[
     },
     {
         "question_id": 442,
-        "question_text": "You have linked SQL*Plus to an external text editor. To invoke the text editor for use within SQL*Plus, which command do you use?",
+        "subs":1,
+"question_text": "You have linked SQL*Plus to an external text editor. To invoke the text editor for use within SQL*Plus, which command do you use?",
         "options": [
             {
                 "text": "a) a) Open",
@@ -3200,7 +3339,8 @@ module.exports =[
     },
     {
         "question_id": 443,
-        "question_text": "The default extension for an Oracle SQL*Plus file is:",
+        "subs":1,
+"question_text": "The default extension for an Oracle SQL*Plus file is:",
         "options": [
             {
                 "text": "a) a) .txt",
@@ -3223,7 +3363,8 @@ module.exports =[
     },
     {
         "question_id": 561,
-        "question_text": "For some relations, changing the data can have undesirable consequences called:",
+        "subs":1,
+"question_text": "For some relations, changing the data can have undesirable consequences called:",
         "options": [
             {
                 "text": "a) a) referential integrity",
@@ -3246,7 +3387,8 @@ module.exports =[
     },
     {
         "question_id": 562,
-        "question_text": "A key:",
+        "subs":1,
+"question_text": "A key:",
         "options": [
             {
                 "text": "a) a) must always be composed of two or more columns.",
@@ -3269,7 +3411,8 @@ module.exports =[
     },
     {
         "question_id": 563,
-        "question_text": "An attribute is a(n):",
+        "subs":1,
+"question_text": "An attribute is a(n):",
         "options": [
             {
                 "text": "a) a) column of a table.",
@@ -3292,7 +3435,8 @@ module.exports =[
     },
     {
         "question_id": 564,
-        "question_text": "A relation in this form is free of all modification anomalies.",
+        "subs":1,
+"question_text": "A relation in this form is free of all modification anomalies.",
         "options": [
             {
                 "text": "a) a) Second normal form",
@@ -3315,7 +3459,8 @@ module.exports =[
     },
     {
         "question_id": 565,
-        "question_text": "A tuple is a(n):",
+        "subs":1,
+"question_text": "A tuple is a(n):",
         "options": [
             {
                 "text": "a) a) Column of a table.",
@@ -3338,7 +3483,8 @@ module.exports =[
     },
     {
         "question_id": 566,
-        "question_text": "If attribute A determines both attributes B and C, then it is also true that:",
+        "subs":1,
+"question_text": "If attribute A determines both attributes B and C, then it is also true that:",
         "options": [
             {
                 "text": "a) a) A \u2192 B.",
@@ -3361,7 +3507,8 @@ module.exports =[
     },
     {
         "question_id": 567,
-        "question_text": "One solution to the multivalued dependency constraint problem is to:",
+        "subs":1,
+"question_text": "One solution to the multivalued dependency constraint problem is to:",
         "options": [
             {
                 "text": "a) a) split the relation into two relations, each with a single theme.",
@@ -3384,7 +3531,8 @@ module.exports =[
     },
     {
         "question_id": 568,
-        "question_text": "In a relation, the order of the rows matters.",
+        "subs":1,
+"question_text": "In a relation, the order of the rows matters.",
         "options": [
             {
                 "text": "a) a) True",
@@ -3407,7 +3555,8 @@ module.exports =[
     },
     {
         "question_id": 569,
-        "question_text": "In a relation, the rows are sometimes called \"records\".",
+        "subs":1,
+"question_text": "In a relation, the rows are sometimes called \"records\".",
         "options": [
             {
                 "text": "a) a> True",
@@ -3430,7 +3579,8 @@ module.exports =[
     },
     {
         "question_id": 134,
-        "question_text": "It is more accurate to define a database as a...",
+        "subs":1,
+"question_text": "It is more accurate to define a database as a...",
         "options": [
             {
                 "text": "a) a) Variety of different record types that are treated as a single unit",
@@ -3453,7 +3603,8 @@ module.exports =[
     },
     {
         "question_id": 135,
-        "question_text": "A logical schema is the entire...",
+        "subs":1,
+"question_text": "A logical schema is the entire...",
         "options": [
             {
                 "text": "a) a) Database",
@@ -3476,7 +3627,8 @@ module.exports =[
     },
     {
         "question_id": 315,
-        "question_text": "Special | Database",
+        "subs":1,
+"question_text": "Special | Database",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -3499,7 +3651,8 @@ module.exports =[
     },
     {
         "question_id": 316,
-        "question_text": "User views are included as part of which schema?",
+        "subs":1,
+"question_text": "User views are included as part of which schema?",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -3522,7 +3675,8 @@ module.exports =[
     },
     {
         "question_id": 317,
-        "question_text": "Whose role is it to determine the requirements and design for a database?",
+        "subs":1,
+"question_text": "Whose role is it to determine the requirements and design for a database?",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -3545,7 +3699,8 @@ module.exports =[
     },
     {
         "question_id": 318,
-        "question_text": "There is one physical schema for each logical",
+        "subs":1,
+"question_text": "There is one physical schema for each logical",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -3568,7 +3723,8 @@ module.exports =[
     },
     {
         "question_id": 319,
-        "question_text": "The most important reason for data architecture is reliability.",
+        "subs":1,
+"question_text": "The most important reason for data architecture is reliability.",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -3591,7 +3747,8 @@ module.exports =[
     },
     {
         "question_id": 320,
-        "question_text": "The systems development life cycle cannot be used with database implementation.",
+        "subs":1,
+"question_text": "The systems development life cycle cannot be used with database implementation.",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -3614,7 +3771,8 @@ module.exports =[
     },
     {
         "question_id": 321,
-        "question_text": "Enterprise data modeling typically occurs during information systems planning.",
+        "subs":1,
+"question_text": "Enterprise data modeling typically occurs during information systems planning.",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -3637,7 +3795,8 @@ module.exports =[
     },
     {
         "question_id": 322,
-        "question_text": "A conceptual schema is usually depicted in graphical format using E-R or object-modeling notations.",
+        "subs":1,
+"question_text": "A conceptual schema is usually depicted in graphical format using E-R or object-modeling notations.",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -3660,7 +3819,8 @@ module.exports =[
     },
     {
         "question_id": 323,
-        "question_text": "The physical database design identifies data integrity and security requirements.",
+        "subs":1,
+"question_text": "The physical database design identifies data integrity and security requirements.",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -3683,7 +3843,8 @@ module.exports =[
     },
     {
         "question_id": 324,
-        "question_text": "The longest step of database development is database maintenance.",
+        "subs":1,
+"question_text": "The longest step of database development is database maintenance.",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -3706,7 +3867,8 @@ module.exports =[
     },
     {
         "question_id": 142,
-        "question_text": "The master list of an indexed file",
+        "subs":1,
+"question_text": "The master list of an indexed file",
         "options": [
             {
                 "text": "a) a) ascending",
@@ -3729,7 +3891,8 @@ module.exports =[
     },
     {
         "question_id": 143,
-        "question_text": "Which of the following is not the responsibility of the utilities component of DBMS software?",
+        "subs":1,
+"question_text": "Which of the following is not the responsibility of the utilities component of DBMS software?",
         "options": [
             {
                 "text": "a) a) creating the physical and logical designs",
@@ -3752,7 +3915,8 @@ module.exports =[
     },
     {
         "question_id": 144,
-        "question_text": "In SQL, the CREATE TABLESPACE is used",
+        "subs":1,
+"question_text": "In SQL, the CREATE TABLESPACE is used",
         "options": [
             {
                 "text": "a) a) to create a database trigger",
@@ -3775,7 +3939,8 @@ module.exports =[
     },
     {
         "question_id": 145,
-        "question_text": "In SQL, which command is used to remove a stored function from the database?",
+        "subs":1,
+"question_text": "In SQL, which command is used to remove a stored function from the database?",
         "options": [
             {
                 "text": "a) a) REMOVE FUNCTION",
@@ -3798,7 +3963,8 @@ module.exports =[
     },
     {
         "question_id": 146,
-        "question_text": "The database administration function includes",
+        "subs":1,
+"question_text": "The database administration function includes",
         "options": [
             {
                 "text": "a) a) application programming",
@@ -3821,7 +3987,8 @@ module.exports =[
     },
     {
         "question_id": 147,
-        "question_text": "A relational database management (RDBM) package manages data in more than one file at once. How does it organize these file?",
+        "subs":1,
+"question_text": "A relational database management (RDBM) package manages data in more than one file at once. How does it organize these file?",
         "options": [
             {
                 "text": "a) a) tables",
@@ -3844,7 +4011,8 @@ module.exports =[
     },
     {
         "question_id": 1,
-        "question_text": "complex logical relationships",
+        "subs":1,
+"question_text": "complex logical relationships",
         "options": [
             {
                 "text": "a) a) Option B",
@@ -3867,7 +4035,8 @@ module.exports =[
     },
     {
         "question_id": 2,
-        "question_text": "A computer file contains several records. What does each record contain?",
+        "subs":1,
+"question_text": "A computer file contains several records. What does each record contain?",
         "options": [
             {
                 "text": "a) a) Bytes",
@@ -3890,7 +4059,8 @@ module.exports =[
     },
     {
         "question_id": 3,
-        "question_text": "in SQL, the CREATE VIEW command is",
+        "subs":1,
+"question_text": "in SQL, the CREATE VIEW command is",
         "options": [
             {
                 "text": "a) a) used",
@@ -3913,7 +4083,8 @@ module.exports =[
     },
     {
         "question_id": 4,
-        "question_text": "Contains the smallest unit of 6. meaningful data, so you might call it the balc building block for a date file.",
+        "subs":1,
+"question_text": "Contains the smallest unit of 6. meaningful data, so you might call it the balc building block for a date file.",
         "options": [
             {
                 "text": "a) a) File structure",
@@ -3936,7 +4107,8 @@ module.exports =[
     },
     {
         "question_id": 5,
-        "question_text": "In the DBM approach, application program perform the storage fun, tion",
+        "subs":1,
+"question_text": "In the DBM approach, application program perform the storage fun, tion",
         "options": [
             {
                 "text": "a) a) storage function",
@@ -3959,7 +4131,8 @@ module.exports =[
     },
     {
         "question_id": 7,
-        "question_text": "In SQL, which command is end to create a 8. database user?",
+        "subs":1,
+"question_text": "In SQL, which command is end to create a 8. database user?",
         "options": [
             {
                 "text": "a) a) ADD USER TO",
@@ -3982,7 +4155,8 @@ module.exports =[
     },
     {
         "question_id": 9,
-        "question_text": "you look at each form soquentially until you see the one you",
+        "subs":1,
+"question_text": "you look at each form soquentially until you see the one you",
         "options": [
             {
                 "text": "a) a) All of the above",
@@ -4005,7 +4179,8 @@ module.exports =[
     },
     {
         "question_id": 10,
-        "question_text": "means that one record in a particular record type is related to only one record of another record type.",
+        "subs":1,
+"question_text": "means that one record in a particular record type is related to only one record of another record type.",
         "options": [
             {
                 "text": "a) a) relationships",
@@ -4028,7 +4203,8 @@ module.exports =[
     },
     {
         "question_id": 200,
-        "question_text": "SOAP uses HTTP as its only transport mechanism.",
+        "subs":1,
+"question_text": "SOAP uses HTTP as its only transport mechanism.",
         "options": [
             {
                 "text": "a) a) True",
@@ -4051,7 +4227,8 @@ module.exports =[
     },
     {
         "question_id": 201,
-        "question_text": "The DTD defines the structure of XML documents.",
+        "subs":1,
+"question_text": "The DTD defines the structure of XML documents.",
         "options": [
             {
                 "text": "a) a) True",
@@ -4074,7 +4251,8 @@ module.exports =[
     },
     {
         "question_id": 202,
-        "question_text": "If a document does not conform to the DTD, it is a bad XML document.",
+        "subs":1,
+"question_text": "If a document does not conform to the DTD, it is a bad XML document.",
         "options": [
             {
                 "text": "a) a) True",
@@ -4097,7 +4275,8 @@ module.exports =[
     },
     {
         "question_id": 203,
-        "question_text": "XSLT processors are context-oriented; each statement is evaluated in the context of the match that has been made.",
+        "subs":1,
+"question_text": "XSLT processors are context-oriented; each statement is evaluated in the context of the match that has been made.",
         "options": [
             {
                 "text": "a) a) True",
@@ -4120,7 +4299,8 @@ module.exports =[
     },
     {
         "question_id": 204,
-        "question_text": "Web page display is the most important application of XML.",
+        "subs":1,
+"question_text": "Web page display is the most important application of XML.",
         "options": [
             {
                 "text": "a) a) True",
@@ -4143,7 +4323,8 @@ module.exports =[
     },
     {
         "question_id": 205,
-        "question_text": "It took the popularity of the Internet to realize that database processing and document processing need each other.",
+        "subs":1,
+"question_text": "It took the popularity of the Internet to realize that database processing and document processing need each other.",
         "options": [
             {
                 "text": "a) a) True",
@@ -4166,7 +4347,8 @@ module.exports =[
     },
     {
         "question_id": 206,
-        "question_text": "You can validate an XML Schema document against its schema, just as you would any other XML document.",
+        "subs":1,
+"question_text": "You can validate an XML Schema document against its schema, just as you would any other XML document.",
         "options": [
             {
                 "text": "a) a) True",
@@ -4189,7 +4371,8 @@ module.exports =[
     },
     {
         "question_id": 207,
-        "question_text": "XML technology is a hybrid of document processing and database processing.",
+        "subs":1,
+"question_text": "XML technology is a hybrid of document processing and database processing.",
         "options": [
             {
                 "text": "a) a) True",
@@ -4212,7 +4395,8 @@ module.exports =[
     },
     {
         "question_id": 208,
-        "question_text": "The most popular way to materialize XML documents is to use XSLT.",
+        "subs":1,
+"question_text": "The most popular way to materialize XML documents is to use XSLT.",
         "options": [
             {
                 "text": "a) a) True",
@@ -4235,7 +4419,8 @@ module.exports =[
     },
     {
         "question_id": 580,
-        "question_text": "XML Schemas consist of:",
+        "subs":1,
+"question_text": "XML Schemas consist of:",
         "options": [
             {
                 "text": "a) a) Properties and methods.",
@@ -4258,7 +4443,8 @@ module.exports =[
     },
     {
         "question_id": 581,
-        "question_text": "The expression FOR XML RAW tells SQL Server to:",
+        "subs":1,
+"question_text": "The expression FOR XML RAW tells SQL Server to:",
         "options": [
             {
                 "text": "a) a) Place the values of the columns into elements rather than attributes.",
@@ -4281,7 +4467,8 @@ module.exports =[
     },
     {
         "question_id": 582,
-        "question_text": "ADO.NET provides the ability to create and process in-memory databases called:",
+        "subs":1,
+"question_text": "ADO.NET provides the ability to create and process in-memory databases called:",
         "options": [
             {
                 "text": "a) a) Views",
@@ -4304,7 +4491,8 @@ module.exports =[
     },
     {
         "question_id": 583,
-        "question_text": "An XML component that defines the structure of a document is known as a(n):",
+        "subs":1,
+"question_text": "An XML component that defines the structure of a document is known as a(n):",
         "options": [
             {
                 "text": "a) a) DOCTYPE",
@@ -4327,7 +4515,8 @@ module.exports =[
     },
     {
         "question_id": 584,
-        "question_text": "HTML is an application of a more robust document markup language called:",
+        "subs":1,
+"question_text": "HTML is an application of a more robust document markup language called:",
         "options": [
             {
                 "text": "a) a) XHTML SGML",
@@ -4350,7 +4539,8 @@ module.exports =[
     },
     {
         "question_id": 585,
-        "question_text": "XSLT processors evaluate each statement in the context of the match that has been made. That is, XSLT processors are:",
+        "subs":1,
+"question_text": "XSLT processors evaluate each statement in the context of the match that has been made. That is, XSLT processors are:",
         "options": [
             {
                 "text": "a) a) Context oriented.",
@@ -4373,7 +4563,8 @@ module.exports =[
     },
     {
         "question_id": 586,
-        "question_text": "The DTD begins with the word:",
+        "subs":1,
+"question_text": "The DTD begins with the word:",
         "options": [
             {
                 "text": "a) a) #PCDATA",
@@ -4396,7 +4587,8 @@ module.exports =[
     },
     {
         "question_id": 587,
-        "question_text": "What is not true about XML?",
+        "subs":1,
+"question_text": "What is not true about XML?",
         "options": [
             {
                 "text": "a) correct answer",
@@ -4419,7 +4611,8 @@ module.exports =[
     },
     {
         "question_id": 2,
-        "question_text": "The way a particular application views the 5. data from the data base that the application",
+        "subs":1,
+"question_text": "The way a particular application views the 5. data from the data base that the application",
         "options": [
             {
                 "text": "a) A",
@@ -4442,7 +4635,8 @@ module.exports =[
     },
     {
         "question_id": 6,
-        "question_text": "Large collections of files are called",
+        "subs":1,
+"question_text": "Large collections of files are called",
         "options": [
             {
                 "text": "a) A",
@@ -4465,7 +4659,8 @@ module.exports =[
     },
     {
         "question_id": 301,
-        "question_text": "True",
+        "subs":1,
+"question_text": "True",
         "options": [
             {
                 "text": "a) a) False",
@@ -4488,7 +4683,8 @@ module.exports =[
     },
     {
         "question_id": 302,
-        "question_text": "XML Schemas are XML documents,",
+        "subs":1,
+"question_text": "XML Schemas are XML documents,",
         "options": [
             {
                 "text": "a) a) Item",
@@ -4511,7 +4707,8 @@ module.exports =[
     },
     {
         "question_id": 303,
-        "question_text": "Which of the following database activities allow for the actual retrieval and use of a database?",
+        "subs":1,
+"question_text": "Which of the following database activities allow for the actual retrieval and use of a database?",
         "options": [
             {
                 "text": "a) a) Physical database design and definition",
@@ -4534,7 +4731,8 @@ module.exports =[
     },
     {
         "question_id": 304,
-        "question_text": "The three-schema components include all,",
+        "subs":1,
+"question_text": "The three-schema components include all,",
         "options": [
             {
                 "text": "a) a) internal schema. conceptual schema. programming external schema.",
@@ -4557,7 +4755,8 @@ module.exports =[
     },
     {
         "question_id": 305,
-        "question_text": "Which is not a type of data management technology?",
+        "subs":1,
+"question_text": "Which is not a type of data management technology?",
         "options": [
             {
                 "text": "a) a) Object-oriented",
@@ -4580,7 +4779,8 @@ module.exports =[
     },
     {
         "question_id": 306,
-        "question_text": "Which is not a relevant feature of CASE tools?",
+        "subs":1,
+"question_text": "Which is not a relevant feature of CASE tools?",
         "options": [
             {
                 "text": "a) a) Access to a DB via the Internet",
@@ -4603,7 +4803,8 @@ module.exports =[
     },
     {
         "question_id": 307,
-        "question_text": "The first step in database development is",
+        "subs":1,
+"question_text": "The first step in database development is",
         "options": [
             {
                 "text": "a) a) Physical database design",
@@ -4626,7 +4827,8 @@ module.exports =[
     },
     {
         "question_id": 308,
-        "question_text": "Which of the following database activities determines the entities, attributes, and relationships of data?",
+        "subs":1,
+"question_text": "Which of the following database activities determines the entities, attributes, and relationships of data?",
         "options": [
             {
                 "text": "a) a) Logical database design",
@@ -4649,7 +4851,8 @@ module.exports =[
     },
     {
         "question_id": 332,
-        "question_text": "Which of the following is an advantage of partitioning?",
+        "subs":1,
+"question_text": "Which of the following is an advantage of partitioning?",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -4672,7 +4875,8 @@ module.exports =[
     },
     {
         "question_id": 333,
-        "question_text": "The blocking factor is:",
+        "subs":1,
+"question_text": "The blocking factor is:",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -4695,7 +4899,8 @@ module.exports =[
     },
     {
         "question_id": 334,
-        "question_text": "Which of the following improves a query's processing time?",
+        "subs":1,
+"question_text": "Which of the following improves a query's processing time?",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -4718,7 +4923,8 @@ module.exports =[
     },
     {
         "question_id": 335,
-        "question_text": "Which of the following are integrity controls that a DBMS may support?",
+        "subs":1,
+"question_text": "Which of the following are integrity controls that a DBMS may support?",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -4741,7 +4947,8 @@ module.exports =[
     },
     {
         "question_id": 337,
-        "question_text": "What is the best data type definition for Oracle when a field is alphanumeric and has a fixed length?",
+        "subs":1,
+"question_text": "What is the best data type definition for Oracle when a field is alphanumeric and has a fixed length?",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -4764,7 +4971,8 @@ module.exports =[
     },
     {
         "question_id": 602,
-        "question_text": "The SQL statement used to create a view is",
+        "subs":1,
+"question_text": "The SQL statement used to create a view is",
         "options": [
             {
                 "text": "a) a) CREATE VIEW",
@@ -4787,7 +4995,8 @@ module.exports =[
     },
     {
         "question_id": 603,
-        "question_text": "The SQL MAKE TABLE command is used to",
+        "subs":1,
+"question_text": "The SQL MAKE TABLE command is used to",
         "options": [
             {
                 "text": "a) a) True",
@@ -4810,7 +5019,8 @@ module.exports =[
     },
     {
         "question_id": 604,
-        "question_text": "SQL has a JOIN ON syntax that can be used to create inner joins and",
+        "subs":1,
+"question_text": "SQL has a JOIN ON syntax that can be used to create inner joins and",
         "options": [
             {
                 "text": "a) a) True",
@@ -4833,7 +5043,8 @@ module.exports =[
     },
     {
         "question_id": 605,
-        "question_text": "Standard SQL-92 views are constructed from SQL SELECT statements that",
+        "subs":1,
+"question_text": "Standard SQL-92 views are constructed from SQL SELECT statements that",
         "options": [
             {
                 "text": "a) a) True",
@@ -4856,7 +5067,8 @@ module.exports =[
     },
     {
         "question_id": 606,
-        "question_text": "SQL Server does not support the BEFORE",
+        "subs":1,
+"question_text": "SQL Server does not support the BEFORE",
         "options": [
             {
                 "text": "a) a) True",
@@ -4879,7 +5091,8 @@ module.exports =[
     },
     {
         "question_id": 607,
-        "question_text": "A updatable view has its own data.",
+        "subs":1,
+"question_text": "A updatable view has its own data.",
         "options": [
             {
                 "text": "a) a) True",
@@ -4902,7 +5115,8 @@ module.exports =[
     },
     {
         "question_id": 608,
-        "question_text": "The SQL DELETE statement is used to",
+        "subs":1,
+"question_text": "The SQL DELETE statement is used to",
         "options": [
             {
                 "text": "a) a) True",
@@ -4925,7 +5139,8 @@ module.exports =[
     },
     {
         "question_id": 609,
-        "question_text": "Common types of SQL CHECK constraints include range",
+        "subs":1,
+"question_text": "Common types of SQL CHECK constraints include range",
         "options": [
             {
                 "text": "a) a) True",
@@ -4948,7 +5163,8 @@ module.exports =[
     },
     {
         "question_id": 610,
-        "question_text": "If any required (NOT NULL) columns are missing from",
+        "subs":1,
+"question_text": "If any required (NOT NULL) columns are missing from",
         "options": [
             {
                 "text": "a) a) True",
@@ -4971,7 +5187,8 @@ module.exports =[
     },
     {
         "question_id": 632,
-        "question_text": "both (a) and (b)",
+        "subs":1,
+"question_text": "both (a) and (b)",
         "options": [
             {
                 "text": "a) a) Option B",
@@ -4994,7 +5211,8 @@ module.exports =[
     },
     {
         "question_id": 102,
-        "question_text": "A computer file can be best described as",
+        "subs":1,
+"question_text": "A computer file can be best described as",
         "options": [
             {
                 "text": "a) a) a single data item",
@@ -5017,7 +5235,8 @@ module.exports =[
     },
     {
         "question_id": 103,
-        "question_text": "A good query system",
+        "subs":1,
+"question_text": "A good query system",
         "options": [
             {
                 "text": "a) a) can accept English language",
@@ -5040,7 +5259,8 @@ module.exports =[
     },
     {
         "question_id": 104,
-        "question_text": "If you want to organize a file in multiple ways, it is better to",
+        "subs":1,
+"question_text": "If you want to organize a file in multiple ways, it is better to",
         "options": [
             {
                 "text": "a) a) Delete",
@@ -5063,7 +5283,8 @@ module.exports =[
     },
     {
         "question_id": 105,
-        "question_text": "The modify operation is likely to be done after",
+        "subs":1,
+"question_text": "The modify operation is likely to be done after",
         "options": [
             {
                 "text": "a) a> Delete",
@@ -5086,7 +5307,8 @@ module.exports =[
     },
     {
         "question_id": 106,
-        "question_text": "One data dictionary software package is cre called",
+        "subs":1,
+"question_text": "One data dictionary software package is cre called",
         "options": [
             {
                 "text": "a) a> DB/DC dictionary",
@@ -5109,7 +5331,8 @@ module.exports =[
     },
     {
         "question_id": 107,
-        "question_text": "One approach to standardizing storing of data",
+        "subs":1,
+"question_text": "One approach to standardizing storing of data",
         "options": [
             {
                 "text": "a) a> MIS",
@@ -5132,7 +5355,8 @@ module.exports =[
     },
     {
         "question_id": 108,
-        "question_text": "What software packages are commonly used for businesses that have to track extensive lists of clients and inventory?",
+        "subs":1,
+"question_text": "What software packages are commonly used for businesses that have to track extensive lists of clients and inventory?",
         "options": [
             {
                 "text": "a) a> Special purpose packages",
@@ -5155,7 +5379,8 @@ module.exports =[
     },
     {
         "question_id": 8,
-        "question_text": "The data-base environment has all of the following components except:",
+        "subs":1,
+"question_text": "The data-base environment has all of the following components except:",
         "options": [
             {
                 "text": "a) Option not Provided",
@@ -5178,7 +5403,8 @@ module.exports =[
     },
     {
         "question_id": 437,
-        "question_text": "You can add a column at any time as long as it is a NULL column. You can increase the number of characters in character columns or the number of digits in numeric columns",
+        "subs":1,
+"question_text": "You can add a column at any time as long as it is a NULL column. You can increase the number of characters in character columns or the number of digits in numeric columns",
         "options": [
             {
                 "text": "a) None",

@@ -2,12 +2,15 @@ const express = require('express');
 const router = express.Router();
 const { connectToDatabase } = require('../db');
 
-// Route to fetch collection names as topics
+// Route to fetch collection names as topics with question counts
 router.get('/topics', async (req, res) => {
   try {
     const db = await connectToDatabase('data');
     const collections = await db.listCollections().toArray();
-    const topics = collections.map(col => col.name);
+    const topics = await Promise.all(collections.map(async col => {
+      const count = await db.collection(col.name).countDocuments();
+      return { name: col.name, count };
+    }));
     res.json(topics);
   } catch (error) {
     console.error('Error fetching topics:', error);
@@ -15,7 +18,7 @@ router.get('/topics', async (req, res) => {
   }
 });
 
-// Update the subtopics route to fetch collections from the "data" database
+// Update the subtopics route to fetch collections from the "data" database with question counts
 router.get('/subtopics/:topic', async (req, res) => {
   const { topic } = req.params;
   try {
@@ -52,6 +55,15 @@ router.get('/subtopics/:topic', async (req, res) => {
     // Send only half of the unique subtopics
     for (const subsValue in classifiedSubtopics) {
       classifiedSubtopics[subsValue] = classifiedSubtopics[subsValue].slice(0, Math.ceil(classifiedSubtopics[subsValue].length / 2));
+    }
+
+    // Add question counts to subtopics
+    for (const subsValue in classifiedSubtopics) {
+      classifiedSubtopics[subsValue] = await Promise.all(classifiedSubtopics[subsValue].map(async subtopic => {
+        const [subtopicName, subs] = subtopic.split('-');
+        const count = await db.collection(subtopicName).countDocuments({ subs: parseInt(subs) });
+        return { name: subtopic, count };
+      }));
     }
 
     console.log('Unique Subs:', Array.from(uniqueSubs));

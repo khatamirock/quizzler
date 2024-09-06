@@ -28,12 +28,12 @@ function updateSubtopics() {
                         const optgroup = document.createElement('optgroup');
                         optgroup.label = `Subs: ${subsValue}`;
                         subtopics.forEach(subtopic => {
-                            if (!addedSubtopics.has(subtopic)) {
+                            if (!addedSubtopics.has(subtopic.name)) {
                                 const option = document.createElement('option');
-                                option.value = subtopic; // Use subtopic as the value
-                                option.textContent = subtopic;
+                                option.value = subtopic.name; // Use subtopic as the value
+                                option.textContent = `${subtopic.name} (${subtopic.count} questions)`;
                                 optgroup.appendChild(option);
-                                addedSubtopics.add(subtopic);
+                                addedSubtopics.add(subtopic.name);
                             }
                         });
                         subtopicSelect.appendChild(optgroup);
@@ -343,8 +343,8 @@ document.addEventListener('DOMContentLoaded', () => {
       topicSelect.innerHTML = '<option value="" disabled selected>Select a topic</option>';
       topics.forEach(topic => {
         const option = document.createElement('option');
-        option.value = topic;
-        option.textContent = topic;
+        option.value = topic.name;
+        option.textContent = `${topic.name} (${topic.count} questions)`;
         topicSelect.appendChild(option);
       });
     })
@@ -369,12 +369,12 @@ document.addEventListener('DOMContentLoaded', () => {
               const optgroup = document.createElement('optgroup');
               optgroup.label = `Subs: ${subsValue}`;
               subtopics.forEach(subtopic => {
-                if (!addedSubtopics.has(subtopic)) {
+                if (!addedSubtopics.has(subtopic.name)) {
                   const option = document.createElement('option');
-                  option.value = subtopic; // Use subtopic as the value
-                  option.textContent = subtopic;
+                  option.value = subtopic.name; // Use subtopic as the value
+                  option.textContent = `${subtopic.name} (${subtopic.count} questions)`;
                   optgroup.appendChild(option);
-                  addedSubtopics.add(subtopic);
+                  addedSubtopics.add(subtopic.name);
                 }
               });
               subtopicSelect.appendChild(optgroup);
