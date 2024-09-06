@@ -175,3 +175,119 @@ function restartQuiz() {
     document.getElementById('score').textContent = '';
     document.getElementById('finalScore').textContent = '';
 }
+
+// Add these variables at the top of your file
+const quizTab = document.getElementById('quizTab');
+const dashboardTab = document.getElementById('dashboardTab');
+const quizContent = document.getElementById('quizContent');
+const dashboardContent = document.getElementById('dashboardContent');
+const dashboardData = document.getElementById('dashboardData');
+
+// Add event listeners for tab switching
+quizTab.addEventListener('click', () => switchTab('quiz'));
+dashboardTab.addEventListener('click', () => switchTab('dashboard'));
+
+function switchTab(tab) {
+    if (tab === 'quiz') {
+        quizTab.classList.add('active');
+        dashboardTab.classList.remove('active');
+        quizContent.style.display = 'block';
+        dashboardContent.style.display = 'none';
+    } else {
+        quizTab.classList.remove('active');
+        dashboardTab.classList.add('active');
+        quizContent.style.display = 'none';
+        dashboardContent.style.display = 'block';
+        fetchDashboardData();
+    }
+}
+
+async function fetchDashboardData() {
+    try {
+        const response = await fetch('/api/questions/dashboard');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log('Fetched dashboard data:', data);
+        displayDashboardData(data);
+    } catch (error) {
+        console.error('Error fetching dashboard data:', error);
+        dashboardData.innerHTML = '<p>Error loading dashboard data. Please try again later.</p>';
+    }
+}
+
+function displayDashboardData(data) {
+    console.log('Displaying dashboard data:', data);
+    if (!data || data.length === 0) {
+        dashboardData.innerHTML = '<p>No quiz results available.</p>';
+        return;
+    }
+
+    // Group data by topic
+    const groupedData = data.reduce((acc, result) => {
+        if (!acc[result.topic]) {
+            acc[result.topic] = [];
+        }
+        acc[result.topic].push(result);
+        return acc;
+    }, {});
+
+    // Clear previous charts
+    const chartsContainer = document.getElementById('chartsContainer');
+    chartsContainer.innerHTML = '';
+
+    // Create a chart for each topic
+    Object.keys(groupedData).forEach(topic => {
+        const topicData = groupedData[topic];
+        const labels = topicData.map(result => new Date(result.timestamp).toLocaleString());
+        const scores = topicData.map(result => result.score);
+
+        // Create a canvas element for the chart
+        const canvas = document.createElement('canvas');
+        canvas.id = `chart-${topic}`;
+        chartsContainer.appendChild(canvas);
+
+        // Render the chart
+        const ctx = canvas.getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: `Quiz Scores Over Time for ${topic}`,
+                    data: scores,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    fill: true,
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Time'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Score'
+                        },
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    });
+}
+
+// Call this function when the page loads to set up the initial state
+function initializePage() {
+    switchTab('quiz');
+}
+
+// Call the initialization function when the page loads
+document.addEventListener('DOMContentLoaded', initializePage);

@@ -59,4 +59,18 @@ router.post('/submit-result', async (req, res) => {
   }
 });
 
+// Add this new route for the dashboard
+router.get('/dashboard', async (req, res) => {
+  const db = getDb();
+
+  try {
+    const results = await db.collection('quiz_results').find({}).toArray();
+    console.log('Dashboard results:', results);
+    res.json(results);
+  } catch (error) {
+    console.error('Error fetching dashboard data:', error);
+    res.status(500).json({ error: 'Failed to fetch dashboard data' });
+  }
+});
+
 module.exports = router;
