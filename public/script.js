@@ -175,3 +175,69 @@ function restartQuiz() {
     document.getElementById('score').textContent = '';
     document.getElementById('finalScore').textContent = '';
 }
+
+// Add these variables at the top of your file
+const quizTab = document.getElementById('quizTab');
+const dashboardTab = document.getElementById('dashboardTab');
+const quizContent = document.getElementById('quizContent');
+const dashboardContent = document.getElementById('dashboardContent');
+const dashboardData = document.getElementById('dashboardData');
+
+// Add event listeners for tab switching
+quizTab.addEventListener('click', () => switchTab('quiz'));
+dashboardTab.addEventListener('click', () => switchTab('dashboard'));
+
+function switchTab(tab) {
+    if (tab === 'quiz') {
+        quizTab.classList.add('active');
+        dashboardTab.classList.remove('active');
+        quizContent.style.display = 'block';
+        dashboardContent.style.display = 'none';
+    } else {
+        quizTab.classList.remove('active');
+        dashboardTab.classList.add('active');
+        quizContent.style.display = 'none';
+        dashboardContent.style.display = 'block';
+        fetchDashboardData();
+    }
+}
+
+async function fetchDashboardData() {
+    try {
+        const response = await fetch('/api/questions/dashboard');
+        const data = await response.json();
+        displayDashboardData(data);
+    } catch (error) {
+        console.error('Error fetching dashboard data:', error);
+        dashboardData.innerHTML = '<p>Error loading dashboard data. Please try again later.</p>';
+    }
+}
+
+function displayDashboardData(data) {
+    if (data.length === 0) {
+        dashboardData.innerHTML = '<p>No quiz results available.</p>';
+        return;
+    }
+
+    let html = '<table><tr><th>Topic</th><th>Subtopic</th><th>Average Score</th><th>Total Attempts</th></tr>';
+    data.forEach(topic => {
+        topic.subtopics.forEach(subtopic => {
+            html += `<tr>
+                <td>${topic._id}</td>
+                <td>${subtopic.name}</td>
+                <td>${subtopic.avgScore.toFixed(2)}%</td>
+                <td>${subtopic.totalAttempts}</td>
+            </tr>`;
+        });
+    });
+    html += '</table>';
+    dashboardData.innerHTML = html;
+}
+
+// Call this function when the page loads to set up the initial state
+function initializePage() {
+    switchTab('quiz');
+}
+
+// Call the initialization function when the page loads
+document.addEventListener('DOMContentLoaded', initializePage);
