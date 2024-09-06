@@ -224,20 +224,64 @@ function displayDashboardData(data) {
         return;
     }
 
-    let html = '<table><tr><th>Topic</th><th>Subtopic</th><th>Score</th><th>Total Questions</th><th>Timestamp</th></tr>';
-    data.forEach(result => {
-        console.log('Processing result:', result);
-        html += `<tr>
-            <td>${result.topic || 'N/A'}</td>
-            <td>${result.subtopic || 'N/A'}</td>
-            <td>${result.score}</td>
-            <td>${result.totalQuestions}</td>
-            <td>${new Date(result.timestamp).toLocaleString()}</td>
-        </tr>`;
+    // Group data by topic
+    const groupedData = data.reduce((acc, result) => {
+        if (!acc[result.topic]) {
+            acc[result.topic] = [];
+        }
+        acc[result.topic].push(result);
+        return acc;
+    }, {});
+
+    // Clear previous charts
+    const chartsContainer = document.getElementById('chartsContainer');
+    chartsContainer.innerHTML = '';
+
+    // Create a chart for each topic
+    Object.keys(groupedData).forEach(topic => {
+        const topicData = groupedData[topic];
+        const labels = topicData.map(result => new Date(result.timestamp).toLocaleString());
+        const scores = topicData.map(result => result.score);
+
+        // Create a canvas element for the chart
+        const canvas = document.createElement('canvas');
+        canvas.id = `chart-${topic}`;
+        chartsContainer.appendChild(canvas);
+
+        // Render the chart
+        const ctx = canvas.getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: `Quiz Scores Over Time for ${topic}`,
+                    data: scores,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    fill: true,
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Time'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Score'
+                        },
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
     });
-    html += '</table>';
-    console.log('Generated HTML:', html);
-    dashboardData.innerHTML = html;
 }
 
 // Call this function when the page loads to set up the initial state
