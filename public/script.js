@@ -296,7 +296,29 @@ function displayDashboardData(data) {
 // Call this function when the page loads to set up the initial state
 function initializePage() {
     switchTab('quiz');
+    fetchTopics();
+    fetchMongoCollections(); // Add this line to fetch MongoDB collections
 }
 
 // Call the initialization function when the page loads
 document.addEventListener('DOMContentLoaded', initializePage);
+
+const mongoCollectionSelect = document.getElementById('mongoCollection');
+
+// Add this function to fetch MongoDB collections
+async function fetchMongoCollections() {
+    try {
+        const response = await fetch('/api/questions/collections');
+        const collections = await response.json();
+        mongoCollectionSelect.innerHTML = '<option value="" disabled selected>Select a MongoDB Collection</option>';
+        collections.forEach(collection => {
+            const option = document.createElement('option');
+            option.value = collection;
+            option.textContent = collection;
+            mongoCollectionSelect.appendChild(option);
+        });
+        console.log('Fetched MongoDB collections:', collections);
+    } catch (error) {
+        console.error('Error fetching MongoDB collections:', error);
+    }
+}

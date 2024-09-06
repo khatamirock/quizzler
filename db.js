@@ -1,26 +1,26 @@
 require('dotenv').config();
 const { MongoClient } = require('mongodb');
 
-const uri = process.env.MONGO_URI;
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+let cachedDb = null;
 
-let dbConnection;
+async function connectToDatabase(dbName = null) {
+  if (cachedDb && (!dbName || cachedDb.databaseName === dbName)) {
+    console.log('Using cached database connection');
+    return cachedDb;
+  }
 
-async function connectToDatabase() {
-  if (dbConnection) return dbConnection;
-  
   try {
-    // Check if we're already connected
-    if (client.topology && client.topology.isConnected()) {
-      dbConnection = client.db(process.env.DB_NAME);
-      return dbConnection;
-    }
+    console.log('Connecting to MongoDB...');
+    const uri = dbName ? `${process.env.MONGO_URI}/${dbName}` : process.env.MONGO_URI;
+    const client = await MongoClient.connect(uri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('Connected to MongoDB successfully');
 
-    // If not connected, connect now
-    await client.connect();
-    dbConnection = client.db(process.env.DB_NAME);
-    console.log('Connected to MongoDB');
-    return dbConnection;
+    const db = client.db(dbName);
+    cachedDb = db;
+    return db;
   } catch (error) {
     console.error('Error connecting to MongoDB:', error);
     throw error;
