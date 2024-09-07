@@ -1,9 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const questionsRouter = require('./routes/questions');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(express.json());
+app.use('/api/questions', questionsRouter);
 
 mongoose.connect('mongodb://localhost:27017/yourDatabase', { useNewUrlParser: true, useUnifiedTopology: true });
 
