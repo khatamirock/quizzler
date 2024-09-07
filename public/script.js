@@ -199,6 +199,74 @@ quizTab.addEventListener('click', () => switchTab('quiz'));
 dashboardTab.addEventListener('click', () => switchTab('dashboard'));
 converterTab.addEventListener('click', () => switchTab('converter'));
 
+const topicFilter = document.createElement('select');
+topicFilter.id = 'topicFilter';
+topicFilter.innerHTML = '<option value="">All Topics</option>';
+
+const subtopicFilter = document.createElement('select');
+subtopicFilter.id = 'subtopicFilter';
+subtopicFilter.innerHTML = '<option value="">All Subtopics</option>';
+subtopicFilter.disabled = true;
+
+async function populateTopicFilter() {
+    try {
+        const response = await fetch('/api/questions/dashboard-topics');
+        const topics = await response.json();
+        topicFilter.innerHTML = '<option value="">All Topics</option>';
+        topics.forEach(topic => {
+            const option = document.createElement('option');
+            option.value = topic;
+            option.textContent = topic;
+            topicFilter.appendChild(option);
+        });
+        dashboardContent.insertBefore(subtopicFilter, dashboardData);
+        dashboardContent.insertBefore(topicFilter, subtopicFilter);
+    } catch (error) {
+        console.error('Error fetching dashboard topics:', error);
+    }
+}
+
+async function populateSubtopicFilter(topic) {
+    try {
+        const response = await fetch(`/api/questions/dashboard-subtopics/${topic}`);
+        const subtopics = await response.json();
+        subtopicFilter.innerHTML = '<option value="">All Subtopics</option>';
+        subtopics.forEach(subtopic => {
+            const option = document.createElement('option');
+            option.value = subtopic;
+            option.textContent = subtopic;
+            subtopicFilter.appendChild(option);
+        });
+        subtopicFilter.disabled = false;
+    } catch (error) {
+        console.error('Error fetching dashboard subtopics:', error);
+    }
+}
+
+async function fetchDashboardData() {
+    try {
+        const topic = topicFilter.value;
+        const subtopic = subtopicFilter.value;
+        let url = '/api/questions/dashboard';
+        if (topic) {
+            url += `/${topic}`;
+            if (subtopic) {
+                url += `/${subtopic}`;
+            }
+        }
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log('Fetched dashboard data:', data);
+        displayDashboardData(data);
+    } catch (error) {
+        console.error('Error fetching dashboard data:', error);
+        dashboardData.innerHTML = '<p>Error loading dashboard data. Please try again later.</p>';
+    }
+}
+
 function switchTab(tab) {
     quizTab.classList.remove('active');
     dashboardTab.classList.remove('active');
@@ -221,42 +289,18 @@ function switchTab(tab) {
     }
 }
 
-const topicFilter = document.createElement('select');
-topicFilter.id = 'topicFilter';
-topicFilter.innerHTML = '<option value="">All Topics</option>';
-
-async function populateTopicFilter() {
-    try {
-        const response = await fetch('/api/questions/dashboard-topics');
-        const topics = await response.json();
-        topics.forEach(topic => {
-            const option = document.createElement('option');
-            option.value = topic;
-            option.textContent = topic;
-            topicFilter.appendChild(option);
-        });
-        dashboardContent.insertBefore(topicFilter, dashboardData);
-    } catch (error) {
-        console.error('Error fetching dashboard topics:', error);
+topicFilter.addEventListener('change', (event) => {
+    const selectedTopic = event.target.value;
+    if (selectedTopic) {
+        populateSubtopicFilter(selectedTopic);
+    } else {
+        subtopicFilter.innerHTML = '<option value="">All Subtopics</option>';
+        subtopicFilter.disabled = true;
     }
-}
+    fetchDashboardData();
+});
 
-async function fetchDashboardData() {
-    try {
-        const topic = topicFilter.value;
-        const url = topic ? `/api/questions/dashboard/${topic}` : '/api/questions/dashboard';
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        console.log('Fetched dashboard data:', data);
-        displayDashboardData(data);
-    } catch (error) {
-        console.error('Error fetching dashboard data:', error);
-        dashboardData.innerHTML = '<p>Error loading dashboard data. Please try again later.</p>';
-    }
-}
+subtopicFilter.addEventListener('change', fetchDashboardData);
 
 function displayDashboardData(data) {
     console.log('Displaying dashboard data:', data);
@@ -265,12 +309,13 @@ function displayDashboardData(data) {
         return;
     }
 
-    // Group data by topic
+    // Group data by topic and subtopic
     const groupedData = data.reduce((acc, result) => {
-        if (!acc[result.topic]) {
-            acc[result.topic] = [];
+        const key = `${result.topic}-${result.subtopic}`;
+        if (!acc[key]) {
+            acc[key] = [];
         }
-        acc[result.topic].push(result);
+        acc[key].push(result);
         return acc;
     }, {});
 
@@ -278,15 +323,15 @@ function displayDashboardData(data) {
     const chartsContainer = document.getElementById('chartsContainer');
     chartsContainer.innerHTML = '';
 
-    // Create a chart for each topic
-    Object.keys(groupedData).forEach(topic => {
-        const topicData = groupedData[topic];
-        const labels = topicData.map(result => new Date(result.timestamp).toLocaleString());
-        const scores = topicData.map(result => result.score);
+    // Create a chart for each topic-subtopic combination
+    Object.entries(groupedData).forEach(([key, results]) => {
+        const [topic, subtopic] = key.split('-');
+        const labels = results.map(result => new Date(result.timestamp).toLocaleString());
+        const scores = results.map(result => result.score);
 
         // Create a canvas element for the chart
         const canvas = document.createElement('canvas');
-        canvas.id = `chart-${topic}`;
+        canvas.id = `chart-${key}`;
         chartsContainer.appendChild(canvas);
 
         // Render the chart
@@ -296,7 +341,7 @@ function displayDashboardData(data) {
             data: {
                 labels: labels,
                 datasets: [{
-                    label: `Quiz Scores Over Time for ${topic}`,
+                    label: `Quiz Scores for ${topic} - ${subtopic}`,
                     data: scores,
                     borderColor: 'rgba(75, 192, 192, 1)',
                     backgroundColor: 'rgba(75, 192, 192, 0.2)',

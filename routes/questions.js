@@ -146,6 +146,40 @@ router.get('/dashboard-topics', async (req, res) => {
   }
 });
 
+// Add this new route after the '/dashboard-topics' route
+router.get('/dashboard-subtopics/:topic', async (req, res) => {
+  try {
+    const db = await connectToDatabase();
+    const { topic } = req.params;
+    const subtopics = await db.collection('quiz_results').distinct('subtopic', { topic: topic });
+    res.json(subtopics);
+  } catch (error) {
+    console.error('Error fetching dashboard subtopics:', error);
+    res.status(500).json({ error: 'Failed to fetch dashboard subtopics' });
+  }
+});
+
+// Update the dashboard route to accept both topic and subtopic filters
+router.get('/dashboard/:topic?/:subtopic?', async (req, res) => {
+  try {
+    const db = await connectToDatabase();
+    const { topic, subtopic } = req.params;
+    let query = {};
+    if (topic) {
+      query.topic = topic;
+    }
+    if (subtopic) {
+      query.subtopic = subtopic;
+    }
+    const results = await db.collection('quiz_results').find(query).toArray();
+    console.log('Dashboard results:', results);
+    res.json(results);
+  } catch (error) {
+    console.error('Error fetching dashboard data:', error);
+    res.status(500).json({ error: 'Failed to fetch dashboard data' });
+  }
+});
+
 // Update the collections route to use the "data" database
 router.get('/collections', async (req, res) => {
   console.log('Attempting to fetch collections...');
