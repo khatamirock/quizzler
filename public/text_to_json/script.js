@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     previewButton.addEventListener('click', () => {
         const rawText = document.getElementById('rawText').value;
-        currentJsonData = extractQA(rawText);
+        const subtopicName = newSubtopic.value || subtopicSelect.value;
+        currentJsonData = convertToJSON(rawText, subtopicName);
         jsonPreview.textContent = JSON.stringify(currentJsonData, null, 2);
         form.style.display = 'none';
         previewArea.style.display = 'block';
@@ -48,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
+            console.log('Saving JSON data:', { topicName, subtopicName, currentJsonData });
             const response = await saveJsonData(topicName, subtopicName, currentJsonData);
             console.log('Server response:', response);
             resultDiv.innerHTML = `<p>${response.message}</p>`;
@@ -64,113 +66,91 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ... (keep the existing fetchTopics and fetchSubtopics functions)
+    function convertToJSON(inputText, subtopicName) {
+        const questions = inputText.split(/Ques\s+\d+:/);
+        questions.shift(); // Remove the empty string at the beginning
+        const result = [];
 
-    function extractQA(text) {
-        console.log('Raw text input:', text);
-        const questions = text.split(/\*\*Ques\s+(\d+)\s+\(Bangla\):\*\*/);
-        console.log('Split questions:', questions);
-        questions.shift();
-        const results = [];
+        questions.forEach((questionContent, index) => {
+            const questionNumber = index + 1;
+            const [questionText, answerPart] = questionContent.split('Answer:');
+            const fullQuestionText = questionText.trim();
 
-        for (let i = 0; i < questions.length; i += 2) {
-            const questionId = parseInt(questions[i]);
-            const questionContent = questions[i + 1] || "";
+            const options = fullQuestionText.match(/[a-d]\..+?(?=(?:\n[a-d]\.|\n*$))/gs) || [];
 
-            const [questionText, ...optionsAndAnswer] = questionContent.split(/([a-d]\.)/);
-            const options = [];
-            let correctAnswer = '';
+            const jsonQuestion = {
+                question_id: questionNumber,
+                subs: subtopicName,
+                question_text: fullQuestionText.replace(/[a-d]\..+/g, '').trim(),
+                options: options.map(option => {
+                    const [value, text] = option.split('. ');
+                    return {
+                        text: `${value}) ${text.trim()}`,
+                        value: value.trim()
+                    };
+                }),
+                correct_answer: answerPart ? answerPart.trim() : ''
+            };
 
-            for (let j = 0; j < optionsAndAnswer.length; j += 2) {
-                const optionLetter = optionsAndAnswer[j].trim().replace('.', '');
-                const optionText = optionsAndAnswer[j + 1] || "";
+            result.push(jsonQuestion);
+        });
 
-                if (optionText.includes("**Answer:**")) {
-                    const [text, answer] = optionText.split("**Answer:**");
-                    options.push({
-                        text: cleanText(text),
-                        value: optionLetter
-                    });
-                    correctAnswer = answer.trim();
-                } else {
-                    options.push({
-                        text: cleanText(optionText),
-                        value: optionLetter
-                    });
-                }
-            }
+        return result;
+    }
 
-            results.push({
-                question_id: questionId,
-                question_text: cleanText(questionText),
-                options: options,
-                correct_answer: correctAnswer
+    async function fetchTopics() {
+        try {
+            const response = await fetch('/api/questions/topics');
+            const topics = await response.json();
+            topicSelect.innerHTML = '<option value="">Select or create a topic</option>';
+            topics.forEach(topic => {
+                const option = document.createElement('option');
+                option.value = topic.name; // Ensure the correct property is used
+                option.textContent = topic.name; // Ensure the correct property is used
+                topicSelect.appendChild(option);
             });
+            console.log('Fetched topics:', topics);
+        } catch (error) {
+            console.error('Error fetching topics:', error);
+        }
+    }
+
+    async function fetchSubtopics(topic) {
+        try {
+            const response = await fetch(`/api/questions/subtopics/${topic}`);
+            const subtopics = await response.json();
+            subtopicSelect.innerHTML = '<option value="">Select or create a subtopic</option>';
+            subtopics.forEach(subtopic => {
+                const option = document.createElement('option');
+                option.value = subtopic.name; // Ensure the correct property is used
+                option.textContent = subtopic.name; // Ensure the correct property is used
+                subtopicSelect.appendChild(option);
+            });
+            console.log('Fetched subtopics for topic', topic, ':', subtopics);
+        } catch (error) {
+            console.error('Error fetching subtopics:', error);
+        }
+    }
+
+    async function saveJsonData(topicName, subtopicName, jsonData) {
+        const response = await fetch('/api/questions/save-json', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                topicName,
+                subtopicName,
+                jsonData
+            }),
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error('Failed to save JSON data:', errorText);
+            throw new Error('Failed to save JSON data');
         }
 
-        console.log('Extracted results:', results);
-        return results;
+        return response.json();
     }
-
-    // ... (keep the existing cleanText and saveJsonData functions)
 });
-
-async function fetchTopics() {
-    try {
-        const response = await fetch('/api/questions/topics');
-        const topics = await response.json();
-        const topicSelect = document.getElementById('topicSelect');
-        topicSelect.innerHTML = '<option value="">Select or create a topic</option>';
-        topics.forEach(topic => {
-            const option = document.createElement('option');
-            option.value = topic;
-            option.textContent = topic;
-            topicSelect.appendChild(option);
-        });
-        console.log('Fetched topics:', topics);
-    } catch (error) {
-        console.error('Error fetching topics:', error);
-    }
-}
-
-async function fetchSubtopics(topic) {
-    try {
-        const response = await fetch(`/api/questions/subtopics/${topic}`);
-        const subtopics = await response.json();
-        const subtopicSelect = document.getElementById('subtopicSelect');
-        subtopicSelect.innerHTML = '<option value="">Select or create a subtopic</option>';
-        subtopics.forEach(subtopic => {
-            const option = document.createElement('option');
-            option.value = subtopic;
-            option.textContent = subtopic;
-            subtopicSelect.appendChild(option);
-        });
-        console.log('Fetched subtopics for topic', topic, ':', subtopics);
-    } catch (error) {
-        console.error('Error fetching subtopics:', error);
-    }
-}
-
-function cleanText(text) {
-    return text.replace(/\s+/g, ' ').trim();
-}
-
-async function saveJsonData(topicName, subtopicName, jsonData) {
-    const response = await fetch('/api/questions/save-json', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            topicName,
-            subtopicName,
-            jsonData
-        }),
-    });
-
-    if (!response.ok) {
-        throw new Error('Failed to save JSON data');
-    }
-
-    return response.json();
-}
