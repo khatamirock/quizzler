@@ -116,16 +116,33 @@ router.post('/submit-result', async (req, res) => {
   }
 });
 
-// Update the dashboard route
-router.get('/dashboard', async (req, res) => {
+// Update the dashboard route to accept a topic filter
+router.get('/dashboard/:topic?', async (req, res) => {
   try {
     const db = await connectToDatabase();
-    const results = await db.collection('quiz_results').find({}).toArray();
+    const { topic } = req.params;
+    let query = {};
+    if (topic) {
+      query = { topic: topic };
+    }
+    const results = await db.collection('quiz_results').find(query).toArray();
     console.log('Dashboard results:', results);
     res.json(results);
   } catch (error) {
     console.error('Error fetching dashboard data:', error);
     res.status(500).json({ error: 'Failed to fetch dashboard data' });
+  }
+});
+
+// Add a new route to fetch all unique topics
+router.get('/dashboard-topics', async (req, res) => {
+  try {
+    const db = await connectToDatabase();
+    const topics = await db.collection('quiz_results').distinct('topic');
+    res.json(topics);
+  } catch (error) {
+    console.error('Error fetching dashboard topics:', error);
+    res.status(500).json({ error: 'Failed to fetch dashboard topics' });
   }
 });
 

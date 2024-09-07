@@ -213,6 +213,7 @@ function switchTab(tab) {
     } else if (tab === 'dashboard') {
         dashboardTab.classList.add('active');
         dashboardContent.style.display = 'block';
+        populateTopicFilter();
         fetchDashboardData();
     } else if (tab === 'converter') {
         converterTab.classList.add('active');
@@ -220,9 +221,31 @@ function switchTab(tab) {
     }
 }
 
+const topicFilter = document.createElement('select');
+topicFilter.id = 'topicFilter';
+topicFilter.innerHTML = '<option value="">All Topics</option>';
+
+async function populateTopicFilter() {
+    try {
+        const response = await fetch('/api/questions/dashboard-topics');
+        const topics = await response.json();
+        topics.forEach(topic => {
+            const option = document.createElement('option');
+            option.value = topic;
+            option.textContent = topic;
+            topicFilter.appendChild(option);
+        });
+        dashboardContent.insertBefore(topicFilter, dashboardData);
+    } catch (error) {
+        console.error('Error fetching dashboard topics:', error);
+    }
+}
+
 async function fetchDashboardData() {
     try {
-        const response = await fetch('/api/questions/dashboard');
+        const topic = topicFilter.value;
+        const url = topic ? `/api/questions/dashboard/${topic}` : '/api/questions/dashboard';
+        const response = await fetch(url);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -392,3 +415,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Other existing code...
 });
+
+topicFilter.addEventListener('change', fetchDashboardData);
