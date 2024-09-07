@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const jsonQuestion = {
                 question_id: questionNumber,
-                subs: subtopicName,
+                subs: parseInt(subtopicName) || 1, // Convert to integer, default to 1 if parsing fails
                 question_text: fullQuestionText.replace(/[a-d]\..+/g, '').trim(),
                 options: options.map(option => {
                     const [value, text] = option.split('. ');

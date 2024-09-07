@@ -151,4 +151,23 @@ router.get('/collections', async (req, res) => {
   }
 });
 
+// Route to save JSON data
+router.post('/save-json', async (req, res) => {
+  const { topicName, subtopicName, jsonData } = req.body;
+
+  try {
+    const db = await connectToDatabase('data');
+    const collection = db.collection(topicName);
+
+    // Insert the JSON data into the collection
+    const result = await collection.insertMany(jsonData);
+
+    console.log(`Inserted ${result.insertedCount} documents into the collection`);
+    res.json({ message: 'JSON data saved successfully', insertedCount: result.insertedCount });
+  } catch (error) {
+    console.error('Error saving JSON data:', error);
+    res.status(500).json({ error: 'Failed to save JSON data', details: error.message });
+  }
+});
+
 module.exports = router;
