@@ -31,7 +31,7 @@ function updateSubtopics() {
                         const groupInfo = subtopics[0].info || 'No extra info added';
                         
                         // Add the info to the optgroup label
-                        optgroup.label = `Subs: ${subsValue} - ${groupInfo}`;
+                        optgroup.label = `Subset: ${subsValue} - ${groupInfo}`;
                         
                         subtopics.forEach(subtopic => {
                             if (!addedSubtopics.has(subtopic.name)) {
@@ -479,16 +479,16 @@ document.addEventListener('DOMContentLoaded', () => {
               const optgroup = document.createElement('optgroup');
               
               // Get the info from the first subtopic in this group
-              const groupInfo = subtopics[0].info || 'No extra info added';
+              const groupInfo = subtopics[0].info || '  No extra info added';
               
               // Add the info to the optgroup label
-              optgroup.label = `Subs: ${subsValue} - ${groupInfo}`;
+              optgroup.label = `Subset: ${subsValue} -   ${groupInfo}`;
               
               subtopics.forEach(subtopic => {
                 if (!addedSubtopics.has(subtopic.name)) {
                   const option = document.createElement('option');
                   option.value = subtopic.name; // Use subtopic as the value
-                  option.textContent = `${subtopic.name} (${subtopic.count} questions)`;
+                  option.textContent = `Start -  ${subtopic.name} (${subtopic.count} questions)`;
                   if (subtopic.info) {
                     option.dataset.info = subtopic.info;
                   }
