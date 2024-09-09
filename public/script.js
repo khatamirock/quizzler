@@ -53,6 +53,9 @@ startButton.addEventListener('click', startQuiz);
 submitButton.addEventListener('click', submitQuiz);
 restartButton.addEventListener('click', restartQuiz);
 
+let quizDuration = 0;
+let timerInterval;
+
 function startQuiz() {
     const topic = topicSelect.value;
     const subtopic = subtopicSelect.value;
@@ -74,6 +77,10 @@ function startQuiz() {
             results.style.display = 'none';
             displayQuestions();
             updateScore();
+            
+            // Set up and start the timer
+            quizDuration = currentQuestions.length * 60; // 1 minute per question
+            startTimer();
         });
 }
 
@@ -139,10 +146,11 @@ function updateScore() {
 }
 
 function submitQuiz() {
+    clearInterval(timerInterval); // Stop the timer
+    
     const unansweredQuestions = currentQuestions.length - document.querySelectorAll('.question:has(.option.correct), .question:has(.option.incorrect)').length;
     if (unansweredQuestions > 0) {
-        alert(`You have ${unansweredQuestions} unanswered question(s). Please answer all questions before submitting.`);
-        return;
+        alert(`Time's up! You have ${unansweredQuestions} unanswered question(s). These will be marked as incorrect.`);
     }
 
     const topic = document.getElementById('topic').value;
@@ -178,11 +186,14 @@ function showResults() {
 }
 
 function restartQuiz() {
+    clearInterval(timerInterval); // Ensure the timer is stopped
     results.style.display = 'none';
     quiz.style.display = 'none';
     setup.style.display = 'block';
     document.getElementById('score').textContent = '';
     document.getElementById('finalScore').textContent = '';
+    document.getElementById('timeRemaining').textContent = '';
+    document.getElementById('timerBar').value = 100;
 }
 
 // Add these variables at the top of your file
@@ -327,7 +338,7 @@ function displayDashboardData(data) {
     Object.entries(groupedData).forEach(([key, results]) => {
         const [topic, subtopic] = key.split('-');
         const labels = results.map(result => new Date(result.timestamp).toLocaleString());
-        const scores = results.map(result => result.score);
+        const percentages = results.map(result => (result.score / result.totalQuestions) * 100);
 
         // Create a canvas element for the chart
         const canvas = document.createElement('canvas');
@@ -342,7 +353,7 @@ function displayDashboardData(data) {
                 labels: labels,
                 datasets: [{
                     label: `Quiz Scores for ${topic} - ${subtopic}`,
-                    data: scores,
+                    data: percentages,
                     borderColor: 'rgba(75, 192, 192, 1)',
                     backgroundColor: 'rgba(75, 192, 192, 0.2)',
                     fill: true,
@@ -360,9 +371,22 @@ function displayDashboardData(data) {
                     y: {
                         title: {
                             display: true,
-                            text: 'Score'
+                            text: 'Score Percentage'
                         },
-                        beginAtZero: true
+                        beginAtZero: true,
+                        max: 100
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const dataIndex = context.dataIndex;
+                                const result = results[dataIndex];
+                                const percentage = percentages[dataIndex].toFixed(2);
+                                return `${result.score} / ${result.totalQuestions} (${percentage}%)`;
+                            }
+                        }
                     }
                 }
             }
@@ -374,31 +398,31 @@ function displayDashboardData(data) {
 function initializePage() {
     switchTab('quiz');
     fetchTopics();
-    fetchMongoCollections(); // Add this line to fetch MongoDB collections
+    // fetchMongoCollections(); // Add this line to fetch MongoDB collections
 }
 
 // Call the initialization function when the page loads
 document.addEventListener('DOMContentLoaded', initializePage);
 
-const mongoCollectionSelect = document.getElementById('mongoCollection');
+// const mongoCollectionSelect = document.getElementById('mongoCollection');
 
-// Add this function to fetch MongoDB collections
-async function fetchMongoCollections() {
-    try {
-        const response = await fetch('/api/questions/collections');
-        const collections = await response.json();
-        mongoCollectionSelect.innerHTML = '<option value="" disabled selected>Select a MongoDB Collection</option>';
-        collections.forEach(collection => {
-            const option = document.createElement('option');
-            option.value = collection;
-            option.textContent = collection;
-            mongoCollectionSelect.appendChild(option);
-        });
-        console.log('Fetched MongoDB collections:', collections);
-    } catch (error) {
-        console.error('Error fetching MongoDB collections:', error);
-    }
-}
+// // Add this function to fetch MongoDB collections
+// async function fetchMongoCollections() {
+//     try {
+//         const response = await fetch('/api/questions/collections');
+//         const collections = await response.json();
+//         mongoCollectionSelect.innerHTML = '<option value="" disabled selected>Select a MongoDB Collection</option>';
+//         collections.forEach(collection => {
+//             const option = document.createElement('option');
+//             option.value = collection;
+//             option.textContent = collection;
+//             mongoCollectionSelect.appendChild(option);
+//         });
+//         console.log('Fetched MongoDB collections:', collections);
+//     } catch (error) {
+//         console.error('Error fetching MongoDB collections:', error);
+//     }
+// }
 
 document.addEventListener('DOMContentLoaded', () => {
   const topicSelect = document.getElementById('topic');
