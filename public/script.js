@@ -81,6 +81,7 @@ function startQuiz() {
             // Set up and start the timer
             quizDuration = currentQuestions.length * 60; // 1 minute per question
             startTimer();
+            setupStickyTimer();
         });
 }
 
@@ -486,3 +487,37 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 topicFilter.addEventListener('change', fetchDashboardData);
+
+function startTimer() {
+    let timeLeft = quizDuration;
+    updateTimerDisplay(timeLeft);
+    
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        updateTimerDisplay(timeLeft);
+        
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            submitQuiz();
+        }
+    }, 1000);
+}
+
+function updateTimerDisplay(timeLeft) {
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+    document.getElementById('timeRemaining').textContent = `Time Remaining: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+    
+    const progressPercentage = (timeLeft / quizDuration) * 100;
+    document.getElementById('timerBar').value = progressPercentage;
+}
+
+function setupStickyTimer() {
+    const stickyTimer = document.querySelector('.sticky-timer');
+    const observer = new IntersectionObserver(
+        ([e]) => e.target.classList.toggle('stuck', e.intersectionRatio < 1),
+        { threshold: [1] }
+    );
+
+    observer.observe(stickyTimer);
+}
