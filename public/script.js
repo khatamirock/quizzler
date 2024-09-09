@@ -30,13 +30,15 @@ function updateSubtopics() {
                         subtopics.forEach(subtopic => {
                             if (!addedSubtopics.has(subtopic.name)) {
                                 const option = document.createElement('option');
-                                option.value = subtopic.name; // Use subtopic as the value
+                                option.value = subtopic.name;
                                 option.textContent = `${subtopic.name} (${subtopic.count} questions)`;
                                 optgroup.appendChild(option);
                                 addedSubtopics.add(subtopic.name);
                             }
                         });
-                        subtopicSelect.appendChild(optgroup);
+                        if (optgroup.children.length > 0) {
+                            subtopicSelect.appendChild(optgroup);
+                        }
                     }
                     subtopicSelect.disabled = false;
                 } else {
@@ -321,6 +323,9 @@ function displayDashboardData(data) {
         return;
     }
 
+    // Sort the entire data array by timestamp in descending order
+    data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
     // Group data by topic and subtopic
     const groupedData = data.reduce((acc, result) => {
         const key = `${result.topic}-${result.subtopic}`;
@@ -338,6 +343,10 @@ function displayDashboardData(data) {
     // Create a chart for each topic-subtopic combination
     Object.entries(groupedData).forEach(([key, results]) => {
         const [topic, subtopic] = key.split('-');
+        
+        // Sort results for this topic-subtopic by timestamp in descending order
+        results.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+        
         const labels = results.map(result => new Date(result.timestamp).toLocaleString());
         const percentages = results.map(result => (result.score / result.totalQuestions) * 100);
 
@@ -367,7 +376,8 @@ function displayDashboardData(data) {
                         title: {
                             display: true,
                             text: 'Time'
-                        }
+                        },
+                        reverse: true // This will reverse the x-axis
                     },
                     y: {
                         title: {
@@ -470,7 +480,9 @@ document.addEventListener('DOMContentLoaded', () => {
                   addedSubtopics.add(subtopic.name);
                 }
               });
-              subtopicSelect.appendChild(optgroup);
+              if (optgroup.children.length > 0) {
+                subtopicSelect.appendChild(optgroup);
+              }
             }
             subtopicSelect.disabled = false;
           } else {
