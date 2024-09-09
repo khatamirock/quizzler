@@ -48,11 +48,35 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        const password = prompt("Please enter the admin password to save the data:");
+        if (!password) {
+            resultDiv.innerHTML = '<p>Error: Password is required to save data.</p>';
+            return;
+        }
+
         try {
             console.log('Saving JSON data:', { topicName, subtopicName, currentJsonData });
-            const response = await saveJsonData(topicName, subtopicName, currentJsonData);
-            console.log('Server response:', response);
-            resultDiv.innerHTML = `<p>${response.message}</p>`;
+            const response = await fetch('/api/questions/save-json', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    topicName,
+                    subtopicName,
+                    jsonData: currentJsonData,
+                    password: password
+                }),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Failed to save JSON data');
+            }
+
+            const result = await response.json();
+            console.log('Server response:', result);
+            resultDiv.innerHTML = `<p>${result.message}</p>`;
             
             fetchTopics();
             if (topicSelect.value) {

@@ -205,20 +205,24 @@ router.get('/collections', async (req, res) => {
 
 // Route to save JSON data
 router.post('/save-json', async (req, res) => {
-  const { topicName, subtopicName, jsonData } = req.body;
+  const { topicName, subtopicName, jsonData, password } = req.body;
+
+  // Check if the provided password matches the environment variable
+  if (password !== process.env.ADMIN_PASSWORD) {
+    return res.status(401).json({ error: 'Unauthorized: Incorrect password' });
+  }
 
   try {
     const db = await connectToDatabase('data');
     const collection = db.collection(topicName);
 
-    // Insert the JSON data into the collection
-    const result = await collection.insertMany(jsonData);
+    // Insert the new questions
+    await collection.insertMany(jsonData);
 
-    console.log(`Inserted ${result.insertedCount} documents into the collection`);
-    res.json({ message: 'JSON data saved successfully', insertedCount: result.insertedCount });
+    res.json({ message: 'JSON data saved successfully' });
   } catch (error) {
     console.error('Error saving JSON data:', error);
-    res.status(500).json({ error: 'Failed to save JSON data', details: error.message });
+    res.status(500).json({ error: 'Failed to save JSON data' });
   }
 });
 
