@@ -31,8 +31,8 @@ function updateSubtopics() {
                             if (!addedSubtopics.has(subtopic.name)) {
                                 const option = document.createElement('option');
                                 option.value = subtopic.name;
-                                option.textContent = `${subtopic.name} (${subtopic.count} questions)`;
-                                optgroup.appendChild(option);
+                                option.innerHTML = `${subtopic.name} (${subtopic.count} questions)<br><small>${subtopic.info || 'No extra info added'}</small>`;
+                                option.dataset.info = subtopic.info || 'No extra info added';
                                 addedSubtopics.add(subtopic.name);
                             }
                         });
@@ -47,8 +47,24 @@ function updateSubtopics() {
                     option.textContent = "No subtopics available";
                     subtopicSelect.appendChild(option);
                 }
+                // Add event listener to show info when a subtopic is selected
+                subtopicSelect.addEventListener('change', showSubtopicInfo);
             });
     }
+}
+
+function showSubtopicInfo() {
+    const selectedOption = subtopicSelect.options[subtopicSelect.selectedIndex];
+    const infoElement = document.getElementById('subtopicInfo');
+    
+    if (!infoElement) {
+        const infoDiv = document.createElement('div');
+        infoDiv.id = 'subtopicInfo';
+        subtopicSelect.parentNode.insertBefore(infoDiv, subtopicSelect.nextSibling);
+    }
+    
+    const info = selectedOption.dataset.info;
+    document.getElementById('subtopicInfo').textContent = info;
 }
 
 startButton.addEventListener('click', startQuiz);
@@ -476,6 +492,9 @@ document.addEventListener('DOMContentLoaded', () => {
                   const option = document.createElement('option');
                   option.value = subtopic.name; // Use subtopic as the value
                   option.textContent = `${subtopic.name} (${subtopic.count} questions)`;
+                  if (subtopic.info) {
+                    option.dataset.info = subtopic.info;
+                  }
                   optgroup.appendChild(option);
                   addedSubtopics.add(subtopic.name);
                 }
@@ -532,4 +551,25 @@ function setupStickyTimer() {
     );
 
     observer.observe(stickyTimer);
+}
+
+// Add an event listener to display subtopic info
+subtopicSelect.addEventListener('change', displaySubtopicInfo);
+
+function displaySubtopicInfo() {
+    const selectedOption = subtopicSelect.options[subtopicSelect.selectedIndex];
+    const infoElement = document.getElementById('subtopicInfo');
+    
+    if (!infoElement) {
+        const infoDiv = document.createElement('div');
+        infoDiv.id = 'subtopicInfo';
+        subtopicSelect.parentNode.insertBefore(infoDiv, subtopicSelect.nextSibling);
+    }
+    
+    const info = selectedOption.dataset.info;
+    if (info) {
+        document.getElementById('subtopicInfo').textContent = `Info: ${info}`;
+    } else {
+        document.getElementById('subtopicInfo').textContent = '';
+    }
 }

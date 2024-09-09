@@ -29,8 +29,24 @@ app.get('/api/questions/topics', async (req, res) => {
 
 app.get('/api/questions/subtopics/:topic', async (req, res) => {
     try {
-        const topic = await Topic.findOne({ name: req.params.topic }, 'subtopics.name');
-        res.json(topic ? topic.subtopics : []);
+        const topic = await Topic.findOne({ name: req.params.topic }, 'subtopics');
+        if (topic) {
+            const classifiedSubtopics = topic.subtopics.reduce((acc, subtopic) => {
+                const subsValue = subtopic.questions[0]?.subs || 1;
+                if (!acc[subsValue]) {
+                    acc[subsValue] = [];
+                }
+                acc[subsValue].push({
+                    name: subtopic.name,
+                    count: subtopic.questions.length,
+                    info: subtopic.questions[0]?.info || '' // Include the info field
+                });
+                return acc;
+            }, {});
+            res.json(classifiedSubtopics);
+        } else {
+            res.json({});
+        }
     } catch (error) {
         console.error('Error fetching subtopics:', error);
         res.status(500).send('Error fetching subtopics');
@@ -38,10 +54,17 @@ app.get('/api/questions/subtopics/:topic', async (req, res) => {
 });
 
 app.post('/api/questions/save-json', async (req, res) => {
-    const { topicName, subtopicName, jsonData } = req.body;
-
     try {
-        console.log('Received data to save:', { topicName, subtopicName, jsonData });
+        const { topicName, subtopicName, jsonData, subtopicInfo } = req.body;
+        
+        // Save the subtopic info
+        if (subtopicInfo) {
+            await db.collection('subtopics').updateOne(
+                { topic: topicName, name: subtopicName },
+                { $set: { info: subtopicInfo } },
+                { upsert: true }
+            );
+        }
 
         let topic = await Topic.findOne({ name: topicName });
         if (!topic) {
@@ -57,10 +80,10 @@ app.post('/api/questions/save-json', async (req, res) => {
         subtopic.questions = jsonData;
 
         await topic.save();
-        res.json({ message: 'JSON data saved successfully' });
+        res.json({ message: 'Questions saved successfully' });
     } catch (error) {
-        console.error('Error saving JSON data:', error);
-        res.status(500).send('Error saving JSON data');
+        console.error('Error saving questions:', error);
+        res.status(500).json({ error: 'Failed to save questions' });
     }
 });
 

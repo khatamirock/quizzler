@@ -71,6 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
         questions.shift(); // Remove the empty string at the beginning
         const result = [];
 
+        const subtopicInfo = promptForSubtopicInfo(); // Get subtopic info
+
         questions.forEach((questionContent, index) => {
             const questionNumber = index + 1;
             const [questionText, answerPart] = questionContent.split('Answer:');
@@ -80,7 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const jsonQuestion = {
                 question_id: questionNumber,
-                subs: parseInt(subtopicName) || 1, // Convert to integer, default to 1 if parsing fails
+                subs: parseInt(subtopicName) || 1,
+                info: subtopicInfo, // Add the info field to each question
                 question_text: fullQuestionText.replace(/[a-d]\..+/g, '').trim(),
                 options: options.map(option => {
                     const [value, text] = option.split('. ');
@@ -96,6 +99,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         return result;
+    }
+
+    function promptForSubtopicInfo() {
+        return prompt("Enter information about this subtopic (optional):");
     }
 
     async function fetchTopics() {
@@ -141,7 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify({
                 topicName,
                 subtopicName,
-                jsonData
+                jsonData,
+                subtopicInfo: jsonData[0].info // Add this line
             }),
         });
 
