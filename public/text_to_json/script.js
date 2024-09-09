@@ -90,40 +90,39 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    function convertToJSON(inputText, subtopicName) {
-        const questions = inputText.split(/Ques\s+\d+:/);
-        questions.shift(); // Remove the empty string at the beginning
-        const result = [];
-
-        const subtopicInfo = promptForSubtopicInfo(); // Get subtopic info
-
-        questions.forEach((questionContent, index) => {
-            const questionNumber = index + 1;
-            const [questionText, answerPart] = questionContent.split('Answer:');
-            const fullQuestionText = questionText.trim();
-
-            const options = fullQuestionText.match(/[a-d]\..+?(?=(?:\n[a-d]\.|\n*$))/gs) || [];
-
-            const jsonQuestion = {
-                question_id: questionNumber,
-                subs: parseInt(subtopicName) || 1,
-                info: subtopicInfo, // Add the info field to each question
-                question_text: fullQuestionText.replace(/[a-d]\..+/g, '').trim(),
-                options: options.map(option => {
-                    const [value, text] = option.split('. ');
-                    return {
-                        text: `${value}) ${text.trim()}`,
-                        value: value.trim()
-                    };
-                }),
-                correct_answer: answerPart ? answerPart.trim() : ''
-            };
-
-            result.push(jsonQuestion);
-        });
-
-        return result;
-    }
+function convertToJSON(inputText, subtopicName) {
+    const questions = inputText.split(/Ques\s+\d+:/);
+    questions.shift(); // Remove the empty string at the beginning
+    const result = [];
+    const subtopicInfo = promptForSubtopicInfo(); // Get subtopic info
+    
+    questions.forEach((questionContent, index) => {
+        const questionNumber = index + 1;
+        const [questionText, answerPart] = questionContent.split('Answer:');
+        const fullQuestionText = questionText.trim();
+        const options = fullQuestionText.match(/[a-d]\..+?(?=(?:\n[a-d]\.|\n*$))/gs) || [];
+        
+        const jsonQuestion = {
+            question_id: questionNumber,
+            subs: parseInt(subtopicName) || 1,
+            info: subtopicInfo, // Add the info field to each question
+            question_text: fullQuestionText.replace(/[a-d]\..+/g, '').trim(),
+            options: options.map(option => {
+                const [value, text] = option.split('. ');
+                return {
+                    text: `${value}) ${text.trim()}`,
+                    value: value.trim()
+                };
+            }),
+            correct_answer: answerPart ? answerPart.trim().replace(/[^a-d]/gi, '') : ''
+        };
+        
+        result.push(jsonQuestion);
+    });
+    
+    return result;
+}
+ 
 
     function promptForSubtopicInfo() {
         return prompt("Enter information about this subtopic (optional):");
