@@ -18,7 +18,12 @@ function updateSubtopics() {
     subtopicSelect.innerHTML = '<option value="">Select Subtopic</option>';
     subtopicSelect.disabled = true;
 
+    const loadingSpinner = document.getElementById('subtopicLoading');
+
     if (topic) {
+        // Show loading spinner
+        loadingSpinner.style.display = 'inline-block';
+
         fetch(`/api/questions/subtopics/${topic}`)
             .then(response => response.json())
             .then(classifiedSubtopics => {
@@ -36,10 +41,7 @@ function updateSubtopics() {
                         subtopics.forEach(subtopic => {
                             if (!addedSubtopics.has(subtopic.name)) {
                                 const option = document.createElement('option');
-                                // option.value = subtopic.name;
-                                // option.textContent = `${subtopic.name} (${subtopic.count} questions)`;
-                                // optgroup.appendChild(option);
-                                // addedSubtopics.add(subtopic.name);
+
                             }
                         });
                         if (optgroup.children.length > 0) {
@@ -53,7 +55,21 @@ function updateSubtopics() {
                     option.textContent = "No subtopics available";
                     subtopicSelect.appendChild(option);
                 }
+            })
+            .catch(error => {
+                console.error('Error fetching subtopics:', error);
+                const option = document.createElement('option');
+                option.value = "error";
+                option.textContent = "Error loading subtopics";
+                subtopicSelect.appendChild(option);
+            })
+            .finally(() => {
+                // Hide loading spinner
+                loadingSpinner.style.display = 'none';
             });
+    } else {
+        // Hide loading spinner if no topic is selected
+        loadingSpinner.style.display = 'none';
     }
 }
 
