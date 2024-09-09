@@ -183,6 +183,7 @@ function submitQuiz() {
         body: JSON.stringify({
             topic,
             subtopic,
+            subs: currentQuestions[0].subs, // Assuming all questions in a quiz have the same 'subs' value
             score,
             totalQuestions: currentQuestions.length
         }),
@@ -342,9 +343,9 @@ function displayDashboardData(data) {
     // Sort the entire data array by timestamp in descending order
     data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 
-    // Group data by topic and subtopic
+    // Group data by topic, subtopic, and subs
     const groupedData = data.reduce((acc, result) => {
-        const key = `${result.topic}-${result.subtopic}`;
+        const key = `${result.topic}-${result.subtopic}-${result.subs}`;
         if (!acc[key]) {
             acc[key] = [];
         }
@@ -356,11 +357,11 @@ function displayDashboardData(data) {
     const chartsContainer = document.getElementById('chartsContainer');
     chartsContainer.innerHTML = '';
 
-    // Create a chart for each topic-subtopic combination
+    // Create a chart for each topic-subtopic-subs combination
     Object.entries(groupedData).forEach(([key, results]) => {
-        const [topic, subtopic] = key.split('-');
+        const [topic, subtopic, subs] = key.split('-');
         
-        // Sort results for this topic-subtopic by timestamp in descending order
+        // Sort results for this group by timestamp in descending order
         results.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
         
         const labels = results.map(result => new Date(result.timestamp).toLocaleString());
@@ -378,7 +379,7 @@ function displayDashboardData(data) {
             data: {
                 labels: labels,
                 datasets: [{
-                    label: `Quiz Scores for ${topic} - ${subtopic}`,
+                    label: `Quiz Scores for ${topic} - ${subtopic} (Subs: ${subs})`,
                     data: percentages,
                     borderColor: 'rgba(75, 192, 192, 1)',
                     backgroundColor: 'rgba(75, 192, 192, 0.2)',
@@ -393,7 +394,7 @@ function displayDashboardData(data) {
                             display: true,
                             text: 'Time'
                         },
-                        reverse: true // This will reverse the x-axis
+                        reverse: true
                     },
                     y: {
                         title: {
