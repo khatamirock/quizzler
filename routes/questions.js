@@ -26,14 +26,13 @@ router.get('/subtopics/:topic', async (req, res) => {
     const collections = await db.listCollections().toArray();
     const subtopics = collections.map(col => col.name);
 
-    // Find unique `subs` values and classify subtopics
     const classifiedSubtopics = {};
     const uniqueSubs = new Set();
 
     for (const subtopic of subtopics) {
       if (subtopic.toLowerCase().includes(topic.toLowerCase())) {
         const collection = db.collection(subtopic);
-        const subsFields = await collection.find({}, { projection: { subs: 1 } }).toArray();
+        const subsFields = await collection.find({}, { projection: { subs: 1, info: 1 } }).toArray();
         
         subsFields.forEach(subsField => {
           const subsValue = subsField && subsField.subs ? subsField.subs : 'other';
@@ -47,27 +46,29 @@ router.get('/subtopics/:topic', async (req, res) => {
       }
     }
 
-    // Convert sets to arrays for JSON serialization
     for (const subsValue in classifiedSubtopics) {
       classifiedSubtopics[subsValue] = Array.from(classifiedSubtopics[subsValue]);
     }
 
-    // Send only half of the unique subtopics
     for (const subsValue in classifiedSubtopics) {
       classifiedSubtopics[subsValue] = classifiedSubtopics[subsValue].slice(0, Math.ceil(classifiedSubtopics[subsValue].length / 2));
     }
 
-    // Add question counts to subtopics
     for (const subsValue in classifiedSubtopics) {
       classifiedSubtopics[subsValue] = await Promise.all(classifiedSubtopics[subsValue].map(async subtopic => {
         const [subtopicName, subs] = subtopic.split('-');
         const count = await db.collection(subtopicName).countDocuments({ subs: parseInt(subs) });
-        return { name: subtopic, count };
+        
+        // Fetch the info field for the first document with matching subs
+        const infoDoc = await db.collection(subtopicName).findOne({ subs: parseInt(subs) }, { projection: { info: 1 } });
+        const info = infoDoc && infoDoc.info ? infoDoc.info : 'No extra info added';
+        
+        return { name: subtopic, count, info };
       }));
     }
 
     console.log('Unique Subs:', Array.from(uniqueSubs));
-    console.log('Classified Subtopics:', classifiedSubtopics);
+    console.log('Classified Subtopics:>>>>>>>>>>>>', classifiedSubtopics);
     res.json(classifiedSubtopics);
   } catch (error) {
     console.error('Error fetching subtopics:', error);

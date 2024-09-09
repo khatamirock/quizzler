@@ -26,14 +26,20 @@ function updateSubtopics() {
                     const addedSubtopics = new Set();
                     for (const [subsValue, subtopics] of Object.entries(classifiedSubtopics)) {
                         const optgroup = document.createElement('optgroup');
-                        optgroup.label = `Subs: ${subsValue}`;
+                        
+                        // Get the info from the first subtopic in this group
+                        const groupInfo = subtopics[0].info || 'No extra info added';
+                        
+                        // Add the info to the optgroup label
+                        optgroup.label = `Subs: ${subsValue} - ${groupInfo}`;
+                        
                         subtopics.forEach(subtopic => {
                             if (!addedSubtopics.has(subtopic.name)) {
                                 const option = document.createElement('option');
-                                option.value = subtopic.name;
-                                option.innerHTML = `${subtopic.name} (${subtopic.count} questions)<br><small>${subtopic.info || 'No extra info added'}</small>`;
-                                option.dataset.info = subtopic.info || 'No extra info added';
-                                addedSubtopics.add(subtopic.name);
+                                // option.value = subtopic.name;
+                                // option.textContent = `${subtopic.name} (${subtopic.count} questions)`;
+                                // optgroup.appendChild(option);
+                                // addedSubtopics.add(subtopic.name);
                             }
                         });
                         if (optgroup.children.length > 0) {
@@ -47,24 +53,8 @@ function updateSubtopics() {
                     option.textContent = "No subtopics available";
                     subtopicSelect.appendChild(option);
                 }
-                // Add event listener to show info when a subtopic is selected
-                subtopicSelect.addEventListener('change', showSubtopicInfo);
             });
     }
-}
-
-function showSubtopicInfo() {
-    const selectedOption = subtopicSelect.options[subtopicSelect.selectedIndex];
-    const infoElement = document.getElementById('subtopicInfo');
-    
-    if (!infoElement) {
-        const infoDiv = document.createElement('div');
-        infoDiv.id = 'subtopicInfo';
-        subtopicSelect.parentNode.insertBefore(infoDiv, subtopicSelect.nextSibling);
-    }
-    
-    const info = selectedOption.dataset.info;
-    document.getElementById('subtopicInfo').textContent = info;
 }
 
 startButton.addEventListener('click', startQuiz);
@@ -379,7 +369,7 @@ function displayDashboardData(data) {
             data: {
                 labels: labels,
                 datasets: [{
-                    label: `Quiz Scores for ${topic} - ${subtopic} (Subs: ${subs})`,
+                    label: `Quiz Scores for ${topic} - (Subs: ${subs})`,
                     data: percentages,
                     borderColor: 'rgba(75, 192, 192, 1)',
                     backgroundColor: 'rgba(75, 192, 192, 0.2)',
@@ -487,7 +477,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const addedSubtopics = new Set();
             for (const [subsValue, subtopics] of Object.entries(classifiedSubtopics)) {
               const optgroup = document.createElement('optgroup');
-              optgroup.label = `Subs: ${subsValue}`;
+              
+              // Get the info from the first subtopic in this group
+              const groupInfo = subtopics[0].info || 'No extra info added';
+              
+              // Add the info to the optgroup label
+              optgroup.label = `Subs: ${subsValue} - ${groupInfo}`;
+              
               subtopics.forEach(subtopic => {
                 if (!addedSubtopics.has(subtopic.name)) {
                   const option = document.createElement('option');
@@ -552,25 +548,4 @@ function setupStickyTimer() {
     );
 
     observer.observe(stickyTimer);
-}
-
-// Add an event listener to display subtopic info
-subtopicSelect.addEventListener('change', displaySubtopicInfo);
-
-function displaySubtopicInfo() {
-    const selectedOption = subtopicSelect.options[subtopicSelect.selectedIndex];
-    const infoElement = document.getElementById('subtopicInfo');
-    
-    if (!infoElement) {
-        const infoDiv = document.createElement('div');
-        infoDiv.id = 'subtopicInfo';
-        subtopicSelect.parentNode.insertBefore(infoDiv, subtopicSelect.nextSibling);
-    }
-    
-    const info = selectedOption.dataset.info;
-    if (info) {
-        document.getElementById('subtopicInfo').textContent = `Info: ${info}`;
-    } else {
-        document.getElementById('subtopicInfo').textContent = '';
-    }
 }
