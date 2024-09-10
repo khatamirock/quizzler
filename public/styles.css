@@ -208,3 +208,37 @@ button:hover {
 @-webkit-keyframes spin {
     to { -webkit-transform: rotate(360deg); }
 }
+
+#questionCountButtons {
+    margin: 10px 0;
+}
+
+#questionCountButtons p {
+    margin-bottom: 5px;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.question-count-btn {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    color: black; /* Add this line to make the text color black */
+}
+
+.question-count-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.question-count-btn.selected {
+    background-color: #3498db;
+    color: black; /* Change this to black if you want */
+    font-weight: bold; /* Add this to make the text stand out more */
+}

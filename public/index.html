@@ -25,7 +25,22 @@
                 <select id="subtopic" disabled>
                     <option value="">Select Subtopic</option>
                 </select>
-                <input type="number" id="questionCount" min="1" max="50" value="5" placeholder="Number of questions">
+                <!-- Replace the number input with this new div -->
+                <div id="questionCountButtons">
+                    <p>Select number of questions:</p>
+                    <div class="button-group">
+                        <button class="question-count-btn" data-count="5">5</button>
+                        <button class="question-count-btn" data-count="10">10</button>
+                        <button class="question-count-btn" data-count="15">15</button>
+                        <button class="question-count-btn" data-count="20">20</button>
+                        <button class="question-count-btn" data-count="25">25</button>
+                        <button class="question-count-btn" data-count="30">30</button>
+                        <button class="question-count-btn" data-count="35">35</button>
+                        <button class="question-count-btn" data-count="40">40</button>
+                        <button class="question-count-btn" data-count="45">45</button>
+                        <button class="question-count-btn" data-count="50">50</button>
+                    </div>
+                </div>
                 <button id="startQuiz">Start Quiz</button>
                 <!-- Add the new dropdown for MongoDB collections -->
                 <!-- <select id="mongoCollection">

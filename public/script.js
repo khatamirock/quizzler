@@ -80,10 +80,24 @@ restartButton.addEventListener('click', restartQuiz);
 let quizDuration = 0;
 let timerInterval;
 
+// Add this near the top of your file with other variable declarations
+let selectedQuestionCount = 5; // Default to 5 questions
+
+// Add this after your existing event listeners
+document.querySelectorAll('.question-count-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        document.querySelectorAll('.question-count-btn').forEach(btn => btn.classList.remove('selected'));
+        button.classList.add('selected');
+        selectedQuestionCount = parseInt(button.dataset.count);
+    });
+});
+
+// In your initializePage function, add this line to set the default selected button
+document.querySelector('.question-count-btn[data-count="5"]').classList.add('selected');
+
 function startQuiz() {
     const topic = topicSelect.value;
     const subtopic = subtopicSelect.value;
-    const count = document.getElementById('questionCount').value;
 
     if (!topic || (!subtopic && subtopicSelect.options.length > 1)) {
         alert('Please select a topic and subtopic (if available)');
@@ -91,7 +105,7 @@ function startQuiz() {
     }
 
     const subtopicPath = subtopic === "default" ? "" : `/${subtopic}`;
-    fetch(`/api/questions/${topic}${subtopicPath}/${count}`)
+    fetch(`/api/questions/${topic}${subtopicPath}/${selectedQuestionCount}`)
         .then(response => response.json())
         .then(data => {
             currentQuestions = data;
