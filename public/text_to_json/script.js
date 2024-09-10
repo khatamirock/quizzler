@@ -91,26 +91,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 function convertToJSON(inputText, subtopicName) {
-    const questions = inputText.split(/(?:Ques\s+\d+:|প্রশ্ন\s*\d*:?)/);
+    const questions = inputText.split(/(?:Ques\s+\d+:|প্রশ্ন\s*\d*:?|\d+\.\s*)/);
     questions.shift(); // Remove the empty string at the beginning
     const result = [];
     const subtopicInfo = promptForSubtopicInfo(); // Get subtopic info
     
     questions.forEach((questionContent, index) => {
         const questionNumber = index + 1;
-        const [questionText, answerPart] = questionContent.split(/Answer:|উত্তর:/);
+        const [questionText, answerPart] = questionContent.split(/Answer:|উত্তর:|Ans:/i);
         const fullQuestionText = questionText.trim();
-        const options = fullQuestionText.match(/(?:[a-d]\.|[ক-ঘ]\))\s*.+?(?=(?:\n(?:[a-d]\.|[ক-ঘ]\))|\n*$))/gs) || [];
+        const options = fullQuestionText.match(/(?:[a-d]\)|[ক-ঘ]\)|[a-d]\.)\s*.+?(?=(?:\n[a-d]\)|\n[ক-ঘ]\)|\n[a-d]\.|\n*$))/gs) || [];
+        
+        const cleanedQuestionText = fullQuestionText.replace(/(?:[a-d]\)|[ক-ঘ]\)|[a-d]\.)\s*.+/g, '').trim();
         
         const jsonQuestion = {
             question_id: questionNumber,
             subs: parseInt(subtopicName) || 1,
             info: subtopicInfo,
-            question_text: fullQuestionText.replace(/(?:[a-d]\.|[ক-ঘ]\)).+/g, '').trim(),
+            question_text: cleanedQuestionText,
             options: options.map(option => {
-                const [value, text] = option.split(/\.|\)/);
+                const [value, text] = option.split(/\s*\)\s*|\s*\.\s*/);
                 return {
-                    text: `${value.trim()}) ${text.trim()}`, // Add space after value
+                    text: `${value.trim()}) ${text.trim()}`,
                     value: value.trim()
                 };
             }),
