@@ -100,14 +100,23 @@ router.get('/:topic/:subtopic/:count', async (req, res) => {
 
 // Update the submit-result route
 router.post('/submit-result', async (req, res) => {
-  const { topic, subtopic, score, totalQuestions } = req.body;
+  const { topic, subtopic, subs, score, totalQuestions } = req.body; // Remove info from destructuring
   try {
-    const db = await connectToDatabase();
+    const db = await connectToDatabase('data');
+    
+    // Fetch the info field from the subtopic collection
+    const subtopicName = subtopic.split('-')[0];
+    const subsValue = parseInt(subtopic.split('-').pop());
+    const infoDoc = await db.collection(subtopicName).findOne({ subs: subsValue }, { projection: { info: 1 } });
+    const info = infoDoc && infoDoc.info ? infoDoc.info : 'No extra info added';
+
     const result = await db.collection('quiz_results').insertOne({
       topic,
       subtopic,
+      subs,
       score,
       totalQuestions,
+      info, // Save the fetched info field
       timestamp: new Date()
     });
     res.json({ message: 'Result saved successfully', id: result.insertedId });

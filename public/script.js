@@ -392,6 +392,10 @@ function displayDashboardData(data) {
         canvas.id = `chart-${key}`;
         chartsContainer.appendChild(canvas);
 
+        // Get the info field from the first result in the group
+        const info = results[0].info || 'No info available';
+        console.log('Chart info:', results[0].info ); // Log the info field for each chart
+
         // Render the chart
         const ctx = canvas.getContext('2d');
         new Chart(ctx, {
@@ -399,7 +403,7 @@ function displayDashboardData(data) {
             data: {
                 labels: labels,
                 datasets: [{
-                    label: `Quiz Scores for ${topic} - (Subs: ${subs})`,
+                    label: `Quiz Scores for ${topic} - ${info}`, // Updated label to use info
                     data: percentages,
                     borderColor: 'rgba(75, 192, 192, 1)',
                     backgroundColor: 'rgba(75, 192, 192, 0.2)',
