@@ -77,7 +77,8 @@ startButton.addEventListener('click', startQuiz);
 submitButton.addEventListener('click', submitQuiz);
 restartButton.addEventListener('click', restartQuiz);
 
-let quizDuration = 0;
+let quizStartTime;
+let quizDuration;
 let timerInterval;
 
 // Add this near the top of your file with other variable declarations
@@ -120,7 +121,6 @@ function startQuiz() {
             updateScore();
             
             // Set up and start the timer
-            quizDuration = currentQuestions.length * 60; // 1 minute per question
             startTimer();
             setupStickyTimer();
         });
@@ -651,27 +651,31 @@ document.addEventListener('DOMContentLoaded', () => {
 topicFilter.addEventListener('change', fetchDashboardData);
 
 function startTimer() {
-    let timeLeft = quizDuration;
-    updateTimerDisplay(timeLeft);
+    quizStartTime = Date.now();
+    quizDuration = currentQuestions.length * 60 * 1000; // Convert minutes to milliseconds
     
-    timerInterval = setInterval(() => {
-        timeLeft--;
-        updateTimerDisplay(timeLeft);
-        
-        if (timeLeft <= 0) {
-            clearInterval(timerInterval);
-            submitQuiz();
-        }
-    }, 1000);
+    updateTimerDisplay();
+    
+    timerInterval = setInterval(updateTimerDisplay, 1000);
 }
 
-function updateTimerDisplay(timeLeft) {
-    const minutes = Math.floor(timeLeft / 60);
-    const seconds = timeLeft % 60;
+function updateTimerDisplay() {
+    const currentTime = Date.now();
+    const elapsedTime = currentTime - quizStartTime;
+    const remainingTime = Math.max(quizDuration - elapsedTime, 0);
+    
+    const minutes = Math.floor(remainingTime / 60000);
+    const seconds = Math.floor((remainingTime % 60000) / 1000);
+    
     document.getElementById('timeRemaining').textContent = `Time Remaining: ${minutes}:${seconds.toString().padStart(2, '0')}`;
     
-    const progressPercentage = (timeLeft / quizDuration) * 100;
+    const progressPercentage = (remainingTime / quizDuration) * 100;
     document.getElementById('timerBar').value = progressPercentage;
+
+    if (remainingTime <= 0) {
+        clearInterval(timerInterval);
+        submitQuiz();
+    }
 }
 
 function setupStickyTimer() {
