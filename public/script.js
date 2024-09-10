@@ -105,7 +105,10 @@ function startQuiz() {
     }
 
     const subtopicPath = subtopic === "default" ? "" : `/${subtopic}`;
-    fetch(`/api/questions/${topic}${subtopicPath}/${selectedQuestionCount}`)
+    const timestamp = new Date().getTime();
+    fetch(`/api/questions/${topic}${subtopicPath}/${selectedQuestionCount}?t=${timestamp}`, {
+        cache: 'no-store' // This ensures we always get the latest data
+    })
         .then(response => response.json())
         .then(data => {
             currentQuestions = data;
@@ -138,13 +141,110 @@ function displayQuestions() {
                     </div>
                 `).join('')}
             </div>
+            <button class="suggest-correction" data-question-id="${question._id}">Suggest Correction</button>
         `;
         questionsContainer.appendChild(questionElement);
     });
 
-    // Add event listeners to options
+    // Add event listeners to options and suggest correction buttons
     document.querySelectorAll('.option').forEach(option => {
         option.addEventListener('click', () => selectOption(option));
+    });
+    document.querySelectorAll('.suggest-correction').forEach(button => {
+        button.addEventListener('click', () => suggestCorrection(button.dataset.questionId));
+    });
+}
+
+function suggestCorrection(questionId) {
+    const question = currentQuestions.find(q => q._id === questionId);
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <h2>Suggest Correction</h2>
+            <p>Question: ${question.question_text}</p>
+            <form id="correctionForm">
+                <div id="optionsContainer">
+                    ${question.options.map((option, index) => `
+                        <div class="option-edit">
+                            <label for="option${index}">Option ${option.value}:</label>
+                            <input type="text" id="option${index}" value="${option.text}" required>
+                        </div>
+                    `).join('')}
+                </div>
+                <label for="correctedAnswer">Correct Answer:</label>
+                <select id="correctedAnswer" required>
+                    ${question.options.map(option => `
+                        <option value="${option.value}" ${option.value === question.correct_answer ? 'selected' : ''}>
+                            ${option.value}
+                        </option>
+                    `).join('')}
+                </select>
+                <button type="submit">Submit Correction</button>
+                <button type="button" id="cancelCorrection">Cancel</button>
+            </form>
+        </div>
+    `;
+    document.body.appendChild(modal);
+
+    document.getElementById('correctionForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        submitOptionCorrection(questionId);
+    });
+
+    document.getElementById('cancelCorrection').addEventListener('click', () => {
+        document.body.removeChild(modal);
+    });
+}
+
+function submitOptionCorrection(questionId) {
+    const correctedOptions = Array.from(document.querySelectorAll('.option-edit input')).map((input, index) => ({
+        value: String.fromCharCode(97 + index), // 'a', 'b', 'c', 'd'
+        text: input.value
+    }));
+    const correctedAnswer = document.getElementById('correctedAnswer').value;
+    const topic = topicSelect.value;
+
+    const password = prompt("Please enter the admin password to submit the correction:");
+    if (!password) {
+        alert("Password is required to submit a correction.");
+        return;
+    }
+
+    console.log('Submitting correction:', { questionId, correctedOptions, correctedAnswer, topic });
+
+    fetch('/api/questions/suggest-option-correction', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            questionId,
+            correctedOptions,
+            correctedAnswer,
+            topic,
+            password
+        }),
+    })
+    .then(response => {
+        if (!response.ok) {
+            return response.json().then(err => {
+                throw new Error(err.message || 'Unknown error occurred');
+            });
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Question updated successfully:', data);
+        alert('Question updated successfully!');
+        document.body.removeChild(document.querySelector('.modal'));
+        
+        // Refresh the questions display
+        startQuiz();
+    })
+    .catch(error => {
+        console.error('Error updating question:', error);
+        alert(`Failed to update question: ${error.message}`);
     });
 }
 

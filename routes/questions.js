@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { connectToDatabase } = require('../db');
+const { ObjectId } = require('mongodb');
 
 // Route to fetch collection names as topics with question counts
 router.get('/topics', async (req, res) => {
@@ -233,6 +234,57 @@ router.post('/save-json', async (req, res) => {
     console.error('Error saving JSON data:', error);
     res.status(500).json({ error: 'Failed to save JSON data' });
   }
+});
+
+router.post('/suggest-option-correction', async (req, res) => {
+    const { questionId, correctedOptions, correctedAnswer, topic, password } = req.body;
+
+    // Check if the provided password matches the environment variable
+    if (password !== process.env.ADMIN_PASSWORD) {
+        return res.status(401).json({ success: false, message: 'Unauthorized: Incorrect password' });
+    }
+
+    try {
+        console.log('Received option correction request:', { questionId, correctedOptions, correctedAnswer, topic });
+
+        const db = await connectToDatabase('data');
+        
+        // Use the topic as the collection name if provided
+        const collectionName = topic || 'questions';
+        const collection = db.collection(collectionName);
+
+        // Check if the question exists
+        const existingQuestion = await collection.findOne({ _id: new ObjectId(questionId) });
+        if (!existingQuestion) {
+            throw new Error(`Question with ID ${questionId} not found in collection ${collectionName}`);
+        }
+
+        // Update the question directly in the database
+        const updateResult = await collection.updateOne(
+            { _id: new ObjectId(questionId) },
+            { 
+                $set: {
+                    options: correctedOptions,
+                    correct_answer: correctedAnswer
+                }
+            }
+        );
+
+        console.log('Update result:', updateResult);
+
+        if (updateResult.matchedCount === 0) {
+            throw new Error(`No question found with ID ${questionId} in collection ${collectionName}`);
+        }
+
+        if (updateResult.modifiedCount === 0) {
+            throw new Error('Question found but not modified. Possibly no changes were made.');
+        }
+
+        res.json({ success: true, message: 'Question updated successfully' });
+    } catch (error) {
+        console.error('Error updating question:', error);
+        res.status(500).json({ success: false, message: `Failed to update question: ${error.message}` });
+    }
 });
 
 module.exports = router;
