@@ -157,6 +157,14 @@ function displayQuestions() {
 
 function suggestCorrection(questionId) {
     const question = currentQuestions.find(q => q._id === questionId);
+    const questionElement = document.querySelector(`[data-question-id="${questionId}"]`).closest('.question');
+    
+    // Remove any existing modal
+    const existingModal = document.querySelector('.modal');
+    if (existingModal) {
+        existingModal.remove();
+    }
+
     const modal = document.createElement('div');
     modal.className = 'modal';
     modal.innerHTML = `
@@ -185,7 +193,9 @@ function suggestCorrection(questionId) {
             </form>
         </div>
     `;
-    document.body.appendChild(modal);
+    
+    // Insert the modal after the question element
+    questionElement.insertAdjacentElement('afterend', modal);
 
     document.getElementById('correctionForm').addEventListener('submit', (e) => {
         e.preventDefault();
@@ -193,7 +203,7 @@ function suggestCorrection(questionId) {
     });
 
     document.getElementById('cancelCorrection').addEventListener('click', () => {
-        document.body.removeChild(modal);
+        modal.remove();
     });
 }
 
@@ -237,7 +247,12 @@ function submitOptionCorrection(questionId) {
     .then(data => {
         console.log('Question updated successfully:', data);
         alert('Question updated successfully!');
-        document.body.removeChild(document.querySelector('.modal'));
+        
+        // Find and remove the modal
+        const modal = document.querySelector('.modal');
+        if (modal) {
+            modal.remove();
+        }
         
         // Refresh the questions display
         startQuiz();
