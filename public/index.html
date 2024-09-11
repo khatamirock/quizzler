@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Add this line -->
+</head>
+<body>
+    <div id="app">
+        <h1>Quiz System</h1>
+        <div id="tabs">
+            <button id="quizTab" class="active">Quiz</button>
+            <button id="dashboardTab">Dashboard</button>
+            <button id="converterTab">Create Questions..</button>
+        </div>
+        <div id="quizContent">
+            <!-- Existing quiz content -->
+            <div id="setup">
+                <select id="topic">
+                    <option value="" disabled selected>Select a topic</option>
+                </select>
+                <select id="subtopic" disabled>
+                    <option value="">Select Subtopic</option>
+                </select>
+                <!-- Replace the number input with this new div -->
+                <div id="questionCountButtons">
+                    <p>Select number of questions:</p>
+                    <div class="button-group">
+                        <button class="question-count-btn" data-count="5">5</button>
+                        <button class="question-count-btn" data-count="10">10</button>
+                        <button class="question-count-btn" data-count="15">15</button>
+                        <button class="question-count-btn" data-count="20">20</button>
+                        <button class="question-count-btn" data-count="25">25</button>
+                        <button class="question-count-btn" data-count="30">30</button>
+                        <button class="question-count-btn" data-count="35">35</button>
+                        <button class="question-count-btn" data-count="40">40</button>
+                        <button class="question-count-btn" data-count="45">45</button>
+                        <button class="question-count-btn" data-count="50">50</button>
+                    </div>
+                </div>
+                <button id="startQuiz">Start Quiz</button>
+                <!-- Add the new dropdown for MongoDB collections -->
+                <!-- <select id="mongoCollection">
+                    <option value="" disabled selected>Select a MongoDB Collection</option>
+                </select> -->
+            </div>
+            <div id="quiz" style="display:none;">
+                <div id="quizTimer" class="sticky-timer">
+                    <div id="timeRemaining"></div>
+                    <progress id="timerBar" value="100" max="100"></progress>
+                </div>
+                <p id="score"></p>
+                <div id="questions"></div>
+                <button id="submit">Submit Quiz</button>
+            </div>
+            <div id="results" style="display:none;">
+                <h2>Quiz Results</h2>
+                <p id="finalScore"></p>
+                <button id="restart">Restart Quiz</button>
+            </div>
+        </div>
+        <div id="dashboardContent" style="display: none;">
+            <h2>Dashboard</h2>
+            <!-- The topic and subtopic filters will be inserted here by JavaScript -->
+            <div id="dashboardData"></div>
+            <div id="chartsContainer"></div>
+        </div>
+        <div id="converterContent" style="display:none;">
+            <iframe src="text_to_json/index.html" width="100%" height="600px" frameborder="0"></iframe>
+        </div>
+        <!-- Replace the existing loading spinner div with this -->
+        <div id="subtopicLoading" class="loading-spinner" style="display: none;">Loading...</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
