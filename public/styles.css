@@ -188,6 +188,8 @@ button:hover {
 
 #subtopic {
     width: auto;
+    margin-top: 50px;
+    margin-bottom: 60px;
     min-width: 300px;
     max-height: 300px;
     overflow-y: auto;
@@ -219,6 +221,7 @@ button:hover {
 
 #questionCountButtons p {
     margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .button-group {
@@ -290,7 +293,9 @@ button:hover {
 }
 
 .subtopic-option {
-    padding: 5px;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
     cursor: pointer;
 }
 

@@ -229,16 +229,20 @@ function displayQuestions() {
                 `).join('')}
             </div>
             <button class="suggest-correction" data-question-id="${question._id}">Suggest Correction</button>
+            <button class="delete-question" data-question-id="${question._id}">Delete Question</button>
         `;
         questionsContainer.appendChild(questionElement);
     });
 
-    // Add event listeners to options and suggest correction buttons
+    // Add event listeners to options, suggest correction buttons, and delete buttons
     document.querySelectorAll('.option').forEach(option => {
         option.addEventListener('click', () => selectOption(option));
     });
     document.querySelectorAll('.suggest-correction').forEach(button => {
         button.addEventListener('click', () => suggestCorrection(button.dataset.questionId));
+    });
+    document.querySelectorAll('.delete-question').forEach(button => {
+        button.addEventListener('click', () => deleteQuestion(button.dataset.questionId));
     });
 }
 
@@ -407,7 +411,7 @@ function submitQuiz() {
         body: JSON.stringify({
             topic,
             subtopic,
-            subs: currentQuestions[0].subs, // Assuming all questions in a quiz have the same 'subs' value
+            subs: currentQuestions[0]?.subs, // Use optional chaining in case all questions were deleted
             score,
             totalQuestions: currentQuestions.length,
             info
@@ -798,6 +802,68 @@ function setupStickyTimer() {
     );
 
     observer.observe(stickyTimer);
+}
+
+function deleteQuestion(questionId) {
+    const password = prompt("Please enter the admin password to delete this question:");
+    if (!password) {
+        alert("Password is required to delete a question.");
+        return;
+    }
+
+    const topic = topicSelect.value;
+    const subtopicElement = document.querySelector('.subtopic-option.selected');
+    const subtopic = subtopicElement ? subtopicElement.dataset.value : '';
+
+    fetch('/api/questions/delete-question', {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            questionId,
+            topic,
+            subtopic,
+            password
+        }),
+    })
+    .then(response => {
+        if (!response.ok) {
+            return response.json().then(err => {
+                throw new Error(err.message || 'Unknown error occurred');
+            });
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Question deleted successfully:', data);
+        alert('Question deleted successfully!');
+        
+        // Remove the question from currentQuestions array
+        currentQuestions = currentQuestions.filter(q => q._id !== questionId);
+        
+        // Refresh the questions display
+        displayQuestions();
+        
+        // Update the quiz state
+        updateQuizState();
+    })
+    .catch(error => {
+        console.error('Error deleting question:', error);
+        alert(`Failed to delete question: ${error.message}`);
+    });
+}
+
+function updateQuizState() {
+    // Update the score and other quiz state variables
+    score = 0;
+    updateScore();
+    
+    // If all questions are deleted, end the quiz
+    if (currentQuestions.length === 0) {
+        alert("All questions have been deleted. The quiz will end now.");
+        submitQuiz();
+    }
 }
 
 subtopicSelect.addEventListener('click', (event) => {
