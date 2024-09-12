@@ -15,33 +15,52 @@ topicSelect.addEventListener('change', updateSubtopics);
 
 function updateSubtopics() {
     const topic = topicSelect.value;
-    subtopicSelect.innerHTML = '<option value="">Select Subtopic</option>';
+    subtopicSelect.innerHTML = '';
     subtopicSelect.disabled = true;
 
     const loadingSpinner = document.getElementById('subtopicLoading');
 
     if (topic) {
-        // Show loading spinner
         loadingSpinner.style.display = 'inline-block';
 
         fetch(`/api/questions/subtopics/${topic}`)
             .then(response => response.json())
             .then(classifiedSubtopics => {
+                console.log('Received subtopics:', classifiedSubtopics); // Debug info
                 if (Object.keys(classifiedSubtopics).length > 0) {
                     const addedSubtopics = new Set();
                     for (const [subsValue, subtopics] of Object.entries(classifiedSubtopics)) {
-                        const optgroup = document.createElement('optgroup');
-                        
-                        // Get the info from the first subtopic in this group
+                        const optgroup = document.createElement('div');
+                        optgroup.className = 'subset-container';
                         const groupInfo = subtopics[0].info || 'No extra info added';
                         
-                        // Add the info to the optgroup label
-                        optgroup.label = `Subset: ${subsValue} - ${groupInfo}`;
+                        // Create a container for the delete button and subset label
+                        const containerDiv = document.createElement('div');
+                        containerDiv.className = 'subset-container';
                         
+                        // Add subset label
+                        const subsetLabel = document.createElement('span');
+                        subsetLabel.textContent = `Subset: ${subsValue} - ${groupInfo}`;
+                        containerDiv.appendChild(subsetLabel);
+                        
+                        // Add delete button
+                        const deleteButton = createDeleteButton(subsValue, topic);
+                        containerDiv.appendChild(deleteButton);
+                        
+                        // Add the container to the optgroup
+                        optgroup.appendChild(containerDiv);
+
                         subtopics.forEach(subtopic => {
                             if (!addedSubtopics.has(subtopic.name)) {
-                                const option = document.createElement('option');
-
+                                const option = document.createElement('div');
+                                option.className = 'subtopic-option';
+                                option.dataset.value = subtopic.name;
+                                option.textContent = `Start - ${subtopic.name} (${subtopic.count} questions)`;
+                                if (subtopic.info) {
+                                    option.dataset.info = subtopic.info;
+                                }
+                                optgroup.appendChild(option);
+                                addedSubtopics.add(subtopic.name);
                             }
                         });
                         if (optgroup.children.length > 0) {
@@ -50,26 +69,55 @@ function updateSubtopics() {
                     }
                     subtopicSelect.disabled = false;
                 } else {
-                    const option = document.createElement('option');
-                    option.value = "default";
+                    const option = document.createElement('div');
+                    option.className = 'subtopic-option';
+                    option.dataset.value = "default";
                     option.textContent = "No subtopics available";
                     subtopicSelect.appendChild(option);
                 }
             })
             .catch(error => {
                 console.error('Error fetching subtopics:', error);
-                const option = document.createElement('option');
-                option.value = "error";
+                const option = document.createElement('div');
+                option.className = 'subtopic-option';
+                option.dataset.value = "error";
                 option.textContent = "Error loading subtopics";
                 subtopicSelect.appendChild(option);
             })
             .finally(() => {
-                // Hide loading spinner
                 loadingSpinner.style.display = 'none';
             });
     } else {
-        // Hide loading spinner if no topic is selected
         loadingSpinner.style.display = 'none';
+    }
+}
+
+function createDeleteButton(subsValue, topic) {
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.className = 'delete-subset-btn';
+    deleteButton.onclick = (e) => {
+        e.preventDefault(); // Prevent the dropdown from closing
+        if (confirm(`Are you sure you want to delete subset ${subsValue} for topic ${topic}?`)) {
+            deleteSubset(topic, subsValue);
+        }
+    };
+    return deleteButton;
+}
+
+async function deleteSubset(topic, subsValue) {
+    try {
+        const response = await fetch(`/api/questions/delete-subset/${topic}/${subsValue}`, {
+            method: 'DELETE',
+        });
+        if (response.ok) {
+            console.log(`Subset ${subsValue} deleted successfully for topic ${topic}`);
+            updateSubtopics(); // Refresh the subtopics list
+        } else {
+            console.error('Failed to delete subset:', await response.text());
+        }
+    } catch (error) {
+        console.error('Error deleting subset:', error);
     }
 }
 
@@ -96,22 +144,57 @@ document.querySelectorAll('.question-count-btn').forEach(button => {
 // In your initializePage function, add this line to set the default selected button
 document.querySelector('.question-count-btn[data-count="5"]').classList.add('selected');
 
-function startQuiz() {
-    const topic = topicSelect.value;
-    const subtopic = subtopicSelect.value;
+// Update the subtopic selection event listener
+subtopicSelect.addEventListener('click', (event) => {
+    if (event.target.classList.contains('subtopic-option')) {
+        // Remove 'selected' class from all options
+        document.querySelectorAll('.subtopic-option').forEach(option => {
+            option.classList.remove('selected');
+        });
+        // Add 'selected' class to the clicked option
+        event.target.classList.add('selected');
+        const selectedValue = event.target.dataset.value;
+        console.log('Selected subtopic:', selectedValue);
+    }
+});
 
-    if (!topic || (!subtopic && subtopicSelect.options.length > 1)) {
+// Update the startQuiz function
+function startQuiz() {
+    console.log('startQuiz function called'); // Debug log
+    const topic = topicSelect.value;
+    const subtopicElement = document.querySelector('.subtopic-option.selected');
+    const subtopic = subtopicElement ? subtopicElement.dataset.value : '';
+
+    console.log('Selected topic:', topic); // Debug log
+    console.log('Selected subtopic:', subtopic); // Debug log
+    console.log('Selected question count:', selectedQuestionCount); // Debug log
+
+    if (!topic || (!subtopic && subtopicSelect.children.length > 1)) {
         alert('Please select a topic and subtopic (if available)');
         return;
     }
 
     const subtopicPath = subtopic === "default" ? "" : `/${subtopic}`;
     const timestamp = new Date().getTime();
-    fetch(`/api/questions/${topic}${subtopicPath}/${selectedQuestionCount}?t=${timestamp}`, {
-        cache: 'no-store' // This ensures we always get the latest data
+    const url = `/api/questions/${topic}${subtopicPath}/${selectedQuestionCount}?t=${timestamp}`;
+    
+    console.log('Fetching questions from:', url); // Debug log
+
+    fetch(url, {
+        cache: 'no-store'
     })
-        .then(response => response.json())
+        .then(response => {
+            console.log('Response status:', response.status); // Debug log
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
+            console.log('Received questions:', data); // Debug log
+            if (!Array.isArray(data) || data.length === 0) {
+                throw new Error('No questions received');
+            }
             currentQuestions = data;
             score = 0;
             setup.style.display = 'none';
@@ -120,9 +203,12 @@ function startQuiz() {
             displayQuestions();
             updateScore();
             
-            // Set up and start the timer
             startTimer();
             setupStickyTimer();
+        })
+        .catch(error => {
+            console.error('Error starting quiz:', error);
+            alert('Failed to start quiz. Please try again. Error: ' + error.message);
         });
 }
 
@@ -615,7 +701,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateSubtopics() {
     const topic = topicSelect.value;
-    subtopicSelect.innerHTML = '<option value="">Select Subtopic</option>';
+    subtopicSelect.innerHTML = '';
     subtopicSelect.disabled = true;
 
     if (topic) {
@@ -625,19 +711,32 @@ document.addEventListener('DOMContentLoaded', () => {
           if (Object.keys(classifiedSubtopics).length > 0) {
             const addedSubtopics = new Set();
             for (const [subsValue, subtopics] of Object.entries(classifiedSubtopics)) {
-              const optgroup = document.createElement('optgroup');
+              const optgroup = document.createElement('div');
+              optgroup.className = 'subset-container';
+              const groupInfo = subtopics[0].info || 'No extra info added';
               
-              // Get the info from the first subtopic in this group
-              const groupInfo = subtopics[0].info || '  No extra info added';
+              // Create a container for the delete button and subset label
+              const containerDiv = document.createElement('div');
+              containerDiv.className = 'subset-container';
               
-              // Add the info to the optgroup label
-              optgroup.label = `Subset: ${subsValue} -   ${groupInfo}`;
+              // Add subset label
+              const subsetLabel = document.createElement('span');
+              subsetLabel.textContent = `Subset: ${subsValue} - ${groupInfo}`;
+              containerDiv.appendChild(subsetLabel);
               
+              // Add delete button
+              const deleteButton = createDeleteButton(subsValue, topic);
+              containerDiv.appendChild(deleteButton);
+              
+              // Add the container to the optgroup
+              optgroup.appendChild(containerDiv);
+
               subtopics.forEach(subtopic => {
                 if (!addedSubtopics.has(subtopic.name)) {
-                  const option = document.createElement('option');
-                  option.value = subtopic.name; // Use subtopic as the value
-                  option.textContent = `Start -  ${subtopic.name} (${subtopic.count} questions)`;
+                  const option = document.createElement('div');
+                  option.className = 'subtopic-option';
+                  option.dataset.value = subtopic.name;
+                  option.textContent = `Start - ${subtopic.name} (${subtopic.count} questions)`;
                   if (subtopic.info) {
                     option.dataset.info = subtopic.info;
                   }
@@ -651,8 +750,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             subtopicSelect.disabled = false;
           } else {
-            const option = document.createElement('option');
-            option.value = "default";
+            const option = document.createElement('div');
+            option.className = 'subtopic-option';
+            option.dataset.value = "default";
             option.textContent = "No subtopics available";
             subtopicSelect.appendChild(option);
           }
@@ -702,3 +802,25 @@ function setupStickyTimer() {
 
     observer.observe(stickyTimer);
 }
+
+subtopicSelect.addEventListener('click', (event) => {
+    if (event.target.classList.contains('subtopic-option')) {
+        const selectedValue = event.target.dataset.value;
+        console.log('Selected subtopic:', selectedValue);
+        // Here you can update any other parts of your UI that need to know the selected subtopic
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM fully loaded');
+    const startButton = document.getElementById('startQuiz');
+    if (startButton) {
+        console.log('Start button found');
+        startButton.addEventListener('click', () => {
+            console.log('Start button clicked');
+            startQuiz();
+        });
+    } else {
+        console.error('Start button not found');
+    }
+});

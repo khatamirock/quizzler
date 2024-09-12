@@ -22,10 +22,14 @@ router.get('/topics', async (req, res) => {
 // Update the subtopics route to fetch collections from the "data" database with question counts
 router.get('/subtopics/:topic', async (req, res) => {
   const { topic } = req.params;
+  console.log(`Fetching subtopics for topic: ${topic}`); // Debug info
+
   try {
     const db = await connectToDatabase('data');
     const collections = await db.listCollections().toArray();
     const subtopics = collections.map(col => col.name);
+
+    console.log(`Found collections:`, subtopics); // Debug info
 
     const classifiedSubtopics = {};
     const uniqueSubs = new Set();
@@ -35,6 +39,8 @@ router.get('/subtopics/:topic', async (req, res) => {
         const collection = db.collection(subtopic);
         const subsFields = await collection.find({}, { projection: { subs: 1, info: 1 } }).toArray();
         
+        console.log(`Subtopic ${subtopic} has ${subsFields.length} documents`); // Debug info
+
         subsFields.forEach(subsField => {
           const subsValue = subsField && subsField.subs ? subsField.subs : 'other';
           uniqueSubs.add(subsValue);
@@ -69,7 +75,7 @@ router.get('/subtopics/:topic', async (req, res) => {
     }
 
     console.log('Unique Subs:', Array.from(uniqueSubs));
-    console.log('Classified Subtopics:>>>>>>>>>>>>', classifiedSubtopics);
+    console.log('Classified Subtopics:', classifiedSubtopics);
     res.json(classifiedSubtopics);
   } catch (error) {
     console.error('Error fetching subtopics:', error);
@@ -284,6 +290,31 @@ router.post('/suggest-option-correction', async (req, res) => {
     } catch (error) {
         console.error('Error updating question:', error);
         res.status(500).json({ success: false, message: `Failed to update question: ${error.message}` });
+    }
+});
+
+// Add this new route to handle subset deletion
+router.delete('/delete-subset/:topic/:subsValue', async (req, res) => {
+    const { topic, subsValue } = req.params;
+    console.log(`Attempting to delete subset ${subsValue} for topic ${topic}`); // Debug info
+
+    try {
+        const db = await connectToDatabase('data');
+        const collection = db.collection(topic);
+
+        // Delete all documents with the specified subs value
+        const result = await collection.deleteMany({ subs: parseInt(subsValue) });
+
+        console.log(`Deletion result:`, result); // Debug info
+
+        if (result.deletedCount > 0) {
+            res.json({ message: `Subset ${subsValue} deleted successfully`, deletedCount: result.deletedCount });
+        } else {
+            res.status(404).json({ error: `No questions found for subset ${subsValue}` });
+        }
+    } catch (error) {
+        console.error('Error deleting subset:', error);
+        res.status(500).json({ error: 'Failed to delete subset', details: error.message });
     }
 });
 

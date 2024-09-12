@@ -188,7 +188,11 @@ button:hover {
 
 #subtopic {
     width: auto;
-    min-width: 300px; /* Adjust this value as needed */
+    min-width: 300px;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
 .loading-spinner {
@@ -255,4 +259,46 @@ button:hover {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.delete-subset-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 2px 5px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.delete-subset-btn:hover {
+    background-color: #ff1a1a;
+}
+
+.subset-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.subset-container span {
+    flex-grow: 1;
+}
+
+.subtopic-option {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.subtopic-option:hover {
+    background-color: #e0e0e0;
+}
+
+.subtopic-option.selected {
+    background-color: #3498db;
+    color: white;
 }
