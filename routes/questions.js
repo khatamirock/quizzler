@@ -107,30 +107,34 @@ router.get('/:topic/:subtopic/:count', async (req, res) => {
 
 // Update the submit-result route
 router.post('/submit-result', async (req, res) => {
-  const { topic, subtopic, subs, score, totalQuestions } = req.body; // Remove info from destructuring
-  try {
-    const db = await connectToDatabase('data');
-    
-    // Fetch the info field from the subtopic collection
-    const subtopicName = subtopic.split('-')[0];
-    const subsValue = parseInt(subtopic.split('-').pop());
-    const infoDoc = await db.collection(subtopicName).findOne({ subs: subsValue }, { projection: { info: 1 } });
-    const info = infoDoc && infoDoc.info ? infoDoc.info : 'No extra info added';
+    try {
+        const { topic, subtopic, score, totalQuestions, info } = req.body;
+        
+        // Log the received data
+        console.log('Received quiz result:', { topic, subtopic, score, totalQuestions, info });
 
-    const result = await db.collection('quiz_results').insertOne({
-      topic,
-      subtopic,
-      subs,
-      score,
-      totalQuestions,
-      info, // Save the fetched info field
-      timestamp: new Date()
-    });
-    res.json({ message: 'Result saved successfully', id: result.insertedId });
-  } catch (error) {
-    console.error('Error saving result:', error);
-    res.status(500).json({ error: 'Failed to save result' });
-  }
+        // Validate the data
+        if (!topic || score === undefined || totalQuestions === undefined) {
+            return res.status(400).json({ error: 'Missing required fields' });
+        }
+
+        const db = await connectToDatabase();
+        const result = {
+            topic,
+            subtopic: subtopic || 'General', // Use 'General' if subtopic is undefined
+            score,
+            totalQuestions,
+            info: info || '', // Include the info field, use empty string if undefined
+            timestamp: new Date()
+        };
+
+        await db.collection('quiz_results').insertOne(result);
+        console.log('Result saved successfully:', result);
+        res.json({ message: 'Result saved successfully' });
+    } catch (error) {
+        console.error('Error saving result:', error);
+        res.status(500).json({ error: 'Failed to save result', details: error.message });
+    }
 });
 
 // Update the dashboard route to accept a topic filter

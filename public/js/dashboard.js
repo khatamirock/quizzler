@@ -44,3 +44,32 @@ function loadDashboard() {
         })
         .catch(error => console.error('Error loading dashboard:', error));
 }
+
+function submitQuiz() {
+    // ... existing code ...
+
+    const topic = document.getElementById('topic-select').value;
+    const subtopic = document.getElementById('subtopic-select').value;
+    const score = correctAnswers;
+    const totalQuestions = questions.length;
+    const info = document.getElementById('subtopic-select').options[document.getElementById('subtopic-select').selectedIndex].getAttribute('data-info');
+
+    // Log the values before sending
+    console.log('Submitting quiz result:', { topic, subtopic, score, totalQuestions, info });
+
+    fetch('/api/questions/submit-result', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ topic, subtopic, score, totalQuestions, info }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Result saved:', data);
+        // ... rest of the code ...
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
