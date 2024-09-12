@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const topicSelect = document.getElementById('topicSelect');
+    const newTopic = document.getElementById('newTopic');
     const subtopicSelect = document.getElementById('subtopicSelect');
     const newSubtopic = document.getElementById('newSubtopic');
     const questionText = document.getElementById('questionText');
@@ -20,20 +21,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
     // Update subtopics when topic changes
-    topicSelect.addEventListener('change', () => {
+    topicSelect.addEventListener('change', updateSubtopics);
+
+    // Function to update subtopics
+    function updateSubtopics() {
         const selectedTopic = topicSelect.value;
-        fetch(`/api/questions/subtopics/${selectedTopic}`)
-            .then(response => response.json())
-            .then(subtopics => {
-                subtopicSelect.innerHTML = '<option value="" disabled selected>Select a subtopic</option>';
-                Object.values(subtopics).flat().forEach(subtopic => {
-                    const option = document.createElement('option');
-                    option.value = subtopic.name;
-                    option.textContent = subtopic.name;
-                    subtopicSelect.appendChild(option);
+        if (selectedTopic) {
+            fetch(`/api/questions/subtopics/${selectedTopic}`)
+                .then(response => response.json())
+                .then(subtopics => {
+                    subtopicSelect.innerHTML = '<option value="" disabled selected>Select a subtopic</option>';
+                    Object.values(subtopics).flat().forEach(subtopic => {
+                        const option = document.createElement('option');
+                        option.value = subtopic.name;
+                        option.textContent = subtopic.name;
+                        subtopicSelect.appendChild(option);
+                    });
                 });
-            });
-    });
+        } else {
+            subtopicSelect.innerHTML = '<option value="" disabled selected>Select a subtopic</option>';
+        }
+    }
 
     // Submit question
     submitButton.addEventListener('click', () => {
@@ -49,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }));
 
         const questionData = {
-            topic: topicSelect.value,
+            topic: topicSelect.value || newTopic.value,
             subtopic: subtopicSelect.value || newSubtopic.value,
             question_text: questionText.value,
             options: options,
@@ -57,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
             password: password
         };
 
-        console.log('Sending question data:', questionData); // Log the data being sent
+        console.log('Sending question data:', questionData);
 
         fetch('/api/questions/add', {
             method: 'POST',
@@ -75,12 +83,17 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(data => {
-            console.log('Response:', data); // Log the response
+            console.log('Response:', data);
             alert('Question added successfully!');
             // Clear form
+            topicSelect.value = '';
+            newTopic.value = '';
+            subtopicSelect.value = '';
+            newSubtopic.value = '';
             questionText.value = '';
             optionsContainer.querySelectorAll('.optionInput').forEach(input => input.value = '');
             correctAnswer.value = '';
+            updateSubtopics(); // Reset subtopics
         })
         .catch(error => {
             console.error('Error:', error);
