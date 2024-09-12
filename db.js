@@ -3,7 +3,7 @@ const { MongoClient } = require('mongodb');
 
 let cachedDb = null;
 
-async function connectToDatabase(dbName = 'niha') {
+async function connectToDatabase(dbName = process.env.DB_NAME) {
   if (cachedDb) {
     return cachedDb;
   }
