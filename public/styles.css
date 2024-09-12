@@ -1,34 +1,39 @@
 body {
     font-family: 'Roboto', sans-serif;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #f0f0f0;
+    padding: 40px;
+    background-color: #f8f9fa;
     color: #333;
+    line-height: 1.6;
 }
 
 #app {
     background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     color: #2c3e50;
     text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
 }
 
 select, input, button {
-    margin: 10px;
-    padding: 10px;
+    margin: 15px 0;
+    padding: 12px 15px;
     font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
 }
 
 select, input {
-    width: calc(100% - 22px);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 button {
@@ -36,277 +41,313 @@ button {
     color: white;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 button:hover {
     background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .question {
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .options {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 15px;
 }
 
 .option {
-    background-color: #ecf0f1;
-    border: 1px solid #bdc3c7;
-    border-radius: 5px;
-    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
 }
 
 .option:hover {
-    background-color: #e0e0e0;
+    background-color: #e9ecef;
+    transform: translateY(-2px);
 }
 
 .option.selected {
     background-color: #3498db;
     color: white;
+    border-color: #3498db;
 }
 
 .option.correct {
     background-color: #2ecc71;
     color: white;
+    border-color: #2ecc71;
 }
 
 .option.incorrect {
     background-color: #e74c3c;
     color: white;
+    border-color: #e74c3c;
 }
 
 #results {
     text-align: center;
+    margin-top: 30px;
 }
 
 #score {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     color: #2c3e50;
 }
 
 #tabs {
-    margin-bottom: 20px;
+
+    margin-bottom: 30px;
+    display: flex;
+ 
+    justify-content: space-evenly;
 }
 
 #tabs button {
-    padding: 10px 20px;
+    color: black;
+    padding: 12px 25px;
     font-size: 16px;
     cursor: pointer;
     background-color: #f0f0f0;
     border: none;
     outline: none;
+    transition: all 0.3s ease;
 }
 
 #tabs button.active {
     background-color: #007bff;
     color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 #dashboardData table {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 #dashboardData th, #dashboardData td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    border: none;
+    padding: 15px;
     text-align: left;
 }
 
 #dashboardData th {
-    background-color: #f2f2f2;
+    background-color: #f8f9fa;
     font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#dashboardData tr:nth-child(even) {
+    background-color: #f8f9fa;
 }
 
 .sticky-timer {
     position: sticky;
     top: 0;
-     
-    background: lightgreen;
-    padding: 20px !important;
-    
+    background: linear-gradient(to right, #a8ff78, #78ffd6);
+    padding: 25px !important;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-radius: 0 0 15px 15px;
 }
 
 .sticky-timer.stuck {
-    background: linear-gradient(to bottom, rgba(144, 238, 144, 0.8), rgba(144, 238, 144, 0.6));
+    background: linear-gradient(to right, rgba(168, 255, 120, 0.9), rgba(120, 255, 214, 0.9));
 }
 
 #quizTimer {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 #timeRemaining {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    color: #2c3e50;
 }
 
 #timerBar {
     width: 100%;
-    height: 20px;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
-/* Ensure there's some space at the top of the quiz content */
+#timerBar::-webkit-progress-bar {
+    background-color: #e0e0e0;
+}
+
+#timerBar::-webkit-progress-value {
+    background-color: #3498db;
+}
+
 #quiz {
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 #subtopicInfo {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
     font-style: italic;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .subtopic-info {
-    font-size: 0.8em;
-    color: #666;
-    font-style: italic;
-}
-
-#subtopic option small {
-    display: block;
-    font-size: 0.8em;
+    font-size: 0.9em;
     color: #666;
     font-style: italic;
 }
 
 #subtopic {
-    width: auto;
+    width: 100%;
     margin-top: 50px;
     margin-bottom: 60px;
-    min-width: 300px;
-    max-height: 300px;
+    max-height: 400px;
     overflow-y: auto;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .loading-spinner {
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    border: 3px solid rgba(0, 0, 0, 0.3);
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
-    border-top-color: #000;
+    border-top-color: #3498db;
     animation: spin 1s ease-in-out infinite;
-    -webkit-animation: spin 1s ease-in-out infinite;
 }
 
 @keyframes spin {
-    to { -webkit-transform: rotate(360deg); }
-}
-@-webkit-keyframes spin {
-    to { -webkit-transform: rotate(360deg); }
+    to { transform: rotate(360deg); }
 }
 
 #questionCountButtons {
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 #questionCountButtons p {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-weight: bold;
+    color: #2c3e50;
 }
 
 .button-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 10px;
 }
 
 .question-count-btn {
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 5px 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px 15px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    color: black; /* Add this line to make the text color black */
+    transition: all 0.3s ease;
+    color: #333;
 }
 
 .question-count-btn:hover {
-    background-color: #e0e0e0;
+    background-color: #e9ecef;
+    transform: translateY(-2px);
 }
 
 .question-count-btn.selected {
     background-color: #3498db;
-    color: black; /* Change this to black if you want */
-    font-weight: bold; /* Add this to make the text stand out more */
+    color: white;
+    font-weight: bold;
+    border-color: #3498db;
 }
 
 .modal {
-    background-color: rgba(0,0,0,0.1);
-    padding: 20px;
-    margin: 10px 0;
-    border-radius: 5px;
+    background-color: rgba(0,0,0,0.5);
+    padding: 30px;
+    margin: 20px 0;
+    border-radius: 15px;
 }
 
 .modal-content {
     background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .delete-subset-btn {
-    background-color: #ff7575ce;
+    background-color: #ff7575;
     color: white;
     border: none;
-    padding: 6px 9px;
-    margin-left: 5px;
+    padding: 8px 12px;
+    margin-left: 10px;
     cursor: pointer;
-    font-size: 0.8em;
-
-    color: black;
+    font-size: 0.9em;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
+
 .delete-subset-btn:hover {
-    color: black;
-    font-weight: bold;
     background-color: #ff0000;
-    transform: scale(1.1);
- 
-    transition: transform 0.095s ease-in-out;
+    transform: scale(1.05);
 }
 
 .subset-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
-    margin-bottom: 5px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .subset-container span {
     flex-grow: 1;
+    font-weight: bold;
+    color: #2c3e50;
 }
 
 .subtopic-option {
     display: flex;    
-    /* background: rgb(177, 255, 170); */
     justify-content: center;
-    padding: 15px;
+    padding: 20px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    font-weight: bold;
+    z-index: 5;
 }
 
 .subtopic-option::before {
@@ -319,25 +360,23 @@ button:hover {
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(0, 255, 0, 0.4),
         rgba(144, 238, 144, 0.4),
-        rgba(0, 255, 0, 0.4),
+        rgba(144, 238, 144, 0.6),
+        rgba(144, 238, 144, 0.4),
         transparent
     );
-    animation: greenGradient 3s linear infinite;
+    animation: greenGradient 2.5s linear infinite;
+    z-index: -1;
 }
 
 @keyframes greenGradient {
-    0% {
-        left: -200%;
-    }
-    100% {
-        left: 100%;
-    }
+    0% { left: -200%; }
+    100% { left: 100%; }
 }
 
 .subtopic-option:hover {
-    background-color: #f0d0a0;
+    background-color: #e9ecef;
+    transform: translateY(-2px);
 }
 
 .subtopic-option:hover::before {
