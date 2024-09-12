@@ -265,17 +265,23 @@ button:hover {
 }
 
 .delete-subset-btn {
-    background-color: #ff4d4d;
+    background-color: #ff7575ce;
     color: white;
     border: none;
-    padding: 2px 5px;
+    padding: 6px 9px;
     margin-left: 5px;
     cursor: pointer;
     font-size: 0.8em;
-}
 
+    color: black;
+}
 .delete-subset-btn:hover {
-    background-color: #ff1a1a;
+    color: black;
+    font-weight: bold;
+    background-color: #ff0000;
+    transform: scale(1.1);
+ 
+    transition: transform 0.095s ease-in-out;
 }
 
 .subset-container {
@@ -293,14 +299,49 @@ button:hover {
 }
 
 .subtopic-option {
-    display: flex;
+    display: flex;    
+    background: bisque;
     justify-content: center;
     padding: 15px;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.subtopic-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -300%;
+    width: 300%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 105, 180, 0.4),
+        rgba(255, 255, 0, 0.4),
+        rgba(0, 191, 255, 0.4),
+        transparent
+    );
+    animation: colorfulGradient 3s linear infinite;
+}
+
+@keyframes colorfulGradient {
+    0% {
+        left: -300%;
+    }
+    100% {
+        left: 100%;
+    }
 }
 
 .subtopic-option:hover {
-    background-color: #e0e0e0;
+    background-color: #f0d0a0;
+}
+
+.subtopic-option:hover::before {
+    left: 100%;
 }
 
 .subtopic-option.selected {
