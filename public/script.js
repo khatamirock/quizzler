@@ -30,25 +30,21 @@ function updateSubtopics() {
                 if (Object.keys(classifiedSubtopics).length > 0) {
                     const addedSubtopics = new Set();
                     for (const [subsValue, subtopics] of Object.entries(classifiedSubtopics)) {
-                        const optgroup = document.createElement('div');
-                        optgroup.className = 'subset-container';
+                        const subsetContainer = document.createElement('div');
+                        subsetContainer.className = 'subset-container';
                         const groupInfo = subtopics[0].info || 'No extra info added';
-                        
-                        // Create a container for the delete button and subset label
-                        const containerDiv = document.createElement('div');
-                        containerDiv.className = 'subset-container';
                         
                         // Add subset label
                         const subsetLabel = document.createElement('span');
                         subsetLabel.textContent = `Subset: ${subsValue} - ${groupInfo}`;
-                        containerDiv.appendChild(subsetLabel);
+                        subsetContainer.appendChild(subsetLabel);
                         
                         // Add delete button
                         const deleteButton = createDeleteButton(subsValue, topic);
-                        containerDiv.appendChild(deleteButton);
+                        subsetContainer.appendChild(deleteButton);
                         
-                        // Add the container to the optgroup
-                        optgroup.appendChild(containerDiv);
+                        // Add the subset container to the subtopicSelect
+                        subtopicSelect.appendChild(subsetContainer);
 
                         subtopics.forEach(subtopic => {
                             if (!addedSubtopics.has(subtopic.name)) {
@@ -59,13 +55,10 @@ function updateSubtopics() {
                                 if (subtopic.info) {
                                     option.dataset.info = subtopic.info;
                                 }
-                                optgroup.appendChild(option);
+                                subtopicSelect.appendChild(option);
                                 addedSubtopics.add(subtopic.name);
                             }
                         });
-                        if (optgroup.children.length > 0) {
-                            subtopicSelect.appendChild(optgroup);
-                        }
                     }
                     subtopicSelect.disabled = false;
                 } else {
@@ -711,25 +704,21 @@ document.addEventListener('DOMContentLoaded', () => {
           if (Object.keys(classifiedSubtopics).length > 0) {
             const addedSubtopics = new Set();
             for (const [subsValue, subtopics] of Object.entries(classifiedSubtopics)) {
-              const optgroup = document.createElement('div');
-              optgroup.className = 'subset-container';
-              const groupInfo = subtopics[0].info || 'No extra info added';
-              
-              // Create a container for the delete button and subset label
-              const containerDiv = document.createElement('div');
-              containerDiv.className = 'subset-container';
+            //   const subsetContainer = document.createElement('div');
+            //   subsetContainer.className = 'subset-container';
+            //   const groupInfo = subtopics[0].info || 'No extra info added';
               
               // Add subset label
               const subsetLabel = document.createElement('span');
               subsetLabel.textContent = `Subset: ${subsValue} - ${groupInfo}`;
-              containerDiv.appendChild(subsetLabel);
+              subsetContainer.appendChild(subsetLabel);
               
               // Add delete button
               const deleteButton = createDeleteButton(subsValue, topic);
-              containerDiv.appendChild(deleteButton);
+              subsetContainer.appendChild(deleteButton);
               
-              // Add the container to the optgroup
-              optgroup.appendChild(containerDiv);
+              // Add the subset container to the subtopicSelect
+              subtopicSelect.appendChild(subsetContainer);
 
               subtopics.forEach(subtopic => {
                 if (!addedSubtopics.has(subtopic.name)) {
@@ -740,13 +729,10 @@ document.addEventListener('DOMContentLoaded', () => {
                   if (subtopic.info) {
                     option.dataset.info = subtopic.info;
                   }
-                  optgroup.appendChild(option);
+                  subtopicSelect.appendChild(option);
                   addedSubtopics.add(subtopic.name);
                 }
               });
-              if (optgroup.children.length > 0) {
-                subtopicSelect.appendChild(optgroup);
-              }
             }
             subtopicSelect.disabled = false;
           } else {
