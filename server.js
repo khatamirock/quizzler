@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const questionsRouter = require('./routes/questions');
 const { MongoClient, ObjectId } = require('mongodb');
+const path = require('path');
 
 const app = express();
 app.use(bodyParser.json());
@@ -207,6 +208,33 @@ app.post('/api/questions/approve-correction', async (req, res) => {
         res.status(500).json({ success: false, message: 'Failed to approve correction' });
     }
 });
+
+// Add this new route for adding questions
+app.post('/api/questions/add', async (req, res) => {
+    try {
+        const { topic, subtopic, question_text, options, correct_answer } = req.body;
+        
+        const newQuestion = {
+            question_id: Date.now(), // You might want to use a more robust ID generation method
+            subs: 1, // You might want to determine this value based on your logic
+            info: "",
+            question_text,
+            options,
+            correct_answer
+        };
+
+        const collection = db.collection(topic);
+        await collection.insertOne(newQuestion);
+
+        res.json({ message: 'Question added successfully', question: newQuestion });
+    } catch (error) {
+        console.error('Error adding question:', error);
+        res.status(500).json({ error: 'Failed to add question' });
+    }
+});
+
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

@@ -326,4 +326,33 @@ router.delete('/delete-subset/:topic/:subsValue', async (req, res) => {
     }
 });
 
+router.post('/add', async (req, res) => {
+    try {
+        const { topic, subtopic, question_text, options, correct_answer, password } = req.body;
+        
+        // Check if the provided password matches the environment variable
+        if (password !== process.env.ADMIN_PASSWORD) {
+            return res.status(401).json({ error: 'Unauthorized: Incorrect password' });
+        }
+
+        const newQuestion = {
+            question_id: Date.now(), // You might want to use a more robust ID generation method
+            subs: 1, // You might want to determine this value based on your logic
+            info: "",
+            question_text,
+            options,
+            correct_answer
+        };
+
+        const db = await connectToDatabase('data');
+        const collection = db.collection(topic);
+        await collection.insertOne(newQuestion);
+
+        res.json({ message: 'Question added successfully', question: newQuestion });
+    } catch (error) {
+        console.error('Error adding question:', error);
+        res.status(500).json({ error: 'Failed to add question' });
+    }
+});
+
 module.exports = router;

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Question</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="addQuestionForm">
+        <h2>Add New Question</h2>
+        <select id="topicSelect">
+            <option value="" disabled selected>Select a topic</option>
+        </select>
+        <select id="subtopicSelect">
+            <option value="" disabled selected>Select a subtopic</option>
+        </select>
+        <input type="text" id="newSubtopic" placeholder="Or create a new subtopic">
+        <textarea id="questionText" placeholder="Enter your question here"></textarea>
+        <div id="optionsContainer">
+            <input type="text" class="optionInput" placeholder="Option A">
+            <input type="text" class="optionInput" placeholder="Option B">
+            <input type="text" class="optionInput" placeholder="Option C">
+            <input type="text" class="optionInput" placeholder="Option D">
+        </div>
+        <select id="correctAnswer">
+            <option value="" disabled selected>Select correct answer</option>
+            <option value="a">A</option>
+            <option value="b">B</option>
+            <option value="c">C</option>
+            <option value="d">D</option>
+        </select>
+        <button id="submitQuestion">Submit Question</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
