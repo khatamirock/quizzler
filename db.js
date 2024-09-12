@@ -3,8 +3,7 @@ const { MongoClient } = require('mongodb');
 
 let cachedDb = null;
 
-async function connectToDatabase(dbName = process.env.DB_NAME) {
-  
+async function connectToDatabase(dbName = 'data') {
   if (cachedDb) {
     return cachedDb;
   }
