@@ -91,26 +91,34 @@ function createDeleteButton(subsValue, topic) {
     deleteButton.className = 'delete-subset-btn';
     deleteButton.onclick = (e) => {
         e.preventDefault(); // Prevent the dropdown from closing
-        if (confirm(`Are you sure you want to delete subset ${subsValue} for topic ${topic}?`)) {
-            deleteSubset(topic, subsValue);
+        const password = prompt("Please enter the admin password to delete this subset:");
+        if (password) {
+            deleteSubset(topic, subsValue, password);
         }
     };
     return deleteButton;
 }
 
-async function deleteSubset(topic, subsValue) {
+async function deleteSubset(topic, subsValue, password) {
     try {
         const response = await fetch(`/api/questions/delete-subset/${topic}/${subsValue}`, {
             method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ password })
         });
         if (response.ok) {
             console.log(`Subset ${subsValue} deleted successfully for topic ${topic}`);
             updateSubtopics(); // Refresh the subtopics list
         } else {
-            console.error('Failed to delete subset:', await response.text());
+            const errorData = await response.json();
+            console.error('Failed to delete subset:', errorData.error);
+            alert(errorData.error || 'Failed to delete subset');
         }
     } catch (error) {
         console.error('Error deleting subset:', error);
+        alert('Error deleting subset');
     }
 }
 

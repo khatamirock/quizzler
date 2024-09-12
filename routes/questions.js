@@ -298,7 +298,13 @@ router.post('/suggest-option-correction', async (req, res) => {
 // Add this new route to handle subset deletion
 router.delete('/delete-subset/:topic/:subsValue', async (req, res) => {
     const { topic, subsValue } = req.params;
-    console.log(`Attempting to delete subset ${subsValue} for topic ${topic}`); // Debug info
+    const { password } = req.body;
+    console.log(`Attempting to delete subset ${subsValue} for topic ${topic}`);
+
+    // Check if the provided password matches the environment variable
+    if (password !== process.env.ADMIN_PASSWORD) {
+        return res.status(401).json({ error: 'Unauthorized: Incorrect password' });
+    }
 
     try {
         const db = await connectToDatabase('data');
@@ -307,7 +313,7 @@ router.delete('/delete-subset/:topic/:subsValue', async (req, res) => {
         // Delete all documents with the specified subs value
         const result = await collection.deleteMany({ subs: parseInt(subsValue) });
 
-        console.log(`Deletion result:`, result); // Debug info
+        console.log(`Deletion result:`, result);
 
         if (result.deletedCount > 0) {
             res.json({ message: `Subset ${subsValue} deleted successfully`, deletedCount: result.deletedCount });
