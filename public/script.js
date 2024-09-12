@@ -387,7 +387,9 @@ function submitQuiz() {
     }
 
     const topic = document.getElementById('topic').value;
-    const subtopic = document.getElementById('subtopic').value;
+    const subtopicElement = document.querySelector('.subtopic-option.selected');
+    const subtopic = subtopicElement ? subtopicElement.dataset.value : '';
+    const info = subtopicElement ? subtopicElement.dataset.info : 'No info available';
 
     fetch('/api/questions/submit-result', {
         method: 'POST',
@@ -399,7 +401,8 @@ function submitQuiz() {
             subtopic,
             subs: currentQuestions[0].subs, // Assuming all questions in a quiz have the same 'subs' value
             score,
-            totalQuestions: currentQuestions.length
+            totalQuestions: currentQuestions.length,
+            info
         }),
     })
     .then(response => response.json())

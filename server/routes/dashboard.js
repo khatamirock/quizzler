@@ -3,10 +3,25 @@ router.get('/progress', async (req, res) => {
         const topics = await Topic.aggregate([
             {
                 $group: {
-                    _id: '$topic',
+                    _id: { topic: '$topic', subtopic: '$subtopic' },
                     name: { $first: '$topic' },
-                    info: { $first: '$subtopic' }, // Assuming 'subtopic' is the info field
+                    subtopic: { $first: '$subtopic' },
+                    info: { $first: '$info' },
                     averageScore: { $avg: { $multiply: [ { $divide: ['$score', '$totalQuestions'] }, 100 ] } }
+                }
+            },
+            {
+                $group: {
+                    _id: '$_id.topic',
+                    name: { $first: '$name' },
+                    subtopics: {
+                        $push: {
+                            name: '$subtopic',
+                            info: '$info',
+                            averageScore: '$averageScore'
+                        }
+                    },
+                    overallAverageScore: { $avg: '$averageScore' }
                 }
             }
         ]);

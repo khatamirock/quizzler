@@ -110,10 +110,8 @@ router.post('/submit-result', async (req, res) => {
     try {
         const { topic, subtopic, score, totalQuestions, info } = req.body;
         
-        // Log the received data
         console.log('Received quiz result:', { topic, subtopic, score, totalQuestions, info });
 
-        // Validate the data
         if (!topic || score === undefined || totalQuestions === undefined) {
             return res.status(400).json({ error: 'Missing required fields' });
         }
@@ -121,10 +119,10 @@ router.post('/submit-result', async (req, res) => {
         const db = await connectToDatabase();
         const result = {
             topic,
-            subtopic: subtopic || 'General', // Use 'General' if subtopic is undefined
+            subtopic: subtopic || null, // Use null if subtopic is not provided
             score,
             totalQuestions,
-            info: info || '', // Include the info field, use empty string if undefined
+            info: info || 'No info available',
             timestamp: new Date()
         };
 
