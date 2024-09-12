@@ -117,6 +117,19 @@ router.post('/submit-result', async (req, res) => {
         }
 
         const db = await connectToDatabase();
+        
+        // Check if a result for this quiz attempt already exists
+        const existingResult = await db.collection('quiz_results').findOne({
+            topic,
+            subtopic,
+            timestamp: { $gte: new Date(Date.now() - 5000) } // Check for results in the last 5 seconds
+        });
+
+        if (existingResult) {
+            console.log('Duplicate submission detected. Ignoring.');
+            return res.json({ message: 'Result already saved' });
+        }
+
         const result = {
             topic,
             subtopic: subtopic || null, // Use null if subtopic is not provided

@@ -390,11 +390,22 @@ function updateScore() {
     document.getElementById('score').textContent = `Current Score: ${score} out of ${answeredQuestions}`;
 }
 
+let isSubmitting = false;
+
 function submitQuiz() {
+    submitQuizAndRedirect();
+}
+
+function submitQuizAndRedirect() {
+    if (isSubmitting) return; // Prevent multiple submissions
+    isSubmitting = true;
+
     clearInterval(timerInterval); // Stop the timer
     
     const unansweredQuestions = currentQuestions.length - document.querySelectorAll('.question:has(.option.correct), .question:has(.option.incorrect)').length;
     if (unansweredQuestions > 0) {
+        // redirect to the http://baseurl/#quiz
+ 
         alert(`Time's up! You have ${unansweredQuestions} unanswered question(s). These will be marked as incorrect.`);
     }
 
@@ -411,7 +422,7 @@ function submitQuiz() {
         body: JSON.stringify({
             topic,
             subtopic,
-            subs: currentQuestions[0]?.subs, // Use optional chaining in case all questions were deleted
+            subs: currentQuestions[0]?.subs,
             score,
             totalQuestions: currentQuestions.length,
             info
@@ -420,13 +431,18 @@ function submitQuiz() {
     .then(response => response.json())
     .then(data => {
         console.log('Result saved:', data);
-        quiz.style.display = 'none';
-        showResults();
+        // Redirect to dashboard
+        switchTab('dashboard');
     })
     .catch(error => {
         console.error('Error saving result:', error);
-        alert('Failed to save result. Please try again.');
+        // alert('Failed to save result. Please try again.');
+    })
+    .finally(() => {
+        isSubmitting = false; // Reset the flag
     });
+    window.location.href = '/';
+    return;
 }
 
 function showResults() {
@@ -749,7 +765,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   const option = document.createElement('div');
                   option.className = 'subtopic-option';
                   option.dataset.value = subtopic.name;
-                  option.textContent = `Start - ${subtopic.name} (${subtopic.count} questions)`;
+                  option.textContent = `Start - Quiz ${subtopic.name} (${subtopic.count} questions)`;
                   if (subtopic.info) {
                     option.dataset.info = subtopic.info;
                   }
@@ -799,7 +815,7 @@ function updateTimerDisplay() {
 
     if (remainingTime <= 0) {
         clearInterval(timerInterval);
-        submitQuiz();
+        submitQuizAndRedirect();
     }
 }
 
