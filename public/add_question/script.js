@@ -36,6 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
     previewButton.addEventListener('click', () => {
         const subtopicName = newSubtopic.value || subtopicSelect.value;
         currentJsonData = convertToJSON(subtopicName);
+        
+        const selectedCount = parseInt(questionCountSlider.value);
+        const filledCount = currentJsonData.length;
+        
+        if (filledCount < selectedCount) {
+            alert(`You selected ${selectedCount} questions, but only ${filledCount} are completely filled out. Only the filled questions will be saved.`);
+        }
+        
         jsonPreview.textContent = JSON.stringify(currentJsonData, null, 2);
         form.style.display = 'none';
         previewArea.style.display = 'block';
@@ -103,28 +111,31 @@ document.addEventListener('DOMContentLoaded', () => {
         const subtopicInfo = promptForSubtopicInfo(); // Get subtopic info
 
         for (let i = 0; i < questionCount; i++) {
-            const questionText = document.getElementById(`questionText${i}`).value;
-            const optionA = document.getElementById(`optionA${i}`).value;
-            const optionB = document.getElementById(`optionB${i}`).value;
-            const optionC = document.getElementById(`optionC${i}`).value;
-            const optionD = document.getElementById(`optionD${i}`).value;
+            const questionText = document.getElementById(`questionText${i}`).value.trim();
+            const optionA = document.getElementById(`optionA${i}`).value.trim();
+            const optionB = document.getElementById(`optionB${i}`).value.trim();
+            const optionC = document.getElementById(`optionC${i}`).value.trim();
+            const optionD = document.getElementById(`optionD${i}`).value.trim();
             const correctAnswer = document.getElementById(`correctAnswer${i}`).value;
 
-            const jsonQuestion = {
-                question_id: i + 1,
-                subs: parseInt(subtopicName) || 1,
-                info: subtopicInfo,
-                question_text: questionText,
-                options: [
-                    { text: `a) ${optionA}`, value: 'a' },
-                    { text: `b) ${optionB}`, value: 'b' },
-                    { text: `c) ${optionC}`, value: 'c' },
-                    { text: `d) ${optionD}`, value: 'd' },
-                ],
-                correct_answer: correctAnswer
-            };
+            // Check if the question and all options are filled
+            if (questionText && optionA && optionB && optionC && optionD) {
+                const jsonQuestion = {
+                    question_id: result.length + 1, // Use the current length of result array + 1
+                    subs: parseInt(subtopicName) || 1,
+                    info: subtopicInfo,
+                    question_text: questionText,
+                    options: [
+                        { text: `a) ${optionA}`, value: 'a' },
+                        { text: `b) ${optionB}`, value: 'b' },
+                        { text: `c) ${optionC}`, value: 'c' },
+                        { text: `d) ${optionD}`, value: 'd' },
+                    ],
+                    correct_answer: correctAnswer
+                };
 
-            result.push(jsonQuestion);
+                result.push(jsonQuestion);
+            }
         }
 
         return result;
