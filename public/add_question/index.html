@@ -3,35 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Question</title>
+    <title>Text to JSON Converter</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="addQuestionForm">
-        <h2>Add New Question</h2>
-        <select id="topicSelect">
-            <option value="" disabled selected>Select a topic</option>
-        </select>
-        <input type="text" id="newTopic" placeholder="Or create a new topic">
-        <select id="subtopicSelect">
-            <option value="" disabled selected>Select a subtopic</option>
-        </select>
-        <input type="text" id="newSubtopic" placeholder="Or create a new subtopic">
-        <textarea id="questionText" placeholder="Enter your question here"></textarea>
-        <div id="optionsContainer">
-            <input type="text" class="optionInput" placeholder="Option A">
-            <input type="text" class="optionInput" placeholder="Option B">
-            <input type="text" class="optionInput" placeholder="Option C">
-            <input type="text" class="optionInput" placeholder="Option D">
+    <div class="container">
+        <div class="instructions">
+            <h2>Instructions</h2>
+            <p>Format your questions as follows:</p>
+            <pre>
+প্রশ্ন ১: বাংলাদেশের ক্ষুদ্রতম জেলা কোনটি? 
+
+ক) নারায়ণগঞ্জ
+খ) মেহেরপুর
+গ) ঝালকাঠি
+ঘ) সিলেট
+Answer: খ)
+
+Ques 3: Which RAID level creates a mirror of all disks for storing data?
+a. RAID Level 0
+b. RAID Level 1
+c. RAID Level 2
+d. RAID Level 3
+Answer: b
+            </pre>
         </div>
-        <select id="correctAnswer">
-            <option value="" disabled selected>Select correct answer</option>
-            <option value="a">A</option>
-            <option value="b">B</option>
-            <option value="c">C</option>
-            <option value="d">D</option>
-        </select>
-        <button id="submitQuestion">Submit Question</button>
+        <div id="converter">
+            <h2>Text to JSON Converter</h2>
+            <form id="converterForm">
+                <label for="topicSelect">Select Topic:</label>
+                <select id="topicSelect">
+                    <option value="">Select or create a topic</option>
+                </select>
+                
+                <label for="newTopic">Or Create New Topic:</label>
+                <input type="text" id="newTopic" placeholder="Enter new topic name">
+                
+                <label for="subtopicSelect">Select Subtopic:</label>
+                <select id="subtopicSelect" disabled>
+                    <option value="">Select or create a subtopic</option>
+                </select>
+                
+                <label for="newSubtopic">Or Create New Subtopic:</label>
+                <input type="text" id="newSubtopic" placeholder="Enter new subtopic name">
+                
+                <label for="questionCountSlider">Number of Questions:</label>
+                <input type="range" id="questionCountSlider" min="1" max="10" value="1">
+                <span id="questionCountValue">1</span>
+
+                <div id="questionContainer">
+                    
+                </div>
+
+                <button type="button" id="previewButton">Preview JSON</button>
+            </form>
+            <div id="previewArea" style="display: none;">
+                <h3>JSON Preview:</h3>
+                <pre id="jsonPreview"></pre>
+                <button id="saveButton">Save JSON</button>
+                <button id="editButton">Edit Text</button>
+            </div>
+            <div id="result"></div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
