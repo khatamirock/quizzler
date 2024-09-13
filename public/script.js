@@ -414,6 +414,14 @@ function submitQuizAndRedirect() {
     const subtopic = subtopicElement ? subtopicElement.dataset.value : '';
     const info = subtopicElement ? subtopicElement.dataset.info : 'No info available';
 
+    // Prompt for password
+    const password = prompt("Please enter the admin password to submit the quiz:");
+    if (!password) {
+        alert("Password is required to submit the quiz.");
+        isSubmitting = false; // Reset the flag
+        return;
+    }
+
     fetch('/api/questions/submit-result', {
         method: 'POST',
         headers: {
@@ -425,7 +433,8 @@ function submitQuizAndRedirect() {
             subs: currentQuestions[0]?.subs,
             score,
             totalQuestions: currentQuestions.length,
-            info
+            info,
+            password // Include the password in the request body
         }),
     })
     .then(response => response.json())
@@ -898,6 +907,7 @@ subtopicSelect.addEventListener('click', (event) => {
         // Here you can update any other parts of your UI that need to know the selected subtopic
     }
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded');
