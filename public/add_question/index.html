@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text to JSON Converter</title>
+    <title>ADD QUESTION(S)</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <div id="converter">
-            <h2>Text to JSON Converter</h2>
+            <h2>ADD QUESTION(S)</h2>
             <form id="converterForm">
                 <label for="topicSelect">Select Topic:</label>
                 <select id="topicSelect">
@@ -19,12 +19,13 @@
                 <label for="newTopic">Or Create New Topic:</label>
                 <input type="text" id="newTopic" placeholder="Enter new topic name">
                 
-                <label for="subtopicSelect">Select Subtopic:</label>
-                <select id="subtopicSelect" disabled>
-                    <option value="">Select or create a subtopic</option>
-                </select>
+ 
                 
-                <label for="newSubtopic">Or Create New Subtopic:</label>
+                <label for="newSubtopic">
+                    <strong>Create Subtopic (must be integer (1,2,3...)):</strong>
+                    <i class="info-icon" title="If you don't have any existing subtopic (INTEGER) then only create new 
+                    otherwise put a existing subtopic ones (1,2,....)">ⓘ</i>
+                </label>
                 <input type="text" id="newSubtopic" placeholder="Enter new subtopic name">
                 
                 <label for="questionCountSlider">Number of Questions:</label>
