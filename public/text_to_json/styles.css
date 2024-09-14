@@ -1,39 +1,40 @@
 :root {
-    --primary-color: #3498db;
+    --primary-color: #4a90e2;
     --secondary-color: #2ecc71;
-    --background-color: #f5f7fa;
-    --text-color: #34495e;
-    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --border-radius: 8px;
+    --background-color: #f8f9fa;
+    --text-color: #333333;
+    --box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
 }
 
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Inter', 'Roboto', sans-serif;
     line-height: 1.6;
     margin: 0;
-    padding: 20px;
+    padding: 30px;
     background-color: var(--background-color);
     color: var(--text-color);
 }
 
 .container {
     display: flex;
-    gap: 30px;
-    max-width: 1200px;
+    gap: 40px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 .instructions, #converter {
     background-color: #ffffff;
-    padding: 30px;
+    padding: 40px;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .instructions:hover, #converter:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .instructions {
@@ -41,13 +42,14 @@ body {
 }
 
 .instructions pre {
-    background-color: #f8f9fa;
-    padding: 15px;
+    background-color: #f1f3f5;
+    padding: 20px;
     border-radius: var(--border-radius);
     white-space: pre-wrap;
     word-wrap: break-word;
     font-size: 14px;
-    border: 1px solid #e0e0e0;
+    border: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 #converter {
@@ -56,8 +58,9 @@ body {
 
 h2 {
     color: var(--primary-color);
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 600;
 }
 
 form {
@@ -66,85 +69,101 @@ form {
 }
 
 label {
-    margin-top: 15px;
+    margin-top: 20px;
     font-weight: 500;
+    color: #555;
 }
 
 input, textarea, select {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
     border-radius: var(--border-radius);
     font-size: 16px;
-    transition: border-color 0.3s ease;
+    transition: var(--transition);
 }
 
 input:focus, textarea:focus, select:focus {
     outline: none;
     border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
 }
 
 button {
-    padding: 12px 20px;
+    padding: 14px 24px;
     background-color: var(--primary-color);
     color: #ffffff;
     border: none;
     border-radius: var(--border-radius);
     cursor: pointer;
     font-size: 16px;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
+    font-weight: 600;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #3a7bc8;
+    transform: translateY(-2px);
 }
 
 #result {
-    margin-top: 30px;
-    padding: 20px;
+    margin-top: 40px;
+    padding: 30px;
     background-color: #e9ecef;
     border-radius: var(--border-radius);
     font-size: 16px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 #previewArea {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #f8f9fa;
+    margin-top: 40px;
+    padding: 30px;
+    background-color: #f1f3f5;
     border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }
 
 #jsonPreview {
-    background-color: #e9ecef;
-    padding: 20px;
+    background-color: #ffffff;
+    padding: 30px;
     border-radius: var(--border-radius);
     white-space: pre-wrap;
     word-wrap: break-word;
-    font-family: 'Courier New', monospace;
+    font-family: 'Fira Code', 'Courier New', monospace;
     font-size: 14px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 #saveButton, #editButton {
-    margin-top: 15px;
-    margin-right: 15px;
+    margin-top: 20px;
+    margin-right: 20px;
 }
 
 .question-field {
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: #f8f9fa;
+    margin-bottom: 40px;
+    padding: 30px;
+    background-color: #ffffff;
     border-radius: var(--border-radius);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.question-field:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
 .question-field label {
-    margin-top: 10px;
+    margin-top: 15px;
     display: block;
     font-weight: 500;
+    color: #555;
 }
 
 .question-field input, .question-field textarea, .question-field select {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     width: 100%;
+    border: 2px solid #e0e0e0;
 }

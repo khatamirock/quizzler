@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const rawText = document.getElementById('rawText').value;
         const subtopicName = newSubtopic.value || subtopicSelect.value;
         currentJsonData = convertToJSON(rawText, subtopicName);
-        jsonPreview.textContent = JSON.stringify(currentJsonData, null, 2);
+        renderEditablePreview(currentJsonData);
         form.style.display = 'none';
         previewArea.style.display = 'block';
     });
@@ -55,7 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            console.log('Saving JSON data:', { topicName, subtopicName, currentJsonData });
+            const editedJsonData = gatherEditedData();
+            console.log('Saving JSON data:', { topicName, subtopicName, editedJsonData });
             const response = await fetch('/api/questions/save-json', {
                 method: 'POST',
                 headers: {
@@ -64,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify({
                     topicName,
                     subtopicName,
-                    jsonData: currentJsonData,
+                    jsonData: editedJsonData,
                     password: password
                 }),
             });
@@ -90,40 +91,67 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-function convertToJSON(inputText, subtopicName) {
-    const questions = inputText.split(/(?:Ques\s+\d+:|প্রশ্ন\s*\d*:?|\d+\.\s*)/);
-    questions.shift(); // Remove the empty string at the beginning
-    const result = [];
-    const subtopicInfo = promptForSubtopicInfo(); // Get subtopic info
-    
-    questions.forEach((questionContent, index) => {
-        const questionNumber = index + 1;
-        const [questionText, answerPart] = questionContent.split(/Answer:|উত্তর:|Ans:/i);
-        const fullQuestionText = questionText.trim();
-        const options = fullQuestionText.match(/(?:[a-d]\)|[ক-ঘ]\)|[a-d]\.)\s*.+?(?=(?:\n[a-d]\)|\n[ক-ঘ]\)|\n[a-d]\.|\n*$))/gs) || [];
+    function gatherEditedData() {
+        const editedData = [];
+        const previewContent = document.getElementById('editablePreview');
+        const questionDivs = previewContent.getElementsByClassName('question-preview');
+
+        Array.from(questionDivs).forEach((questionDiv, index) => {
+            const questionText = questionDiv.querySelector(`#question-${index}`).value;
+            const info = questionDiv.querySelector(`#info-${index}`).value;
+            const options = ['a', 'b', 'c', 'd'].map(option => ({
+                text: `${option}) ${questionDiv.querySelector(`#option-${index}-${option}`).value}`,
+                value: option
+            }));
+            const correctAnswer = questionDiv.querySelector(`#correct-answer-${index}`).value;
+
+            editedData.push({
+                question_id: index + 1,
+                subs: currentJsonData[index].subs,
+                info: info,
+                question_text: questionText,
+                options: options,
+                correct_answer: correctAnswer
+            });
+        });
+
+        return editedData;
+    }
+
+    function convertToJSON(inputText, subtopicName) {
+        const questions = inputText.split(/(?:Ques\s+\d+:|প্রশ্ন\s*\d*:?|\d+\.\s*)/);
+        questions.shift(); // Remove the empty string at the beginning
+        const result = [];
+        const subtopicInfo = promptForSubtopicInfo(); // Get subtopic info
         
-        const cleanedQuestionText = fullQuestionText.replace(/(?:[a-d]\)|[ক-ঘ]\)|[a-d]\.)\s*.+/g, '').trim();
+        questions.forEach((questionContent, index) => {
+            const questionNumber = index + 1;
+            const [questionText, answerPart] = questionContent.split(/Answer:|উত্তর:|Ans:/i);
+            const fullQuestionText = questionText.trim();
+            const options = fullQuestionText.match(/(?:[a-d]\)|[ক-ঘ]\)|[a-d]\.)\s*.+?(?=(?:\n[a-d]\)|\n[ক-ঘ]\)|\n[a-d]\.|\n*$))/gs) || [];
+            
+            const cleanedQuestionText = fullQuestionText.replace(/(?:[a-d]\)|[ক-ঘ]\)|[a-d]\.)\s*.+/g, '').trim();
+            
+            const jsonQuestion = {
+                question_id: questionNumber,
+                subs: parseInt(subtopicName) || 1,
+                info: subtopicInfo,
+                question_text: cleanedQuestionText,
+                options: options.map(option => {
+                    const [value, text] = option.split(/\s*\)\s*|\s*\.\s*/);
+                    return {
+                        text: `${value.trim()}) ${text.trim()}`,
+                        value: value.trim()
+                    };
+                }),
+                correct_answer: answerPart ? answerPart.trim().replace(/[^a-dক-ঘ]/gi, '') : ''
+            };
+            
+            result.push(jsonQuestion);
+        });
         
-        const jsonQuestion = {
-            question_id: questionNumber,
-            subs: parseInt(subtopicName) || 1,
-            info: subtopicInfo,
-            question_text: cleanedQuestionText,
-            options: options.map(option => {
-                const [value, text] = option.split(/\s*\)\s*|\s*\.\s*/);
-                return {
-                    text: `${value.trim()}) ${text.trim()}`,
-                    value: value.trim()
-                };
-            }),
-            correct_answer: answerPart ? answerPart.trim().replace(/[^a-dক-ঘ]/gi, '') : ''
-        };
-        
-        result.push(jsonQuestion);
-    });
-    
-    return result;
-}
+        return result;
+    }
  
 
     function promptForSubtopicInfo() {
@@ -187,3 +215,40 @@ function convertToJSON(inputText, subtopicName) {
         return response.json();
     }
 });
+
+function renderEditablePreview(jsonData) {
+    const previewContent = document.createElement('div');
+    previewContent.id = 'editablePreview';
+
+    jsonData.forEach((question, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.className = 'question-preview';
+
+        questionDiv.innerHTML = `
+            <h3>Question ${index + 1}</h3>
+            <label for="question-${index}">Question Text:</label>
+            <textarea id="question-${index}" rows="3">${question.question_text}</textarea>
+            
+            <label for="info-${index}">Info:</label>
+            <input type="text" id="info-${index}" value="${question.info || ''}">
+            
+            <h4>Options:</h4>
+            ${['a', 'b', 'c', 'd'].map((option, optIndex) => `
+                <label for="option-${index}-${option}">Option ${option.toUpperCase()}:</label>
+                <input type="text" id="option-${index}-${option}" value="${question.options[optIndex] ? question.options[optIndex].text.split(') ')[1] : (optIndex === 3 ? 'None of the above' : '')}">
+            `).join('')}
+            
+            <label for="correct-answer-${index}">Correct Answer:</label>
+            <select id="correct-answer-${index}">
+                ${['a', 'b', 'c', 'd'].map(option => `
+                    <option value="${option}" ${question.correct_answer.toLowerCase() === option ? 'selected' : ''}>${option.toUpperCase()}</option>
+                `).join('')}
+            </select>
+        `;
+
+        previewContent.appendChild(questionDiv);
+    });
+
+    jsonPreview.innerHTML = '';
+    jsonPreview.appendChild(previewContent);
+}
