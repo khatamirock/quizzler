@@ -129,10 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const [questionText, answerPart] = questionContent.split(/Answer:|উত্তর:|Ans:/i);
             const fullQuestionText = questionText.trim();
             
-            // Updated regex to match both English and Bangla options
-            const options = fullQuestionText.match(/(?:[a-d]\)|[ক-ঘ]\)|[a-d]\.)\s*.+?(?=(?:\n[a-d]\)|\n[ক-ঘ]\)|\n[a-d]\.|\n*$))/gs) || [];
+            // Updated regex to match both English, Bangla, and new Bangla format options
+            const options = fullQuestionText.match(/(?:[a-dA-D]\)|[ক-ঘ]\)|[a-dA-D]\.|\n[A-D]\.)\s*.+?(?=(?:\n[a-dA-D]\)|\n[ক-ঘ]\)|\n[a-dA-D]\.|\n[A-D]\.|\n*$))/gs) || [];
             
-            const cleanedQuestionText = fullQuestionText.replace(/(?:[a-d]\)|[ক-ঘ]\)|[a-d]\.)\s*.+/g, '').trim();
+            const cleanedQuestionText = fullQuestionText.replace(/(?:[a-dA-D]\)|[ক-ঘ]\)|[a-dA-D]\.|\n[A-D]\.)\s*.+/g, '').trim();
             
             const jsonQuestion = {
                 question_id: questionNumber,
@@ -140,14 +140,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 info: subtopicInfo,
                 question_text: cleanedQuestionText,
                 options: options.map(option => {
-                    const [value, text] = option.split(/\s*\)\s*|\s*\.\s*/);
-                    const englishValue = convertBanglaToEnglishOption(value.trim());
+                    let [value, text] = option.split(/\s*\)\s*|\s*\.\s*/);
+                    value = value.trim();
+                    // Handle the new format where options start with A, B, C, D
+                    if (/^[A-D]$/.test(value)) {
+                        value = value.toLowerCase();
+                    }
+                    const englishValue = convertBanglaToEnglishOption(value);
                     return {
-                        text: `${value.trim()}) ${text.trim()}`,
+                        text: `${value}) ${text.trim()}`,
                         value: englishValue
                     };
                 }),
-                correct_answer: answerPart ? convertBanglaToEnglishOption(answerPart.trim().replace(/[^a-dক-ঘ]/gi, '')) : ''
+                correct_answer: answerPart ? convertBanglaToEnglishOption(answerPart.trim().replace(/[^a-dA-Dক-ঘ]/gi, '')) : ''
             };
             
             result.push(jsonQuestion);
@@ -161,7 +166,11 @@ document.addEventListener('DOMContentLoaded', () => {
             'ক': 'a',
             'খ': 'b',
             'গ': 'c',
-            'ঘ': 'd'
+            'ঘ': 'd',
+            'A': 'a',
+            'B': 'b',
+            'C': 'c',
+            'D': 'd'
         };
         return banglaToEnglish[option] || option.toLowerCase();
     }
