@@ -222,27 +222,27 @@ function renderEditablePreview(jsonData) {
         const questionDiv = document.createElement('div');
         questionDiv.className = 'question-preview';
         questionDiv.innerHTML = `
-            <h3 style="line-height: 0 !important;">Question ${index + 1}</h3>
-            <div style="display: flex; align-items: flex-start; margin-bottom: 10px;">
-                <label for="question-${index}" style="line-height: 0 !important; width: 120px;">Question Text:</label>
-                <textarea id="question-${index}" rows="3" style="width: calc(100% - 120px);">${question.question_text}</textarea>
+            <h3>Question ${index + 1}</h3>
+            <div class="input-group">
+                <label for="question-${index}">Question Text:</label>
+                <textarea id="question-${index}" rows="3">${question.question_text}</textarea>
             </div>
-            <div style="display: flex; align-items: center; margin-bottom: 10px;">
-                <label for="info-${index}" style="line-height: 0 !important; width: 120px;">Info:</label>
-                <input type="text" id="info-${index}" value="${question.info || ''}" style="width: calc(100% - 120px);">
+            <div class="input-group">
+                <label for="info-${index}">Info:</label>
+                <input type="text" id="info-${index}" value="${question.info || ''}">
             </div>
-            <h4 style="margin: 0; line-height: 0 !important;">Options:</h4>
-            <div class="options-grid" style="margin: 0;">
+            <h4>Options:</h4>
+            <div class="options-grid">
                 ${['a', 'b', 'c', 'd'].map((option, optIndex) => `
-                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
-                        <label for="option-${index}-${option}" style="line-height: 0 !important; width: 30px;">${option.toUpperCase()}:</label>
-                        <input type="text" id="option-${index}-${option}" value="${question.options[optIndex] ? question.options[optIndex].text.split(') ')[1] : (optIndex === 3 ? 'None of the above' : '')}" style="width: calc(100% - 30px);">
+                    <div class="option-input">
+                        <label for="option-${index}-${option}">${option.toUpperCase()}:</label>
+                        <input type="text" id="option-${index}-${option}" value="${question.options[optIndex] ? question.options[optIndex].text.split(') ')[1] : (optIndex === 3 ? 'None of the above' : '')}">
                     </div>
                 `).join('')}
             </div>
-            <div style="display: flex; align-items: center; margin-top: 10px;">
-                <label for="correct-answer-${index}" style="line-height: 0 !important; width: 120px;">Correct Answer:</label>
-                <select id="correct-answer-${index}" style="width: calc(100% - 120px);">
+            <div class="input-group">
+                <label for="correct-answer-${index}">Correct Answer:</label>
+                <select id="correct-answer-${index}">
                     ${['a', 'b', 'c', 'd'].map(option => `
                         <option value="${option}" ${question.correct_answer.toLowerCase() === option ? 'selected' : ''}>${option.toUpperCase()}</option>
                     `).join('')}

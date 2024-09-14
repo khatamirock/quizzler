@@ -19,12 +19,14 @@ body {
 
 .container {
     display: flex;
+    flex-direction: column;
     gap: 40px;
     max-width: 1400px;
     margin: 0 auto;
 }
 
 .instructions, #converter {
+    width: 100%;
     background-color: #ffffff;
     padding: 40px;
     border-radius: var(--border-radius);
@@ -167,6 +169,46 @@ button:hover {
     width: 100%;
     border: 2px solid #e0e0e0;
 }
-.options-grid{
-    line-height: 0 !important;
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+}
+
+@media (min-width: 480px) {
+    .options-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.question-preview{
+    line-height: 0.1 !important;
+}
+.input-group input,
+.input-group textarea,
+.input-group select {
+    width: 100%;
+}
+
+.option-input {
+    display: flex;
+    align-items: center;
+}
+
+.option-input label {
+    flex: 0 0 30px;
+    margin-right: 5px;
+}
+
+.option-input input {
+    flex: 1;
 }
