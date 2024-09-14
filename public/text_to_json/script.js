@@ -236,12 +236,17 @@ document.addEventListener('DOMContentLoaded', () => {
         return response.json();
     }
 });
+
 function renderEditablePreview(jsonData) {
     const previewContent = document.createElement('div');
     previewContent.id = 'editablePreview';
     jsonData.forEach((question, index) => {
         const questionDiv = document.createElement('div');
         questionDiv.className = 'question-preview';
+        questionDiv.style.padding = '15px';
+        questionDiv.style.marginBottom = '10px';
+        questionDiv.style.borderRadius = '5px';
+        questionDiv.style.backgroundColor = index % 2 === 0 ? '#ffffff' : '#f0f0f0';
         questionDiv.innerHTML = `
             <h3>Question ${index + 1}</h3>
             <div class="input-group">
