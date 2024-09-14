@@ -97,7 +97,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const questionDivs = previewContent.getElementsByClassName('question-preview');
 
         Array.from(questionDivs).forEach((questionDiv, index) => {
-            const questionText = questionDiv.querySelector(`#question-${index}`).value;
+            const questionText = questionDiv.querySelector(`#question-${index}`).value.trim();
+            
+            // Skip this question if the question text is empty
+            if (questionText.length === 0) {
+                return;
+            }
+
             const info = questionDiv.querySelector(`#info-${index}`).value;
             const options = ['a', 'b', 'c', 'd'].map(option => ({
                 text: `${option}) ${questionDiv.querySelector(`#option-${index}-${option}`).value}`,
@@ -106,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const correctAnswer = questionDiv.querySelector(`#correct-answer-${index}`).value;
 
             editedData.push({
-                question_id: index + 1,
+                question_id: editedData.length + 1, // Use the current length for numbering
                 subs: currentJsonData[index].subs,
                 info: info,
                 question_text: questionText,
@@ -125,10 +131,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const subtopicInfo = promptForSubtopicInfo(); // Get subtopic info
         
         questions.forEach((questionContent, index) => {
-            const questionNumber = index + 1;
+            // Skip empty questions
+            if (!questionContent.trim()) {
+                return;
+            }
+
+            const questionNumber = result.length + 1; // Use the current result length for numbering
             const [questionText, answerPart] = questionContent.split(/Answer:|উত্তর:|Ans:/i);
             const fullQuestionText = questionText.trim();
             
+            // Skip questions without any content
+            if (!fullQuestionText) {
+                return;
+            }
+
             // Updated regex to match both English, Bangla, and new Bangla format options
             const options = fullQuestionText.match(/(?:[a-dA-D]\)|[ক-ঘ]\)|[a-dA-D]\.|\n[A-D]\.)\s*.+?(?=(?:\n[a-dA-D]\)|\n[ক-ঘ]\)|\n[a-dA-D]\.|\n[A-D]\.|\n*$))/gs) || [];
             
@@ -155,7 +171,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 correct_answer: answerPart ? convertBanglaToEnglishOption(answerPart.trim().replace(/[^a-dA-Dক-ঘ]/gi, '')) : ''
             };
             
-            result.push(jsonQuestion);
+            // Push the question only if it has content
+            if (jsonQuestion.question_text || jsonQuestion.options.length > 0) {
+                result.push(jsonQuestion);
+            }
         });
         
         return result;
