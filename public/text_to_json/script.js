@@ -128,6 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const questionNumber = index + 1;
             const [questionText, answerPart] = questionContent.split(/Answer:|উত্তর:|Ans:/i);
             const fullQuestionText = questionText.trim();
+            
+            // Updated regex to match both English and Bangla options
             const options = fullQuestionText.match(/(?:[a-d]\)|[ক-ঘ]\)|[a-d]\.)\s*.+?(?=(?:\n[a-d]\)|\n[ক-ঘ]\)|\n[a-d]\.|\n*$))/gs) || [];
             
             const cleanedQuestionText = fullQuestionText.replace(/(?:[a-d]\)|[ক-ঘ]\)|[a-d]\.)\s*.+/g, '').trim();
@@ -139,12 +141,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 question_text: cleanedQuestionText,
                 options: options.map(option => {
                     const [value, text] = option.split(/\s*\)\s*|\s*\.\s*/);
+                    const englishValue = convertBanglaToEnglishOption(value.trim());
                     return {
                         text: `${value.trim()}) ${text.trim()}`,
-                        value: value.trim()
+                        value: englishValue
                     };
                 }),
-                correct_answer: answerPart ? answerPart.trim().replace(/[^a-dক-ঘ]/gi, '') : ''
+                correct_answer: answerPart ? convertBanglaToEnglishOption(answerPart.trim().replace(/[^a-dক-ঘ]/gi, '')) : ''
             };
             
             result.push(jsonQuestion);
@@ -152,7 +155,16 @@ document.addEventListener('DOMContentLoaded', () => {
         
         return result;
     }
- 
+
+    function convertBanglaToEnglishOption(option) {
+        const banglaToEnglish = {
+            'ক': 'a',
+            'খ': 'b',
+            'গ': 'c',
+            'ঘ': 'd'
+        };
+        return banglaToEnglish[option] || option.toLowerCase();
+    }
 
     function promptForSubtopicInfo() {
         return prompt("Enter information about this subtopic (optional):");
