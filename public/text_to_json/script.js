@@ -230,13 +230,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             if (typeof subtopics === 'object' && subtopics !== null) {
-                const subtopicKeys = Object.keys(subtopics);
+                subtopicsInfoElement.innerHTML = '<h3>Subtopics:</h3>';
                 
-                // Display subtopics as a comma-separated list
-                subtopicsInfoElement.innerHTML = `<h3>Subtopics included: ${subtopicKeys.join(', ')}</h3>`;
-                
-                // Add options to select element
-                subtopicKeys.forEach(key => {
+                Object.entries(subtopics).forEach(([key, value]) => {
+                    const subtopicInfo = value[0]; // Assuming there's always at least one item in the array
+                    const infoText = subtopicInfo.info || 'No info available';
+                    
+                    // Add subtopic info to the HTML
+                    const subtopicDiv = document.createElement('div');
+                    subtopicDiv.innerHTML = `<p>${key} - ${infoText}</p>`;
+                    subtopicsInfoElement.appendChild(subtopicDiv);
+                    
+                    // Add option to select element
                     const option = document.createElement('option');
                     option.value = key;
                     option.textContent = key;
