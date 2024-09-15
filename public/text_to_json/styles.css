@@ -199,6 +199,7 @@ button:hover {
 }
 .question-preview{
     line-height: 0 !important;
+    background-color: #333333 !important;
 }
 .input-group input,
 .input-group textarea,
