@@ -19,14 +19,18 @@
                 <label for="newTopic">Or Create New Topic:</label>
                 <input type="text" id="newTopic" placeholder="Enter new topic name">
                 
- 
-                
                 <label for="newSubtopic">
                     <strong>Create Subtopic (must be integer (1,2,3...)):</strong>
                     <i class="info-icon" title="If you don't have any existing subtopic (INTEGER) then only create new 
                     otherwise put a existing subtopic ones (1,2,....)">ⓘ</i>
                 </label>
                 <input type="text" id="newSubtopic" placeholder="Enter new subtopic name">
+                
+                <label for="subtopicSelect">Select Subtopic:</label>
+                <select id="subtopicSelect" disabled>
+                    <option value="">Select or create a subtopic</option>
+                </select>
+                <!-- The subtopics info will be inserted here -->
                 
                 <label for="questionCountSlider">Number of Questions:</label>
                 <input type="range" id="questionCountSlider" min="1" max="30" value="1">

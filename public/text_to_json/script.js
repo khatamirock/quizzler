@@ -229,6 +229,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 subtopicSelect.parentNode.insertBefore(subtopicsInfoElement, subtopicSelect.nextSibling);
             }
             
+            subtopicsInfoElement.style.color = 'indianred';
+            subtopicsInfoElement.style.padding = '15px';
+            subtopicsInfoElement.style.fontWeight = 'bold';
+
+
+
             if (typeof subtopics === 'object' && subtopics !== null) {
                 subtopicsInfoElement.innerHTML = '<h3>Subtopics:</h3>';
                 
