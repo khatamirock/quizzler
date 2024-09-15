@@ -51,7 +51,8 @@ function updateSubtopics() {
                                 const option = document.createElement('div');
                                 option.className = 'subtopic-option';
                                 option.dataset.value = subtopic.name;
-                                option.textContent = `Start - ${subtopic.name} (${subtopic.count} questions)`;
+                                // option.textContent = `Start Exam -${groupInfo} ${subtopic.name} (${subtopic.count} questions)`;
+                                option.textContent = `Start Exam -${groupInfo} - Total(${subtopic.count} questions)`;
                                 if (subtopic.info) {
                                     option.dataset.info = subtopic.info;
                                 }
