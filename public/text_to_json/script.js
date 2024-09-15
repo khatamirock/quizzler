@@ -205,8 +205,8 @@ document.addEventListener('DOMContentLoaded', () => {
             topicSelect.innerHTML = '<option value="">Select or create a topic</option>';
             topics.forEach(topic => {
                 const option = document.createElement('option');
-                option.value = topic.name; // Ensure the correct property is used
-                option.textContent = topic.name; // Ensure the correct property is used
+                option.value = topic.name;
+                option.textContent = topic.name;
                 topicSelect.appendChild(option);
             });
             console.log('Fetched topics:', topics);
@@ -220,12 +220,32 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch(`/api/questions/subtopics/${topic}`);
             const subtopics = await response.json();
             subtopicSelect.innerHTML = '<option value="">Select or create a subtopic</option>';
-            subtopics.forEach(subtopic => {
-                const option = document.createElement('option');
-                option.value = subtopic.name; // Ensure the correct property is used
-                option.textContent = subtopic.name; // Ensure the correct property is used
-                subtopicSelect.appendChild(option);
-            });
+            
+            // Create or get the element to display subtopics info
+            let subtopicsInfoElement = document.getElementById('subtopicsInfo');
+            if (!subtopicsInfoElement) {
+                subtopicsInfoElement = document.createElement('div');
+                subtopicsInfoElement.id = 'subtopicsInfo';
+                subtopicSelect.parentNode.insertBefore(subtopicsInfoElement, subtopicSelect.nextSibling);
+            }
+            
+            if (typeof subtopics === 'object' && subtopics !== null) {
+                const subtopicKeys = Object.keys(subtopics);
+                
+                // Display subtopics as a comma-separated list
+                subtopicsInfoElement.innerHTML = `<h3>Subtopics included: ${subtopicKeys.join(', ')}</h3>`;
+                
+                // Add options to select element
+                subtopicKeys.forEach(key => {
+                    const option = document.createElement('option');
+                    option.value = key;
+                    option.textContent = key;
+                    subtopicSelect.appendChild(option);
+                });
+            } else {
+                subtopicsInfoElement.innerHTML = '<h3>No subtopics available</h3>';
+                console.warn('Subtopics response is not an object:', subtopics);
+            }
             console.log('Fetched subtopics for topic', topic, ':', subtopics);
         } catch (error) {
             console.error('Error fetching subtopics:', error);
