@@ -2,7 +2,7 @@
     --primary-color: #3498db;
     --secondary-color: #2ecc71;
     --background-color: #f5f7fa;
-    --text-color: #34495e;
+    --text-color: #e0e0e0;
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --border-radius: 8px;
 }
@@ -12,7 +12,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 20px;
-    background-color: var(--background-color);
+    /* background-color: var(--background-color); */
     color: var(--text-color);
 }
 
@@ -24,7 +24,7 @@ body {
 }
 
 .instructions, #converter {
-    background-color: #ffffff;
+    background-color: #2c2c2c;
     padding: 30px;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
@@ -48,6 +48,7 @@ body {
     word-wrap: break-word;
     font-size: 14px;
     border: 1px solid #e0e0e0;
+    color: #e0e0e0;
 }
 
 #converter {
@@ -68,15 +69,18 @@ form {
 label {
     margin-top: 15px;
     font-weight: 500;
+    color: #e0e0e0;
 }
 
 input, textarea, select {
     margin-bottom: 15px;
     padding: 10px;
-    border: 1px solid #e0e0e0;
+    border: 2px solid var(--border-color);
+    background-color: #333333;
     border-radius: var(--border-radius);
     font-size: 16px;
     transition: border-color 0.3s ease;
+    color: #e0e0e0;
 }
 
 input:focus, textarea:focus, select:focus {
@@ -106,6 +110,7 @@ button:hover {
     background-color: #e9ecef;
     border-radius: var(--border-radius);
     font-size: 16px;
+    color: #e0e0e0;
 }
 
 #previewArea {
@@ -123,6 +128,7 @@ button:hover {
     word-wrap: break-word;
     font-family: 'Courier New', monospace;
     font-size: 14px;
+    color: #e0e0e0;
 }
 
 #saveButton, #editButton {
@@ -133,7 +139,7 @@ button:hover {
 .question-field {
     margin-bottom: 30px;
     padding: 20px;
-    background-color: #f8f9fa;
+    /* background-color: #f8f9fa; */
     border-radius: var(--border-radius);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
@@ -142,11 +148,13 @@ button:hover {
     margin-top: 10px;
     display: block;
     font-weight: 500;
+    color: #e0e0e0;
 }
 
 .question-field input, .question-field textarea, .question-field select {
     margin-bottom: 10px;
     width: 100%;
+    color: #e0e0e0;
 }
 
 .info-icon {
@@ -171,7 +179,7 @@ button:hover {
     top: 50%;
     transform: translateY(-50%);
     background-color: #333;
-    color: white;
+    color: #e0e0e0;
     padding: 5px 10px;
     border-radius: 4px;
     white-space: nowrap;

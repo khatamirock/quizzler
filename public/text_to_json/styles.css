@@ -1,9 +1,9 @@
 :root {
     --primary-color: #4a90e2;
     --secondary-color: #2ecc71;
-    --background-color: #f8f9fa;
-    --text-color: #333333;
-    --box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    --background-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     --border-radius: 12px;
     --transition: all 0.3s ease;
 }
@@ -33,7 +33,7 @@ body {
 
 .instructions, #converter {
     width: 100%;
-    background-color: #ffffff;
+    background-color: #2a2a2a;
     padding: 40px;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
@@ -42,7 +42,7 @@ body {
 
 .instructions:hover, #converter:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
 .instructions {
@@ -50,14 +50,15 @@ body {
 }
 
 .instructions pre {
-    background-color: #f1f3f5;
+    background-color: #333333;
     padding: 20px;
     border-radius: var(--border-radius);
     white-space: pre-wrap;
     word-wrap: break-word;
     font-size: 14px;
     border: none;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #e0e0e0;
 }
 
 #converter {
@@ -79,22 +80,23 @@ form {
 label {
     margin-top: 20px;
     font-weight: 500;
-    color: #555;
+    color: #b0b0b0;
 }
 
 input, textarea, select {
-    margin-bottom: 20px;
     padding: 12px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid #444444;
     border-radius: var(--border-radius);
     font-size: 16px;
     transition: var(--transition);
+    background-color: #333333;
+    color: #e0e0e0;
 }
 
 input:focus, textarea:focus, select:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
 }
 
 button {
@@ -119,29 +121,30 @@ button:hover {
 #result {
     margin-top: 40px;
     padding: 30px;
-    background-color: #e9ecef;
+    background-color: #333333;
     border-radius: var(--border-radius);
     font-size: 16px;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #previewArea {
     margin-top: 40px;
     padding: 30px;
-    background-color: #f1f3f5;
+    background-color: #2a2a2a;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
 }
 
 #jsonPreview {
-    background-color: #ffffff;
+    background-color: #333333;
     padding: 30px;
     border-radius: var(--border-radius);
     white-space: pre-wrap;
     word-wrap: break-word;
     font-family: 'Fira Code', 'Courier New', monospace;
     font-size: 14px;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #e0e0e0;
 }
 
 #saveButton, #editButton {
@@ -152,7 +155,7 @@ button:hover {
 .question-field {
     margin-bottom: 40px;
     padding: 30px;
-    background-color: #ffffff;
+    background-color: #2a2a2a;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     transition: var(--transition);
@@ -160,20 +163,22 @@ button:hover {
 
 .question-field:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 .question-field label {
     margin-top: 15px;
     display: block;
     font-weight: 500;
-    color: #555;
+    color: #b0b0b0;
 }
 
 .question-field input, .question-field textarea, .question-field select {
     margin-bottom: 15px;
     width: 100%;
-    border: 2px solid #e0e0e0;
+    border: 2px solid #444444;
+    background-color: #333333;
+    color: #e0e0e0;
 }
 
 .options-grid {
@@ -188,16 +193,12 @@ button:hover {
     }
 }
 
-.input-group {
-    margin-bottom: 15px;
-}
-
 .input-group label {
     display: block;
     margin-bottom: 5px;
 }
 .question-preview{
-    line-height: 0.1 !important;
+    line-height: 0 !important;
 }
 .input-group input,
 .input-group textarea,

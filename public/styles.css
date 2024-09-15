@@ -1,13 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+
+:root {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --accent-color: #e74c3c;
+    --border-color: #333333;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     max-width: 100%;
     margin: 0 auto;
     padding: 10px;
-    background-color: antiquewhite;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
@@ -15,18 +25,18 @@ body {
     font-family: 'Kalam', sans-serif;
     font-size: 2em;
     font-weight: 700;
-    color: #009fff;
+    color: var(--primary-color);
 }
 
 #app {
-    background-color: white;
+    background-color: #2c2c2c;
     border-radius: 15px;
     padding: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
-    color: #2c3e50;
+    color: var(--text-color);
     text-align: center;
     font-size: 1.8em;
     margin-bottom: 20px;
@@ -38,9 +48,11 @@ select, input, button {
     padding: 10px;
     font-size: 14px;
     border-radius: 8px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--border-color);
     transition: all 0.3s ease;
     font-family: 'Poppins', sans-serif;
+    background-color: #333333;
+    color: var(--text-color);
 }
 
 select, input {
@@ -49,8 +61,8 @@ select, input {
 }
 
 button {
-    background-color: #3498db;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -62,15 +74,15 @@ button {
 button:hover, button:focus {
     background-color: #2980b9;
     transform: translateY(-2px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .question {
-    background-color: #ffffff;
+    background-color: #2c2c2c;
     border-radius: 10px;
     padding: 15px;
     margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .options {
@@ -80,36 +92,37 @@ button:hover, button:focus {
 }
 
 .option {
-    background-color: #f8f9fa;
-    border: 1px solid #e0e0e0;
+    background-color: #333333;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 14px;
+    color: var(--text-color);
 }
 
 .option:hover, .option:focus {
-    background-color: #e9ecef;
+    background-color: #444444;
     transform: translateY(-2px);
 }
 
 .option.selected {
-    background-color: #3498db;
-    color: white;
-    border-color: #3498db;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-color: var(--primary-color);
 }
 
 .option.correct {
-    background-color: #2ecc71;
-    color: white;
-    border-color: #2ecc71;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-color: var(--secondary-color);
 }
 
 .option.incorrect {
-    background-color: #e74c3c;
-    color: white;
-    border-color: #e74c3c;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border-color: var(--accent-color);
 }
 
 #results {
@@ -120,7 +133,7 @@ button:hover, button:focus {
 #score {
     font-size: 24px;
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--text-color);
 }
 
 #tabs {
@@ -132,11 +145,11 @@ button:hover, button:focus {
 }
 
 #tabs button {
-    color: #333;
+    color: var(--text-color);
     padding: 8px 15px;
     font-size: 14px;
     cursor: pointer;
-    background-color: #f0f0f0;
+    background-color: #333333;
     border: none;
     outline: none;
     transition: all 0.3s ease;
@@ -144,10 +157,10 @@ button:hover, button:focus {
 }
 
 #tabs button.active {
-    background-color: #007bff;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     transform: translateY(-2px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 #dashboardData table {
@@ -155,42 +168,44 @@ button:hover, button:focus {
     border-collapse: separate;
     border-spacing: 0;
     margin-top: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
     font-size: 14px;
+    background-color: #2c2c2c;
 }
 
 #dashboardData th, #dashboardData td {
     border: none;
     padding: 12px;
     text-align: left;
+    color: var(--text-color);
 }
 
 #dashboardData th {
-    background-color: #f8f9fa;
+    background-color: #333333;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 #dashboardData tr:nth-child(even) {
-    background-color: #f8f9fa;
+    background-color: #333333;
 }
 
 .sticky-timer {
     position: sticky;
     top: 0;
-    background: linear-gradient(to right, #a8ff78, #78ffd6);
+    background: linear-gradient(to right, #2c3e50, #34495e);
     padding: 15px !important;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
     border-radius: 0 0 15px 15px;
 }
 
 .sticky-timer.stuck {
-    background: linear-gradient(to right, rgba(168, 255, 120, 0.9), rgba(120, 255, 214, 0.9));
+    background: linear-gradient(to right, rgba(44, 62, 80, 0.9), rgba(52, 73, 94, 0.9));
 }
 
 #quizTimer {
@@ -201,23 +216,23 @@ button:hover, button:focus {
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 8px;
-    color: #2c3e50;
+    color: var(--text-color);
 }
 
 #timerBar {
     width: 100%;
     height: 8px;
-    background-color: #e0e0e0;
+    background-color: #444444;
     border-radius: 4px;
     overflow: hidden;
 }
 
 #timerBar::-webkit-progress-bar {
-    background-color: #e0e0e0;
+    background-color: #444444;
 }
 
 #timerBar::-webkit-progress-value {
-    background-color: #3498db;
+    background-color: var(--primary-color);
 }
 
 #quiz {
@@ -227,16 +242,17 @@ button:hover, button:focus {
 #subtopicInfo {
     margin-top: 15px;
     padding: 12px;
-    background-color: #f8f9fa;
+    background-color: #333333;
     border-radius: 8px;
     font-style: italic;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     font-size: 14px;
+    color: var(--text-color);
 }
 
 .subtopic-info {
     font-size: 0.9em;
-    color: #666;
+    color: #999999;
     font-style: italic;
 }
 
@@ -246,18 +262,19 @@ button:hover, button:focus {
     margin-bottom: 40px;
     max-height: 300px;
     overflow-y: auto;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #2c2c2c;
 }
 
 .loading-spinner {
     display: inline-block;
     width: 24px;
     height: 24px;
-    border: 3px solid rgba(0, 0, 0, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.1);
     border-radius: 50%;
-    border-top-color: #3498db;
+    border-top-color: var(--primary-color);
     animation: spin 1s ease-in-out infinite;
 }
 
@@ -272,7 +289,7 @@ button:hover, button:focus {
 #questionCountButtons p {
     margin-bottom: 8px;
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--text-color);
     font-size: 14px;
 }
 
@@ -283,45 +300,45 @@ button:hover, button:focus {
 }
 
 .question-count-btn {
-    background-color: #f8f9fa;
-    border: 1px solid #e0e0e0;
+    background-color: #333333;
+    border: 1px solid var(--border-color);
     border-radius: 6px;
     padding: 8px 12px;
     cursor: pointer;
     transition: all 0.3s ease;
-    color: #333;
+    color: var(--text-color);
     font-size: 14px;
 }
 
 .question-count-btn:hover, .question-count-btn:focus {
-    background-color: #e9ecef;
+    background-color: #444444;
     transform: translateY(-2px);
 }
 
 .question-count-btn.selected {
-    background-color: #3498db;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     font-weight: 600;
-    border-color: #3498db;
+    border-color: var(--primary-color);
 }
 
 .modal {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.7);
     padding: 20px;
     margin: 15px 0;
     border-radius: 12px;
 }
 
 .modal-content {
-    background-color: white;
+    background-color: #2c2c2c;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .delete-subset-btn {
-    background-color: #ff7575;
-    color: white;
+    background-color: var(--accent-color);
+    color: var(--text-color);
     border: none;
     padding: 6px 10px;
     margin-left: 8px;
@@ -332,7 +349,7 @@ button:hover, button:focus {
 }
 
 .delete-subset-btn:hover, .delete-subset-btn:focus {
-    background-color: #ff0000;
+    background-color: #c0392b;
     transform: scale(1.05);
 }
 
@@ -341,25 +358,22 @@ button:hover, button:focus {
     justify-content: space-between;
     align-items: center;
     padding: 12px;
-    background-color: #f8f9fa;
+    background-color: #333333;
     border-radius: 8px;
     margin-bottom: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .subset-container span {
     flex-grow: 1;
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--text-color);
     font-size: 14px;
 }
 
-
-
 .subtopic-option {
     display: flex;    
-    background-color: darkseagreen;
-
+    background-color: #2c3e50;
     justify-content: center;
     padding: 15px;
     cursor: pointer;
@@ -368,10 +382,10 @@ button:hover, button:focus {
     transition: all 0.3s ease;
     border-radius: 8px;
     margin-bottom: 8px;
- 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     font-weight: 600;
     font-size: 14px;
+    color: var(--text-color);
 }
 
 .subtopic-option::before {
@@ -384,28 +398,28 @@ button:hover, button:focus {
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(144, 238, 144, 0.4),
-        rgba(144, 238, 144, 0.6),
-        rgba(144, 238, 144, 0.4),
+        rgba(52, 152, 219, 0.4),
+        rgba(52, 152, 219, 0.6),
+        rgba(52, 152, 219, 0.4),
         transparent
     );
-    animation: greenGradient 2.5s linear infinite;
+    animation: blueGradient 2.5s linear infinite;
     z-index: -1;
 }
 
-@keyframes greenGradient {
+@keyframes blueGradient {
     0% { left: -200%; }
     100% { left: 100%; }
 }
 
 .subtopic-option:hover, .subtopic-option:focus {
-    background-color: #e9ecef;
+    background-color: #34495e;
     transform: translateY(-2px);
 }
 
 .subtopic-option.selected {
-    background-color: #3498db;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color);
 }
 
 @media (min-width: 768px) {
