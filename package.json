@@ -4,12 +4,22 @@
   "description": "A simple quiz system",
   "main": "local_server.js",
   "scripts": {
-    "start": "node local_server.js"
+    "start": "node local_server.js",
+    "minify": "terser api/index.js -o api/index.min.js",
+    "onsficate_main": "terser public/js/*.js -o public/js/bundle.min.js",
+    
+    "obfuscate_add_question": "javascript-obfuscator public/add_question/script.js --output public/add_question/script.min.js",
+    "obfuscate_text_to_json": "javascript-obfuscator public/text_to_json/script.js -o public/text_to_json/script.min.js"
+    
+    
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.17.1",
     "mongodb": "^4.13.0"
+  },
+  "devDependencies": {
+    "terser": "^5.7.2"
   }
 }
