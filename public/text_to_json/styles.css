@@ -40,10 +40,10 @@ body {
     transition: var(--transition);
 }
 
-.instructions:hover, #converter:hover {
+/* .instructions:hover, #converter:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-}
+} */
 
 .instructions {
     flex: 1;
