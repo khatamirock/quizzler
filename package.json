@@ -10,7 +10,7 @@
     
 
 
-    "onsficate_main": "terser public/js/*.js -o public/js/bundle.min.js",
+    "onsficate_main": "javascript-obfuscator public/script.js -o public/script.min.js",
     "obfuscate_add_question": "javascript-obfuscator public/add_question/script.js --output public/add_question/script.min.js",
     "obfuscate_text_to_json": "javascript-obfuscator public/text_to_json/script.js -o public/text_to_json/script.min.js"
     
