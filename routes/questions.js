@@ -379,7 +379,8 @@ router.post('/save-incorrect-answers', async (req, res) => {
 
     try {
         const db = await connectToDatabase();
-        const collection = db.collection('incorrect_ans');
+        // Incorrect Answer
+        const collection = db.collection('Incorrect Answer');
 
         // Insert each incorrect answer as a separate document, but only if it doesn't already exist
         const results = await Promise.all(incorrectAnswers.map(async (answer) => {
@@ -414,7 +415,7 @@ router.post('/remove-correct-answer', async (req, res) => {
     
     try {
         const db = await connectToDatabase();
-        const collection = db.collection('incorrect_ans');
+        const collection = db.collection('Incorrect Answer');
 
         const result = await collection.deleteOne({ question_id: questionId });
 

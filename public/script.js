@@ -378,7 +378,7 @@ function selectOption(selectedOption) {
         score++;
 
         // If the current topic is 'incorrect_ans', remove this question from the database
-        if (topicSelect.value === 'incorrect_ans') {
+        if (topicSelect.value === 'Incorrect Answer') {
             removeCorrectAnswerFromIncorrectAns(question.question_id);
         }
     } else {
@@ -890,7 +890,63 @@ function updateTimerDisplay() {
         submitQuizAndRedirect();
     }
 }
+function submitQuizAndRedirect() {
+    if (isSubmitting) return; // Prevent multiple submissions
+    isSubmitting = true;
 
+    clearInterval(timerInterval); // Stop the timer
+    
+    const unansweredQuestions = currentQuestions.length - document.querySelectorAll('.question:has(.option.correct), .question:has(.option.incorrect)').length;
+    if (unansweredQuestions > 0) {
+        // redirect to the http://baseurl/#quiz
+ 
+        alert(`Time's up! You have ${unansweredQuestions} unanswered question(s). These will be marked as incorrect.`);
+    }
+
+    const topic = document.getElementById('topic').value;
+    const subtopicElement = document.querySelector('.subtopic-option.selected');
+    const subtopic = subtopicElement ? subtopicElement.dataset.value : '';
+    const info = subtopicElement ? subtopicElement.dataset.info : 'No info available';
+
+    // Prompt for password
+    const password = prompt("Please enter the admin password to submit the quiz:");
+    if (!password) {
+        alert("Password is required to submit the quiz.");
+        isSubmitting = false; // Reset the flag
+        return;
+    }
+
+    fetch('/api/questions/submit-result', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            topic,
+            subtopic,
+            subs: currentQuestions[0]?.subs,
+            score,
+            totalQuestions: currentQuestions.length,
+            info,
+            password // Include the password in the request body
+        }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Result saved:', data);
+        // Redirect to dashboard
+        switchTab('dashboard');
+    })
+    .catch(error => {
+        console.error('Error saving result:', error);
+        // alert('Failed to save result. Please try again.');
+    })
+    .finally(() => {
+        isSubmitting = false; // Reset the flag
+    });
+    window.location.href = '/';
+    return;
+}
 function setupStickyTimer() {
     const stickyTimer = document.querySelector('.sticky-timer');
     const observer = new IntersectionObserver(
