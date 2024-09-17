@@ -108,12 +108,41 @@ router.get('/:topic/:subtopic/:count', async (req, res) => {
 // Update the submit-result route
 router.post('/submit-result', async (req, res) => {
     try {
-        const { topic, subtopic, score, totalQuestions, info } = req.body;
+        const { topic, subtopic, score, totalQuestions, info, password } = req.body;
         
         console.log('Received quiz result:', { topic, subtopic, score, totalQuestions, info });
 
-        if (!topic || score === undefined || totalQuestions === undefined) {
+        if (!topic || score === undefined || totalQuestions === undefined || !password) {
             return res.status(400).json({ error: 'Missing required fields' });
+        }
+
+        // Check if the provided password matches the environment variable
+        let isPasswordCorrect = false;
+        let attempts = 0;
+        const maxAttempts = 3;
+
+        while (!isPasswordCorrect && attempts < maxAttempts) {
+            if (password === process.env.ADMIN_PASSWORD) {
+                isPasswordCorrect = true;
+            } else {
+                attempts++;
+                if (attempts < maxAttempts) {
+                    // Ask for password again
+                    const retryResponse = await new Promise(resolve => {
+                        res.json({ status: 'retry', message: 'Incorrect password. Please try again.' });
+                        req.once('data', chunk => {
+                            resolve(JSON.parse(chunk));
+                        });
+                    });
+                    if (retryResponse.password === process.env.ADMIN_PASSWORD) {
+                        isPasswordCorrect = true;
+                    }
+                }
+            }
+        }
+
+        if (!isPasswordCorrect) {
+            return res.status(401).json({ error: 'Unauthorized: Incorrect password after multiple attempts' });
         }
 
         const db = await connectToDatabase();
