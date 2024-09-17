@@ -32,7 +32,7 @@ body {
 }
 
 .instructions, #converter {
-    /* width: 100%; */
+    width: 100%;
     background-color: #2a2a2a;
     padding: 40px;
     border-radius: var(--border-radius);
@@ -40,10 +40,10 @@ body {
     transition: var(--transition);
 }
 
-/* .instructions:hover, #converter:hover {
+.instructions:hover, #converter:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-} */
+}
 
 .instructions {
     flex: 1;
@@ -187,7 +187,7 @@ button:hover {
     gap: 5px;
 }
 
-@media (min-width: 730px) {
+@media (min-width: 480px) {
     .options-grid {
         grid-template-columns: 1fr 1fr;
     }
