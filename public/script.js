@@ -355,6 +355,8 @@ function submitOptionCorrection(questionId) {
     });
 }
 
+let incorrectMCQIds = []; // Declare a global variable to store incorrect MCQ ids
+
 function selectOption(selectedOption) {
     const questionElement = selectedOption.closest('.question');
     const options = questionElement.querySelectorAll('.option');
@@ -375,11 +377,17 @@ function selectOption(selectedOption) {
         selectedOption.classList.add('correct');
         score++;
     } else {
+        console.log('\n\n\n Incorrect answer selected for question ID:', question._id, '\n\n\n\n');
         selectedOption.classList.add('incorrect');
-        options.forEach(option => {
-            if (option.dataset.value === question.correct_answer) {
-                option.classList.add('correct');
-            }
+        
+        // Store the entire question object for incorrect answers
+        incorrectMCQIds.push({
+            question_id: question.question_id,
+            subs: question.subs,
+            info: question.info,
+            question_text: question.question_text,
+            options: question.options,
+            correct_answer: question.correct_answer
         });
     }
 
@@ -394,10 +402,6 @@ function updateScore() {
 let isSubmitting = false;
 
 function submitQuiz() {
-    submitQuizAndRedirect();
-}
-
-function submitQuizAndRedirect() {
     if (isSubmitting) return; // Prevent multiple submissions
     isSubmitting = true;
 
@@ -405,8 +409,6 @@ function submitQuizAndRedirect() {
     
     const unansweredQuestions = currentQuestions.length - document.querySelectorAll('.question:has(.option.correct), .question:has(.option.incorrect)').length;
     if (unansweredQuestions > 0) {
-        // redirect to the http://baseurl/#quiz
- 
         alert(`Time's up! You have ${unansweredQuestions} unanswered question(s). These will be marked as incorrect.`);
     }
 
@@ -423,6 +425,7 @@ function submitQuizAndRedirect() {
         return;
     }
 
+    // Save quiz results
     fetch('/api/questions/submit-result', {
         method: 'POST',
         headers: {
@@ -435,29 +438,60 @@ function submitQuizAndRedirect() {
             score,
             totalQuestions: currentQuestions.length,
             info,
-            password // Include the password in the request body
+            password
         }),
     })
     .then(response => response.json())
     .then(data => {
         console.log('Result saved:', data);
-        // Redirect to dashboard
-        switchTab('dashboard');
+        
+        // Save incorrect answers
+        return fetch('/api/questions/save-incorrect-answers', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                topic,
+                subtopic,
+                incorrectAnswers: incorrectMCQIds,
+                password
+            }),
+        });
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Incorrect answers saved:', data);
+        // End the quiz and show results
+        endQuiz();
     })
     .catch(error => {
-        console.error('Error saving result:', error);
-        // alert('Failed to save result. Please try again.');
+        console.error('Error saving result or incorrect answers:', error);
+        alert('Failed to save result or incorrect answers. Please try again.');
     })
     .finally(() => {
         isSubmitting = false; // Reset the flag
+        incorrectMCQIds = []; // Clear the incorrect answers array
     });
-    window.location.href = '/';
-    return;
+}
+
+function endQuiz() {
+    // Hide the quiz interface
+    document.getElementById('quiz').style.display = 'none';
+    
+    // Show the results
+    showResults();
+    
+    // Optionally, you can add a delay before redirecting to the dashboard
+    setTimeout(() => {
+        switchTab('dashboard');
+    }, 3000); // Redirect after 3 seconds
 }
 
 function showResults() {
     results.style.display = 'block';
     document.getElementById('finalScore').textContent = `Final Score: ${score} out of ${currentQuestions.length}`;
+    // You can add more detailed results here if needed
 }
 
 function restartQuiz() {
@@ -798,6 +832,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Other existing code...
 });
+
 
 topicFilter.addEventListener('change', fetchDashboardData);
 

@@ -316,7 +316,7 @@ router.delete('/delete-subset/:topic/:subsValue', async (req, res) => {
 
     // Check if the provided password matches the environment variable
     if (password !== process.env.ADMIN_PASSWORD) {
-        return res.status(401).json({ error: 'Unauthorized: Incorrect password' });
+        return res.status(401).json({ error: 'Unauthorized: Incorrect password ?? reallie ?/' });
     }
 
     try {
@@ -365,6 +365,39 @@ router.post('/add', async (req, res) => {
     } catch (error) {
         console.error('Error adding question:', error);
         res.status(500).json({ error: 'Failed to add question' });
+    }
+});
+
+// Add this new route to save incorrect answers
+router.post('/save-incorrect-answers', async (req, res) => {
+    const { topic, subtopic, incorrectAnswers, password } = req.body;
+
+    // Check if the provided password matches the environment variable
+    if (password !== process.env.ADMIN_PASSWORD) {
+        return res.status(401).json({ error: 'Unauthorized: Incorrect password' });
+    }
+
+    try {
+        const db = await connectToDatabase();
+        const collection = db.collection('incorrect_ans');
+
+        // Insert each incorrect answer as a separate document
+        const results = await Promise.all(incorrectAnswers.map(answer => {
+            return collection.insertOne({
+                question_id: answer.question_id,
+                subs: answer.subs,
+                info: answer.info,
+                question_text: answer.question_text,
+                options: answer.options,
+                correct_answer: answer.correct_answer,
+                timestamp: new Date()
+            });
+        }));
+
+        res.json({ message: 'Incorrect answers saved successfully', insertedIds: results.map(result => result.insertedId) });
+    } catch (error) {
+        console.error('Error saving incorrect answers:', error);
+        res.status(500).json({ error: 'Failed to save incorrect answers', details: error.message });
     }
 });
 
