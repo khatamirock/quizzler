@@ -385,9 +385,12 @@ button:hover, button:focus {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     font-weight: 600;
     font-size: 14px;
-    /* color: var(--text-color); 
-    */
     color: black;
+}
+
+.subtopic-option.selected {
+    background-color: #002361  !important;
+    /* color: white; */
 }
 
 .subtopic-option::before {
