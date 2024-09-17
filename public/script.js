@@ -376,6 +376,11 @@ function selectOption(selectedOption) {
     if (selectedOption.dataset.value === question.correct_answer) {
         selectedOption.classList.add('correct');
         score++;
+
+        // If the current topic is 'incorrect_ans', remove this question from the database
+        if (topicSelect.value === 'incorrect_ans') {
+            removeCorrectAnswerFromIncorrectAns(question.question_id);
+        }
     } else {
         console.log('\n\n\n Incorrect answer selected for question ID:', question._id, '\n\n\n\n');
         selectedOption.classList.add('incorrect');
@@ -392,6 +397,28 @@ function selectOption(selectedOption) {
     }
 
     updateScore();
+}
+
+function removeCorrectAnswerFromIncorrectAns(questionId) {
+    fetch('/api/questions/remove-correct-answer', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ questionId }),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Correct answer removed successfully:', data);
+    })
+    .catch(error => {
+        console.error('Error removing correct answer:', error);
+    });
 }
 
 function updateScore() {

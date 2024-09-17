@@ -381,23 +381,51 @@ router.post('/save-incorrect-answers', async (req, res) => {
         const db = await connectToDatabase();
         const collection = db.collection('incorrect_ans');
 
-        // Insert each incorrect answer as a separate document
-        const results = await Promise.all(incorrectAnswers.map(answer => {
-            return collection.insertOne({
-                question_id: answer.question_id,
-                subs: answer.subs,
-                info: answer.info,
-                question_text: answer.question_text,
-                options: answer.options,
-                correct_answer: answer.correct_answer,
-                timestamp: new Date()
-            });
+        // Insert each incorrect answer as a separate document, but only if it doesn't already exist
+        const results = await Promise.all(incorrectAnswers.map(async (answer) => {
+            const existingQuestion = await collection.findOne({ question_id: answer.question_id });
+            if (!existingQuestion) {
+                return collection.insertOne({
+                    question_id: answer.question_id,
+                    subs: answer.subs,
+                    info: answer.info,
+                    question_text: answer.question_text,
+                    options: answer.options,
+                    correct_answer: answer.correct_answer,
+                    timestamp: new Date()
+                });
+            }
+            return null;
         }));
 
-        res.json({ message: 'Incorrect answers saved successfully', insertedIds: results.map(result => result.insertedId) });
+        const insertedIds = results.filter(result => result !== null).map(result => result.insertedId);
+
+        res.json({ message: 'Incorrect answers saved successfully', insertedIds });
     } catch (error) {
         console.error('Error saving incorrect answers:', error);
         res.status(500).json({ error: 'Failed to save incorrect answers', details: error.message });
+    }
+});
+
+router.post('/remove-correct-answer', async (req, res) => {
+    const { questionId } = req.body;
+
+    console.log(`Attempting to remove correct answer for question ID: ${questionId}`);
+    
+    try {
+        const db = await connectToDatabase();
+        const collection = db.collection('incorrect_ans');
+
+        const result = await collection.deleteOne({ question_id: questionId });
+
+        if (result.deletedCount === 1) {
+            res.json({ message: 'Correct answer removed successfully' });
+        } else {
+            res.status(404).json({ error: 'Question not found in incorrect_ans collection' });
+        }
+    } catch (error) {
+        console.error('Error removing correct answer:', error);
+        res.status(500).json({ error: 'Failed to remove correct answer', details: error.message });
     }
 });
 
