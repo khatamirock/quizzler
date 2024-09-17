@@ -84,7 +84,7 @@ label {
 }
 
 input, textarea, select {
-    padding: 12px;
+    padding: 10px;
     border: 2px solid #444444;
     border-radius: var(--border-radius);
     font-size: 16px;
