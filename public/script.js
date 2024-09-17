@@ -385,6 +385,13 @@ function selectOption(selectedOption) {
         console.log('\n\n\n Incorrect answer selected for question ID:', question._id, '\n\n\n\n');
         selectedOption.classList.add('incorrect');
         
+        // Highlight the correct answer in green
+        options.forEach(option => {
+            if (option.dataset.value === question.correct_answer) {
+                option.classList.add('correct');
+            }
+        });
+        
         // Store the entire question object for incorrect answers
         incorrectMCQIds.push({
             question_id: question.question_id,
