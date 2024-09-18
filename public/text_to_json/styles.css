@@ -41,7 +41,7 @@ body {
 }
 
 .instructions:hover, #converter:hover {
-    transform: translateY(-8px);
+    /* transform: translateY(-8px); */
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
