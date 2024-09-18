@@ -468,7 +468,7 @@ button:hover, button:focus {
 
 .explanation::before {
     font-family: 'Font Awesome 5 Free';
-    content: '\f05a';  /* Info circle icon */
+    
     display: inline-block;
     margin-right: 10px;
     font-weight: 900;
