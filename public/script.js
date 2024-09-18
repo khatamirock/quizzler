@@ -357,7 +357,7 @@ function submitOptionCorrection(questionId) {
 
         setTimeout(() => {
             successAlert.remove();
-        }, 1000);
+        }, 1400);
         
         // Find and remove the modal
         const modal = document.querySelector('.modal');
