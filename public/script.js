@@ -436,7 +436,7 @@ function selectOption(selectedOption) {
     if (question.explain) {
         const explanationElement = document.createElement('h3');
         explanationElement.className = 'explanation';
-        explanationElement.textContent = `Explanation: ${question.explain}`;
+        explanationElement.textContent = `${question.explain}`;
         questionElement.appendChild(explanationElement);
     }
 
