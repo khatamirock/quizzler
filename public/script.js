@@ -230,10 +230,10 @@ function displayQuestions() {
                 `).join('')}
             </div>
             <div class="button-container">
-                <button class="suggest-correction mobile-friendly" data-question-id="${question._id}">Suggest</button>
-                <button class="delete-question mobile-friendly" data-question-id="${question._id}">Delete</button>
-            </div>
-        `;
+                <button class="suggest-correction mobile-friendly" data-question-id="${question._id}">Suggest/add-info</button>
+                </div>
+                `;
+                // <button class="delete-question mobile-friendly" data-question-id="${question._id}">Delete</button>
         questionsContainer.appendChild(questionElement);
     });
 
