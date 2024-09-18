@@ -475,6 +475,47 @@ button:hover, button:focus {
 }
 
 
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.suggest-correction.mobile-friendly,
+.delete-question.mobile-friendly {
+ 
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.suggest-correction.mobile-friendly {
+    background-color: #3498db;
+}
+
+.delete-question.mobile-friendly {
+    background-color: #e74c3c;
+}
+
+.suggest-correction.mobile-friendly:hover {
+    background-color: #2980b9;
+}
+
+.delete-question.mobile-friendly:hover {
+    background-color: #c0392b;
+}
+
+@media (min-width: 768px) {
+    .suggest-correction.mobile-friendly,
+    .delete-question.mobile-friendly {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
 
 
 

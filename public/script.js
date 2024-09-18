@@ -229,8 +229,10 @@ function displayQuestions() {
                     </div>
                 `).join('')}
             </div>
-            <button class="suggest-correction" data-question-id="${question._id}">Suggest Correction</button>
-            <button class="delete-question" data-question-id="${question._id}">Delete Question</button>
+            <div class="button-container">
+                <button class="suggest-correction mobile-friendly" data-question-id="${question._id}">Suggest</button>
+                <button class="delete-question mobile-friendly" data-question-id="${question._id}">Delete</button>
+            </div>
         `;
         questionsContainer.appendChild(questionElement);
     });
