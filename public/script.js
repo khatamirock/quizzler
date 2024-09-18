@@ -426,6 +426,7 @@ function selectOption(selectedOption) {
         incorrectMCQIds.push({
             question_id: question.question_id,
             subs: question.subs,
+            randomNumber: Math.floor(Math.random() * 9000) + 1000,
             info: question.info,
             question_text: question.question_text,
             options: question.options,
@@ -473,16 +474,31 @@ function updateScore() {
 }
 
 let isSubmitting = false;
-
 function submitQuiz() {
     if (isSubmitting) return; // Prevent multiple submissions
     isSubmitting = true;
 
     clearInterval(timerInterval); // Stop the timer
     
-    const unansweredQuestions = currentQuestions.length - document.querySelectorAll('.question:has(.option.correct), .question:has(.option.incorrect)').length;
-    if (unansweredQuestions > 0) {
-        alert(`Time's up! You have ${unansweredQuestions} unanswered question(s). These will be marked as incorrect.`);
+    const unansweredQuestions = currentQuestions.filter(question => 
+        !document.querySelector(`.question:has(.option.correct)[data-question-id="${question._id}"], .question:has(.option.incorrect)[data-question-id="${question._id}"]`)
+    );
+
+    if (unansweredQuestions.length > 0) {
+        alert(`Time's up! You have ${unansweredQuestions.length} unanswered question(s). These will be marked as incorrect.`);
+        // Add unanswered questions to incorrectMCQIds
+        unansweredQuestions.forEach(question => {
+            incorrectMCQIds.push({
+                question_id: question._id,
+                subs: question.subs,
+                randomNumber: Math.floor(Math.random() * 9000) + 1000,
+                info: question.info,
+                question_text: question.question_text,
+                options: question.options,
+                correct_answer: question.correct_answer,
+                explain: question.explain || ''
+            });
+        });
     }
 
     const topic = document.getElementById('topic').value;
@@ -518,7 +534,7 @@ function submitQuiz() {
     .then(data => {
         console.log('Result saved:', data);
         
-        // Save incorrect answers
+        // Save incorrect answers including unanswered questions
         return fetch('/api/questions/save-incorrect-answers', {
             method: 'POST',
             headers: {
@@ -556,9 +572,9 @@ function endQuiz() {
     showResults();
     
     // Optionally, you can add a delay before redirecting to the dashboard
-    setTimeout(() => {
-        switchTab('dashboard');
-    }, 3000); // Redirect after 3 seconds
+    // setTimeout(() => {
+    //     switchTab('dashboard');
+    // }, 900); // Redirect after 3 seconds
 }
 
 function showResults() {
