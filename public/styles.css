@@ -336,6 +336,25 @@ button:hover, button:focus {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+#explain {
+    width: 100%;
+    min-height: 100px;
+    background-color: #3a3a3a;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 15px;
+    font-size: 14px;
+    resize: vertical;
+}
+
+#explain:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
 .delete-subset-btn {
     background-color: var(--accent-color);
     color: var(--text-color);
@@ -424,6 +443,19 @@ button:hover, button:focus {
     background-color: var(--primary-color);
     color: var(--text-color);
 }
+
+.explanation{
+    padding: 25px;
+    background: #97433b;
+    color: #ffa9a9;
+    font-weight: bold;
+    
+}
+
+
+
+
+
 
 @media (min-width: 768px) {
     body {

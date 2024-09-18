@@ -280,6 +280,8 @@ function suggestCorrection(questionId) {
                         </option>
                     `).join('')}
                 </select>
+                <label for="explain">Explanation:</label>
+                <textarea id="explain" rows="4">${question.explain || ''}</textarea>
                 <button type="submit">Submit Correction</button>
                 <button type="button" id="cancelCorrection">Cancel</button>
             </form>
@@ -305,6 +307,7 @@ function submitOptionCorrection(questionId) {
         text: input.value
     }));
     const correctedAnswer = document.getElementById('correctedAnswer').value;
+    const explain = document.getElementById('explain').value;
     const topic = topicSelect.value;
 
     const password = prompt("Please enter the admin password to submit the correction:");
@@ -313,7 +316,7 @@ function submitOptionCorrection(questionId) {
         return;
     }
 
-    console.log('Submitting correction:', { questionId, correctedOptions, correctedAnswer, topic });
+    console.log('Submitting correction:', { questionId, correctedOptions, correctedAnswer, explain, topic });
 
     fetch('/api/questions/suggest-option-correction', {
         method: 'POST',
@@ -324,6 +327,7 @@ function submitOptionCorrection(questionId) {
             questionId,
             correctedOptions,
             correctedAnswer,
+            explain,
             topic,
             password
         }),
@@ -338,7 +342,22 @@ function submitOptionCorrection(questionId) {
     })
     .then(data => {
         console.log('Question updated successfully:', data);
-        alert('Question updated successfully!');
+        const successAlert = document.createElement('div');
+        successAlert.textContent = 'Question updated successfully!';
+        successAlert.style.position = 'fixed';
+        successAlert.style.top = '20px';
+        successAlert.style.left = '50%';
+        successAlert.style.transform = 'translateX(-50%)';
+        successAlert.style.padding = '10px 20px';
+        successAlert.style.backgroundColor = '#4CAF50';
+        successAlert.style.color = 'white';
+        successAlert.style.borderRadius = '5px';
+        successAlert.style.zIndex = '1000';
+        document.body.appendChild(successAlert);
+
+        setTimeout(() => {
+            successAlert.remove();
+        }, 1000);
         
         // Find and remove the modal
         const modal = document.querySelector('.modal');
@@ -346,8 +365,19 @@ function submitOptionCorrection(questionId) {
             modal.remove();
         }
         
+        // Update the currentQuestions array with the new data
+        const updatedQuestionIndex = currentQuestions.findIndex(q => q._id === questionId);
+        if (updatedQuestionIndex !== -1) {
+            currentQuestions[updatedQuestionIndex] = {
+                ...currentQuestions[updatedQuestionIndex],
+                options: correctedOptions,
+                correct_answer: correctedAnswer,
+                explain: explain
+            };
+        }
+        
         // Refresh the questions display
-        startQuiz();
+        // displayQuestions();
     })
     .catch(error => {
         console.error('Error updating question:', error);
@@ -356,7 +386,6 @@ function submitOptionCorrection(questionId) {
 }
 
 let incorrectMCQIds = []; // Declare a global variable to store incorrect MCQ ids
-
 function selectOption(selectedOption) {
     const questionElement = selectedOption.closest('.question');
     const options = questionElement.querySelectorAll('.option');
@@ -382,7 +411,6 @@ function selectOption(selectedOption) {
             removeCorrectAnswerFromIncorrectAns(question.question_id);
         }
     } else {
-        console.log('\n\n\n Incorrect answer selected for question ID:', question._id, '\n\n\n\n');
         selectedOption.classList.add('incorrect');
         
         // Highlight the correct answer in green
@@ -399,8 +427,17 @@ function selectOption(selectedOption) {
             info: question.info,
             question_text: question.question_text,
             options: question.options,
-            correct_answer: question.correct_answer
+            correct_answer: question.correct_answer,
+            explain: question.explain || ''
         });
+    }
+
+    // Show explanation if available
+    if (question.explain) {
+        const explanationElement = document.createElement('h3');
+        explanationElement.className = 'explanation';
+        explanationElement.textContent = `Explanation: ${question.explain}`;
+        questionElement.appendChild(explanationElement);
     }
 
     updateScore();

@@ -287,7 +287,7 @@ router.post('/save-json', async (req, res) => {
 });
 
 router.post('/suggest-option-correction', async (req, res) => {
-    const { questionId, correctedOptions, correctedAnswer, topic, password } = req.body;
+    const { questionId, correctedOptions, correctedAnswer, topic, password, explain } = req.body;
 
     // Check if the provided password matches the environment variable
     if (password !== process.env.ADMIN_PASSWORD) {
@@ -315,7 +315,8 @@ router.post('/suggest-option-correction', async (req, res) => {
             { 
                 $set: {
                     options: correctedOptions,
-                    correct_answer: correctedAnswer
+                    correct_answer: correctedAnswer,
+                    explain: explain
                 }
             }
         );
