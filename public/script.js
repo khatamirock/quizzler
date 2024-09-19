@@ -1052,8 +1052,26 @@ function deleteQuestion(questionId) {
     })
     .then(data => {
         console.log('Question deleted successfully:', data);
-        alert('Question deleted successfully!');
+        showNotification('Question deleted successfully!');
         
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background-color: #4CAF50;
+                color: white;
+                padding: 15px;
+                border-radius: 5px;
+                z-index: 1000;
+            `;
+            document.body.appendChild(notification);
+            setTimeout(() => {
+                notification.remove();
+            }, 1000);
+        }
         // Remove the question from currentQuestions array
         currentQuestions = currentQuestions.filter(q => q._id !== questionId);
         
