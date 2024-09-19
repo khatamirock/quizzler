@@ -460,4 +460,34 @@ router.post('/remove-correct-answer', async (req, res) => {
     }
 });
 
+// Add this new route to handle single question deletion
+router.delete('/delete-question', async (req, res) => {
+    const { questionId, topic, subtopic, password } = req.body;
+    console.log(`Attempting to delete question ${questionId} from topic ${topic}`);
+
+    // Check if the provided password matches the environment variable
+    if (password !== process.env.ADMIN_PASSWORD) {
+        return res.status(401).json({ error: 'Unauthorized: Incorrect password' });
+    }
+
+    try {
+        const db = await connectToDatabase('data');
+        const collection = db.collection(topic);
+
+        // Delete the specific question
+        const result = await collection.deleteOne({ _id: new ObjectId(questionId) });
+
+        console.log(`Deletion result:`, result);
+
+        if (result.deletedCount > 0) {
+            res.json({ message: `Question deleted successfully`, deletedCount: result.deletedCount });
+        } else {
+            res.status(404).json({ error: `Question not found` });
+        }
+    } catch (error) {
+        console.error('Error deleting question:', error);
+        res.status(500).json({ error: 'Failed to delete question', details: error.message });
+    }
+});
+
 module.exports = router;
