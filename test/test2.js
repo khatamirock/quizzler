@@ -10,11 +10,26 @@ async function generateMCQ(question) {
   const chatCompletion = await groq.chat.completions.create({
     messages: [
       {
+        role: "system",
+        content: "You are an expert in creating multiple-choice questions in Bengali. Your task is to generate 4 best matching options with an answer for a given question, following a specific format."
+      },
+      {
         role: "user",
-        content: `${question}\nfor this question create 4 best matching option with ans. in bangla in this format \n\`প্রশ্ন ১: বাংলাদেশের ক্ষুদ্রতম জেলা কোনটি? \n\nক) নারায়ণগঞ্জ\nখ) মেহেরপুর\nগ) ঝালকাঠি\nঘ) সিলেট\nAnswer: খ)\``
+        content: `Please create a multiple-choice question in Bengali for the following question, with 4 options and an answer. Use this format:
+
+প্রশ্ন ১: [Question]
+
+ক) [Option A]
+খ) [Option B]
+গ) [Option C]
+ঘ) [Option D]
+Answer: [Correct option letter]
+
+The question is: ${question}`
       }
     ],
-    model: "llama3-groq-70b-8192-tool-use-preview",
+    // model: "llama3-groq-70b-8192-tool-use-preview",
+    model:"llama3-8b-8192",
     temperature: 0.5,
     max_tokens: 1024,
     top_p: 0.65,

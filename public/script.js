@@ -4,7 +4,7 @@ const results = document.getElementById('results');
 const startButton = document.getElementById('startQuiz');
 const submitButton = document.getElementById('submit');
 const restartButton = document.getElementById('restart');
-
+let  quizInProgress = false;
 let currentQuestions = [];
 let score = 0;
 
@@ -123,7 +123,7 @@ async function deleteSubset(topic, subsValue, password) {
     }
 }
 
-startButton.addEventListener('click', startQuiz);
+// startButton.addEventListener('click', startQuiz);
 submitButton.addEventListener('click', submitQuiz);
 restartButton.addEventListener('click', restartQuiz);
 
@@ -161,7 +161,14 @@ subtopicSelect.addEventListener('click', (event) => {
 });
 
 // Update the startQuiz function
+ 
 function startQuiz() {
+    if (quizInProgress) {
+        console.log('Quiz already in progress');
+        return;
+    }
+    quizInProgress = true;
+
     console.log('startQuiz function called'); // Debug log
     const topic = topicSelect.value;
     const subtopicElement = document.querySelector('.subtopic-option.selected');
@@ -564,6 +571,7 @@ function submitQuiz() {
     })
     .finally(() => {
         isSubmitting = false; // Reset the flag
+        quizInProgress = false;
         incorrectMCQIds = []; // Clear the incorrect answers array
     });
 }
@@ -825,7 +833,16 @@ function initializePage() {
 }
 
 // Call the initialization function when the page loads
-document.addEventListener('DOMContentLoaded', initializePage);
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM fully loaded');
+    const startButton = document.getElementById('startQuiz');
+    if (startButton) {
+        console.log('Start button found');
+        startButton.addEventListener('click', startQuiz, { once: true });
+    } else {
+        console.error('Start button not found');
+    }
+});
 
 // const mongoCollectionSelect = document.getElementById('mongoCollection');
 
@@ -887,7 +904,7 @@ document.addEventListener('DOMContentLoaded', () => {
               
               // Add subset label
               const subsetLabel = document.createElement('span');
-              subsetLabel.textContent = `Subset: ${subsValue} - ${groupInfo}`;
+            //   subsetLabel.textContent = `Subset: ${subsValue} - ${groupInfo}`;
               subsetContainer.appendChild(subsetLabel);
               
               // Add delete button
