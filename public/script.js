@@ -421,18 +421,19 @@ function selectOption(selectedOption) {
                 option.classList.add('correct');
             }
         });
-        
+        console.log('incorrect ans detected',incorrectMCQIds);
         // Store the entire question object for incorrect answers
-        incorrectMCQIds.push({
-            question_id: question.question_id,
-            subs: question.subs,
-            randomNumber: Math.floor(Math.random() * 9000) + 1000,
-            info: question.info,
-            question_text: question.question_text,
-            options: question.options,
-            correct_answer: question.correct_answer,
-            explain: question.explain || ''
-        });
+        if (!incorrectMCQIds.some(item => item.question_id === question._id)) {
+            incorrectMCQIds.push({
+                question_id: question._id,
+                subs: question.subs,
+                info: question.info,
+                question_text: question.question_text,
+                options: question.options,
+                correct_answer: question.correct_answer,
+                explain: question.explain || ''
+            });
+        }
     }
 
     // Show explanation if available
@@ -474,6 +475,9 @@ function updateScore() {
 }
 
 let isSubmitting = false;
+
+
+
 function submitQuiz() {
     if (isSubmitting) return; // Prevent multiple submissions
     isSubmitting = true;
@@ -481,26 +485,26 @@ function submitQuiz() {
     clearInterval(timerInterval); // Stop the timer
     
     const unansweredQuestions = currentQuestions.filter(question => 
-        !document.querySelector(`.question:has(.option.correct)[data-question-id="${question._id}"], .question:has(.option.incorrect)[data-question-id="${question._id}"]`)
+        !document.querySelector(`.question[data-question-id="${question._id}"] .option.correct, .question[data-question-id="${question._id}"] .option.incorrect`)
     );
 
-    if (unansweredQuestions.length > 0) {
-        alert(`Time's up! You have ${unansweredQuestions.length} unanswered question(s). These will be marked as incorrect.`);
-        // Add unanswered questions to incorrectMCQIds
-        unansweredQuestions.forEach(question => {
-            incorrectMCQIds.push({
-                question_id: question._id,
-                subs: question.subs,
-                randomNumber: Math.floor(Math.random() * 9000) + 1000,
-                info: question.info,
-                question_text: question.question_text,
-                options: question.options,
-                correct_answer: question.correct_answer,
-                explain: question.explain || ''
-            });
-        });
-    }
-
+    // if (unansweredQuestions.length > 0) {
+    //     alert(`Time's up! You have ${unansweredQuestions.length} unanswered question(s). These will be marked as incorrect.`);
+    //     // Add only unanswered questions to incorrectMCQIds
+    //     unansweredQuestions.forEach(question => {
+    //         if (!incorrectMCQIds.some(item => item.question_id === question._id)) {
+    //             incorrectMCQIds.push({
+    //                 question_id: question._id,
+    //                 subs: question.subs,
+    //                 info: question.info,
+    //                 question_text: question.question_text,
+    //                 options: question.options,
+    //                 correct_answer: question.correct_answer,
+    //                 explain: question.explain || ''
+    //             });
+    //         }
+    //     });
+    // }
     const topic = document.getElementById('topic').value;
     const subtopicElement = document.querySelector('.subtopic-option.selected');
     const subtopic = subtopicElement ? subtopicElement.dataset.value : '';
@@ -550,7 +554,7 @@ function submitQuiz() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log('Incorrect answers saved:', data);
+        console.log('Incorrect answers saved\n\n', data);
         // End the quiz and show results
         endQuiz();
     })
