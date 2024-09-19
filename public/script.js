@@ -1070,7 +1070,7 @@ function deleteQuestion(questionId) {
             document.body.appendChild(notification);
             setTimeout(() => {
                 notification.remove();
-            }, 1000);
+            }, 1200);
         }
         // Remove the question from currentQuestions array
         currentQuestions = currentQuestions.filter(q => q._id !== questionId);
