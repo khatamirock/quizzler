@@ -200,7 +200,7 @@ function startQuiz() {
             return response.json();
         })
         .then(data => {
-            console.log('Received questions:', data); // Debug log
+            // console.log('Received questions:', data); // Debug log
             if (!Array.isArray(data) || data.length === 0) {
                 throw new Error('No questions received');
             }
