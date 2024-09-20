@@ -200,7 +200,7 @@ function startQuiz() {
             return response.json();
         })
         .then(data => {
-            // console.log('Received questions:', data); // Debug log
+            console.log('Received questions:', data); // Debug log
             if (!Array.isArray(data) || data.length === 0) {
                 throw new Error('No questions received');
             }
@@ -220,7 +220,6 @@ function startQuiz() {
             alert('Failed to start quiz. Please try again. Error: ' + error.message);
         });
 }
-
 function displayQuestions() {
     const questionsContainer = document.getElementById('questions');
     questionsContainer.innerHTML = '';
@@ -239,28 +238,18 @@ function displayQuestions() {
             <div class="button-container">
                 <button class="suggest-correction mobile-friendly" data-question-id="${question._id}">Suggest/add-info</button>
                 <button class="delete-question mobile-friendly" data-question-id="${question._id}">Delete</button>
-            </div>
-        `;
+                </div>
+                `;
         questionsContainer.appendChild(questionElement);
-
-        // Add event listeners to options for this question
-        const optionsForQuestion = questionElement.querySelectorAll('.option');
-        optionsForQuestion.forEach(option => {
-            option.addEventListener('click', () => {
-                if (!questionElement.classList.contains('answered')) {
-                    selectOption(option);
-                    questionElement.classList.add('answered');
-                    // optionsForQuestion.forEach(opt => opt.style.pointerEvents = 'none');
-                    // questionElement.style.opacity = '0.7';
-                }
-            });
-        });
     });
- 
 
     // Add event listeners to options, suggest correction buttons, and delete buttons
     document.querySelectorAll('.option').forEach(option => {
-        option.addEventListener('click', () => selectOption(option));
+        option.addEventListener('click', () => {
+            selectOption(option);
+            const questionElement = option.closest('.question');
+            questionElement.classList.add('answered');
+        });
     });
     document.querySelectorAll('.suggest-correction').forEach(button => {
         button.addEventListener('click', () => suggestCorrection(button.dataset.questionId));

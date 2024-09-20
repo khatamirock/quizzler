@@ -483,6 +483,8 @@ button:hover, button:focus {
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
+    pointer-events: all !important;
+
 }
 
 .suggest-correction.mobile-friendly,
