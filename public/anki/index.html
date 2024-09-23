@@ -12,6 +12,16 @@
     <!-- create a text modern sleek text-box for the user to input the text -->
     <div class="container">
         <form id="ankiForm">
+            <label for="topicSelect">Select Topic:</label>
+            <select id="topicSelect">
+                <option value="">Select a topic</option>
+            </select>
+
+            <label for="subtopicSelect">Select Subtopic:</label>
+            <select id="subtopicSelect" disabled>
+                <option value="">Select a subtopic</option>
+            </select>
+
             <label for="ankiText">Enter Text:</label>
             <textarea id="ankiText" rows="10" required></textarea>
             <button type="button" id="ankiButton">Submit</button>
