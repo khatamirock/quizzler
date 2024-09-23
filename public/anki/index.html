@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anki</title>
+    <!-- add the css -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Anki</h1>
+    <!-- create a text modern sleek text-box for the user to input the text -->
+    <div class="container">
+        <form id="ankiForm">
+            <label for="ankiText">Enter Text:</label>
+            <textarea id="ankiText" rows="10" required></textarea>
+            <button type="button" id="ankiButton">Submit</button>
+        </form>
+    </div>
+
+    <!-- Popup window -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <label for="popupText">Your Text:</label>
+            <textarea id="popupText" readonly></textarea>
+            <button id="copyButton">Copy Text</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -619,12 +619,15 @@ const converterTab = document.getElementById('converterTab');
 const converterContent = document.getElementById('converterContent');
 const addQuestionTab = document.getElementById('addQuestionTab');
 const addQuestionContent = document.getElementById('addQuestionContent');
+const ankiTab = document.getElementById('ankiTab');
+const ankiContent = document.getElementById('ankiContent');
 
 // Add event listeners for tab switching
 quizTab.addEventListener('click', () => switchTab('quiz'));
 dashboardTab.addEventListener('click', () => switchTab('dashboard'));
 converterTab.addEventListener('click', () => switchTab('converter'));
 addQuestionTab.addEventListener('click', () => switchTab('addQuestion'));
+ankiTab.addEventListener('click', () => switchTab('anki'));
 
 const topicFilter = document.createElement('select');
 topicFilter.id = 'topicFilter';
@@ -699,10 +702,16 @@ function switchTab(tab) {
     dashboardTab.classList.remove('active');
     converterTab.classList.remove('active');
     addQuestionTab.classList.remove('active');
+    ankiTab.classList.remove('active');
     quizContent.style.display = 'none';
     dashboardContent.style.display = 'none';
     converterContent.style.display = 'none';
     addQuestionContent.style.display = 'none';
+    
+    // Check if ankiContent exists before accessing its style property
+    if (ankiContent) {
+        ankiContent.style.display = 'none';
+    }
 
     if (tab === 'quiz') {
         quizTab.classList.add('active');
@@ -719,6 +728,12 @@ function switchTab(tab) {
         addQuestionTab.classList.add('active');
         addQuestionContent.style.display = 'block';
         addQuestionContent.innerHTML = '<iframe src="add_question/index.html" width="100%" height="600px" frameborder="0"></iframe>';
+    } else if (tab === 'anki') {
+        ankiTab.classList.add('active');
+        if (ankiContent) {
+            ankiContent.style.display = 'block';
+            ankiContent.innerHTML = '<iframe src="anki/index.html" width="100%" height="600px" frameborder="0"></iframe>';
+        }
     }
 }
 
