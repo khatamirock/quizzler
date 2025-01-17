@@ -490,4 +490,28 @@ router.delete('/delete-question', async (req, res) => {
     }
 });
 
+// Add this new route to fetch all questions for a topic and subtopic
+router.get('/:topic/:subtopic/:subsValue', async (req, res) => {
+  const { topic, subtopic, subsValue } = req.params;
+  console.log('Fetching questions for:', { topic, subtopic, subsValue });
+  try {
+    const db = await connectToDatabase('data');
+    const collection = db.collection(topic);
+    console.log('Querying collection:', topic);
+    const questions = await collection.find({ subs: parseInt(subsValue) }).toArray();
+    console.log('Found questions:', questions.length);
+
+    if (!questions || !Array.isArray(questions)) {
+      console.log('Invalid data format or no questions found');
+      return res.status(400).json({ error: 'Invalid topic or data format' });
+    }
+
+    console.log('Sending questions to client');
+    res.json(questions);
+  } catch (error) {
+    console.error('Error fetching questions:', error);
+    res.status(500).json({ error: 'Failed to fetch questions', details: error.message });
+  }
+});
+
 module.exports = router;
