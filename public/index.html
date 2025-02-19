@@ -42,6 +42,13 @@
                         <button class="question-count-btn" data-count="50">50</button>
                     </div>
                 </div>
+                
+                <div id="timeSelection">
+                    <label for="timeSlider">Select Quiz Time (minutes):</label>
+                    <input type="range" id="timeSlider" min="1" max="60" value="10">
+                    <span id="timeValue">10</span>
+                </div>
+
                 <button id="startQuiz">Start Quiz</button>
                 <!-- Add the new dropdown for MongoDB collections -->
                 <!-- <select id="mongoCollection">

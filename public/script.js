@@ -133,6 +133,8 @@ let timerInterval;
 
 // Add this near the top of your file with other variable declarations
 let selectedQuestionCount = 5; // Default to 5 questions
+let timeSlider = document.getElementById('timeSlider');
+let timeValue = document.getElementById('timeValue');
 
 // Add this after your existing event listeners
 document.querySelectorAll('.question-count-btn').forEach(button => {
@@ -141,6 +143,10 @@ document.querySelectorAll('.question-count-btn').forEach(button => {
         button.classList.add('selected');
         selectedQuestionCount = parseInt(button.dataset.count);
     });
+});
+
+timeSlider.addEventListener('input', function() {
+    timeValue.textContent = timeSlider.value;
 });
 
 // In your initializePage function, add this line to set the default selected button
@@ -966,7 +972,7 @@ topicFilter.addEventListener('change', fetchDashboardData);
 
 function startTimer() {
     quizStartTime = Date.now();
-    quizDuration = currentQuestions.length * 60 * 1000; // Convert minutes to milliseconds
+    quizDuration = parseInt(timeSlider.value) * 60 * 1000; // Use slider value for quiz duration
     
     updateTimerDisplay();
     
