@@ -506,8 +506,8 @@ button:hover, button:focus {
 
 .suggest-correction.mobile-friendly,
 .delete-question.mobile-friendly {
- 
-    font-size: 14px;
+    padding: 8px 10px;
+    font-size: 8px;
     border-radius: 5px;
     border: none;
     color: #fff;
@@ -534,8 +534,8 @@ button:hover, button:focus {
 @media (min-width: 768px) {
     .suggest-correction.mobile-friendly,
     .delete-question.mobile-friendly {
-        padding: 12px;
-        font-size: 16px;
+        padding: 6px;
+        font-size: 10px;
     }
 }
 
